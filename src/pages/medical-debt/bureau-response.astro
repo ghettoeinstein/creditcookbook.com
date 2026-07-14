@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = "What to do when credit bureaus verify, reject, or ignore your medical debt dispute. Response scripts for every outcome.";
+---
+
+<Base title="Bureau Response Scripts — CreditCookbook" description="{description}" posterTitle="BUREAU RESPONSE" posterLabel="// 11 — handling bureau responses">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// content</span>
+      <h2 style="margin-bottom: 24px;">Bureau response scripts</h2>
+      <p style="max-width: 64ch; margin-bottom: 32px;">After you dispute a medical collection, the bureau has 30 days to investigate. Their response determines your next move. Here's what to do for every possible outcome.</p>
+
+<h3 style="margin-bottom: 16px;">Outcome 1: Item removed</h3>
+<p style="max-width: 60ch; margin-bottom: 24px;">The best case. The bureau could not verify the account and removed it. Check your updated credit report to confirm it's gone. No further action needed — move on to the next dispute.</p>
+
+<h3 style="margin-bottom: 16px;">Outcome 2: Item verified (not removed)</h3>
+<p style="max-width: 60ch; margin-bottom: 16px;">The bureau claims they verified the account. Don't give up — this is common and often based on automated e-OSCAR verification, not actual investigation.</p>
+<ol style="margin-left: 24px; line-height: 2.5; margin-bottom: 24px;">
+  <li><strong>Send a Method of Verification (MOV) letter.</strong> Demand to know exactly how the bureau verified the account — who they contacted, what documentation was provided.</li>
+  <li><strong>File a CFPB complaint.</strong> Go to consumerfinance.gov and file a complaint against the bureau. This forces a real investigation.</li>
+  <li><strong>Dispute with the furnisher directly.</strong> Under FCRA § 1681s-2(b), you can dispute directly with the entity that reported the account.</li>
+  <li><strong>Send a 609 letter.</strong> Request all documents the bureau used to verify, under FCRA § 609.</li>
+</ol>
+
+<h3 style="margin-bottom: 16px;">MOV Letter Template</h3>
+<div class="mono-block" style="margin-bottom: 32px;">
+[YOUR NAME]
+[YOUR ADDRESS]
+
+[DATE]
+
+[BUREAU NAME]
+[BUREAU ADDRESS]
+
+RE: Method of Verification Request
+Account: [ACCOUNT NUMBER]
+Dispute Date: [DATE YOU DISPUTED]
+
+To Whom It May Concern,
+
+You verified the above-referenced account after my
+dispute dated [DATE]. I am requesting the method of
+verification you used, as required by FCRA Section 611
+(15 U.S.C. Section 1681i(a)(6)(B)(iii)).
+
+Specifically, I want to know:
+1. The name and contact information of the person or
+   entity who verified this account.
+2. The documentation that was provided to verify the
+   accuracy of this account.
+3. Whether this verification was performed
+   electronically (e-OSCAR) or manually.
+
+If you cannot provide this information, the
+verification was insufficient and I demand removal.
+
+Sincerely,
+
+[YOUR NAME]
+</div>
+
+<h3 style="margin-bottom: 16px;">Outcome 3: No response (ignored)</h3>
+<p style="max-width: 60ch; margin-bottom: 24px;">If the bureau doesn't respond within 30 days, they are in violation of FCRA § 1681i. The item must be removed. Send a demand letter citing the violation and file a CFPB complaint.</p>
+
+<h3 style="margin-bottom: 16px;">Outcome 4: Item updated but not removed</h3>
+<p style="max-width: 60ch;">Sometimes the bureau "updates" the account (changes the status, balance, or date) instead of removing it. If the update is still inaccurate, re-dispute with the corrected information. If the account was paid, cite the 45-day paid removal rule.</p>
+    </div>
+  </section>
+</Base>

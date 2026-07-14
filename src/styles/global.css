@@ -1,0 +1,366 @@
+/* ============================================================
+   CreditCookbook — Swiss / International Typographic Style
+   Palette: white / blue / black — used with Swiss restraint
+   ============================================================ */
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+/* ---- Tokens ---- */
+:root {
+  /* Color */
+  --white: #FFFFFF;
+  --ink: #0A0A0A;
+  --blue: #1E3A8A;
+  --blue-bright: #0040FF;
+  --paper: #F5F5F5;
+  --line: #0A0A0A;
+
+  /* Type */
+  --font-display: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-body: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Grid */
+  --grid-cols: 12;
+  --grid-gap: 24px;
+  --max-width: 1080px;
+  --gutter: 24px;
+}
+
+/* ---- Base ---- */
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+h3 { font-size: 1.25rem; font-weight: 700; }
+h4 { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+
+p { font-size: 1rem; line-height: 1.75; color: var(--ink); }
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: color 0.1s ease;
+}
+a:hover { color: var(--blue-bright); }
+
+strong { font-weight: 700; }
+
+/* ---- Layout ---- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  gap: var(--grid-gap);
+}
+
+/* ---- Hairline rules ---- */
+.rule {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+.rule-blue {
+  border: 0;
+  border-top: 1px solid var(--blue);
+  margin: 0;
+}
+
+/* ---- Swiss poster title block ---- */
+.poster-block {
+  background: var(--blue);
+  color: var(--white);
+  padding: 80px 0;
+  width: 100%;
+}
+.poster-block .container { }
+.poster-block h1 {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  text-transform: uppercase;
+}
+.poster-block .label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 24px;
+  display: block;
+}
+
+/* ---- Nav ---- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.nav .logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav .logo-mark {
+  width: 20px;
+  height: 20px;
+  background: var(--blue);
+  display: inline-block;
+}
+.nav .links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.nav .links a {
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav .links a:hover { color: var(--blue); }
+.nav .links a.active { color: var(--blue); font-weight: 600; }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.btn-primary {
+  background: var(--blue);
+  color: var(--white);
+}
+.btn-primary:hover { background: var(--blue-bright); color: var(--white); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--white); }
+
+/* ---- Cards ---- */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 28px;
+}
+.card-flat {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 28px;
+}
+
+/* ---- Monospace utility (templates, data) ---- */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.mono-block {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 24px;
+  white-space: pre-wrap;
+  color: var(--ink);
+}
+
+/* ---- Section spacing ---- */
+.section {
+  padding: 80px 0;
+}
+.section-tight {
+  padding: 48px 0;
+}
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* ---- Footer ---- */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  font-size: 12px;
+  color: var(--ink);
+  font-family: var(--font-mono);
+}
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer a {
+  color: var(--ink);
+  margin-left: 20px;
+}
+.footer a:hover { color: var(--blue); }
+
+/* ---- Email capture ---- */
+.email-capture {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 40px;
+}
+.email-capture h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+.email-capture p {
+  font-size: 14px;
+  color: var(--ink);
+  opacity: 0.7;
+  margin-bottom: 24px;
+}
+.email-capture form {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+}
+.email-capture input {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--ink);
+  border-right: none;
+  background: var(--white);
+  color: var(--ink);
+  outline: none;
+}
+.email-capture input:focus { border-color: var(--blue); }
+.email-capture button {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  background: var(--ink);
+  color: var(--white);
+  border: 1.5px solid var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.email-capture button:hover { background: var(--blue); border-color: var(--blue); }
+.email-capture .fine {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--ink);
+  opacity: 0.5;
+  margin-top: 12px;
+}
+
+/* ---- Table ---- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+th {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--ink);
+  background: var(--paper);
+}
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+/* ---- Step navigation ---- */
+.steps {
+  display: flex;
+  gap: 0;
+  list-style: none;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--line);
+}
+.steps li {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 14px 20px;
+  border-right: 1px solid var(--line);
+  color: var(--ink);
+  opacity: 0.5;
+  cursor: default;
+}
+.steps li.active {
+  color: var(--blue);
+  font-weight: 600;
+  opacity: 1;
+  border-bottom: 2px solid var(--blue);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .nav .links a:not(.btn) { display: none; }
+  .grid { grid-template-columns: 1fr; }
+  .email-capture form { flex-direction: column; }
+  .email-capture input { border-right: 1.5px solid var(--ink); }
+  .email-capture button { border-top: none; }
+}

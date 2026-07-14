@@ -1,0 +1,17 @@
+{
+  "name": "creditcookbook",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "astro build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "astro": "^4.16.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.0"
+  }
+}

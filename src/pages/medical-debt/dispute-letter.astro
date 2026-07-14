@@ -1,0 +1,94 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = "Fill-in-the-blank FCRA dispute letter for medical collections. Free, open-source, and ready to send to all three credit bureaus.";
+---
+
+<Base title="Medical Debt Dispute Letter Template — CreditCookbook" description={description} posterTitle="DISPUTE LETTER" posterLabel="// 03 — FCRA dispute template">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// dispute letter template</span>
+      <h2 style="margin-bottom: 16px;">FCRA Dispute Letter for Medical Collections</h2>
+      <p style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">Copy this template. Fill in the bracketed fields. Send via certified mail with return receipt to all three bureaus. Keep the tracking number.</p>
+
+      <div style="display: flex; gap: 16px; margin-bottom: 48px;">
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').textContent)">Copy letter</button>
+        <a href="/medical-debt" class="btn btn-ghost">Back to cluster</a>
+      </div>
+
+      <div id="letter" class="mono-block" style="margin-bottom: 48px;">
+[YOUR NAME]
+[YOUR ADDRESS]
+[YOUR CITY, STATE ZIP]
+[YOUR PHONE]
+[YOUR EMAIL]
+
+[DATE]
+
+[EXPERIAN / EQUIFAX / TRANSUNION]
+[BUREAU ADDRESS]
+
+RE: Dispute of Medical Collection Account
+
+Account: [COLLECTION ACCOUNT NUMBER]
+Original Creditor: [HEALTHCARE PROVIDER NAME]
+Amount: [AMOUNT]
+
+To Whom It May Concern,
+
+I am writing to dispute the above-referenced medical collection
+account appearing on my credit report. Pursuant to 15 U.S.C.
+Section 1681i (Section 611 of the Fair Credit Reporting Act), I am
+exercising my right to dispute this item.
+
+I dispute this account because:
+
+[CHOOSE ONE OR MORE:]
+- The information is inaccurate — the amount is incorrect.
+- The information is incomplete — billing not processed through insurance.
+- The information is unverifiable — I have no record of this debt.
+- The account has been paid and should be removed per the
+  45-day paid medical collection removal rule.
+
+I am requesting that you investigate this dispute within 30 days
+as required by FCRA Section 1681i(a)(1). If you cannot verify this
+account with complete and accurate documentation, I request that
+you permanently remove it from my credit file.
+
+Please send me an updated copy of my credit report once the
+investigation is complete, as required by FCRA Section 1681j.
+
+Sincerely,
+
+[YOUR NAME]
+
+Enclosures:
+- Copy of credit report with disputed item highlighted
+- Proof of payment (if applicable)
+      </div>
+
+      <h3 style="margin-bottom: 16px;">Bureau mailing addresses</h3>
+      <table style="margin-bottom: 48px;">
+        <thead><tr><th>Bureau</th><th>Address</th></tr></thead>
+        <tbody>
+          <tr><td>Experian</td><td>P.O. Box 9701, Allen, TX 75013</td></tr>
+          <tr><td>Equifax</td><td>P.O. Box 105069, Atlanta, GA 30348</td></tr>
+          <tr><td>TransUnion</td><td>P.O. Box 2000, Chester, PA 19016</td></tr>
+        </tbody>
+      </table>
+
+      <div class="card">
+        <h4 style="margin-bottom: 12px;">Checklist before sending</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Fill in all bracketed fields with your information</li>
+          <li>Highlight the disputed item on a copy of your credit report</li>
+          <li>Include proof of payment if the account is paid</li>
+          <li>Send via USPS Certified Mail with Return Receipt</li>
+          <li>Keep the tracking number</li>
+          <li>Send a separate letter to each bureau</li>
+          <li>Wait 30 days — if no response, the item must be removed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>

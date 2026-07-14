@@ -1,0 +1,147 @@
+---
+import Base from '../../layouts/Base.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+
+const description = 'Complete medical debt removal playbook: dispute letters, negotiation scripts, HIPAA-based removal strategies, and step-by-step guides for removing medical collections from your credit report.';
+
+const faqs = [
+  { q: "Can medical debt be removed from my credit report?", a: "Yes. Medical collections under $500 are excluded from credit reports as of 2023 (FICO 9 / VantageScore 4.0). Paid medical collections should be removed within 45 days. Unpaid collections can be disputed if inaccurate, incomplete, or unverifiable." },
+  { q: "How long does medical debt stay on my report?", a: "Unpaid medical collections remain for 7 years. Paid medical collections must be removed within 45 days of payment. If you never paid and the collection is inaccurate or unverifiable, you can dispute it at any time." },
+  { q: "Does HIPAA help remove medical debt?", a: "HIPAA does not directly apply to credit reporting, but it can be used as leverage. If a healthcare provider shared your medical information with a collection agency without proper authorization, you can file a HIPAA complaint and use it as grounds for dispute." },
+  { q: "Should I pay for delete on medical debt?", a: "Pay-for-delete is rarely necessary for medical debt since paid medical collections are removed automatically. If the collection is under $500, it should not appear at all. Focus on disputing inaccuracies first." },
+  { q: "What is a HIPAA validation letter?", a: "A HIPAA validation letter requests that the collection agency prove they have legal authorization to collect on the debt and that the original creditor (healthcare provider) shared your information in compliance with HIPAA. Many agencies cannot produce this documentation." },
+  { q: "Can I negotiate medical bills directly?", a: "Yes. Hospitals are required to publish their chargemaster rates and offer financial assistance programs. Most hospitals will negotiate a discount of 20-60% for cash payment or set up interest-free payment plans." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+
+<Base title="Medical Debt Removal — CreditCookbook" description={description} posterTitle="MEDICAL DEBT" posterLabel="// cluster 01 — dispute & removal playbook">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// the complete playbook</span>
+      <h2 style="margin-bottom: 16px;">Everything you need to remove medical debt from your credit report.</h2>
+      <p style="max-width: 60ch; opacity: 0.7; margin-bottom: 48px;">Medical debt is the most removable type of negative mark on your credit report. New rules, HIPAA protections, and the $500 threshold make it easier to dispute and remove than any other collection type. Here's the full playbook.</p>
+
+      <!-- Step nav -->
+      <div class="steps">
+        <li class="active">01 — Overview</li>
+        <li>02 — Your Rights</li>
+        <li>03 — Dispute</li>
+        <li>04 — HIPAA</li>
+        <li>05 — Negotiate</li>
+        <li>06 — Build</li>
+      </div>
+
+      <!-- Sub-pages grid -->
+      <h3 style="margin-bottom: 24px;">Guides & Templates</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+
+        <a href="/medical-debt/overview" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 01</span>
+          <h4 style="margin-bottom: 6px;">Overview</h4>
+          <p style="font-size: 13px; opacity: 0.7;">What medical debt is, how it gets on your report, and the current rules.</p>
+        </a>
+
+        <a href="/medical-debt/your-rights" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 02</span>
+          <h4 style="margin-bottom: 6px;">Your Rights</h4>
+          <p style="font-size: 13px; opacity: 0.7;">FCRA, HIPAA, FDCPA — the statutes that protect you.</p>
+        </a>
+
+        <a href="/medical-debt/dispute-letter" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 03</span>
+          <h4 style="margin-bottom: 6px;">Dispute Letter Template</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Fill-in-the-blank FCRA dispute letter for medical collections.</p>
+        </a>
+
+        <a href="/medical-debt/hipaa-removal" style="display: block; padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 04</span>
+          <h4 style="margin-bottom: 6px;">HIPAA Removal Strategy</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Use HIPAA to challenge collection agency authorization.</p>
+        </a>
+
+        <a href="/medical-debt/negotiate-hospital-bills" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 05</span>
+          <h4 style="margin-bottom: 6px;">Negotiate Hospital Bills</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Reduce bills 20-60% with financial assistance programs.</p>
+        </a>
+
+        <a href="/medical-debt/hospital-financial-assistance" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 06</span>
+          <h4 style="margin-bottom: 6px;">Hospital Financial Assistance</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Charity care programs — how to apply and qualify.</p>
+        </a>
+
+        <a href="/medical-debt/validation-letter" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 07</span>
+          <h4 style="margin-bottom: 6px;">Validation Letter Template</h4>
+          <p style="font-size: 13px; opacity: 0.7;">FDCPA debt validation request for medical collections.</p>
+        </a>
+
+        <a href="/medical-debt/pay-for-delete" style="display: block; padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 08</span>
+          <h4 style="margin-bottom: 6px;">Pay-for-Delete</h4>
+          <p style="font-size: 13px; opacity: 0.7;">When to use it, when to avoid it, and the letter template.</p>
+        </a>
+
+        <a href="/medical-debt/goodwill-letter" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 09</span>
+          <h4 style="margin-bottom: 6px;">Goodwill Letter</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Ask the original creditor to remove a paid collection.</p>
+        </a>
+
+        <a href="/medical-debt/500-threshold" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 10</span>
+          <h4 style="margin-bottom: 6px;">The $500 Threshold</h4>
+          <p style="font-size: 13px; opacity: 0.7;">How the 2023 rule change affects medical collections.</p>
+        </a>
+
+        <a href="/medical-debt/bureau-response" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 11</span>
+          <h4 style="margin-bottom: 6px;">Bureau Response Scripts</h4>
+          <p style="font-size: 13px; opacity: 0.7;">What to do when bureaus verify, reject, or ignore disputes.</p>
+        </a>
+
+        <a href="/medical-debt/rebuild-after" style="display: block; padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// 12</span>
+          <h4 style="margin-bottom: 6px;">Rebuild After Removal</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Score recovery timeline and credit-building steps.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- FAQ with schema -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// faq</span>
+      <h2 style="margin-bottom: 32px;">Medical Debt FAQ</h2>
+      <div style="max-width: 700px;">
+        {faqs.map((faq) => (
+          <div style="border-bottom: 1px solid var(--line); padding: 24px 0;">
+            <h4 style="margin-bottom: 12px; text-transform: none; letter-spacing: -0.01em;">{faq.q}</h4>
+            <p style="font-size: 15px; opacity: 0.8; line-height: 1.75;">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <EmailCapture />
+
+</Base>

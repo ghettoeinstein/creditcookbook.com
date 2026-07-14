@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+import EmailCapture from '../components/EmailCapture.astro';
+
+const description = 'Open-source credit education. Dispute letters, bureau response scripts, and credit-repair playbooks — free, inspectable, community-verifiable.';
+---
+
+<Base title="CreditCookbook — Open-Source Credit Education" description={description}>
+  <!-- Hero -->
+  <section class="section" style="padding-top: 100px; padding-bottom: 80px;">
+    <div class="container">
+      <span class="section-label">// open-source credit education</span>
+      <h1 style="font-size: clamp(2.5rem, 7vw, 5rem); max-width: 14ch; margin-bottom: 24px;">
+        Credit repair,<br />without the repair company.
+      </h1>
+      <p style="font-size: 19px; max-width: 52ch; color: var(--ink); opacity: 0.7; margin-bottom: 40px;">
+        Every dispute letter, bureau response script, and credit-building playbook — free, versioned, and inspectable on GitHub. No paid service. No upsell. Just the templates.
+      </p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="/medical-debt" class="btn btn-primary">Start with medical debt</a>
+        <a href="https://github.com/ghettoeinstein/creditcookbook.com" class="btn btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- The problem -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// the problem</span>
+      <h2 style="margin-bottom: 24px;">Credit education is either locked or low-trust.</h2>
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 48px;">
+        <div>
+          <p style="margin-bottom: 16px;">Option A: credit-repair companies charging $49–$149/month for something you can do yourself with the right letter.</p>
+        </div>
+        <div>
+          <p>Option B: SEO farms with no accountability, no sourcing, and no way to verify what's actually in the dispute templates they're selling.</p>
+        </div>
+      </div>
+      <p style="margin-top: 32px; max-width: 60ch;"><strong>CreditCookbook is Option C:</strong> an open, inspectable, community-verifiable source of credit dispute knowledge — hosted on GitHub, generated as a static site, and monetized through affiliate partnerships and a newsletter instead of selling services.</p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Scenarios -->
+  <section class="section" id="scenarios">
+    <div class="container">
+      <span class="section-label">// scenario clusters</span>
+      <h2 style="margin-bottom: 12px;">Pick your situation.</h2>
+      <p style="margin-bottom: 48px; max-width: 50ch; opacity: 0.7;">Each scenario is a complete cluster — dispute letters, bureau scripts, step-by-step playbooks, and FAQ with schema.org markup.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <!-- Medical Debt (live) -->
+        <a href="/medical-debt" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.15s;">
+          <span class="section-label" style="margin-bottom: 8px;">// cluster 01</span>
+          <h3 style="margin-bottom: 8px;">Medical Debt</h3>
+          <p style="font-size: 14px; opacity: 0.7;">Dispute medical collections, negotiate hospital bills, remove paid medical debt from your report.</p>
+          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">12 pages →</p>
+        </a>
+
+        <!-- Coming soon: Collections -->
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
+          <span class="section-label" style="margin-bottom: 8px;">// cluster 02</span>
+          <h3 style="margin-bottom: 8px;">Collections</h3>
+          <p style="font-size: 14px;">Validate, dispute, and negotiate collection accounts.</p>
+          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        </div>
+
+        <!-- Coming soon: Late Payments -->
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
+          <span class="section-label" style="margin-bottom: 8px;">// cluster 03</span>
+          <h3 style="margin-bottom: 8px;">Late Payments</h3>
+          <p style="font-size: 14px;">Goodwill letters, pay-for-delete, and dispute strategies.</p>
+          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        </div>
+
+        <!-- Coming soon: Hard Inquiries -->
+        <div style="padding: 32px; border-bottom: 1px solid var(--line); opacity: 0.4;">
+          <span class="section-label" style="margin-bottom: 8px;">// cluster 04</span>
+          <h3 style="margin-bottom: 8px;">Hard Inquiries</h3>
+          <p style="font-size: 14px;">Remove unauthorized inquiries and protect your score.</p>
+          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <span class="section-label">// about</span>
+      <h2 style="margin-bottom: 24px;">Why open-source?</h2>
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 48px;">
+        <div>
+          <p style="margin-bottom: 16px;">Credit repair isn't magic — it's procedure. The Fair Credit Reporting Act gives you the right to dispute any inaccurate, incomplete, or unverifiable item on your report. The letters that exercise those rights are not proprietary.</p>
+        </div>
+        <div>
+          <p>CreditCookbook makes them public, versioned, and inspectable. Every template has a commit history. Every claim links to its statute. The repo <em>is</em> the product — and openness is the growth mechanism: it earns backlinks, stars, and trust that a closed content site can't.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Email capture -->
+  <EmailCapture />
+
+</Base>

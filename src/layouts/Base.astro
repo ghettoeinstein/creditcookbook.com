@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  posterTitle?: string;
+  posterLabel?: string;
+}
+
+const { title, description, posterTitle, posterLabel } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="logo">
+        <span class="logo-mark"></span>
+        creditcookbook
+      </a>
+      <div class="links">
+        <a href="/medical-debt">Medical Debt</a>
+        <a href="/#scenarios">Scenarios</a>
+        <a href="/#about">About</a>
+        <a href="/#newsletter" class="btn btn-primary">Newsletter</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Poster block (only if provided) -->
+  {posterTitle && (
+    <section class="poster-block">
+      <div class="container">
+        {posterLabel && <span class="label">{posterLabel}</span>}
+        <h1>{posterTitle}</h1>
+      </div>
+    </section>
+  )}
+
+  <!-- Page content -->
+  <slot />
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2026 CreditCookbook · open-source credit education · <a href="https://github.com/ghettoeinstein/creditcookbook.com">GitHub</a></span>
+      <span>
+        <a href="/medical-debt">Medical Debt</a>
+        <a href="/#about">About</a>
+        <a href="/#newsletter">Newsletter</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>
