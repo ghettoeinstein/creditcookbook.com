@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+
+const description = "Caleb Pierre — builder of CreditCookbook. Security engineer, fintech CTO, AI automation specialist. Links, background, and how to work together.";
+---
+
+<Base title="About Caleb Pierre — CreditCookbook" description={description} posterTitle="THE BUILDER" posterLabel="// meet the person behind the playbook">
+
+  <!-- Bio -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// who i am</span>
+      <h2 style="margin-bottom: 24px;">Caleb Pierre</h2>
+      <p style="max-width: 64ch; font-size: 17px; margin-bottom: 24px;">
+        I'm a security engineer turned fintech CTO who got tired of watching people pay $1,200/year for form letters they could send themselves. So I open-sourced the playbook.
+      </p>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        10-year career across enterprise security (Tinder, Verizon Media, CHLA, UCLA Health), fintech (Glass Financial — where I was CTO), and AI agent development (Caleb Pierre Ventures). I've seen what happens when systems aren't transparent. Credit repair is one of those systems — opaque, paywalled, and designed to make you feel like you need a middleman.
+      </p>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        You don't. The Fair Credit Reporting Act gives you every tool. CreditCookbook just puts them in one place where anyone can inspect, copy, and verify them — no paywall, no upsell, no "schedule a free consultation."
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Why I built this -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// why i built this</span>
+      <h2 style="margin-bottom: 24px;">The story.</h2>
+      <p style="max-width: 64ch; margin-bottom: 16px;">
+        I watched someone close to me pay a credit-repair company $99/month for 14 months — $1,386 total — for exactly three dispute letters. Three. The letters worked, but they were generic templates that any paralegal could have written in 20 minutes.
+      </p>
+      <p style="max-width: 64ch; margin-bottom: 16px;">
+        That same month, I was building AI automation systems that could generate, version, and distribute documents at zero marginal cost. The gap was obvious: the knowledge wasn't scarce, the distribution was just locked.
+      </p>
+      <p style="max-width: 64ch;">
+        CreditCookbook is the answer. Open repo, static site, no login, no paywall. Every letter is inspectable on GitHub. Every claim links to the statute. If I'm wrong, you can see it. If I'm right, you can use it. That's the deal.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Links grid -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// connect</span>
+      <h2 style="margin-bottom: 12px;">Find me.</h2>
+      <p style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">If this site helped you, the best thing you can do is share it. The second best is connect.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <!-- Website -->
+        <a href="https://calebpierre.com" target="_blank" rel="noopener" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// my work</span>
+          <h3 style="margin-bottom: 8px;">calebpierre.com</h3>
+          <p style="font-size: 14px; opacity: 0.7;">My agency — AI automation, systems engineering, and security consulting for businesses that want to eliminate manual work.</p>
+          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">calebpierre.com →</p>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// professional</span>
+          <h3 style="margin-bottom: 8px;">LinkedIn</h3>
+          <p style="font-size: 14px; opacity: 0.7;">10 years in enterprise security, fintech CTO, AI systems. Full career history and recommendations.</p>
+          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">linkedin.com/in/calebpierre →</p>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/emperorpierre" target="_blank" rel="noopener" style="display: block; padding: 32px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// personal</span>
+          <h3 style="margin-bottom: 8px;">Instagram</h3>
+          <p style="font-size: 14px; opacity: 0.7;">Behind the scenes — building in public, LA life, and the occasional credit tip that doesn't fit in a template.</p>
+          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">@emperorpierre →</p>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/ghettoeinstein" target="_blank" rel="noopener" style="display: block; padding: 32px; border-right: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// code</span>
+          <h3 style="margin-bottom: 8px;">GitHub</h3>
+          <p style="font-size: 14px; opacity: 0.7;">All my open-source projects including this one. Star the repo if it helped you — it helps others find it.</p>
+          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">github.com/ghettoeinstein →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Work with me -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// work with me</span>
+      <h2 style="margin-bottom: 24px;">Want to work together?</h2>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        CreditCookbook is free and always will be. But if you need something more — AI automation for your business, security architecture review, or systems engineering — I take on a small number of clients through <a href="https://calebpierre.com" target="_blank" rel="noopener">calebpierre.com</a>.
+      </p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="https://calebpierre.com" target="_blank" rel="noopener" class="btn btn-primary">Book a call →</a>
+        <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener" class="btn btn-ghost">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Credits -->
+  <section class="section" style="padding-bottom: 60px;">
+    <div class="container">
+      <span class="section-label">// credits</span>
+      <h3 style="margin-bottom: 16px;">How CreditCookbook is built</h3>
+      <table>
+        <thead>
+          <tr><th>Layer</th><th>Tool</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Framework</td><td>Astro (static site generator)</td></tr>
+          <tr><td>Hosting</td><td>GitHub Pages (free, auto-deploys on push)</td></tr>
+          <tr><td>Design</td><td>Swiss / International Typographic Style</td></tr>
+          <tr><td>Code</td><td>Open-source on GitHub — MIT license</td></tr>
+          <tr><td>Built by</td><td>One person. No team. No VC. No paywall.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</Base>
