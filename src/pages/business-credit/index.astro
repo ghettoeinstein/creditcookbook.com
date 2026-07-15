@@ -26,7 +26,7 @@ const stats = [
 
 <Base title="Business Credit — CreditCookbook" description={description} posterTitle="BUSINESS CREDIT" posterLabel="// hub — separate, establish, scale">
   <!-- Intro -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// the business credit hub</span>
       <h2 data-animate style="margin-bottom: var(--space-2);">Build business credit without personal liability.</h2>
@@ -45,10 +45,10 @@ const stats = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Topic clusters -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// topics</span>
       <h2 data-animate style="margin-bottom: var(--space-3);">The business credit playbook.</h2>
@@ -56,7 +56,7 @@ const stats = [
       <div data-animate data-animate-stagger="0.1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
         {topics.map((t) => (
           <div style="padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.5;">
-            <span class="section-label" style="margin-bottom: var(--space-1);">// topic {t.num} — {t.status}</span>
+            <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// topic {t.num} — {t.status}</span>
             <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">{t.title}</h3>
             <p style="font-size: 13px; opacity: 0.7;">{t.desc}</p>
             <p class="mono" style="margin-top: var(--space-2); font-size: 12px; color: var(--blue);">{t.status}</p>
@@ -66,10 +66,10 @@ const stats = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- The process -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// the process</span>
       <h2 data-animate style="margin-bottom: var(--space-4);">How business credit building works.</h2>
@@ -86,14 +86,14 @@ const stats = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Key principle -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <div data-animate style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: start;">
         <div>
-          <span class="section-label">// the core principle</span>
+          <span class="section-label" data-animate>// the core principle</span>
           <h2 style="margin-bottom: var(--space-2);">Separation is everything.</h2>
         </div>
         <div>
@@ -105,10 +105,10 @@ const stats = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Bureau overview -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// the bureaus</span>
       <h2 data-animate style="margin-bottom: var(--space-4);">Business credit bureaus.</h2>
@@ -133,7 +133,7 @@ const stats = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <EmailCapture />
 </Base>

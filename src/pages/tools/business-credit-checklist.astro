@@ -5,9 +5,9 @@ const description = "Interactive business credit readiness checklist — entity 
 ---
 
 <Base title="Business Credit Readiness Checklist — CreditCookbook" description={description} posterTitle="BUSINESS CREDIT READINESS" posterLabel="// tool 04 — build business credit">
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// business credit readiness</span>
+      <span class="section-label" data-animate>// business credit readiness</span>
       <h2 style="margin-bottom: 16px;">Are you ready for business credit?</h2>
       <p style="max-width: 64ch; margin-bottom: 40px; opacity: 0.7;">Building business credit separate from your personal credit requires proper entity setup, correct registrations, and strategic tradeline management. Check off each item as you complete it — your readiness score updates live.</p>
 
@@ -15,7 +15,7 @@ const description = "Interactive business credit readiness checklist — entity 
       <div style="border: 1px solid var(--line); margin-bottom: 32px;">
         <div style="padding: 32px 40px; border-bottom: 1px solid var(--line);">
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px;">
-            <span class="section-label" style="margin-bottom: 0;">// readiness score</span>
+            <span class="section-label" data-animate style="margin-bottom: 0;">// readiness score</span>
             <span id="readinessScore" style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--blue);">0%</span>
           </div>
           <div style="width: 100%; height: 12px; background: var(--paper); border: 1px solid var(--line); position: relative; overflow: hidden;">
@@ -34,7 +34,7 @@ const description = "Interactive business credit readiness checklist — entity 
         <div class="card" style="margin-bottom: 24px;" data-category="entity">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <div>
-              <span class="section-label" style="margin-bottom: 4px;">// 01</span>
+              <span class="section-label" data-animate style="margin-bottom: 4px;">// 01</span>
               <h3 style="margin-bottom: 0;">Entity Setup</h3>
             </div>
             <span class="cat-score" data-cat="entity" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/5</span>
@@ -52,7 +52,7 @@ const description = "Interactive business credit readiness checklist — entity 
         <div class="card" style="margin-bottom: 24px;" data-category="ein">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <div>
-              <span class="section-label" style="margin-bottom: 4px;">// 02</span>
+              <span class="section-label" data-animate style="margin-bottom: 4px;">// 02</span>
               <h3 style="margin-bottom: 0;">EIN & DUNS Number</h3>
             </div>
             <span class="cat-score" data-cat="ein" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/4</span>
@@ -69,7 +69,7 @@ const description = "Interactive business credit readiness checklist — entity 
         <div class="card" style="margin-bottom: 24px;" data-category="bank">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <div>
-              <span class="section-label" style="margin-bottom: 4px;">// 03</span>
+              <span class="section-label" data-animate style="margin-bottom: 4px;">// 03</span>
               <h3 style="margin-bottom: 0;">Business Banking</h3>
             </div>
             <span class="cat-score" data-cat="bank" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/5</span>
@@ -87,7 +87,7 @@ const description = "Interactive business credit readiness checklist — entity 
         <div class="card" style="margin-bottom: 24px;" data-category="tradelines">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <div>
-              <span class="section-label" style="margin-bottom: 4px;">// 04</span>
+              <span class="section-label" data-animate style="margin-bottom: 4px;">// 04</span>
               <h3 style="margin-bottom: 0;">Tradelines & Vendor Credit</h3>
             </div>
             <span class="cat-score" data-cat="tradelines" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/5</span>
@@ -105,7 +105,7 @@ const description = "Interactive business credit readiness checklist — entity 
         <div class="card" style="margin-bottom: 24px;" data-category="reporting">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <div>
-              <span class="section-label" style="margin-bottom: 4px;">// 05</span>
+              <span class="section-label" data-animate style="margin-bottom: 4px;">// 05</span>
               <h3 style="margin-bottom: 0;">Credit Bureau Reporting</h3>
             </div>
             <span class="cat-score" data-cat="reporting" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/5</span>
@@ -123,7 +123,7 @@ const description = "Interactive business credit readiness checklist — entity 
         <div class="card" style="margin-bottom: 24px;" data-category="score">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <div>
-              <span class="section-label" style="margin-bottom: 4px;">// 06</span>
+              <span class="section-label" data-animate style="margin-bottom: 4px;">// 06</span>
               <h3 style="margin-bottom: 0;">Score & Funding Readiness</h3>
             </div>
             <span class="cat-score" data-cat="score" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/6</span>
@@ -148,7 +148,7 @@ const description = "Interactive business credit readiness checklist — entity 
       <!-- Tier explanation -->
       <div class="card-flat">
         <h3 style="margin-bottom: 16px;">Readiness tiers</h3>
-        <table>
+        <table data-animate>
           <thead>
             <tr><th>Tier</th><th>Score</th><th>What it means</th></tr>
           </thead>
@@ -194,7 +194,7 @@ const description = "Interactive business credit readiness checklist — entity 
       if (scoreEl) {
         scoreEl.textContent = `${checked}/${total}`;
         if (checked === total) scoreEl.style.color = 'var(--blue)';
-        else if (checked > 0) scoreEl.style.color = '#B45309';
+        else if (checked > 0) scoreEl.style.color = 'var(--gold)';
         else scoreEl.style.color = 'var(--ink)';
         scoreEl.style.opacity = checked === 0 ? '0.4' : '1';
       }
@@ -209,8 +209,8 @@ const description = "Interactive business credit readiness checklist — entity 
     // Update label
     let label, color;
     if (percentage <= 10) { label = 'Not started — begin with entity formation.'; color = 'var(--ink)'; }
-    else if (percentage <= 30) { label = 'Foundation — entity forming, getting registered.'; color = '#B45309'; }
-    else if (percentage <= 60) { label = 'Building — banking and tradelines in progress.'; color = '#B45309'; }
+    else if (percentage <= 30) { label = 'Foundation — entity forming, getting registered.'; color = 'var(--gold)'; }
+    else if (percentage <= 60) { label = 'Building — banking and tradelines in progress.'; color = 'var(--gold)'; }
     else if (percentage <= 80) { label = 'Established — credit profile growing. Approaching fundability.'; color = 'var(--blue)'; }
     else { label = 'Fundable — strong profile. Ready for business loans without personal guarantees.'; color = 'var(--blue)'; }
 
@@ -232,7 +232,7 @@ const description = "Interactive business credit readiness checklist — entity 
             <span style="font-weight: 600;">${pct}%</span>
           </div>
           <div style="width: 100%; height: 4px; background: var(--paper); border: 1px solid var(--line);">
-            <div style="height: 100%; width: ${pct}%; background: ${pct === 100 ? 'var(--blue)' : (pct > 0 ? '#B45309' : 'transparent')}; transition: width 0.3s ease;"></div>
+            <div style="height: 100%; width: ${pct}%; background: ${pct === 100 ? 'var(--blue)' : (pct > 0 ? 'var(--gold)' : 'transparent')}; transition: width 0.3s ease;"></div>
           </div>
         </div>
       `;

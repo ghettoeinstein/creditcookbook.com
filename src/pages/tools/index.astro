@@ -13,6 +13,148 @@ const tools = [
 ---
 
 <Base title="Tools — CreditCookbook" description={description} posterTitle="TOOLS" posterLabel="// free, open-source credit tools">
+
+  <!-- ============================================================
+       GEAR + TYPEWRITER FLARE — Rotating gears + typed heading
+       ============================================================ -->
+  <div id="tools-flare" style="display:flex; align-items:center; justify-content:center; gap:var(--space-5); padding:var(--space-6) var(--gutter); background:var(--paper); border-bottom:1px solid var(--line); overflow:hidden;">
+    <!-- Gear 1 -->
+    <svg id="gear-1" width="48" height="48" viewBox="0 0 48 48" style="flex-shrink:0;">
+      <g fill="none" stroke="var(--ink)" stroke-width="1.5">
+        <circle cx="24" cy="24" r="10" />
+        <circle cx="24" cy="24" r="4" fill="var(--gold)" stroke="var(--gold)" />
+        {Array.from({length: 8}).map((_, i) => {
+          const angle = (i * 45) * Math.PI / 180;
+          const x1 = 24 + Math.cos(angle) * 10;
+          const y1 = 24 + Math.sin(angle) * 10;
+          const x2 = 24 + Math.cos(angle) * 16;
+          const y2 = 24 + Math.sin(angle) * 16;
+          return <line x1={x1} y1={y1} x2={x2} y2={y2} />
+        })}
+      </g>
+    </svg>
+    <!-- Typewriter text -->
+    <div style="font-family:var(--font-mono); font-size:var(--text-sm); color:var(--ink); min-height:1.4em; letter-spacing:0.02em;">
+      <span id="typewriter-text"></span><span id="typewriter-cursor" style="color:var(--gold); font-weight:600;">|</span>
+    </div>
+    <!-- Gear 2 -->
+    <svg id="gear-2" width="32" height="32" viewBox="0 0 48 48" style="flex-shrink:0;">
+      <g fill="none" stroke="var(--ink)" stroke-width="1.5" opacity="0.6">
+        <circle cx="24" cy="24" r="10" />
+        <circle cx="24" cy="24" r="4" />
+        {Array.from({length: 8}).map((_, i) => {
+          const angle = (i * 45) * Math.PI / 180;
+          const x1 = 24 + Math.cos(angle) * 10;
+          const y1 = 24 + Math.sin(angle) * 10;
+          const x2 = 24 + Math.cos(angle) * 16;
+          const y2 = 24 + Math.sin(angle) * 16;
+          return <line x1={x1} y1={y1} x2={x2} y2={y2} />
+        })}
+      </g>
+    </svg>
+  </div>
+
+  <script is:inline>
+    (function () {
+      function initToolsFlare() {
+        if (typeof gsap === 'undefined') return setTimeout(initToolsFlare, 50);
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        var gear1 = document.getElementById('gear-1');
+        var gear2 = document.getElementById('gear-2');
+        var textEl = document.getElementById('typewriter-text');
+        var cursor = document.getElementById('typewriter-cursor');
+
+        if (!gear1 || !textEl) return;
+
+        if (reduce) {
+          // Show final text, no animation
+          textEl.textContent = '> tools that respect your data';
+          if (cursor) cursor.style.display = 'none';
+          return;
+        }
+
+        // Continuous gear rotation
+        gsap.to(gear1, {
+          rotation: 360,
+          duration: 20,
+          ease: 'none',
+          repeat: -1,
+          transformOrigin: 'center center'
+        });
+        gsap.to(gear2, {
+          rotation: -360,
+          duration: 15,
+          ease: 'none',
+          repeat: -1,
+          transformOrigin: 'center center'
+        });
+
+        // Typewriter effect on scroll
+        var phrases = [
+          '> tools that respect your data',
+          '> open-source · inspectable',
+          '> no signup · no tracking',
+          '> client-side only'
+        ];
+        var phraseIndex = 0;
+        var charIndex = 0;
+        var typing = true;
+
+        function typeLoop() {
+          var current = phrases[phraseIndex];
+          if (typing) {
+            if (charIndex < current.length) {
+              textEl.textContent = current.substring(0, charIndex + 1);
+              charIndex++;
+              setTimeout(typeLoop, 50 + Math.random() * 30);
+            } else {
+              typing = false;
+              setTimeout(typeLoop, 2000);
+            }
+          } else {
+            if (charIndex > 0) {
+              textEl.textContent = current.substring(0, charIndex - 1);
+              charIndex--;
+              setTimeout(typeLoop, 25);
+            } else {
+              typing = true;
+              phraseIndex = (phraseIndex + 1) % phrases.length;
+              setTimeout(typeLoop, 200);
+            }
+          }
+        }
+
+        // Start typewriter only when scrolled into view
+        if (typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
+          ScrollTrigger.create({
+            trigger: document.getElementById('tools-flare'),
+            start: 'top 85%',
+            once: true,
+            onEnter: function () { typeLoop(); }
+          });
+        } else {
+          typeLoop();
+        }
+
+        // Blinking cursor
+        gsap.to(cursor, {
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power2.inOut',
+          repeat: -1,
+          yoyo: true
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initToolsFlare);
+      } else {
+        initToolsFlare();
+      }
+    })();
+  </script>
+
   <section class="section">
     <div class="container">
       <span class="section-label" data-animate>// credit tools</span>
@@ -22,7 +164,7 @@ const tools = [
       <div data-animate data-animate-stagger="0.1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
         {tools.map((t) => (
           <a href={t.link} style="display: block; padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.1s ease;" onmouseover="this.style.background='var(--paper)'" onmouseout="this.style.background='var(--white)'">
-            <span class="section-label" style="margin-bottom: var(--space-1);">// tool {t.num}</span>
+            <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// tool {t.num}</span>
             <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">{t.title}</h3>
             <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">{t.desc}</p>
             <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: 12px;">open tool →</p>
@@ -32,10 +174,10 @@ const tools = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Tools philosophy -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// our philosophy</span>
       <h2 data-animate style="margin-bottom: var(--space-4);">Tools that respect your data.</h2>
@@ -53,7 +195,7 @@ const tools = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <EmailCapture />
 </Base>

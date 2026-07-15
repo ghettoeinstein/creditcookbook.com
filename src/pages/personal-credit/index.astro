@@ -59,7 +59,7 @@ const processSteps = [
 <Base title="Personal Credit — CreditCookbook" description={description} posterTitle="PERSONAL CREDIT" posterLabel="// hub — dispute, enforce, build">
 
   <!-- Intro + Topic Clusters -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// the personal credit hub</span>
       <h2 data-animate style="margin-bottom: 16px;">Everything you need to fix your personal credit.</h2>
@@ -70,7 +70,7 @@ const processSteps = [
         {subpages.map((s) => (
           s.status === 'live' ? (
             <a href={s.href} style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-              <span class="section-label" style="margin-bottom: 8px;">// topic {s.num} — <span class="stat-gold">{s.status}</span></span>
+              <span class="section-label" data-animate style="margin-bottom: 8px;">// topic {s.num} — <span class="stat-gold">{s.status}</span></span>
               <h4 style="margin-bottom: 8px; text-transform: none; letter-spacing: -0.01em; font-size: 1.15rem;">{s.title}</h4>
               <p style="font-size: 13px; opacity: 0.7; margin-bottom: 16px;">{s.desc}</p>
               <div style="display: flex; flex-wrap: wrap; gap: 6px;">
@@ -82,7 +82,7 @@ const processSteps = [
             </a>
           ) : (
             <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.45;">
-              <span class="section-label" style="margin-bottom: 8px;">// topic {s.num} — {s.status}</span>
+              <span class="section-label" data-animate style="margin-bottom: 8px;">// topic {s.num} — {s.status}</span>
               <h4 style="margin-bottom: 8px; text-transform: none; letter-spacing: -0.01em; font-size: 1.15rem;">{s.title}</h4>
               <p style="font-size: 13px; margin-bottom: 16px;">{s.desc}</p>
               <div style="display: flex; flex-wrap: wrap; gap: 6px;">
@@ -98,10 +98,10 @@ const processSteps = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- The process -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// the process</span>
       <h2 data-animate style="margin-bottom: 32px;">How personal credit repair works.</h2>
@@ -117,10 +117,10 @@ const processSteps = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Key Stats -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// by the numbers</span>
       <h2 data-animate style="margin-bottom: 48px;">Your rights, quantified.</h2>
@@ -149,7 +149,7 @@ const processSteps = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <EmailCapture />
 

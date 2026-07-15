@@ -56,6 +56,17 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
       </div>
     </div>
 
+    <!-- Typographic hero pattern — animated mono text grid -->
+    <div id="hero-typo-grid" data-parallax="0.6" style="position:absolute; inset:0; z-index:1; opacity:0.04; pointer-events:none; overflow:hidden;">
+      <div style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; flex-direction:column; justify-content:space-between; padding: var(--space-4) 0;">
+        {Array.from({length: 8}).map((_, i) => (
+          <div class="hero-typo-row" style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); white-space: nowrap; display:flex; gap: var(--space-6); padding-left: var(--gutter);">
+            <span>FCRA § 609</span><span>·</span><span>FDCPA § 1692g</span><span>·</span><span>HIPAA § 164.514</span><span>·</span><span>dispute · validate · enforce</span><span>·</span><span>no paywall · no upsell</span><span>·</span><span>open source · mit license</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
     <!-- Scroll cue -->
     <div data-parallax="0.5" style="position:absolute; bottom: var(--space-6); left:50%; transform: translateX(-50%); z-index:2; opacity:0.5;">
       <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--white);">↓ scroll</span>
@@ -65,7 +76,7 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
   <!-- ============================================================
        PROBLEM / MISSION STATEMENT
        ============================================================ -->
-  <section class="section" style="padding: var(--space-10) 0;">
+  <section class="section" data-animate style="padding: var(--space-10) 0;">
     <div class="container">
       <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items:start;">
         <div data-animate>
@@ -82,12 +93,12 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- ============================================================
        HOW IT WORKS — 3 steps with staggered reveal
        ============================================================ -->
-  <section class="section" id="how-it-works">
+  <section class="section" data-animate id="how-it-works">
     <div class="container">
       <span class="section-label" data-animate>// how it works</span>
       <h2 data-animate style="margin-bottom: var(--space-6); font-size: var(--display-sm);">Three steps. No middleman.</h2>
@@ -120,12 +131,12 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- ============================================================
        FEATURED RECIPES — Staggered card grid with 3D tilt
        ============================================================ -->
-  <section class="section" id="featured-recipes">
+  <section class="section" data-animate id="featured-recipes">
     <div class="container">
       <span class="section-label" data-animate>// featured recipes</span>
       <h2 data-animate style="margin-bottom: var(--space-1); font-size: var(--display-sm);">Start with a recipe.</h2>
@@ -134,7 +145,7 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
       <div data-animate data-animate-stagger="0.12" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0; border:1px solid var(--line);">
         <!-- Medical Debt (live) -->
         <a href="/medical-debt" data-tilt="4" style="display:block; padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration:none; color: var(--ink); background: var(--white); transition: background 0.2s var(--ease-primary);">
-          <span class="section-label" style="margin-bottom: var(--space-1);">// recipe 01</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// recipe 01</span>
           <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">Medical Debt Removal</h3>
           <p style="font-size: var(--text-sm); opacity:0.7;">Dispute medical collections, negotiate hospital bills, remove paid medical debt from your report.</p>
           <p class="mono" style="margin-top: var(--space-2); color: var(--gold); font-size: var(--text-sm);">12 pages →</p>
@@ -142,7 +153,7 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
 
         <!-- Coming soon: Collections -->
         <div data-tilt="2" style="padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity:0.4; background: var(--white);">
-          <span class="section-label" style="margin-bottom: var(--space-1);">// recipe 02</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// recipe 02</span>
           <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">Collections Dispute</h3>
           <p style="font-size: var(--text-sm);">Validate, dispute, and negotiate collection accounts.</p>
           <p class="mono" style="margin-top: var(--space-2); font-size: var(--text-sm);">coming soon</p>
@@ -150,7 +161,7 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
 
         <!-- Coming soon: Late Payments -->
         <div data-tilt="2" style="padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity:0.4; background: var(--white);">
-          <span class="section-label" style="margin-bottom: var(--space-1);">// recipe 03</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// recipe 03</span>
           <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">Late Payments</h3>
           <p style="font-size: var(--text-sm);">Goodwill letters, pay-for-delete, and dispute strategies.</p>
           <p class="mono" style="margin-top: var(--space-2); font-size: var(--text-sm);">coming soon</p>
@@ -158,7 +169,7 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
 
         <!-- Coming soon: Hard Inquiries -->
         <div data-tilt="2" style="padding: var(--space-4); border-bottom: 1px solid var(--line); opacity:0.4; background: var(--white);">
-          <span class="section-label" style="margin-bottom: var(--space-1);">// recipe 04</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// recipe 04</span>
           <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">Hard Inquiries</h3>
           <p style="font-size: var(--text-sm);">Remove unauthorized inquiries and protect your score.</p>
           <p class="mono" style="margin-top: var(--space-2); font-size: var(--text-sm);">coming soon</p>
@@ -171,24 +182,24 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- ============================================================
-       TRUST BAR — Stats with gold accent
+       TRUST BAR — Animated stat counters with GSAP count-up
        ============================================================ -->
-  <section class="section" style="padding: var(--space-6) 0;">
+  <section class="section" data-animate style="padding: var(--space-6) 0;" id="stat-bar">
     <div class="container">
       <div data-animate data-animate-stagger="0.1" style="display:grid; grid-template-columns: repeat(4, 1fr); gap:0; border:1px solid var(--line);">
         <div style="padding: var(--space-4); border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--gold); display:block;">100%</span>
+          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--gold); display:block;" data-counter="100" data-suffix="%">0%</span>
           <span class="mono" style="font-size: 11px; letter-spacing: var(--tracking-wide); opacity:0.6;">OPEN SOURCE — MIT LICENSE</span>
         </div>
         <div style="padding: var(--space-4); border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--gold); display:block;">$0</span>
+          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--gold); display:block;" data-counter="0" data-prefix="$" data-suffix="">$0</span>
           <span class="mono" style="font-size: 11px; letter-spacing: var(--tracking-wide); opacity:0.6;">NO PAYWALL — NO UPSELL</span>
         </div>
         <div style="padding: var(--space-4); border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--gold); display:block;">12</span>
+          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--gold); display:block;" data-counter="12">0</span>
           <span class="mono" style="font-size: 11px; letter-spacing: var(--tracking-wide); opacity:0.6;">LIVE RECIPES & TEMPLATES</span>
         </div>
         <div style="padding: var(--space-4);">
@@ -199,7 +210,165 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
     </div>
   </section>
 
-  <hr class="rule" />
+  <!-- ============================================================
+       PROCESS FLOW — Animated connecting lines draw on scroll
+       ============================================================ -->
+  <section class="section" data-animate id="process-flow" style="padding: var(--space-8) 0; background: var(--paper);">
+    <div class="container">
+      <span class="section-label" data-animate>// the process</span>
+      <h2 data-animate style="margin-bottom: var(--space-6); font-size: var(--display-sm);">From rights to results.</h2>
+
+      <div id="process-flow-track" style="position:relative; display:grid; grid-template-columns: repeat(3, 1fr); gap:0; border:1px solid var(--line); background: var(--white);">
+        <!-- SVG line overlay -->
+        <svg id="process-flow-svg" style="position:absolute; top:50%; left:0; width:100%; height:2px; pointer-events:none; z-index:1; overflow:visible;" preserveAspectRatio="none">
+          <line x1="0" y1="1" x2="100%" y2="1" stroke="var(--gold)" stroke-width="2" stroke-dasharray="100%" stroke-dashoffset="100%" />
+        </svg>
+
+        <!-- Node 1 -->
+        <div class="process-node" style="padding: var(--space-5); border-right: 1px solid var(--line); position:relative; z-index:2;">
+          <div class="process-node-dot" style="width:12px; height:12px; border-radius:50%; background:var(--ink); margin-bottom: var(--space-3); border:2px solid var(--gold);"></div>
+          <span class="mono" style="font-size: var(--text-sm); color: var(--blue); letter-spacing: var(--tracking-wider); text-transform: uppercase;">// 01</span>
+          <h3 style="margin-top: var(--space-2); margin-bottom: var(--space-1); font-size: var(--text-lg);">Know Your Rights</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7; line-height: var(--leading-relaxed);">FCRA, FDCPA, HIPAA — the statutes that give you the power to dispute.</p>
+        </div>
+
+        <!-- Node 2 -->
+        <div class="process-node" style="padding: var(--space-5); border-right: 1px solid var(--line); position:relative; z-index:2;">
+          <div class="process-node-dot" style="width:12px; height:12px; border-radius:50%; background:var(--ink); margin-bottom: var(--space-3); border:2px solid var(--gold);"></div>
+          <span class="mono" style="font-size: var(--text-sm); color: var(--blue); letter-spacing: var(--tracking-wider); text-transform: uppercase;">// 02</span>
+          <h3 style="margin-top: var(--space-2); margin-bottom: var(--space-1); font-size: var(--text-lg);">Enforce</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7; line-height: var(--leading-relaxed);">Send the right letter, certified mail, to the right party. Follow up.</p>
+        </div>
+
+        <!-- Node 3 -->
+        <div class="process-node" style="padding: var(--space-5); position:relative; z-index:2;">
+          <div class="process-node-dot" style="width:12px; height:12px; border-radius:50%; background:var(--ink); margin-bottom: var(--space-3); border:2px solid var(--gold);"></div>
+          <span class="mono" style="font-size: var(--text-sm); color: var(--blue); letter-spacing: var(--tracking-wider); text-transform: uppercase;">// 03</span>
+          <h3 style="margin-top: var(--space-2); margin-bottom: var(--space-1); font-size: var(--text-lg);">Build</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7; line-height: var(--leading-relaxed);">Secured cards, credit-builder loans, authorized user strategies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      function initHomeFlare() {
+        if (typeof gsap === 'undefined') return setTimeout(initHomeFlare, 50);
+        if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var easeSwiss = 'cubic-bezier(0.32, 0.72, 0, 1)';
+
+        if (reduce) {
+          document.querySelectorAll('[data-counter]').forEach(function (el) {
+            var target = parseFloat(el.getAttribute('data-counter'));
+            var prefix = el.getAttribute('data-prefix') || '';
+            var suffix = el.getAttribute('data-suffix') || '';
+            el.textContent = prefix + target + suffix;
+          });
+          var svgLine = document.getElementById('process-flow-svg');
+          if (svgLine) svgLine.querySelector('line').style.strokeDashoffset = '0';
+          document.querySelectorAll('.process-node-dot').forEach(function (d) { d.style.borderColor = 'var(--gold)'; });
+          return;
+        }
+
+        // --- Stat counters: count up on scroll ---
+        document.querySelectorAll('[data-counter]').forEach(function (el) {
+          var target = parseFloat(el.getAttribute('data-counter'));
+          var prefix = el.getAttribute('data-prefix') || '';
+          var suffix = el.getAttribute('data-suffix') || '';
+          var obj = { val: 0 };
+          ScrollTrigger.create({
+            trigger: el,
+            start: 'top 85%',
+            once: true,
+            onEnter: function () {
+              gsap.to(obj, {
+                val: target,
+                duration: 1.6,
+                ease: 'power2.out',
+                onUpdate: function () {
+                  el.textContent = prefix + Math.round(obj.val) + suffix;
+                }
+              });
+            }
+          });
+        });
+
+        // --- Process flow: draw connecting line + activate nodes ---
+        var flowTrack = document.getElementById('process-flow-track');
+        var flowLine = document.getElementById('process-flow-svg');
+        var flowDots = document.querySelectorAll('.process-node-dot');
+        if (flowTrack && flowLine) {
+          var lineEl = flowLine.querySelector('line');
+          gsap.set(lineEl, { strokeDashoffset: '100%' });
+          ScrollTrigger.create({
+            trigger: flowTrack,
+            start: 'top 75%',
+            once: true,
+            onEnter: function () {
+              gsap.to(lineEl, {
+                strokeDashoffset: '0%',
+                duration: 1.2,
+                ease: 'power2.inOut'
+              });
+              flowDots.forEach(function (dot, i) {
+                gsap.to(dot, {
+                  scale: 1.4,
+                  duration: 0.3,
+                  ease: 'power2.out',
+                  delay: 0.3 + i * 0.3
+                });
+                gsap.to(dot, {
+                  scale: 1,
+                  duration: 0.4,
+                  ease: 'power2.out',
+                  delay: 0.5 + i * 0.3
+                });
+              });
+            }
+          });
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initHomeFlare);
+      } else {
+        initHomeFlare();
+      }
+    })();
+  </script>
+
+  <!-- Typographic hero pattern animation -->
+  <script is:inline>
+    (function () {
+      function initTypoHero() {
+        if (typeof gsap === 'undefined') return setTimeout(initTypoHero, 50);
+        if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce) return;
+
+        var rows = document.querySelectorAll('.hero-typo-row');
+        if (rows.length === 0) return;
+        rows.forEach(function (row, i) {
+          var dir = i % 2 === 0 ? -1 : 1;
+          gsap.to(row, {
+            x: dir * 120,
+            duration: 12 + i * 0.5,
+            ease: 'none',
+            repeat: -1,
+            yoyo: true
+          });
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTypoHero);
+      } else {
+        initTypoHero();
+      }
+    })();
+  </script>
+
+  <hr class="rule" data-animate />
 
   <!-- ============================================================
        NEWSLETTER

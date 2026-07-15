@@ -47,6 +47,108 @@ const recipeStructure = [
 
   <!-- By Problem -->
   <section class="section">
+
+    <!-- ============================================================
+         ANIMATED ENVELOPE — Opens on scroll, reveals recipe categories
+         ============================================================ -->
+    <div id="envelope-section" style="display:flex; flex-direction:column; align-items:center; padding: var(--space-8) 0 var(--space-6);">
+      <div id="envelope-wrap" style="position:relative; width:320px; height:200px; perspective:1200px;">
+        <!-- Envelope back -->
+        <div style="position:absolute; inset:0; background:var(--white); border:1px solid var(--line); z-index:1;"></div>
+        <!-- Envelope body (letter content hidden inside) -->
+        <div id="envelope-letter" style="position:absolute; left:8px; right:8px; bottom:8px; top:30px; background:var(--paper); border:1px solid var(--line); z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:var(--space-3); opacity:0; transform:translateY(0);">
+          <span class="mono" style="font-size:11px; color:var(--gold); letter-spacing:var(--tracking-wider); text-transform:uppercase; margin-bottom:4px;">// recipes inside</span>
+          <span style="font-family:var(--font-display); font-size:var(--text-md); font-weight:600; color:var(--ink);">Open the playbook.</span>
+          <span class="mono" style="font-size:11px; opacity:0.5; margin-top:4px;">6 recipe clusters · 8 letter templates</span>
+        </div>
+        <!-- Envelope flap (top triangle) -->
+        <svg id="envelope-flap" viewBox="0 0 320 100" style="position:absolute; top:0; left:0; width:100%; height:100px; z-index:3; transform-origin: top center;">
+          <polygon points="0,0 320,0 160,100" fill="var(--white)" stroke="var(--line)" stroke-width="1" />
+          <polygon points="0,0 320,0 160,100" fill="none" stroke="var(--gold)" stroke-width="0" id="envelope-flap-gold" />
+        </svg>
+        <!-- Envelope front pocket -->
+        <div style="position:absolute; bottom:0; left:0; right:0; height:120px; background:var(--white); border:1px solid var(--line); border-top:none; z-index:4; clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%);"></div>
+        <!-- Seal -->
+        <div id="envelope-seal" style="position:absolute; top:80px; left:50%; transform:translateX(-50%); width:28px; height:28px; border-radius:50%; background:var(--gold); z-index:5; display:flex; align-items:center; justify-content:center;">
+          <span class="mono" style="font-size:10px; color:var(--ink); font-weight:600;">CC</span>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      (function () {
+        function initEnvelopeFlare() {
+          if (typeof gsap === 'undefined') return setTimeout(initEnvelopeFlare, 50);
+          if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+          var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          var envSection = document.getElementById('envelope-section');
+          var flap = document.getElementById('envelope-flap');
+          var letter = document.getElementById('envelope-letter');
+          var seal = document.getElementById('envelope-seal');
+          var goldLine = document.getElementById('envelope-flap-gold');
+
+          if (!envSection || !flap) return;
+
+          if (reduce) {
+            gsap.set(flap, { rotationX: 0, opacity: 1 });
+            gsap.set(letter, { opacity: 1, y: -20 });
+            gsap.set(seal, { opacity: 0 });
+            if (goldLine) goldLine.setAttribute('stroke-width', '1');
+            return;
+          }
+
+          // Initial state
+          gsap.set(flap, { transformOrigin: 'top center', rotationX: 0 });
+          gsap.set(letter, { opacity: 0, y: 0 });
+          gsap.set(seal, { opacity: 1 });
+
+          // Animate on scroll into view
+          ScrollTrigger.create({
+            trigger: envSection,
+            start: 'top 70%',
+            once: true,
+            onEnter: function () {
+              // Seal fades
+              gsap.to(seal, {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power2.out'
+              });
+              // Flap opens
+              gsap.to(flap, {
+                rotationX: 180,
+                duration: 0.8,
+                ease: 'power2.inOut',
+                delay: 0.15
+              });
+              // Gold accent line appears on flap
+              if (goldLine) {
+                gsap.to(goldLine, {
+                  attr: { 'stroke-width': 1 },
+                  duration: 0.4,
+                  delay: 0.5
+                });
+              }
+              // Letter slides up and fades in
+              gsap.to(letter, {
+                opacity: 1,
+                y: -24,
+                duration: 0.6,
+                ease: 'power2.out',
+                delay: 0.6
+              });
+            }
+          });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initEnvelopeFlare);
+        } else {
+          initEnvelopeFlare();
+        }
+      })();
+    </script>
+
     <div class="container">
       <span class="section-label" data-animate>// browse by problem</span>
       <h2 data-animate style="margin-bottom: 16px;">Pick your situation. Follow the playbook.</h2>
@@ -56,14 +158,14 @@ const recipeStructure = [
         {byProblem.map((r) => (
           r.status === 'live' ? (
             <a href={r.href} style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-              <span class="section-label" style="margin-bottom: 8px;">// recipe {r.num} — {r.status}</span>
+              <span class="section-label" data-animate style="margin-bottom: 8px;">// recipe {r.num} — {r.status}</span>
               <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">{r.title}</h4>
               <p style="font-size: 13px; opacity: 0.7;">{r.desc}</p>
               <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">{r.count} →</p>
             </a>
           ) : (
             <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
-              <span class="section-label" style="margin-bottom: 8px;">// recipe {r.num} — {r.status}</span>
+              <span class="section-label" data-animate style="margin-bottom: 8px;">// recipe {r.num} — {r.status}</span>
               <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">{r.title}</h4>
               <p style="font-size: 13px;">{r.desc}</p>
               <p class="mono" style="margin-top: 16px; font-size: 12px;">{r.count}</p>
@@ -74,10 +176,10 @@ const recipeStructure = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- By Document Type -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// browse by document type</span>
       <h2 data-animate style="margin-bottom: 16px;">Letter templates index.</h2>
@@ -112,10 +214,10 @@ const recipeStructure = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- By Bureau / Creditor -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// browse by bureau / creditor</span>
       <h2 data-animate style="margin-bottom: 16px;">Where to send what.</h2>
@@ -134,10 +236,10 @@ const recipeStructure = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- How recipes work -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// how recipes work</span>
       <h2 data-animate style="margin-bottom: 32px;">Every recipe follows the same structure.</h2>
@@ -153,7 +255,7 @@ const recipeStructure = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <EmailCapture />
 

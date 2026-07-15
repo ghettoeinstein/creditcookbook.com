@@ -208,9 +208,9 @@ const categories = [...new Set(glossaryTerms.map(t => t.category))];
 
 <Base title="Credit & Legal Glossary — CreditCookbook" description={description} posterTitle="GLOSSARY" posterLabel="// resources — 36 terms in plain english">
   <!-- Intro -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// glossary</span>
+      <span class="section-label" data-animate>// glossary</span>
       <h2 style="margin-bottom: 24px;">Credit &amp; Legal Glossary</h2>
       <p style="max-width: 64ch; margin-bottom: 24px;">
         Credit reports, consumer protection laws, and debt collection rules are written in legal language that can be hard to parse. This glossary translates the most important terms into plain English — no law degree required.
@@ -221,10 +221,10 @@ const categories = [...new Set(glossaryTerms.map(t => t.category))];
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Term Count Stats -->
-  <section class="section-tight">
+  <section class="section-tight" data-animate>
     <div class="container">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; border: 1px solid var(--line);">
         <div style="padding: 28px; text-align: center; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
@@ -247,12 +247,12 @@ const categories = [...new Set(glossaryTerms.map(t => t.category))];
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Category Quick Nav -->
-  <section class="section-tight">
+  <section class="section-tight" data-animate>
     <div class="container">
-      <span class="section-label">// jump to category</span>
+      <span class="section-label" data-animate>// jump to category</span>
       <div style="display: flex; gap: 0; flex-wrap: wrap; border: 1px solid var(--line);">
         {categories.map(cat => (
           <a href={`#${cat.toLowerCase().replace(/\s+/g, '-')}`} style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; padding: 12px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none;">
@@ -263,14 +263,14 @@ const categories = [...new Set(glossaryTerms.map(t => t.category))];
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Glossary Terms by Category -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       {categories.map(cat => (
         <div id={cat.toLowerCase().replace(/\s+/g, '-')} style="margin-bottom: 64px;">
-          <span class="section-label" style="margin-bottom: 8px;">// {cat.toLowerCase()}</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// {cat.toLowerCase()}</span>
           <h2 style="margin-bottom: 32px;">{cat}</h2>
           <div style="display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--line);">
             {glossaryTerms.filter(t => t.category === cat).map((t, idx, arr) => (
@@ -285,14 +285,14 @@ const categories = [...new Set(glossaryTerms.map(t => t.category))];
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Key Rights Callout -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// your key rights</span>
+      <span class="section-label" data-animate>// your key rights</span>
       <h2 style="margin-bottom: 24px;">Your Key Rights at a Glance</h2>
-      <table>
+      <table data-animate>
         <thead>
           <tr><th>Right</th><th>Law</th><th>How to exercise it</th></tr>
         </thead>
@@ -309,26 +309,26 @@ const categories = [...new Set(glossaryTerms.map(t => t.category))];
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Related -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// continue learning</span>
+      <span class="section-label" data-animate>// continue learning</span>
       <h3 style="margin-bottom: 24px;">Related resources</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line);">
         <a href="/resources/how-fico-is-calculated" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// fico 8</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// fico 8</span>
           <h4 style="margin-bottom: 6px;">How FICO Is Calculated</h4>
           <p style="font-size: 13px; opacity: 0.7;">Reverse-engineering the FICO 8 scoring model</p>
         </a>
         <a href="/medical-debt/overview" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// medical debt</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// medical debt</span>
           <h4 style="margin-bottom: 6px;">Medical Debt Guide</h4>
           <p style="font-size: 13px; opacity: 0.7;">How to remove medical collections from your report</p>
         </a>
         <a href="/medical-debt/your-rights" style="padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// rights</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// rights</span>
           <h4 style="margin-bottom: 6px;">Your Rights Under FCRA</h4>
           <p style="font-size: 13px; opacity: 0.7;">The statutes that protect you as a consumer</p>
         </a>

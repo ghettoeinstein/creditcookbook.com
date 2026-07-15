@@ -5,15 +5,15 @@ const description = "Calculate your credit card utilization ratio — overall an
 ---
 
 <Base title="Utilization Calculator — CreditCookbook" description={description} posterTitle="UTILIZATION CALCULATOR" posterLabel="// tool 02 — credit utilization">
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// credit utilization</span>
+      <span class="section-label" data-animate>// credit utilization</span>
       <h2 style="margin-bottom: 16px;">Calculate your utilization</h2>
       <p style="max-width: 60ch; margin-bottom: 40px; opacity: 0.7;">Enter each card's balance and credit limit. Your utilization ratio — the percentage of available credit you're using — is one of the biggest factors in your credit score (up to 30% of FICO).</p>
 
       <!-- Card input table -->
       <div class="card-flat" style="margin-bottom: 32px;">
-        <table id="utilTable" style="margin-bottom: 16px;">
+        <table data-animate id="utilTable" style="margin-bottom: 16px;">
           <thead>
             <tr>
               <th style="width: 30%;">Card / Account</th>
@@ -33,7 +33,7 @@ const description = "Calculate your credit card utilization ratio — overall an
       <!-- Results -->
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
         <div style="padding: 40px; border-right: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// overall utilization</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// overall utilization</span>
           <div id="overallUtil" style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">—</div>
           <div id="overallBar" style="width: 100%; height: 8px; background: var(--paper); border: 1px solid var(--line); margin-top: 16px; position: relative; overflow: hidden;">
             <div id="overallBarFill" style="height: 100%; width: 0%; background: var(--blue); transition: width 0.3s ease;"></div>
@@ -43,8 +43,8 @@ const description = "Calculate your credit card utilization ratio — overall an
           </div>
         </div>
         <div style="padding: 40px;">
-          <span class="section-label" style="margin-bottom: 8px;">// totals</span>
-          <table style="margin-bottom: 0;">
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// totals</span>
+          <table data-animate style="margin-bottom: 0;">
             <tbody>
               <tr><td style="border: none; padding: 4px 0; font-family: var(--font-mono); font-size: 13px; opacity: 0.7;">Total balance</td><td style="border: none; padding: 4px 0; text-align: right; font-family: var(--font-mono); font-weight: 600;" id="totalBalance">$0</td></tr>
               <tr><td style="border: none; padding: 4px 0; font-family: var(--font-mono); font-size: 13px; opacity: 0.7;">Total limit</td><td style="border: none; padding: 4px 0; text-align: right; font-family: var(--font-mono); font-weight: 600;" id="totalLimit">$0</td></tr>
@@ -62,7 +62,7 @@ const description = "Calculate your credit card utilization ratio — overall an
           <p style="opacity: 0.7;">Enter your card details above to see your score impact.</p>
         </div>
         <h4 style="margin-bottom: 12px;">Utilization tiers</h4>
-        <table>
+        <table data-animate>
           <thead>
             <tr><th>Tier</th><th>Range</th><th>Impact</th></tr>
           </thead>
@@ -130,8 +130,8 @@ const description = "Calculate your credit card utilization ratio — overall an
         utilCell.textContent = util.toFixed(1) + '%';
         // Color code per-card
         if (util <= 29) utilCell.style.color = 'var(--blue)';
-        else if (util <= 49) utilCell.style.color = '#B45309';
-        else utilCell.style.color = '#DC2626';
+        else if (util <= 49) utilCell.style.color = 'var(--gold)';
+        else utilCell.style.color = 'var(--gold-hover)';
         totalBalance += balance;
         totalLimit += limit;
         cardCount++;
@@ -159,8 +159,8 @@ const description = "Calculate your credit card utilization ratio — overall an
 
     // Color the bar
     if (overallUtil <= 29) barFill.style.background = 'var(--blue)';
-    else if (overallUtil <= 49) barFill.style.background = '#B45309';
-    else barFill.style.background = '#DC2626';
+    else if (overallUtil <= 49) barFill.style.background = 'var(--gold)';
+    else barFill.style.background = 'var(--gold-hover)';
 
     // Score assessment
     updateAssessment(overallUtil, totalBalance, totalLimit, cardCount);
@@ -195,7 +195,7 @@ const description = "Calculate your credit card utilization ratio — overall an
       recsList.push('Set up auto-pay to ensure balances stay in this range.');
       recsList.push('Consider a limit increase if your balances are stable.');
     } else if (util <= 49) {
-      tier = 'Fair'; tierColor = '#B45309';
+      tier = 'Fair'; tierColor = 'var(--gold)';
       scoreImpact = 'Moderate (10–30 pts)';
       description = 'You\'re crossing into territory where scoring models start penalizing.';
       recsList.push('Pay down balances to get under 30% utilization — the most important threshold.');
@@ -203,7 +203,7 @@ const description = "Calculate your credit card utilization ratio — overall an
       recsList.push('Request a credit limit increase to lower your ratio.');
       recsList.push('Avoid opening new cards just for the limit — focus on pay-down.');
     } else if (util <= 74) {
-      tier = 'Poor'; tierColor = '#B45309';
+      tier = 'Poor'; tierColor = 'var(--gold)';
       scoreImpact = 'High (30–60+ pts)';
       description = 'High utilization is actively suppressing your score. Action needed.';
       recsList.push('Pay down balances aggressively — getting under 30% should be your #1 priority.');
@@ -212,7 +212,7 @@ const description = "Calculate your credit card utilization ratio — overall an
       recsList.push('Ask for a credit limit increase — even a small one helps the ratio.');
       recsList.push('Stop new charges on high-utilization cards until balances drop.');
     } else {
-      tier = 'Critical'; tierColor = '#DC2626';
+      tier = 'Critical'; tierColor = 'var(--gold-hover)';
       scoreImpact = 'Severe (60–100+ pts)';
       description = 'Near-maxed cards are severely damaging your score. Immediate action needed.';
       recsList.push('Pay down balances immediately — this is the single biggest score lever available to you.');

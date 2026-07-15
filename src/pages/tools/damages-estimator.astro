@@ -5,9 +5,9 @@ const description = "Estimate statutory damages for FCRA and FDCPA violations â€
 ---
 
 <Base title="Statutory Damages Estimator â€” CreditCookbook" description={description} posterTitle="DAMAGES ESTIMATOR" posterLabel="// tool 03 â€” FCRA Â§1681n / Â§1681o / FDCPA Â§1692k">
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// statutory damages estimator</span>
+      <span class="section-label" data-animate>// statutory damages estimator</span>
       <h2 style="margin-bottom: 16px;">FCRA & FDCPA damages calculator</h2>
       <p style="max-width: 64ch; margin-bottom: 16px; opacity: 0.7;">Estimate the statutory damages available under the Fair Credit Reporting Act (FCRA) and Fair Debt Collection Practices Act (FDCPA). This tool calculates statutory ranges based on the number and type of violations.</p>
       <p style="max-width: 64ch; margin-bottom: 40px; font-family: var(--font-mono); font-size: 12px; color: var(--blue);">âš  This is an educational estimator, not legal advice. Actual damages depend on case specifics and court discretion. Consult an attorney for your situation.</p>
@@ -75,7 +75,7 @@ const description = "Estimate statutory damages for FCRA and FDCPA violations â€
       <!-- Results -->
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
         <div style="padding: 40px; border-right: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// statutory damages range</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// statutory damages range</span>
           <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px;">
             <span style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--blue);" id="statutoryLow">$100</span>
             <span style="font-family: var(--font-display); font-size: 1.5rem; opacity: 0.4;">â€”</span>
@@ -84,7 +84,7 @@ const description = "Estimate statutory damages for FCRA and FDCPA violations â€
           <p style="font-size: 12px; opacity: 0.6; font-family: var(--font-mono);" id="statutoryNote">Per-violution statutory range</p>
         </div>
         <div style="padding: 40px;">
-          <span class="section-label" style="margin-bottom: 8px;">// total estimated damages</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// total estimated damages</span>
           <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px;">
             <span style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--ink);" id="totalLow">$100</span>
             <span style="font-family: var(--font-display); font-size: 1.5rem; opacity: 0.4;">â€”</span>
@@ -97,7 +97,7 @@ const description = "Estimate statutory damages for FCRA and FDCPA violations â€
       <!-- Breakdown table -->
       <div class="card-flat" style="margin-bottom: 32px;">
         <h3 style="margin-bottom: 16px;">Damage breakdown</h3>
-        <table>
+        <table data-animate>
           <thead>
             <tr><th>Category</th><th>Low estimate</th><th>High estimate</th><th>Statute</th></tr>
           </thead>
@@ -109,7 +109,7 @@ const description = "Estimate statutory damages for FCRA and FDCPA violations â€
       <!-- Legal references -->
       <div class="card">
         <h3 style="margin-bottom: 16px;">Statutory references</h3>
-        <table>
+        <table data-animate>
           <thead>
             <tr><th>Statute</th><th>Covers</th><th>Statutory damages</th></tr>
           </thead>

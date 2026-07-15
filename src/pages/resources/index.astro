@@ -17,7 +17,7 @@ const resources = [
 ---
 
 <Base title="Resources — CreditCookbook" description={description} posterTitle="RESOURCES" posterLabel="// statutes, references, and tools">
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// credit resources</span>
       <h2 data-animate style="margin-bottom: var(--space-2);">The reference library.</h2>
@@ -27,21 +27,21 @@ const resources = [
         {resources.map((r) => (
           r.status === 'live' && r.external ? (
             <a href={r.link} target="_blank" rel="noopener" style="display: block; padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.1s ease;" onmouseover="this.style.background='var(--paper)'" onmouseout="this.style.background='var(--white)'">
-              <span class="section-label" style="margin-bottom: var(--space-1);">// resource {r.num}</span>
+              <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// resource {r.num}</span>
               <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">{r.title}</h3>
               <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">{r.desc}</p>
               <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: 12px;">visit →</p>
             </a>
           ) : r.status === 'live' ? (
             <a href={r.link} style="display: block; padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.1s ease;" onmouseover="this.style.background='var(--paper)'" onmouseout="this.style.background='var(--white)'">
-              <span class="section-label" style="margin-bottom: var(--space-1);">// resource {r.num}</span>
+              <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// resource {r.num}</span>
               <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">{r.title}</h3>
               <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">{r.desc}</p>
               <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: 12px;">read →</p>
             </a>
           ) : (
             <div style="padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.5;">
-              <span class="section-label" style="margin-bottom: var(--space-1);">// resource {r.num} — coming soon</span>
+              <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// resource {r.num} — coming soon</span>
               <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">{r.title}</h3>
               <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">{r.desc}</p>
               <p class="mono" style="margin-top: var(--space-2); font-size: 12px;">coming soon</p>
@@ -52,10 +52,10 @@ const resources = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Quick reference -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// quick reference</span>
       <h2 data-animate style="margin-bottom: var(--space-4);">Key numbers to know.</h2>
@@ -81,7 +81,7 @@ const resources = [
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <EmailCapture />
 </Base>

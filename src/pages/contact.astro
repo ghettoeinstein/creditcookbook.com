@@ -6,7 +6,7 @@ const description = 'Contact CreditCookbook — get in touch about credit educat
 ---
 
 <Base title="Contact — CreditCookbook" description={description} posterTitle="CONTACT" posterLabel="// get in touch">
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// contact</span>
       <h2 data-animate style="margin-bottom: var(--space-2);">Get in touch.</h2>
@@ -15,7 +15,7 @@ const description = 'Contact CreditCookbook — get in touch about credit educat
       <div data-animate data-animate-stagger="0.1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
         <!-- Email -->
         <a href="mailto:hello@creditcookbook.com" style="display: block; padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.1s ease;" onmouseover="this.style.background='var(--paper)'" onmouseout="this.style.background='var(--white)'">
-          <span class="section-label" style="margin-bottom: var(--space-1);">// email</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// email</span>
           <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">hello@creditcookbook.com</h3>
           <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">General questions, corrections, partnership inquiries.</p>
           <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: 12px;">send email →</p>
@@ -23,7 +23,7 @@ const description = 'Contact CreditCookbook — get in touch about credit educat
 
         <!-- GitHub -->
         <a href="https://github.com/ghettoeinstein/creditcookbook.com" target="_blank" rel="noopener" style="display: block; padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.1s ease;" onmouseover="this.style.background='var(--paper)'" onmouseout="this.style.background='var(--white)'">
-          <span class="section-label" style="margin-bottom: var(--space-1);">// open an issue</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// open an issue</span>
           <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">GitHub Issues</h3>
           <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">Found a typo or error in a template? Open an issue on the repo — fastest way to get it fixed.</p>
           <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: 12px;">github.com/ghettoeinstein →</p>
@@ -31,7 +31,7 @@ const description = 'Contact CreditCookbook — get in touch about credit educat
 
         <!-- LinkedIn -->
         <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener" style="display: block; padding: var(--space-4); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.1s ease;" onmouseover="this.style.background='var(--paper)'" onmouseout="this.style.background='var(--white)'">
-          <span class="section-label" style="margin-bottom: var(--space-1);">// professional</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// professional</span>
           <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">LinkedIn</h3>
           <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">Connect with Caleb Pierre on LinkedIn for professional inquiries.</p>
           <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: 12px;">linkedin.com/in/calebpierre →</p>
@@ -40,10 +40,10 @@ const description = 'Contact CreditCookbook — get in touch about credit educat
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Response time -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// what to expect</span>
       <h2 data-animate style="margin-bottom: var(--space-4);">Response expectations.</h2>
@@ -65,7 +65,7 @@ const description = 'Contact CreditCookbook — get in touch about credit educat
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <EmailCapture />
 </Base>

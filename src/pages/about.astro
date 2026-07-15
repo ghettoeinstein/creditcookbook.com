@@ -40,7 +40,7 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
   <!-- ============================================================
        BIO
        ============================================================ -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// who i am</span>
       <h2 data-animate style="margin-bottom: var(--space-3); font-size: var(--display-sm);">Caleb Pierre</h2>
@@ -59,12 +59,12 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- ============================================================
        WHY — The story
        ============================================================ -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// why i built this</span>
       <h2 data-animate style="margin-bottom: var(--space-3); font-size: var(--display-sm);">The story.</h2>
@@ -83,12 +83,140 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
+
+  <!-- ============================================================
+       CAREER TIMELINE — Animated draw-on-scroll
+       ============================================================ -->
+  <section class="section" data-animate id="career-timeline">
+    <div class="container">
+      <span class="section-label" data-animate>// career</span>
+      <h2 data-animate style="margin-bottom: var(--space-6); font-size: var(--display-sm);">10 years. Three disciplines.</h2>
+
+      <div id="timeline-track" style="position:relative; padding-left: 32px;">
+        <!-- Vertical line -->
+        <svg id="timeline-line-svg" style="position:absolute; top:0; left:6px; width:2px; height:100%; overflow:visible; z-index:1;" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100%" stroke="var(--line)" stroke-width="2" />
+          <line id="timeline-line-anim" x1="1" y1="0" x2="1" y2="100%" stroke="var(--gold)" stroke-width="2" stroke-dasharray="100%" stroke-dashoffset="100%" />
+        </svg>
+
+        <!-- Timeline items -->
+        <div class="timeline-item" style="position:relative; padding-bottom: var(--space-6); z-index:2;">
+          <div class="timeline-dot" style="position:absolute; left:-32px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--white); border:2px solid var(--ink); z-index:3;"></div>
+          <span class="mono" style="font-size: var(--text-sm); color: var(--blue); letter-spacing: var(--tracking-wider); text-transform: uppercase;">2016 — 2019</span>
+          <h3 style="margin-top: var(--space-1); margin-bottom: var(--space-1); font-size: var(--text-lg);">Enterprise Security Engineer</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7; line-height: var(--leading-relaxed); max-width: 56ch;">Tinder, Verizon Media, CHLA, UCLA Health. Built security infrastructure, threat detection systems, and compliance frameworks for enterprise-scale platforms.</p>
+        </div>
+
+        <div class="timeline-item" style="position:relative; padding-bottom: var(--space-6); z-index:2;">
+          <div class="timeline-dot" style="position:absolute; left:-32px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--white); border:2px solid var(--ink); z-index:3;"></div>
+          <span class="mono" style="font-size: var(--text-sm); color: var(--blue); letter-spacing: var(--tracking-wider); text-transform: uppercase;">2019 — 2022</span>
+          <h3 style="margin-top: var(--space-1); margin-bottom: var(--space-1); font-size: var(--text-lg);">Fintech CTO — Glass Financial</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7; line-height: var(--leading-relaxed); max-width: 56ch;">Led technology strategy and engineering for a fintech lending platform. Saw firsthand how opaque credit systems hurt consumers — the problem CreditCookbook solves.</p>
+        </div>
+
+        <div class="timeline-item" style="position:relative; padding-bottom: var(--space-6); z-index:2;">
+          <div class="timeline-dot" style="position:absolute; left:-32px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--white); border:2px solid var(--ink); z-index:3;"></div>
+          <span class="mono" style="font-size: var(--text-sm); color: var(--blue); letter-spacing: var(--tracking-wider); text-transform: uppercase;">2022 — present</span>
+          <h3 style="margin-top: var(--space-1); margin-bottom: var(--space-1); font-size: var(--text-lg);">AI Automation — Caleb Pierre Ventures</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7; line-height: var(--leading-relaxed); max-width: 56ch;">Building AI agent systems, automation pipelines, and security consulting for businesses. CreditCookbook is the open-source proof that expertise scales without paywalls.</p>
+        </div>
+
+        <div class="timeline-item" style="position:relative; z-index:2;">
+          <div class="timeline-dot timeline-dot-final" style="position:absolute; left:-32px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--gold); border:2px solid var(--gold); z-index:3;"></div>
+          <span class="mono" style="font-size: var(--text-sm); color: var(--gold); letter-spacing: var(--tracking-wider); text-transform: uppercase;">2026 — now</span>
+          <h3 style="margin-top: var(--space-1); margin-bottom: var(--space-1); font-size: var(--text-lg);">CreditCookbook</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7; line-height: var(--leading-relaxed); max-width: 56ch;">Open-source credit education. Every dispute letter, every statute, every playbook — free, versioned, inspectable on GitHub. Remedy, not repair.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      function initTimelineFlare() {
+        if (typeof gsap === 'undefined') return setTimeout(initTimelineFlare, 50);
+        if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        var track = document.getElementById('timeline-track');
+        var animLine = document.getElementById('timeline-line-anim');
+        var dots = document.querySelectorAll('.timeline-dot');
+        var items = document.querySelectorAll('.timeline-item');
+
+        if (!track) return;
+
+        if (reduce) {
+          if (animLine) animLine.style.strokeDashoffset = '0';
+          dots.forEach(function (d) { d.style.opacity = '1'; });
+          items.forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
+          return;
+        }
+
+        // Draw the gold timeline line on scroll
+        if (animLine) {
+          gsap.set(animLine, { strokeDashoffset: '100%' });
+          gsap.to(animLine, {
+            strokeDashoffset: '0%',
+            duration: 1.5,
+            ease: 'power2.inOut',
+            scrollTrigger: {
+              trigger: track,
+              start: 'top 75%',
+              end: 'bottom 80%',
+              scrub: 0.8
+            }
+          });
+        }
+
+        // Activate dots + reveal items as they enter
+        items.forEach(function (item, i) {
+          var dot = item.querySelector('.timeline-dot');
+          gsap.set(item, { opacity: 0.3, x: -20 });
+          ScrollTrigger.create({
+            trigger: item,
+            start: 'top 80%',
+            once: true,
+            onEnter: function () {
+              gsap.to(item, {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                ease: 'power2.out',
+                delay: i * 0.1
+              });
+              if (dot) {
+                gsap.to(dot, {
+                  scale: 1.5,
+                  duration: 0.3,
+                  ease: 'power2.out',
+                  delay: i * 0.1 + 0.2
+                });
+                gsap.to(dot, {
+                  scale: 1,
+                  duration: 0.4,
+                  ease: 'power2.out',
+                  delay: i * 0.1 + 0.4
+                });
+              }
+            }
+          });
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTimelineFlare);
+      } else {
+        initTimelineFlare();
+      }
+    })();
+  </script>
+
+  <hr class="rule" data-animate />
 
   <!-- ============================================================
        CONNECT — Prominent LinkedIn + Instagram CTAs with gold accents
        ============================================================ -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// connect</span>
       <h2 data-animate style="margin-bottom: var(--space-1); font-size: var(--display-sm);">Find me.</h2>
@@ -97,7 +225,7 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
       <div data-animate data-animate-stagger="0.12" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0; border:1px solid var(--line);">
         <!-- Website -->
         <a href="https://calebpierre.com" target="_blank" rel="noopener" data-tilt="3" style="display:block; padding: var(--space-4); border-right:1px solid var(--line); border-bottom:1px solid var(--line); text-decoration:none; color: var(--ink); background: var(--white); transition: border-color 0.2s var(--ease-primary);">
-          <span class="section-label" style="margin-bottom: var(--space-1);">// my work</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// my work</span>
           <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">calebpierre.com</h3>
           <p style="font-size: var(--text-sm); opacity:0.7;">My agency — AI automation, systems engineering, and security consulting for businesses that want to eliminate manual work.</p>
           <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: var(--text-sm);">calebpierre.com →</p>
@@ -105,7 +233,7 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
 
         <!-- LinkedIn — gold border for emphasis -->
         <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener" data-tilt="4" style="display:block; padding: var(--space-4); border-right:1px solid var(--line); border-bottom:1px solid var(--line); text-decoration:none; color: var(--ink); background: var(--white); transition: all 0.2s var(--ease-primary);">
-          <span class="section-label" style="margin-bottom: var(--space-1); color: var(--gold);">// professional</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1); color: var(--gold);">// professional</span>
           <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">LinkedIn</h3>
           <p style="font-size: var(--text-sm); opacity:0.7;">10 years in enterprise security, fintech CTO, AI systems. Full career history and recommendations.</p>
           <p class="mono" style="margin-top: var(--space-2); color: var(--gold); font-size: var(--text-sm); font-weight:500;">linkedin.com/in/calebpierre →</p>
@@ -113,7 +241,7 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
 
         <!-- Instagram — gold border for emphasis -->
         <a href="https://instagram.com/emperorpierre" target="_blank" rel="noopener" data-tilt="4" style="display:block; padding: var(--space-4); border-bottom:1px solid var(--line); text-decoration:none; color: var(--ink); background: var(--white); transition: all 0.2s var(--ease-primary);">
-          <span class="section-label" style="margin-bottom: var(--space-1); color: var(--gold);">// personal</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1); color: var(--gold);">// personal</span>
           <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">Instagram</h3>
           <p style="font-size: var(--text-sm); opacity:0.7;">Behind the scenes — building in public, LA life, and the occasional credit tip that doesn't fit in a template.</p>
           <p class="mono" style="margin-top: var(--space-2); color: var(--gold); font-size: var(--text-sm); font-weight:500;">@emperorpierre →</p>
@@ -121,7 +249,7 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
 
         <!-- GitHub -->
         <a href="https://github.com/ghettoeinstein" target="_blank" rel="noopener" data-tilt="3" style="display:block; padding: var(--space-4); border-right:1px solid var(--line); text-decoration:none; color: var(--ink); background: var(--white); transition: border-color 0.2s var(--ease-primary);">
-          <span class="section-label" style="margin-bottom: var(--space-1);">// code</span>
+          <span class="section-label" data-animate style="margin-bottom: var(--space-1);">// code</span>
           <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">GitHub</h3>
           <p style="font-size: var(--text-sm); opacity:0.7;">All my open-source projects including this one. Star the repo if it helped you — it helps others find it.</p>
           <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: var(--text-sm);">github.com/ghettoeinstein →</p>
@@ -130,12 +258,12 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- ============================================================
        WORK WITH ME — CTAs
        ============================================================ -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <span class="section-label" data-animate>// work with me</span>
       <h2 data-animate style="margin-bottom: var(--space-3); font-size: var(--display-sm);">Want to work together?</h2>
@@ -149,16 +277,16 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- ============================================================
        CREDITS
        ============================================================ -->
-  <section class="section" style="padding-bottom: 60px;">
+  <section class="section" data-animate style="padding-bottom: 60px;">
     <div class="container">
       <span class="section-label" data-animate>// credits</span>
       <h3 data-animate style="margin-bottom: var(--space-2);">How CreditCookbook is built</h3>
-      <table>
+      <table data-animate>
         <thead>
           <tr><th>Layer</th><th>Tool</th></tr>
         </thead>

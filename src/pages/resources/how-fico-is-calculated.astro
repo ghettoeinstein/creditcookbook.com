@@ -49,9 +49,9 @@ const articleSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Intro -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// overview</span>
+      <span class="section-label" data-animate>// overview</span>
       <h2 style="margin-bottom: 24px;">How FICO 8 Is Calculated</h2>
       <p style="max-width: 64ch; margin-bottom: 24px;">
         FICO 8 is the most widely used credit scoring model in the United States, yet its exact formula is a closely guarded trade secret. Scores range from 300 to 850 and influence the interest rates, credit limits, and loan approvals available to hundreds of millions of consumers.
@@ -65,13 +65,13 @@ const articleSchema = {
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Source Callout -->
-  <section class="section-tight">
+  <section class="section-tight" data-animate>
     <div class="container">
       <div class="card" style="border-left: 4px solid var(--blue);">
-        <span class="section-label" style="margin-bottom: 12px;">// source & attribution</span>
+        <span class="section-label" data-animate style="margin-bottom: 12px;">// source & attribution</span>
         <p style="margin-bottom: 12px;">
           This article is based on the research of <strong>Michael Fowlie</strong>, published as <em>"Reverse Engineering FICO 8"</em> on Medium. The original article walks through the full methodology, including data collection, feature engineering, and model evaluation.
         </p>
@@ -89,18 +89,18 @@ const articleSchema = {
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- The Five Factors -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// the five factors</span>
+      <span class="section-label" data-animate>// the five factors</span>
       <h2 style="margin-bottom: 24px;">The 5 FICO Factors</h2>
       <p style="max-width: 64ch; margin-bottom: 32px;">
         FICO publicly discloses the five categories that make up a FICO 8 score and their approximate weights. What they don't disclose is how each category is computed internally or how the sub-calculations combine into the final number.
       </p>
 
-      <table style="margin-bottom: 32px;">
+      <table data-animate style="margin-bottom: 32px;">
         <thead>
           <tr><th>Factor</th><th>Weight</th><th>What it measures</th></tr>
         </thead>
@@ -142,12 +142,12 @@ const articleSchema = {
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- OLS Regression -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// ols regression</span>
+      <span class="section-label" data-animate>// ols regression</span>
       <h2 style="margin-bottom: 24px;">Ordinary Least Squares Findings</h2>
       <p style="max-width: 64ch; margin-bottom: 24px;">
         The first approach was a linear regression — fitting the FICO score as a weighted sum of credit file variables. The model achieved an <strong>R-squared of 0.64</strong>, meaning it explained 64% of the variance in FICO scores, with a standard deviation of error around <strong>19 points</strong>.
@@ -157,7 +157,7 @@ const articleSchema = {
       </p>
 
       <h3 style="margin-bottom: 16px;">Key Coefficients</h3>
-      <table style="margin-bottom: 32px;">
+      <table data-animate style="margin-bottom: 32px;">
         <thead>
           <tr><th>Variable</th><th>Coefficient</th><th>Interpretation</th></tr>
         </thead>
@@ -171,7 +171,7 @@ const articleSchema = {
         </tbody>
       </table>
 
-      <div class="mono-block" style="margin-bottom: 32px;">
+      <div class="mono-block" data-animate style="margin-bottom: 32px;">
 FICO ≈ 720
   − 8   × (30-day lates)
   − 13  × (120-day lates)
@@ -195,12 +195,12 @@ R² = 0.64  |  σ(error) ≈ 19 pts
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- ML Model -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// machine learning model</span>
+      <span class="section-label" data-animate>// machine learning model</span>
       <h2 style="margin-bottom: 24px;">The ML Model &amp; Five Subscores</h2>
       <p style="max-width: 64ch; margin-bottom: 24px;">
         Linear regression treats every variable as independent and additive. FICO 8 does not — it uses segmented scorecards and interaction effects. To capture this, the research trained a machine learning model that decomposes the credit file into <strong>five subscores</strong>, each normalized to a 0.0–1.0 range.
@@ -211,37 +211,37 @@ R² = 0.64  |  σ(error) ≈ 19 pts
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
         <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// subscore 1</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// subscore 1</span>
           <h4 style="margin-bottom: 6px;">Payment History</h4>
           <p style="font-size: 13px; opacity: 0.7;">Captures lates, delinquencies, collections, public records, and their age/recency.</p>
           <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">range: 0.0 – 1.0</p>
         </div>
         <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// subscore 2</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// subscore 2</span>
           <h4 style="margin-bottom: 6px;">Indebtedness</h4>
           <p style="font-size: 13px; opacity: 0.7;">Captures utilization, total balances, and proportion of accounts with balances.</p>
           <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">range: 0.0 – 1.0</p>
         </div>
         <div style="padding: 24px; border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// subscore 3</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// subscore 3</span>
           <h4 style="margin-bottom: 6px;">Credit Age</h4>
           <p style="font-size: 13px; opacity: 0.7;">Captures age of oldest account, average age, and time since last activity.</p>
           <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">range: 0.0 – 1.0</p>
         </div>
         <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// subscore 4</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// subscore 4</span>
           <h4 style="margin-bottom: 6px;">Pursuit of Credit</h4>
           <p style="font-size: 13px; opacity: 0.7;">Captures hard inquiries, new accounts, and recent credit-seeking behavior.</p>
           <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">range: 0.0 – 1.0</p>
         </div>
         <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// subscore 5</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// subscore 5</span>
           <h4 style="margin-bottom: 6px;">Credit Mix</h4>
           <p style="font-size: 13px; opacity: 0.7;">Captures diversity of account types — revolving, installment, mortgage, auto.</p>
           <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">range: 0.0 – 1.0</p>
         </div>
         <div style="padding: 24px; border-bottom: 1px solid var(--line); background: var(--paper);">
-          <span class="section-label" style="margin-bottom: 8px;">// overall</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// overall</span>
           <h4 style="margin-bottom: 6px;">FICO Estimate</h4>
           <p style="font-size: 13px; opacity: 0.7;">Weighted combination of all five subscores, mapped to the 300–850 scale.</p>
           <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">MAE: 14 pts</p>
@@ -261,18 +261,18 @@ R² = 0.64  |  σ(error) ≈ 19 pts
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Key Thresholds -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// key thresholds</span>
+      <span class="section-label" data-animate>// key thresholds</span>
       <h2 style="margin-bottom: 24px;">Key Balance &amp; Limit Thresholds</h2>
       <p style="max-width: 64ch; margin-bottom: 32px;">
         The regression and ML analysis surfaced several non-linear thresholds — points where a specific balance or credit limit crosses a boundary and triggers a discrete score change. These are not smooth gradients; they are step functions in the scoring formula.
       </p>
 
-      <table style="margin-bottom: 32px;">
+      <table data-animate style="margin-bottom: 32px;">
         <thead>
           <tr><th>Threshold</th><th>Trigger</th><th>Effect</th></tr>
         </thead>
@@ -296,12 +296,12 @@ R² = 0.64  |  σ(error) ≈ 19 pts
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Perfect Profile -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// the perfect profile</span>
+      <span class="section-label" data-animate>// the perfect profile</span>
       <h2 style="margin-bottom: 24px;">The "Perfect Profile" — FICO 840+</h2>
       <p style="max-width: 64ch; margin-bottom: 32px;">
         By isolating the credit files that scored 840 or above, the research identified a consistent profile — the shared characteristics of near-perfect FICO 8 scores. This is what the scoring model rewards most heavily.
@@ -309,47 +309,47 @@ R² = 0.64  |  σ(error) ≈ 19 pts
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
         <div style="padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// inquiries</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// inquiries</span>
           <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">0</div>
           <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Hard inquiries in the last 6 months</p>
         </div>
         <div style="padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// delinquencies</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// delinquencies</span>
           <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">0</div>
           <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Late payments or delinquencies on file</p>
         </div>
         <div style="padding: 28px; border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// public records</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// public records</span>
           <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">0</div>
           <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Bankruptcies, judgments, or tax liens</p>
         </div>
         <div style="padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// open accounts</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// open accounts</span>
           <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">10</div>
           <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Average number of open accounts</p>
         </div>
         <div style="padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// revolving util</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// revolving util</span>
           <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">4.4%</div>
           <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Average revolving utilization rate</p>
         </div>
         <div style="padding: 28px; border-bottom: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// total accounts</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// total accounts</span>
           <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">24</div>
           <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Total accounts (open + closed)</p>
         </div>
         <div style="padding: 28px; border-right: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// bankruptcies</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// bankruptcies</span>
           <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">0</div>
           <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">No bankruptcies on file — ever</p>
         </div>
         <div style="padding: 28px; border-right: 1px solid var(--line);">
-          <span class="section-label" style="margin-bottom: 8px;">// oldest account</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// oldest account</span>
           <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">28 yrs</div>
           <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Average age of oldest account</p>
         </div>
         <div style="padding: 28px; background: var(--paper);">
-          <span class="section-label" style="margin-bottom: 8px;">// target score</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// target score</span>
           <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">840+</div>
           <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">FICO 8 score range (of 300–850)</p>
         </div>
@@ -366,12 +366,12 @@ R² = 0.64  |  σ(error) ≈ 19 pts
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Limitations -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// limitations</span>
+      <span class="section-label" data-animate>// limitations</span>
       <h2 style="margin-bottom: 24px;">Caveats &amp; Limitations</h2>
       <ul style="margin-left: 24px; line-height: 2; max-width: 64ch;">
         <li><strong>This is not the real FICO formula.</strong> It is a statistical approximation based on a specific dataset. Your actual FICO 8 score may differ by 20+ points from any model prediction.</li>
@@ -383,26 +383,26 @@ R² = 0.64  |  σ(error) ≈ 19 pts
     </div>
   </section>
 
-  <hr class="rule" />
+  <hr class="rule" data-animate />
 
   <!-- Related -->
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// continue learning</span>
+      <span class="section-label" data-animate>// continue learning</span>
       <h3 style="margin-bottom: 24px;">Related resources</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line);">
         <a href="/resources/glossary" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// glossary</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// glossary</span>
           <h4 style="margin-bottom: 6px;">Legal Glossary</h4>
           <p style="font-size: 13px; opacity: 0.7;">30+ credit &amp; consumer law terms in plain English</p>
         </a>
         <a href="/medical-debt/overview" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// medical debt</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// medical debt</span>
           <h4 style="margin-bottom: 6px;">Medical Debt Guide</h4>
           <p style="font-size: 13px; opacity: 0.7;">How to remove medical collections from your report</p>
         </a>
         <a href="/about" style="padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// about</span>
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// about</span>
           <h4 style="margin-bottom: 6px;">About CreditCookbook</h4>
           <p style="font-size: 13px; opacity: 0.7;">Open-source credit education — no paywall</p>
         </a>

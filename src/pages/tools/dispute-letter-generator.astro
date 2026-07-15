@@ -5,9 +5,9 @@ const description = "Generate a printable FCRA dispute letter for credit bureau 
 ---
 
 <Base title="Dispute Letter Generator — CreditCookbook" description={description} posterTitle="DISPUTE LETTER GENERATOR" posterLabel="// tool 01 — FCRA §1681i">
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
-      <span class="section-label">// how it works</span>
+      <span class="section-label" data-animate>// how it works</span>
       <h2 style="margin-bottom: 16px;">Generate a dispute letter</h2>
       <p style="max-width: 60ch; margin-bottom: 40px; opacity: 0.7;">Select your dispute type, fill in your details, and generate a printable letter formatted for all three credit bureaus. Everything runs in your browser — no data leaves your device.</p>
 
@@ -109,9 +109,9 @@ const description = "Generate a printable FCRA dispute letter for credit bureau 
 
       <!-- Generated letter -->
       <div id="letterContainer" style="display: none; margin-bottom: 48px;">
-        <hr class="rule" style="margin-bottom: 32px;" />
+        <hr class="rule" data-animate style="margin-bottom: 32px;" />
         <h3 style="margin-bottom: 24px;">Generated letter</h3>
-        <div id="letterOutput" class="mono-block" style="margin-bottom: 24px;"></div>
+        <div id="letterOutput" class="mono-block" data-animate style="margin-bottom: 24px;"></div>
       </div>
 
       <div class="card" style="margin-bottom: 24px;">

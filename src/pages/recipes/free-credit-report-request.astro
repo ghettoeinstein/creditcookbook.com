@@ -1,0 +1,227 @@
+---
+import Base from '../../layouts/Base.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+
+const description = 'Free annual credit report request letter template for Experian, Equifax, and TransUnion. Under the FCRA, you are entitled to one free report from each bureau every 12 months. Fill-in-the-blank template with mailing addresses.';
+
+const howtoSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Request Your Free Annual Credit Report from All Three Bureaus",
+  "description": "Send a written request to Experian, Equifax, and TransUnion to obtain your free annual credit report under the FCRA. Include identifying information and two forms of ID.",
+  "totalTime": "P30D",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Fill in the template",
+      "text": "Replace all bracketed fields with your personal information: full name, address, SSN, date of birth. Make three copies — one for each bureau."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Attach two forms of ID",
+      "text": "Include copies of your Social Security card and a government-issued photo ID (driver's license or state ID). Never send originals."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Mail to all three bureaus",
+      "text": "Send separate letters to Equifax, TransUnion, and Experian at their designated mailing addresses. Use certified mail with return receipt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Wait for response",
+      "text": "Bureaus typically process requests within 15 days. You can also request online at AnnualCreditReport.com for faster access."
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many free credit reports am I entitled to per year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the FCRA, you are entitled to one free credit report from each of the three major bureaus (Experian, Equifax, TransUnion) every 12 months. You can request all three at once or stagger them throughout the year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What forms of ID should I include with my request?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Include copies of two forms of identification: your Social Security card and a government-issued photo ID such as a driver's license. Never send original documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I request my free report online instead of by mail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The only official source for free annual credit reports online is AnnualCreditReport.com. Mailing a written request is an alternative if you prefer paper records or cannot access the online system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to receive my report by mail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bureaus typically process mailed requests within 15 business days. Sending via certified mail with return receipt provides tracking and proof of delivery."
+      }
+    }
+  ]
+};
+---
+
+<Base title="Free Credit Report Request Letter — CreditCookbook" description={description} posterTitle="FREE REPORT" posterLabel="// FCRA annual disclosure request">
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howtoSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+
+  <section class="section" data-animate>
+    <div class="container">
+      <span class="section-label" data-animate>// overview</span>
+      <h2 data-animate style="margin-bottom: 16px;">Free Annual Credit Report Request</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">
+        Under the Fair Credit Reporting Act (FCRA), you are entitled to one free credit report from each of the three major bureaus — Experian, Equifax, and TransUnion — every 12 months. Use this letter template to request your reports by mail. Include two forms of identification and send to each bureau separately.
+      </p>
+
+      <div data-animate style="display: flex; gap: 16px; margin-bottom: 48px;">
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').textContent)">Copy letter</button>
+        <a href="/recipes" class="btn btn-ghost">Back to recipes</a>
+      </div>
+
+      <div data-animate data-animate-stagger="0.1" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); margin-bottom: 48px;">
+        <div style="padding: 28px; border-right: 1px solid var(--line);">
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// bureau 1</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Equifax</h4>
+          <p class="mono" style="font-size: 12px; opacity: 0.7; line-height: 1.6;">Equifax Information Services, LLC<br>Complaint Department<br>P.O. Box 740256<br>Atlanta, GA 30374</p>
+        </div>
+        <div style="padding: 28px; border-right: px solid var(--line);">
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// bureau 2</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">TransUnion</h4>
+          <p class="mono" style="font-size: 12px; opacity: 0.7; line-height: 1.6;">TransUnion LLC<br>Consumer Disclosure Center<br>P.O. Box 2000<br>Chester, PA 19022</p>
+        </div>
+        <div style="padding: 28px;">
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// bureau 3</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Experian</h4>
+          <p class="mono" style="font-size: 12px; opacity: 0.7; line-height: 1.6;">Experian NCAC<br>701 Experian Parkway<br>Allen, TX 75013</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" data-animate />
+
+  <section class="section" data-animate>
+    <div class="container">
+      <span class="section-label" data-animate>// letter template</span>
+      <h2 data-animate style="margin-bottom: 24px;">Letter Template</h2>
+
+      <div data-animate>
+        <p style="max-width: 60ch; margin-bottom: 24px; opacity: 0.7;">Make three copies of this letter — one addressed to each bureau. Fill in all bracketed fields. Include copies (never originals) of two forms of ID.</p>
+
+        <div id="letter" class="mono-block" data-animate style="margin-bottom: 48px;">
+[DATE]
+
+TO: [BUREAU NAME — see addresses above]
+[DEPARTMENT NAME]
+[PO BOX / STREET ADDRESS]
+[CITY, STATE ZIP]
+
+FROM: [YOUR FULL NAME]
+[YOUR STREET ADDRESS]
+[CITY, STATE ZIP]
+
+SSN: [XXX-XX-XXXX]    DOB: [MM-DD-YYYY]
+
+2 forms of ID included — copy of Social Security card
+and driver's license.
+
+Please provide my free annual credit report.
+I am investigating inaccurate data on my credit report.
+Thank you.
+
+Sincerely,
+
+_______________________________
+[YOUR FULL NAME]
+        </div>
+      </div>
+
+      <div data-animate class="card">
+        <h4 style="margin-bottom: 12px;">Key points</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Send a separate letter to each of the three bureaus</li>
+          <li>Include copies of two forms of ID — never send originals</li>
+          <li>Use certified mail with return receipt for proof of delivery</li>
+          <li>Keep copies of everything you send</li>
+          <li>You can also request online at AnnualCreditReport.com</li>
+          <li>One free report per bureau every 12 months under the FCRA</li>
+          <li>This is not legal advice — consult an attorney for your situation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" data-animate />
+
+  <section class="section" data-animate>
+    <div class="container">
+      <span class="section-label" data-animate>// FAQ</span>
+      <h2 data-animate style="margin-bottom: 24px;">Frequently Asked Questions</h2>
+
+      <div data-animate data-animate-stagger="0.1" style="display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--line);">
+        <div style="padding: 28px; border-bottom: 1px solid var(--line);">
+          <h4 style="margin-bottom: 8px; text-transform: none; letter-spacing: -0.01em; font-size: 1.05rem;">How many free credit reports am I entitled to per year?</h4>
+          <p style="font-size: 14px; opacity: 0.7; line-height: 1.6;">Under the FCRA, you are entitled to one free credit report from each of the three major bureaus (Experian, Equifax, TransUnion) every 12 months. You can request all three at once or stagger them throughout the year.</p>
+        </div>
+        <div style="padding: 28px; border-bottom: 1px solid var(--line);">
+          <h4 style="margin-bottom: 8px; text-transform: none; letter-spacing: -0.01em; font-size: 1.05rem;">What forms of ID should I include with my request?</h4>
+          <p style="font-size: 14px; opacity: 0.7; line-height: 1.6;">Include copies of two forms of identification: your Social Security card and a government-issued photo ID such as a driver's license. Never send original documents.</p>
+        </div>
+        <div style="padding: 28px; border-bottom: 1px solid var(--line);">
+          <h4 style="margin-bottom: 8px; text-transform: none; letter-spacing: -0.01em; font-size: 1.05rem;">Can I request my free report online instead of by mail?</h4>
+          <p style="font-size: 14px; opacity: 0.7; line-height: 1.6;">Yes. The only official source for free annual credit reports online is AnnualCreditReport.com. Mailing a written request is an alternative if you prefer paper records or cannot access the online system.</p>
+        </div>
+        <div style="padding: 28px;">
+          <h4 style="margin-bottom: 8px; text-transform: none; letter-spacing: -0.01em; font-size: 1.05rem;">How long does it take to receive my report by mail?</h4>
+          <p style="font-size: 14px; opacity: 0.7; line-height: 1.6;">Bureaus typically process mailed requests within 15 business days. Sending via certified mail with return receipt provides tracking and proof of delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" data-animate />
+
+  <section class="section" data-animate>
+    <div class="container">
+      <span class="section-label" data-animate>// related resources</span>
+      <h2 data-animate style="margin-bottom: 24px;">Related Resources</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <a href="https://www.annualcreditreport.com" target="_blank" rel="noopener" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// official</span>
+          <h4 style="margin-bottom: 6px;">AnnualCreditReport.com</h4>
+          <p style="font-size: 13px; opacity: 0.7;">The only official source for free annual reports</p>
+        </a>
+        <a href="/resources/fcra-explained" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">FCRA Explained</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Your rights under the Fair Credit Reporting Act</p>
+        </a>
+        <a href="/resources/credit-repair-master-guide" style="padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" data-animate style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">Credit Repair Master Guide</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Comprehensive guide to repairing your credit</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" data-animate />
+
+  <EmailCapture />
+
+</Base>
