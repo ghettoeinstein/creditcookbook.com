@@ -1,0 +1,136 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = 'How credit reporting works, step-by-step dispute walkthrough, letter templates by scenario, MOV requests, and legal timelines. The complete FCRA dispute process guide — free and open-source.';
+
+// HowTo schema for structured data
+const howtoSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Dispute an Error on Your Credit Report",
+  "description": "A step-by-step guide to disputing inaccurate, incomplete, or unverifiable items on your credit report under the Fair Credit Reporting Act (FCRA).",
+  "totalTime": "PT45D",
+  "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "7" },
+  "supply": [
+    { "@type": "HowToSupply", "name": "Copy of your credit report" },
+    { "@type": "HowToSupply", "name": "USPS Certified Mail with Return Receipt" }
+  ],
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Get your credit report", "text": "Download free reports from annualcreditreport.com or dispute directly on each bureau's website." },
+    { "@type": "HowToStep", "position": 2, "name": "Identify errors", "text": "Review for inaccurate account details, wrong balances, duplicate entries, accounts that aren't yours, or obsolete items older than 7 years." },
+    { "@type": "HowToStep", "position": 3, "name": "Write your dispute letter", "text": "Use the appropriate template for your scenario: inaccurate, unverifiable, identity theft, obsolete, or mixed file. Fill in all bracketed fields." },
+    { "@type": "HowToStep", "position": 4, "name": "Send to all three bureaus", "text": "Mail separate letters to Experian, Equifax, and TransUnion via USPS Certified Mail with Return Receipt. Keep tracking numbers." },
+    { "@type": "HowToStep", "position": 5, "name": "Wait for investigation", "text": "Bureaus have 30 days to investigate (45 if you send additional info during the dispute window). They must forward your dispute to the furnisher." },
+    { "@type": "HowToStep", "position": 6, "name": "Review results", "text": "Bureaus must send written results within 5 days of completing the investigation. If unverifiable, the item must be deleted." },
+    { "@type": "HowToStep", "position": 7, "name": "Send MOV request if verified", "text": "If the bureau verifies but doesn't remove, request the Method of Verification under FCRA §611(a)(7) within 15 days." }
+  ]
+};
+
+const bureauAddresses = [
+  { name: 'Experian', address: 'P.O. Box 9701, Allen, TX 75013', phone: '1-888-397-3742', online: 'experian.com/dispute' },
+  { name: 'Equifax', address: 'P.O. Box 105069, Atlanta, GA 30348', phone: '1-800-685-1111', online: 'equifax.com/dispute' },
+  { name: 'TransUnion', address: 'P.O. Box 2000, Chester, PA 19016', phone: '1-800-916-8800', online: 'transunion.com/dispute' },
+];
+
+const reportingSteps = [
+  { step: '1', actor: 'Creditor / Furnisher', action: 'Lender, creditor, or collection agency reports account data to bureaus', fcra: 'FCRA §623' },
+  { step: '2', actor: 'Credit Bureau', action: 'Experian, Equifax, or TransUnion stores the data in your credit file', fcra: 'FCRA §609' },
+  { step: '3', actor: 'Furnisher (again)', action: 'Furnisher must provide accurate and complete information, correct errors', fcra: 'FCRA §623(a)(2)' },
+  { step: '4', actor: 'Consumer (You)', action: 'You review your report and dispute any inaccuracies', fcra: 'FCRA §611' },
+  { step: '5', actor: 'Bureau + Furnisher', action: 'Bureau investigates within 30 days; furnisher reviews and confirms/corrects', fcra: 'FCRA §611(a)' },
+  { step: '6', actor: 'Bureau', action: 'Bureau sends results, updates file, and provides updated report if requested', fcra: 'FCRA §611(a)(6)' },
+];
+
+const disputeSteps = [
+  { num: '01', title: 'Get your credit report', desc: 'Download free reports from annualcreditreport.com. You are entitled to one free report per bureau per year, plus additional free reports under FCRA §612 if denied credit, unemployed, on public assistance, or a victim of fraud.' },
+  { num: '02', title: 'Identify errors', desc: 'Review every account for accuracy: account names, balances, payment history, dates opened/closed, account status, and whether each account is actually yours. Look for duplicates, mixed files, and items older than 7 years (10 for bankruptcy).' },
+  { num: '03', title: 'Write your dispute letter', desc: 'Choose the template that matches your scenario below. Fill in all bracketed fields. Be specific about what is inaccurate and why. Cite FCRA §611 when asserting your right to dispute.' },
+  { num: '04', title: 'Send to all three bureaus', desc: 'Mail separate letters to Experian, Equifax, and TransUnion. Send via USPS Certified Mail with Return Receipt — this creates a legal paper trail. Keep the tracking number and receipt. Online disputes are faster but may waive some rights.' },
+  { num: '05', title: 'Wait for investigation', desc: 'Bureaus have 30 days to investigate from receipt of your dispute (45 days if you submit additional information during the 30-day window). The bureau must forward your dispute to the furnisher within 5 business days.' },
+  { num: '06', title: 'Review results', desc: 'The bureau must send you written results within 5 business days of completing the investigation. If the item is unverifiable, it must be deleted. If corrected, you get a free updated report. If the furnisher confirms, the item stays.' },
+  { num: '07', title: 'Send MOV request if verified', desc: 'If the bureau verifies the item but does not remove it, request the Method of Verification under FCRA §611(a)(7) within 15 days of receiving results. The bureau must describe how it verified the item within 15 days of your MOV request.' },
+];
+---
+
+<Base title="The Dispute Process — Personal Credit — CreditCookbook" description={description} posterTitle="THE DISPUTE PROCESS" posterLabel="// 02 — how to dispute anything on your credit report">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howtoSchema)} />
+
+  <!-- How credit reporting works -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// how credit reporting works</span>
+      <h2 data-animate style="margin-bottom: 16px;">Furnishers → Bureaus → You.</h2>
+      <p data-animate style="max-width: 64ch; opacity: 0.7; margin-bottom: 32px;">Credit reporting is a pipeline. Furnishers (lenders, creditors, collection agencies) supply account data to the three major credit bureaus (Experian, Equifax, TransUnion). The bureaus store it in your file. You have the right under the FCRA to see this data, dispute inaccuracies, and demand investigation.</p>
+
+      <table data-animate style="margin-bottom: 32px;">
+        <thead>
+          <tr><th>Step</th><th>Who acts</th><th>What happens</th><th>FCRA section</th></tr>
+        </thead>
+        <tbody>
+          {reportingSteps.map((r) => (
+            <tr>
+              <td><span class="stat-gold" style="font-weight: 700;">{r.step}</span></td>
+              <td style="font-weight: 600;">{r.actor}</td>
+              <td style="opacity: 0.8;">{r.action}</td>
+              <td class="mono" style="font-size: 12px;">{r.fcra}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <div data-animate class="card" style="margin-bottom: 16px;">
+        <h4 style="margin-bottom: 8px; text-transform: none; letter-spacing: -0.01em;">Key concept: Furnishers have duties</h4>
+        <p style="font-size: 14px; opacity: 0.8;">Under FCRA §623, furnishers must provide accurate information, correct errors, and notify bureaus when they determine information is inaccurate. They must also conduct reasonable investigations when a consumer disputes directly with them. If a furnisher fails to investigate or correct, that is a violation.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Step-by-step dispute walkthrough -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// step-by-step dispute walkthrough</span>
+      <h2 data-animate style="margin-bottom: 48px;">The 7-step dispute process.</h2>
+
+      <div data-animate data-animate-stagger="0.06" style="border: 1px solid var(--line);">
+        {disputeSteps.map((s, i) => (
+          <div style="display: grid; grid-template-columns: 80px 1fr; gap: 0; border-bottom: 1px solid var(--line);">
+            <div style="padding: 32px; border-right: 1px solid var(--line); display: flex; align-items: flex-start;">
+              <span class="stat-gold" style="font-size: 1.5rem; font-weight: 700; font-family: var(--font-mono);">{s.num}</span>
+            </div>
+            <div style="padding: 32px;">
+              <h3 style="margin-bottom: 8px;">{s.title}</h3>
+              <p style="font-size: 14px; opacity: 0.7; line-height: 1.75; max-width: 70ch;">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Bureau addresses -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// bureau contact information</span>
+      <h2 data-animate style="margin-bottom: 16px;">Where to send your disputes.</h2>
+      <p data-animate style="max-width: 50ch; opacity: 0.7; margin-bottom: 32px;">Send separate letters to each bureau. Certified Mail with Return Receipt — no exceptions.</p>
+
+      <div data-animate data-animate-stagger="0.08" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        {bureauAddresses.map((b) => (
+          <div style="padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+            <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// credit bureau</span>
+            <h4 style="margin-top: 12px; margin-bottom: 12px; text-transform: none; letter-spacing: -0.01em; font-size: 1.15rem;">{b.name}</h4>
+            <p class="mono" style="font-size: 13px; opacity: 0.7; line-height: 1.7;">{b.address}</p>
+            <p class="mono" style="font-size: 13px; opacity: 0.7; margin-top: 4px;">{b.phone}</p>
+            <p style="margin-top: 12px;"><a href={'https://' + b.online} style="font-size: 13px;">{b.online} →</a></p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+</Base>

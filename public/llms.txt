@@ -1,0 +1,32 @@
+# CreditCookbook.com
+
+> CreditCookbook is a free, open-source credit education platform built by Caleb Pierre Ventures LLC.
+
+## About
+
+CreditCookbook provides plain-English guides, letter templates, interactive tools, and reference resources for personal credit remedy and business credit building. All content is educational, community-verifiable, and grounded in legitimate consumer-protection law (FCRA, FDCPA, CFPB, FTC channels).
+
+## What We Offer
+
+- **Personal Credit Remedy:** FCRA dispute process, FDCPA enforcement, letter templates, escalation guides
+- **Business Credit:** Entity setup, DUNS/Paydex, Net-30 vendor tradelines, funding readiness
+- **Tools:** Dispute letter generator, utilization calculator, statutory damages estimator, business credit readiness checklist — all client-side, no data collected
+- **Resources:** FICO score breakdown, plain-English glossary, links to official sources (CFPB, FTC, bureaus)
+
+## Principles
+
+- Everything is free and open-source (GitHub: github.com/ghettoeinstein/creditcookbook.com)
+- No credit repair upsells, no paid services
+- All tools run client-side — no data leaves your browser
+- All legal claims are verifiable against primary sources
+
+## Contact
+
+- Email: hello@creditcookbook.com
+- LinkedIn: https://linkedin.com/in/calebpierre
+- Instagram: https://instagram.com/emperorpierre
+- GitHub: https://github.com/ghettoeinstein/creditcookbook.com
+
+## Legal Disclaimer
+
+All content on CreditCookbook is for educational purposes only and does not constitute legal or financial advice. Consult a qualified attorney or financial advisor for your specific situation.

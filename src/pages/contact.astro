@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import EmailCapture from '../components/EmailCapture.astro';
 
 const description = 'Contact CreditCookbook — get in touch about credit education, corrections, partnerships, or just to say hello.';
 ---
@@ -7,33 +8,33 @@ const description = 'Contact CreditCookbook — get in touch about credit educat
 <Base title="Contact — CreditCookbook" description={description} posterTitle="CONTACT" posterLabel="// get in touch">
   <section class="section">
     <div class="container">
-      <span class="section-label">// contact</span>
-      <h2 style="margin-bottom: 16px;">Get in touch.</h2>
-      <p style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">Questions about a recipe? Found an error in a letter template? Want to collaborate? Here's how to reach me.</p>
+      <span class="section-label" data-animate>// contact</span>
+      <h2 data-animate style="margin-bottom: var(--space-2);">Get in touch.</h2>
+      <p data-animate style="max-width: 50ch; opacity: 0.7; margin-bottom: var(--space-5);">Questions about a recipe? Found an error in a letter template? Want to collaborate? Here's how to reach me.</p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+      <div data-animate data-animate-stagger="0.1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
         <!-- Email -->
-        <a href="mailto:hello@creditcookbook.com" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// email</span>
-          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">hello@creditcookbook.com</h4>
-          <p style="font-size: 13px; opacity: 0.7;">General questions, corrections, partnership inquiries.</p>
-          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">send email →</p>
+        <a href="mailto:hello@creditcookbook.com" style="display: block; padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.1s ease;" onmouseover="this.style.background='var(--paper)'" onmouseout="this.style.background='var(--white)'">
+          <span class="section-label" style="margin-bottom: var(--space-1);">// email</span>
+          <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">hello@creditcookbook.com</h3>
+          <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">General questions, corrections, partnership inquiries.</p>
+          <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: 12px;">send email →</p>
         </a>
 
         <!-- GitHub -->
-        <a href="https://github.com/ghettoeinstein/creditcookbook.com" target="_blank" rel="noopener" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// open an issue</span>
-          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">GitHub Issues</h4>
-          <p style="font-size: 13px; opacity: 0.7;">Found a typo or error in a template? Open an issue on the repo — fastest way to get it fixed.</p>
-          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">github.com/ghettoeinstein →</p>
+        <a href="https://github.com/ghettoeinstein/creditcookbook.com" target="_blank" rel="noopener" style="display: block; padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.1s ease;" onmouseover="this.style.background='var(--paper)'" onmouseout="this.style.background='var(--white)'">
+          <span class="section-label" style="margin-bottom: var(--space-1);">// open an issue</span>
+          <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">GitHub Issues</h3>
+          <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">Found a typo or error in a template? Open an issue on the repo — fastest way to get it fixed.</p>
+          <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: 12px;">github.com/ghettoeinstein →</p>
         </a>
 
         <!-- LinkedIn -->
-        <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener" style="display: block; padding: 32px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// professional</span>
-          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">LinkedIn</h4>
-          <p style="font-size: 13px; opacity: 0.7;">Connect with Caleb Pierre on LinkedIn for professional inquiries.</p>
-          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">linkedin.com/in/calebpierre →</p>
+        <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener" style="display: block; padding: var(--space-4); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.1s ease;" onmouseover="this.style.background='var(--paper)'" onmouseout="this.style.background='var(--white)'">
+          <span class="section-label" style="margin-bottom: var(--space-1);">// professional</span>
+          <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">LinkedIn</h3>
+          <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">Connect with Caleb Pierre on LinkedIn for professional inquiries.</p>
+          <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: 12px;">linkedin.com/in/calebpierre →</p>
         </a>
       </div>
     </div>
@@ -44,9 +45,10 @@ const description = 'Contact CreditCookbook — get in touch about credit educat
   <!-- Response time -->
   <section class="section">
     <div class="container">
-      <span class="section-label">// what to expect</span>
-      <h2 style="margin-bottom: 24px;">Response expectations.</h2>
-      <table>
+      <span class="section-label" data-animate>// what to expect</span>
+      <h2 data-animate style="margin-bottom: var(--space-4);">Response expectations.</h2>
+
+      <table data-animate>
         <thead>
           <tr><th>Channel</th><th>Response Time</th><th>Best For</th></tr>
         </thead>
@@ -56,10 +58,14 @@ const description = 'Contact CreditCookbook — get in touch about credit educat
           <tr><td>LinkedIn</td><td>1 week</td><td>Professional inquiries, collaborations</td></tr>
         </tbody>
       </table>
-      <p style="margin-top: 32px; max-width: 60ch; font-size: 14px; opacity: 0.6;">
-        <strong>Note:</strong> CreditCookbook is a free, open-source educational resource — not a credit repair service. I cannot provide individualized legal or financial advice. For specific situations, consult a consumer law attorney or a certified credit counselor.
-      </p>
+
+      <div data-animate class="disclaimer-box" style="border: 1px solid var(--gold); padding: var(--space-4); margin-top: var(--space-4); background: var(--paper);">
+        <p style="font-size: 14px; margin-bottom: 0;"><strong>Note:</strong> CreditCookbook is a free, open-source educational resource — not a credit repair service. I cannot provide individualized legal or financial advice. For specific situations, consult a consumer law attorney or a certified credit counselor.</p>
+      </div>
     </div>
   </section>
 
+  <hr class="rule" />
+
+  <EmailCapture />
 </Base>

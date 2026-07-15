@@ -2,33 +2,31 @@
 import Base from '../../layouts/Base.astro';
 import EmailCapture from '../../components/EmailCapture.astro';
 
-const description = 'Credit tools — letter generators, dispute trackers, score calculators, and calculators. Free, open-source tools to manage your credit repair process.';
+const description = 'Credit tools — dispute letter generator, utilization calculator, statutory damages estimator, and business credit readiness checklist. Free, open-source, client-side. No signup.';
 
 const tools = [
-  { num: '01', title: 'Letter Generator', desc: 'Generate dispute, validation, goodwill, and pay-for-delete letters from your data.', status: 'coming soon' },
-  { num: '02', title: 'Dispute Tracker', desc: 'Track sent letters, bureau responses, deadlines, and follow-up dates.', status: 'coming soon' },
-  { num: '03', title: 'Score Calculator', desc: 'Estimate your FICO score impact from removing negatives or adding positive history.', status: 'coming soon' },
-  { num: '04', title: 'Statute Lookup', desc: 'Search FCRA, FDCPA, and HIPAA provisions by topic — find your enforcement lever.', status: 'coming soon' },
-  { num: '05', title: 'Debt-to-Income Calc', desc: 'Calculate your DTI ratio and see how lenders will evaluate your applications.', status: 'coming soon' },
-  { num: '06', title: 'Credit Freeze Guide', desc: 'Step-by-step instructions for freezing and unfreezing your credit at all three bureaus.', status: 'coming soon' },
+  { num: '01', title: 'Dispute Letter Generator', desc: 'Generate FCRA dispute letters for bureau errors — inaccurate, unverifiable, identity theft, obsolete debt, or mixed file. Printable, formatted for all three bureaus.', link: '/tools/dispute-letter-generator', status: 'live' },
+  { num: '02', title: 'Utilization Calculator', desc: 'Calculate your credit card utilization ratio — overall and per-card — and see how it impacts your FICO score. Up to 30% of your score depends on this.', link: '/tools/utilization-calculator', status: 'live' },
+  { num: '03', title: 'Statutory Damages Estimator', desc: 'Estimate statutory damages for FCRA and FDCPA violations — willful noncompliance, negligent noncompliance, and FDCPA statutory penalties.', link: '/tools/damages-estimator', status: 'live' },
+  { num: '04', title: 'Business Credit Readiness', desc: 'Interactive checklist for building business credit — entity setup, EIN/DUNS, banking, tradelines, reporting, and scoring. Track progress with a live score.', link: '/tools/business-credit-checklist', status: 'live' },
 ];
 ---
 
 <Base title="Tools — CreditCookbook" description={description} posterTitle="TOOLS" posterLabel="// free, open-source credit tools">
   <section class="section">
     <div class="container">
-      <span class="section-label">// credit tools</span>
-      <h2 style="margin-bottom: 16px;">Tools to manage your credit repair.</h2>
-      <p style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">Letter generators, dispute trackers, score calculators, and statute lookups — all open-source, all free. No account required. No data stored on our servers.</p>
+      <span class="section-label" data-animate>// credit tools</span>
+      <h2 data-animate style="margin-bottom: var(--space-2);">Tools to manage your credit.</h2>
+      <p data-animate style="max-width: 50ch; opacity: 0.7; margin-bottom: var(--space-5);">Letter generators, calculators, and readiness checklists — all open-source, all free. No account required. No data stored on our servers. Everything runs in your browser.</p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+      <div data-animate data-animate-stagger="0.1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
         {tools.map((t) => (
-          <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
-            <span class="section-label" style="margin-bottom: 8px;">// tool {t.num} — {t.status}</span>
-            <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">{t.title}</h4>
-            <p style="font-size: 13px;">{t.desc}</p>
-            <p class="mono" style="margin-top: 16px; font-size: 12px;">{t.status}</p>
-          </div>
+          <a href={t.link} style="display: block; padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.1s ease;" onmouseover="this.style.background='var(--paper)'" onmouseout="this.style.background='var(--white)'">
+            <span class="section-label" style="margin-bottom: var(--space-1);">// tool {t.num}</span>
+            <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">{t.title}</h3>
+            <p style="font-size: 13px; opacity: 0.7; line-height: 1.6;">{t.desc}</p>
+            <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: 12px;">open tool →</p>
+          </a>
         ))}
       </div>
     </div>
@@ -39,14 +37,17 @@ const tools = [
   <!-- Tools philosophy -->
   <section class="section">
     <div class="container">
-      <span class="section-label">// our philosophy</span>
-      <h2 style="margin-bottom: 24px;">Tools that respect your data.</h2>
-      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 48px;">
-        <div>
-          <p style="margin-bottom: 16px;">Every tool on CreditCookbook runs client-side. No data is sent to our servers, no accounts are required, and no tracking scripts follow you. What you type stays in your browser.</p>
+      <span class="section-label" data-animate>// our philosophy</span>
+      <h2 data-animate style="margin-bottom: var(--space-4);">Tools that respect your data.</h2>
+
+      <div data-animate data-animate-stagger="0.12" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5);">
+        <div style="padding: var(--space-4); border: 1px solid var(--line);">
+          <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">Client-side only</h3>
+          <p style="font-size: 14px; opacity: 0.7; line-height: 1.7;">Every tool runs entirely in your browser. No data is sent to our servers, no accounts are required, and no tracking scripts follow you. What you type stays in your browser.</p>
         </div>
-        <div>
-          <p>The source code for every tool is inspectable on GitHub. If you don't trust the tool, you can read the code, fork it, or run it locally. That's the open-source deal.</p>
+        <div style="padding: var(--space-4); border: 1px solid var(--line);">
+          <h3 style="margin-bottom: var(--space-1); text-transform: none; letter-spacing: -0.01em; font-size: var(--text-md);">Open-source</h3>
+          <p style="font-size: 14px; opacity: 0.7; line-height: 1.7;">The source code for every tool is inspectable on GitHub. If you don't trust the tool, you can read the code, fork it, or run it locally. That's the open-source deal.</p>
         </div>
       </div>
     </div>
@@ -55,5 +56,4 @@ const tools = [
   <hr class="rule" />
 
   <EmailCapture />
-
 </Base>
