@@ -6,67 +6,115 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
 ---
 
 <Base title="CreditCookbook — Open-Source Credit Education" description={description}>
-  <!-- Hero -->
-  <section class="poster-block">
-    <div class="container">
-      <span class="label">// open-source credit education</span>
-      <h1>Remedy,<br />not repair.</h1>
+
+  <!-- ============================================================
+       HERO — Parallax layers, 'Remedy, not repair'
+       ============================================================ -->
+  <section class="hero" style="position:relative; overflow:hidden; background: var(--ink); color: var(--white); min-height: 100vh; display:flex; align-items:center;">
+    <!-- Parallax background layer -->
+    <div data-parallax="0.2" style="position:absolute; inset:0; z-index:0; background: var(--ink);">
+      <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.9) 100%);"></div>
+    </div>
+
+    <!-- Parallax grid lines layer -->
+    <div data-parallax="0.4" style="position:absolute; inset:0; z-index:1; opacity:0.08; pointer-events:none;">
+      <div style="max-width: var(--max-width); margin: 0 auto; height:100%; display:grid; grid-template-columns: repeat(12, 1fr); gap: var(--grid-gap); padding: 0 var(--gutter);">
+        {Array.from({length: 12}).map(() => (
+          <div style="border-right: 1px solid var(--white); height:100%;"></div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Content layer -->
+    <div style="position:relative; z-index:2; width:100%;">
+      <div class="container">
+        <div style="max-width: var(--max-width);">
+          <span data-animate style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); display:block; margin-bottom: var(--space-6);">
+            // open-source credit education
+          </span>
+
+          <h1 data-animate data-animate-delay="0.1" style="font-family: var(--font-display); font-weight: 800; font-size: var(--display-lg); line-height: 0.95; letter-spacing: var(--tracking-tight); color: var(--white); text-transform: none; margin-bottom: var(--space-6);">
+            Remedy,<br />not repair.
+          </h1>
+
+          <p data-animate data-animate-delay="0.2" style="font-size: var(--text-md); max-width: 52ch; color: rgba(255,255,255,0.75); line-height: var(--leading-relaxed); margin-bottom: var(--space-8);">
+            Every dispute letter, bureau response script, and credit-building playbook — free, versioned, and inspectable on GitHub. No paid service. No upsell. Just the templates.
+          </p>
+
+          <div data-animate data-animate-delay="0.3" style="display:flex; gap: var(--space-2); flex-wrap:wrap;">
+            <a href="/personal-credit" class="btn btn-primary" data-tilt="3" style="background: var(--gold); color: var(--ink); border: 1.5px solid var(--gold);">
+              Start with Personal Credit
+            </a>
+            <a href="/recipes" class="btn btn-ghost" style="color: var(--white); border-color: rgba(255,255,255,0.4);">
+              Browse Recipes
+            </a>
+            <a href="https://github.com/ghettoeinstein/creditcookbook.com" class="btn btn-ghost" target="_blank" rel="noopener" style="color: var(--white); border-color: rgba(255,255,255,0.4);">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div data-parallax="0.5" style="position:absolute; bottom: var(--space-6); left:50%; transform: translateX(-50%); z-index:2; opacity:0.5;">
+      <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--white);">↓ scroll</span>
     </div>
   </section>
 
-  <section class="section" style="padding-top: 64px; padding-bottom: 64px;">
+  <!-- ============================================================
+       PROBLEM / MISSION STATEMENT
+       ============================================================ -->
+  <section class="section" style="padding: var(--space-10) 0;">
     <div class="container">
-      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
-        <div>
-          <p style="font-size: 19px; max-width: 52ch; color: var(--ink); opacity: 0.8;">
-            Every dispute letter, bureau response script, and credit-building playbook — free, versioned, and inspectable on GitHub. No paid service. No upsell. Just the templates.
-          </p>
-        </div>
-        <div>
-          <p style="font-size: 15px; max-width: 48ch; color: var(--ink); opacity: 0.6;">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items:start;">
+        <div data-animate>
+          <p style="font-size: var(--text-lg); max-width: 52ch; color: var(--ink); line-height: var(--leading-relaxed); opacity:0.85;">
             CreditCookbook is an open, inspectable, community-verifiable source of credit dispute knowledge — hosted on GitHub, generated as a static site, and monetized through affiliate partnerships and a newsletter instead of selling services.
           </p>
         </div>
-      </div>
-      <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px;">
-        <a href="/personal-credit" class="btn btn-primary">Start with Personal Credit</a>
-        <a href="/recipes" class="btn btn-ghost">Browse Recipes</a>
-        <a href="https://github.com/ghettoeinstein/creditcookbook.com" class="btn btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+        <div data-animate data-animate-delay="0.15">
+          <p style="font-size: var(--text-sm); max-width: 48ch; color: var(--ink); line-height: var(--leading-relaxed); opacity:0.6;">
+            The Fair Credit Reporting Act gives you every tool you need. Credit repair companies charge $99–$149/month for form letters anyone can send. We open-sourced them. Every template is free, versioned, and verifiable down to the statute it cites.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <hr class="rule" />
 
-  <!-- How it works: 3 steps -->
+  <!-- ============================================================
+       HOW IT WORKS — 3 steps with staggered reveal
+       ============================================================ -->
   <section class="section" id="how-it-works">
     <div class="container">
-      <span class="section-label">// how it works</span>
-      <h2 style="margin-bottom: 48px;">Three steps. No middleman.</h2>
+      <span class="section-label" data-animate>// how it works</span>
+      <h2 data-animate style="margin-bottom: var(--space-6); font-size: var(--display-sm);">Three steps. No middleman.</h2>
 
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line);">
+      <div data-animate data-animate-stagger="0.15" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:0; border:1px solid var(--line);">
         <!-- Step 1 -->
-        <div style="padding: 40px; border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 01</span>
-          <h3 style="margin-top: 16px; margin-bottom: 12px; font-size: 1.5rem;">Know Your Rights</h3>
-          <p style="font-size: 14px; opacity: 0.7; line-height: 1.75;">The FCRA, FDCPA, and HIPAA give you tools most people pay $1,200/year to access. Read the statutes, understand what bureaus can and cannot report, and learn what makes a dispute legally valid.</p>
-          <a href="/resources" class="mono" style="display: inline-block; margin-top: 20px; font-size: 12px; color: var(--blue);">→ Explore resources</a>
+        <div style="padding: var(--space-5); border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: var(--text-sm); color: var(--blue); letter-spacing: var(--tracking-wider); text-transform: uppercase;">// step 01</span>
+          <h3 style="margin-top: var(--space-2); margin-bottom: var(--space-1); font-size: var(--text-lg);">Know Your Rights</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7; line-height: var(--leading-relaxed);">The FCRA, FDCPA, and HIPAA give you tools most people pay $1,200/year to access. Read the statutes, understand what bureaus can and cannot report, and learn what makes a dispute legally valid.</p>
+          <a href="/resources" class="mono" style="display:inline-block; margin-top: var(--space-3); font-size: var(--text-sm); color: var(--blue);">→ Explore resources</a>
         </div>
 
         <!-- Step 2 -->
-        <div style="padding: 40px; border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 02</span>
-          <h3 style="margin-top: 16px; margin-bottom: 12px; font-size: 1.5rem;">Enforce</h3>
-          <p style="font-size: 14px; opacity: 0.7; line-height: 1.75;">Send the right letter to the right party. Every template here is fill-in-the-blank, cites the statute, and has been stress-tested against real bureau responses. Track your disputes and follow up.</p>
-          <a href="/recipes" class="mono" style="display: inline-block; margin-top: 20px; font-size: 12px; color: var(--blue);">→ Browse recipes</a>
+        <div style="padding: var(--space-5); border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: var(--text-sm); color: var(--blue); letter-spacing: var(--tracking-wider); text-transform: uppercase;">// step 02</span>
+          <h3 style="margin-top: var(--space-2); margin-bottom: var(--space-1); font-size: var(--text-lg);">Enforce</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7; line-height: var(--leading-relaxed);">Send the right letter to the right party. Every template here is fill-in-the-blank, cites the statute, and has been stress-tested against real bureau responses. Track your disputes and follow up.</p>
+          <a href="/recipes" class="mono" style="display:inline-block; margin-top: var(--space-3); font-size: var(--text-sm); color: var(--blue);">→ Browse recipes</a>
         </div>
 
         <!-- Step 3 -->
-        <div style="padding: 40px;">
-          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 03</span>
-          <h3 style="margin-top: 16px; margin-bottom: 12px; font-size: 1.5rem;">Build</h3>
-          <p style="font-size: 14px; opacity: 0.7; line-height: 1.75;">Removing negatives is half the job. Building positive history is the other half. Secured cards, credit-builder loans, authorized user strategies — the playbooks that actually move your score.</p>
-          <a href="/tools" class="mono" style="display: inline-block; margin-top: 20px; font-size: 12px; color: var(--blue);">→ See tools</a>
+        <div style="padding: var(--space-5);">
+          <span class="mono" style="font-size: var(--text-sm); color: var(--blue); letter-spacing: var(--tracking-wider); text-transform: uppercase;">// step 03</span>
+          <h3 style="margin-top: var(--space-2); margin-bottom: var(--space-1); font-size: var(--text-lg);">Build</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7; line-height: var(--leading-relaxed);">Removing negatives is half the job. Building positive history is the other half. Secured cards, credit-builder loans, authorized user strategies — the playbooks that actually move your score.</p>
+          <a href="/tools" class="mono" style="display:inline-block; margin-top: var(--space-3); font-size: var(--text-sm); color: var(--blue);">→ See tools</a>
         </div>
       </div>
     </div>
@@ -74,74 +122,78 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
 
   <hr class="rule" />
 
-  <!-- Featured Recipes -->
+  <!-- ============================================================
+       FEATURED RECIPES — Staggered card grid with 3D tilt
+       ============================================================ -->
   <section class="section" id="featured-recipes">
     <div class="container">
-      <span class="section-label">// featured recipes</span>
-      <h2 style="margin-bottom: 12px;">Start with a recipe.</h2>
-      <p style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">Each recipe is a complete playbook — dispute letters, bureau scripts, step-by-step instructions, and FAQ with schema.org markup.</p>
+      <span class="section-label" data-animate>// featured recipes</span>
+      <h2 data-animate style="margin-bottom: var(--space-1); font-size: var(--display-sm);">Start with a recipe.</h2>
+      <p data-animate data-animate-delay="0.1" style="max-width: 50ch; opacity:0.7; margin-bottom: var(--space-6);">Each recipe is a complete playbook — dispute letters, bureau scripts, step-by-step instructions, and FAQ with schema.org markup.</p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+      <div data-animate data-animate-stagger="0.12" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0; border:1px solid var(--line);">
         <!-- Medical Debt (live) -->
-        <a href="/medical-debt" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: background 0.15s;">
-          <span class="section-label" style="margin-bottom: 8px;">// recipe 01</span>
-          <h3 style="margin-bottom: 8px;">Medical Debt Removal</h3>
-          <p style="font-size: 14px; opacity: 0.7;">Dispute medical collections, negotiate hospital bills, remove paid medical debt from your report.</p>
-          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">12 pages →</p>
+        <a href="/medical-debt" data-tilt="4" style="display:block; padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration:none; color: var(--ink); background: var(--white); transition: background 0.2s var(--ease-primary);">
+          <span class="section-label" style="margin-bottom: var(--space-1);">// recipe 01</span>
+          <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">Medical Debt Removal</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7;">Dispute medical collections, negotiate hospital bills, remove paid medical debt from your report.</p>
+          <p class="mono" style="margin-top: var(--space-2); color: var(--gold); font-size: var(--text-sm);">12 pages →</p>
         </a>
 
         <!-- Coming soon: Collections -->
-        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
-          <span class="section-label" style="margin-bottom: 8px;">// recipe 02</span>
-          <h3 style="margin-bottom: 8px;">Collections Dispute</h3>
-          <p style="font-size: 14px;">Validate, dispute, and negotiate collection accounts.</p>
-          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        <div data-tilt="2" style="padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity:0.4; background: var(--white);">
+          <span class="section-label" style="margin-bottom: var(--space-1);">// recipe 02</span>
+          <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">Collections Dispute</h3>
+          <p style="font-size: var(--text-sm);">Validate, dispute, and negotiate collection accounts.</p>
+          <p class="mono" style="margin-top: var(--space-2); font-size: var(--text-sm);">coming soon</p>
         </div>
 
         <!-- Coming soon: Late Payments -->
-        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
-          <span class="section-label" style="margin-bottom: 8px;">// recipe 03</span>
-          <h3 style="margin-bottom: 8px;">Late Payments</h3>
-          <p style="font-size: 14px;">Goodwill letters, pay-for-delete, and dispute strategies.</p>
-          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        <div data-tilt="2" style="padding: var(--space-4); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity:0.4; background: var(--white);">
+          <span class="section-label" style="margin-bottom: var(--space-1);">// recipe 03</span>
+          <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">Late Payments</h3>
+          <p style="font-size: var(--text-sm);">Goodwill letters, pay-for-delete, and dispute strategies.</p>
+          <p class="mono" style="margin-top: var(--space-2); font-size: var(--text-sm);">coming soon</p>
         </div>
 
         <!-- Coming soon: Hard Inquiries -->
-        <div style="padding: 32px; border-bottom: 1px solid var(--line); opacity: 0.4;">
-          <span class="section-label" style="margin-bottom: 8px;">// recipe 04</span>
-          <h3 style="margin-bottom: 8px;">Hard Inquiries</h3>
-          <p style="font-size: 14px;">Remove unauthorized inquiries and protect your score.</p>
-          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        <div data-tilt="2" style="padding: var(--space-4); border-bottom: 1px solid var(--line); opacity:0.4; background: var(--white);">
+          <span class="section-label" style="margin-bottom: var(--space-1);">// recipe 04</span>
+          <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">Hard Inquiries</h3>
+          <p style="font-size: var(--text-sm);">Remove unauthorized inquiries and protect your score.</p>
+          <p class="mono" style="margin-top: var(--space-2); font-size: var(--text-sm);">coming soon</p>
         </div>
       </div>
 
-      <div style="margin-top: 32px;">
-        <a href="/recipes" class="mono" style="font-size: 13px; color: var(--blue);">→ See all recipes</a>
+      <div data-animate style="margin-top: var(--space-4);">
+        <a href="/recipes" class="mono" style="font-size: var(--text-sm); color: var(--blue);">→ See all recipes</a>
       </div>
     </div>
   </section>
 
   <hr class="rule" />
 
-  <!-- Trust bar -->
-  <section class="section" style="padding: 48px 0;">
+  <!-- ============================================================
+       TRUST BAR — Stats with gold accent
+       ============================================================ -->
+  <section class="section" style="padding: var(--space-6) 0;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line);">
-        <div style="padding: 28px; border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--blue); display: block;">100%</span>
-          <span class="mono" style="font-size: 11px; letter-spacing: 0.05em; opacity: 0.6;">OPEN SOURCE — MIT LICENSE</span>
+      <div data-animate data-animate-stagger="0.1" style="display:grid; grid-template-columns: repeat(4, 1fr); gap:0; border:1px solid var(--line);">
+        <div style="padding: var(--space-4); border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--gold); display:block;">100%</span>
+          <span class="mono" style="font-size: 11px; letter-spacing: var(--tracking-wide); opacity:0.6;">OPEN SOURCE — MIT LICENSE</span>
         </div>
-        <div style="padding: 28px; border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--blue); display: block;">$0</span>
-          <span class="mono" style="font-size: 11px; letter-spacing: 0.05em; opacity: 0.6;">NO PAYWALL — NO UPSELL</span>
+        <div style="padding: var(--space-4); border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--gold); display:block;">$0</span>
+          <span class="mono" style="font-size: 11px; letter-spacing: var(--tracking-wide); opacity:0.6;">NO PAYWALL — NO UPSELL</span>
         </div>
-        <div style="padding: 28px; border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--blue); display: block;">12</span>
-          <span class="mono" style="font-size: 11px; letter-spacing: 0.05em; opacity: 0.6;">LIVE RECIPES & TEMPLATES</span>
+        <div style="padding: var(--space-4); border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--gold); display:block;">12</span>
+          <span class="mono" style="font-size: 11px; letter-spacing: var(--tracking-wide); opacity:0.6;">LIVE RECIPES & TEMPLATES</span>
         </div>
-        <div style="padding: 28px;">
-          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--blue); display: block;">∞</span>
-          <span class="mono" style="font-size: 11px; letter-spacing: 0.05em; opacity: 0.6;">INSPECTABLE ON GITHUB</span>
+        <div style="padding: var(--space-4);">
+          <span class="mono" style="font-size: 28px; font-weight: 600; color: var(--gold); display:block;">∞</span>
+          <span class="mono" style="font-size: 11px; letter-spacing: var(--tracking-wide); opacity:0.6;">INSPECTABLE ON GITHUB</span>
         </div>
       </div>
     </div>
@@ -149,7 +201,9 @@ const description = 'Open-source credit education. Dispute letters, bureau respo
 
   <hr class="rule" />
 
-  <!-- Newsletter -->
+  <!-- ============================================================
+       NEWSLETTER
+       ============================================================ -->
   <EmailCapture />
 
 </Base>

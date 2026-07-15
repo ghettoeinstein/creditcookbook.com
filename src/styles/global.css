@@ -1,13 +1,16 @@
 /* ============================================================
    CreditCookbook — Swiss / International Typographic Style
-   Palette: white / blue / black — used with Swiss restraint
+   Palette: white / blue / black / gold — Swiss restraint
+   Tokens imported from tokens.css (see Base.astro)
    ============================================================ */
+
+@import './tokens.css';
 
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
-/* ---- Tokens ---- */
+/* ---- Tokens (fallback — also defined in tokens.css) ---- */
 :root {
   /* Color */
   --white: #FFFFFF;
@@ -16,6 +19,8 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   --blue-bright: #0040FF;
   --paper: #F5F5F5;
   --line: #0A0A0A;
+  --gold: #C5A572;
+  --gold-hover: #B8956A;
 
   /* Type */
   --font-display: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -27,6 +32,30 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   --grid-gap: 24px;
   --max-width: 1080px;
   --gutter: 24px;
+
+  /* Type Scale — Major Third (1.25) */
+  --text-xs: 0.64rem;
+  --text-sm: 0.8rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.56rem;
+  --text-xl: 1.95rem;
+  --text-2xl: 2.44rem;
+  --text-3xl: 3.05rem;
+  --text-4xl: 3.81rem;
+
+  /* Spacing — 8px base unit */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 80px;
+
+  /* Motion */
+  --ease-apple: cubic-bezier(0.32, 0.72, 0, 1);
+  --duration-reveal: 0.7s;
 }
 
 /* ---- Base ---- */
@@ -247,11 +276,13 @@ strong { font-weight: 700; }
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
+  align-items: center;
 }
 .footer a {
   color: var(--ink);
-  margin-left: 20px;
+  margin-left: 0;
+  text-decoration: none;
 }
 .footer a:hover { color: var(--blue); }
 
@@ -356,11 +387,121 @@ td {
   border-bottom: 2px solid var(--blue);
 }
 
+/* ---- Swiss grid utilities ---- */
+.swiss-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap);
+}
+.swiss-grid-4 { grid-template-columns: repeat(4, 1fr); }
+.swiss-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.swiss-grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+/* ---- Gold accent utilities ---- */
+.stat-gold {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--gold);
+}
+.gold-accent { color: var(--gold); }
+.gold-divider { border-top: 1px solid var(--gold); }
+a:hover .gold-accent { color: var(--gold-hover); }
+
+/* ---- Reveal animation (motion-light) ---- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity var(--duration-reveal) var(--ease-apple), transform var(--duration-reveal) var(--ease-apple);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity var(--duration-reveal) var(--ease-apple), transform var(--duration-reveal) var(--ease-apple);
+}
+[data-reveal-stagger].is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---- Footer social links ---- */
+.footer-social {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.footer-social a {
+  margin-left: 0;
+  text-decoration: none;
+  color: var(--ink);
+  transition: color 0.1s ease;
+}
+.footer-social a:hover {
+  color: var(--blue);
+}
+.footer-legal {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .nav .links a:not(.btn) { display: none; }
   .grid { grid-template-columns: 1fr; }
+  .swiss-grid { grid-template-columns: 1fr; }
+  .swiss-grid-4, .swiss-grid-3, .swiss-grid-2 { grid-template-columns: 1fr; }
   .email-capture form { flex-direction: column; }
   .email-capture input { border-right: 1.5px solid var(--ink); }
   .email-capture button { border-top: none; }
+  .footer .container { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+  .footer-legal { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .footer-social { gap: 16px; }
+}
+
+/* ---- Legal page styling ---- */
+.legal-content {
+  max-width: 72ch;
+}
+.legal-content h2 {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+.legal-content h3 {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+.legal-content p {
+  margin-bottom: var(--space-2);
+}
+.legal-content ul {
+  margin-left: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+.legal-content li {
+  margin-bottom: var(--space-1);
+  line-height: 1.75;
+}
+.legal-content .disclaimer-box {
+  border: 1px solid var(--gold);
+  padding: var(--space-4);
+  margin: var(--space-5) 0;
+  background: var(--paper);
+}
+.legal-content .disclaimer-box p {
+  font-size: 14px;
+  margin-bottom: 0;
 }

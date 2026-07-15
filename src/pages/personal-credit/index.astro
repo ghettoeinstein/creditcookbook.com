@@ -3,50 +3,97 @@ import Base from '../../layouts/Base.astro';
 import EmailCapture from '../../components/EmailCapture.astro';
 
 const description = 'Personal credit hub — dispute letters, bureau response scripts, and playbooks for medical debt, collections, late payments, and more. Free, inspectable, community-verifiable.';
+
+// Subpages under Personal Credit Remedy
+const subpages = [
+  {
+    num: '01',
+    title: 'Know Your Rights',
+    desc: 'FCRA §609, §611, §623, FDCPA, FCBA, and state-level consumer protections. The statutes that give you every tool to dispute, enforce, and rebuild.',
+    href: '#',
+    status: 'coming soon',
+    topics: ['FCRA Basics', 'FDCPA Basics', 'FCBA', 'State Protections'],
+  },
+  {
+    num: '02',
+    title: 'The Dispute Process',
+    desc: 'How credit reporting works (furnishers → bureaus), step-by-step dispute walkthrough, letter templates by scenario, MOV requests, and legal timelines.',
+    href: '/personal-credit/dispute-process',
+    status: 'live',
+    topics: ['How Reporting Works', 'Dispute Walkthrough', 'Letter Templates', 'MOV Requests', 'Timelines'],
+  },
+  {
+    num: '03',
+    title: 'Escalation & Enforcement',
+    desc: 'CFPB complaints, FTC referrals, State AG complaints, small claims court, and when to hire a consumer-rights attorney.',
+    href: '#',
+    status: 'coming soon',
+    topics: ['CFPB Complaint', 'FTC Process', 'State AG', 'Small Claims', 'Attorney Referral'],
+  },
+  {
+    num: '04',
+    title: 'Credit Building',
+    desc: 'Secured cards, credit-builder loans, authorized user strategy, rent/utility reporting, utilization mechanics, and realistic timeline expectations.',
+    href: '#',
+    status: 'coming soon',
+    topics: ['Secured Cards', 'Authorized User', 'Rent Reporting', 'Utilization', 'Timeline'],
+  },
+  {
+    num: '05',
+    title: 'Identity Theft & Fraud',
+    desc: 'Fraud alerts vs. freezes vs. locks, FTC IdentityTheft.gov walkthrough, and a recovery plan template with FCRA §605B blocking.',
+    href: '#',
+    status: 'coming soon',
+    topics: ['Fraud Alerts', 'Credit Freezes', 'IdentityTheft.gov', 'Recovery Plan'],
+  },
+];
+
+// Process steps
+const processSteps = [
+  { num: '01', title: 'Know Your Rights', desc: 'FCRA, FDCPA, HIPAA — the statutes that protect you and give you enforcement tools.' },
+  { num: '02', title: 'Enforce', desc: 'Send dispute letters, validation requests, and follow up. Track every response.' },
+  { num: '03', title: 'Build', desc: 'Secured cards, credit-builder loans, and authorized user strategies to rebuild.' },
+];
 ---
 
 <Base title="Personal Credit — CreditCookbook" description={description} posterTitle="PERSONAL CREDIT" posterLabel="// hub — dispute, enforce, build">
+
+  <!-- Intro + Topic Clusters -->
   <section class="section">
     <div class="container">
-      <span class="section-label">// the personal credit hub</span>
-      <h2 style="margin-bottom: 16px;">Everything you need to fix your personal credit.</h2>
-      <p style="max-width: 60ch; opacity: 0.7; margin-bottom: 48px;">The FCRA gives you every tool to dispute inaccuracies, enforce your rights, and build positive credit history. Here are the playbooks, letter templates, and step-by-step guides — all free, all inspectable on GitHub.</p>
+      <span class="section-label" data-animate>// the personal credit hub</span>
+      <h2 data-animate style="margin-bottom: 16px;">Everything you need to fix your personal credit.</h2>
+      <p data-animate style="max-width: 60ch; opacity: 0.7; margin-bottom: 48px;">The FCRA gives you every tool to dispute inaccuracies, enforce your rights, and build positive credit history. Here are the playbooks, letter templates, and step-by-step guides — all free, all inspectable on GitHub.</p>
 
-      <!-- Topic clusters -->
-      <h3 style="margin-bottom: 24px;">Topics</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
-
-        <!-- Medical Debt (live) -->
-        <a href="/medical-debt" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// topic 01 — live</span>
-          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Medical Debt</h4>
-          <p style="font-size: 13px; opacity: 0.7;">Dispute medical collections, negotiate hospital bills, HIPAA removal, pay-for-delete, and the $500 threshold rule.</p>
-          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">12 pages →</p>
-        </a>
-
-        <!-- Collections (coming soon) -->
-        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
-          <span class="section-label" style="margin-bottom: 8px;">// topic 02 — coming soon</span>
-          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Collections</h4>
-          <p style="font-size: 13px;">Validate, dispute, and negotiate general collection accounts.</p>
-          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
-        </div>
-
-        <!-- Late Payments (coming soon) -->
-        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
-          <span class="section-label" style="margin-bottom: 8px;">// topic 03 — coming soon</span>
-          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Late Payments</h4>
-          <p style="font-size: 13px;">Goodwill letters, pay-for-delete, and 609 dispute strategies.</p>
-          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
-        </div>
-
-        <!-- Hard Inquiries (coming soon) -->
-        <div style="padding: 32px; border-bottom: 1px solid var(--line); opacity: 0.4;">
-          <span class="section-label" style="margin-bottom: 8px;">// topic 04 — coming soon</span>
-          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Hard Inquiries</h4>
-          <p style="font-size: 13px;">Remove unauthorized inquiries and freeze your report.</p>
-          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
-        </div>
+      <!-- Subpage cards -->
+      <div data-animate data-animate-stagger="0.08" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        {subpages.map((s) => (
+          s.status === 'live' ? (
+            <a href={s.href} style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+              <span class="section-label" style="margin-bottom: 8px;">// topic {s.num} — <span class="stat-gold">{s.status}</span></span>
+              <h4 style="margin-bottom: 8px; text-transform: none; letter-spacing: -0.01em; font-size: 1.15rem;">{s.title}</h4>
+              <p style="font-size: 13px; opacity: 0.7; margin-bottom: 16px;">{s.desc}</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                {s.topics.map((t) => (
+                  <span class="mono" style="font-size: 11px; padding: 4px 8px; border: 1px solid var(--line); color: var(--ink); opacity: 0.6;">{t}</span>
+                ))}
+              </div>
+              <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">read →</p>
+            </a>
+          ) : (
+            <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.45;">
+              <span class="section-label" style="margin-bottom: 8px;">// topic {s.num} — {s.status}</span>
+              <h4 style="margin-bottom: 8px; text-transform: none; letter-spacing: -0.01em; font-size: 1.15rem;">{s.title}</h4>
+              <p style="font-size: 13px; margin-bottom: 16px;">{s.desc}</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                {s.topics.map((t) => (
+                  <span class="mono" style="font-size: 11px; padding: 4px 8px; border: 1px solid var(--line); color: var(--ink); opacity: 0.6;">{t}</span>
+                ))}
+              </div>
+              <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+            </div>
+          )
+        ))}
       </div>
     </div>
   </section>
@@ -56,23 +103,47 @@ const description = 'Personal credit hub — dispute letters, bureau response sc
   <!-- The process -->
   <section class="section">
     <div class="container">
-      <span class="section-label">// the process</span>
-      <h2 style="margin-bottom: 32px;">How personal credit repair works.</h2>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line);">
-        <div style="padding: 28px; border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 01</span>
-          <h3 style="margin-top: 12px; margin-bottom: 8px;">Know Your Rights</h3>
-          <p style="font-size: 13px; opacity: 0.7;">FCRA, FDCPA, HIPAA — the statutes that protect you and give you enforcement tools.</p>
+      <span class="section-label" data-animate>// the process</span>
+      <h2 data-animate style="margin-bottom: 32px;">How personal credit repair works.</h2>
+      <div data-animate data-animate-stagger="0.08" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line);">
+        {processSteps.map((s) => (
+          <div style="padding: 28px; border-right: 1px solid var(--line);">
+            <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step {s.num}</span>
+            <h3 style="margin-top: 12px; margin-bottom: 8px;">{s.title}</h3>
+            <p style="font-size: 13px; opacity: 0.7;">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Key Stats -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// by the numbers</span>
+      <h2 data-animate style="margin-bottom: 48px;">Your rights, quantified.</h2>
+      <div data-animate data-animate-stagger="0.1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: left;">
+          <p class="stat-gold" style="font-size: 2.5rem; font-weight: 700; line-height: 1;">30</p>
+          <p class="mono" style="font-size: 11px; margin-top: 8px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em;">days</p>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Bureaus must complete dispute investigations.</p>
         </div>
-        <div style="padding: 28px; border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 02</span>
-          <h3 style="margin-top: 12px; margin-bottom: 8px;">Enforce</h3>
-          <p style="font-size: 13px; opacity: 0.7;">Send dispute letters, validation requests, and follow up. Track every response.</p>
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: left;">
+          <p class="stat-gold" style="font-size: 2.5rem; font-weight: 700; line-height: 1;">45</p>
+          <p class="mono" style="font-size: 11px; margin-top: 8px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em;">days</p>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Maximum to update your file after investigation.</p>
         </div>
-        <div style="padding: 28px;">
-          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 03</span>
-          <h3 style="margin-top: 12px; margin-bottom: 8px;">Build</h3>
-          <p style="font-size: 13px; opacity: 0.7;">Secured cards, credit-builder loans, and authorized user strategies to rebuild.</p>
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: left;">
+          <p class="stat-gold" style="font-size: 2.5rem; font-weight: 700; line-height: 1;">3</p>
+          <p class="mono" style="font-size: 11px; margin-top: 8px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em;">bureaus</p>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Experian, Equifax, TransUnion — dispute all three.</p>
+        </div>
+        <div style="padding: 32px; border-bottom: 1px solid var(--line); text-align: left;">
+          <p class="stat-gold" style="font-size: 2.5rem; font-weight: 700; line-height: 1;">$0</p>
+          <p class="mono" style="font-size: 11px; margin-top: 8px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em;">cost</p>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Every tool here is free. No paid credit repair.</p>
         </div>
       </div>
     </div>

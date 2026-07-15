@@ -4,84 +4,127 @@ import Base from '../layouts/Base.astro';
 const description = "Caleb Pierre — builder of CreditCookbook. Security engineer, fintech CTO, AI automation specialist. Links, background, and how to work together.";
 ---
 
-<Base title="About Caleb Pierre — CreditCookbook" description={description} posterTitle="THE BUILDER" posterLabel="// meet the person behind the playbook">
+<Base title="About Caleb Pierre — CreditCookbook" description={description}>
 
-  <!-- Bio -->
+  <!-- ============================================================
+       HERO — Parallax, dark background, gold accent label
+       ============================================================ -->
+  <section class="hero" style="position:relative; overflow:hidden; background: var(--ink); color: var(--white); min-height:70vh; display:flex; align-items:flex-end; padding-bottom: var(--space-10);">
+    <!-- Parallax background layer -->
+    <div data-parallax="0.2" style="position:absolute; inset:0; z-index:0;">
+      <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.95) 100%);"></div>
+    </div>
+
+    <!-- Grid lines layer -->
+    <div data-parallax="0.35" style="position:absolute; inset:0; z-index:1; opacity:0.06; pointer-events:none;">
+      <div style="max-width: var(--max-width); margin:0 auto; height:100%; display:grid; grid-template-columns: repeat(12, 1fr); gap: var(--grid-gap); padding: 0 var(--gutter);">
+        {Array.from({length: 12}).map(() => (
+          <div style="border-right: 1px solid var(--white); height:100%;"></div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div style="position:relative; z-index:2; width:100%;">
+      <div class="container">
+        <span data-animate style="font-family: var(--font-mono); font-size: 12px; letter-spacing: var(--tracking-wider); text-transform:uppercase; color: var(--gold); display:block; margin-bottom: var(--space-4);">
+          // meet the person behind the playbook
+        </span>
+        <h1 data-animate data-animate-delay="0.1" style="font-family: var(--font-display); font-weight:800; font-size: var(--display-md); line-height:0.95; letter-spacing: var(--tracking-tight); color: var(--white); text-transform:uppercase;">
+          The Builder
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BIO
+       ============================================================ -->
   <section class="section">
     <div class="container">
-      <span class="section-label">// who i am</span>
-      <h2 style="margin-bottom: 24px;">Caleb Pierre</h2>
-      <p style="max-width: 64ch; font-size: 17px; margin-bottom: 24px;">
-        I'm a security engineer turned fintech CTO who got tired of watching people pay $1,200/year for form letters they could send themselves. So I open-sourced the playbook.
-      </p>
-      <p style="max-width: 64ch; margin-bottom: 24px;">
-        10-year career across enterprise security (Tinder, Verizon Media, CHLA, UCLA Health), fintech (Glass Financial — where I was CTO), and AI agent development (Caleb Pierre Ventures). I've seen what happens when systems aren't transparent. Credit repair is one of those systems — opaque, paywalled, and designed to make you feel like you need a middleman.
-      </p>
-      <p style="max-width: 64ch; margin-bottom: 24px;">
-        You don't. The Fair Credit Reporting Act gives you every tool. CreditCookbook just puts them in one place where anyone can inspect, copy, and verify them — no paywall, no upsell, no "schedule a free consultation."
-      </p>
+      <span class="section-label" data-animate>// who i am</span>
+      <h2 data-animate style="margin-bottom: var(--space-3); font-size: var(--display-sm);">Caleb Pierre</h2>
+
+      <div data-animate style="max-width: 64ch;">
+        <p style="font-size: var(--text-md); margin-bottom: var(--space-3); line-height: var(--leading-relaxed);">
+          I'm a security engineer turned fintech CTO who got tired of watching people pay $1,200/year for form letters they could send themselves. So I open-sourced the playbook.
+        </p>
+        <p style="margin-bottom: var(--space-3); line-height: var(--leading-relaxed);">
+          10-year career across enterprise security (Tinder, Verizon Media, CHLA, UCLA Health), fintech (Glass Financial — where I was CTO), and AI agent development (Caleb Pierre Ventures). I've seen what happens when systems aren't transparent. Credit repair is one of those systems — opaque, paywalled, and designed to make you feel like you need a middleman.
+        </p>
+        <p style="margin-bottom: var(--space-3); line-height: var(--leading-relaxed);">
+          You don't. The Fair Credit Reporting Act gives you every tool. CreditCookbook just puts them in one place where anyone can inspect, copy, and verify them — no paywall, no upsell, no "schedule a free consultation."
+        </p>
+      </div>
     </div>
   </section>
 
   <hr class="rule" />
 
-  <!-- Why I built this -->
+  <!-- ============================================================
+       WHY — The story
+       ============================================================ -->
   <section class="section">
     <div class="container">
-      <span class="section-label">// why i built this</span>
-      <h2 style="margin-bottom: 24px;">The story.</h2>
-      <p style="max-width: 64ch; margin-bottom: 16px;">
-        I watched someone close to me pay a credit-repair company $99/month for 14 months — $1,386 total — for exactly three dispute letters. Three. The letters worked, but they were generic templates that any paralegal could have written in 20 minutes.
-      </p>
-      <p style="max-width: 64ch; margin-bottom: 16px;">
-        That same month, I was building AI automation systems that could generate, version, and distribute documents at zero marginal cost. The gap was obvious: the knowledge wasn't scarce, the distribution was just locked.
-      </p>
-      <p style="max-width: 64ch;">
-        CreditCookbook is the answer. Open repo, static site, no login, no paywall. Every letter is inspectable on GitHub. Every claim links to the statute. If I'm wrong, you can see it. If I'm right, you can use it. That's the deal.
-      </p>
+      <span class="section-label" data-animate>// why i built this</span>
+      <h2 data-animate style="margin-bottom: var(--space-3); font-size: var(--display-sm);">The story.</h2>
+
+      <div data-animate style="max-width: 64ch;">
+        <p style="margin-bottom: var(--space-2); line-height: var(--leading-relaxed);">
+          I watched someone close to me pay a credit-repair company $99/month for 14 months — <span style="color: var(--gold); font-weight:600;">$1,386 total</span> — for exactly three dispute letters. Three. The letters worked, but they were generic templates that any paralegal could have written in 20 minutes.
+        </p>
+        <p style="margin-bottom: var(--space-2); line-height: var(--leading-relaxed);">
+          That same month, I was building AI automation systems that could generate, version, and distribute documents at zero marginal cost. The gap was obvious: the knowledge wasn't scarce, the distribution was just locked.
+        </p>
+        <p style="line-height: var(--leading-relaxed);">
+          CreditCookbook is the answer. Open repo, static site, no login, no paywall. Every letter is inspectable on GitHub. Every claim links to the statute. If I'm wrong, you can see it. If I'm right, you can use it. That's the deal.
+        </p>
+      </div>
     </div>
   </section>
 
   <hr class="rule" />
 
-  <!-- Links grid -->
+  <!-- ============================================================
+       CONNECT — Prominent LinkedIn + Instagram CTAs with gold accents
+       ============================================================ -->
   <section class="section">
     <div class="container">
-      <span class="section-label">// connect</span>
-      <h2 style="margin-bottom: 12px;">Find me.</h2>
-      <p style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">If this site helped you, the best thing you can do is share it. The second best is connect.</p>
+      <span class="section-label" data-animate>// connect</span>
+      <h2 data-animate style="margin-bottom: var(--space-1); font-size: var(--display-sm);">Find me.</h2>
+      <p data-animate data-animate-delay="0.1" style="max-width: 50ch; opacity:0.7; margin-bottom: var(--space-6);">If this site helped you, the best thing you can do is share it. The second best is connect.</p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+      <div data-animate data-animate-stagger="0.12" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0; border:1px solid var(--line);">
         <!-- Website -->
-        <a href="https://calebpierre.com" target="_blank" rel="noopener" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// my work</span>
-          <h3 style="margin-bottom: 8px;">calebpierre.com</h3>
-          <p style="font-size: 14px; opacity: 0.7;">My agency — AI automation, systems engineering, and security consulting for businesses that want to eliminate manual work.</p>
-          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">calebpierre.com →</p>
+        <a href="https://calebpierre.com" target="_blank" rel="noopener" data-tilt="3" style="display:block; padding: var(--space-4); border-right:1px solid var(--line); border-bottom:1px solid var(--line); text-decoration:none; color: var(--ink); background: var(--white); transition: border-color 0.2s var(--ease-primary);">
+          <span class="section-label" style="margin-bottom: var(--space-1);">// my work</span>
+          <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">calebpierre.com</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7;">My agency — AI automation, systems engineering, and security consulting for businesses that want to eliminate manual work.</p>
+          <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: var(--text-sm);">calebpierre.com →</p>
         </a>
 
-        <!-- LinkedIn -->
-        <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// professional</span>
-          <h3 style="margin-bottom: 8px;">LinkedIn</h3>
-          <p style="font-size: 14px; opacity: 0.7;">10 years in enterprise security, fintech CTO, AI systems. Full career history and recommendations.</p>
-          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">linkedin.com/in/calebpierre →</p>
+        <!-- LinkedIn — gold border for emphasis -->
+        <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener" data-tilt="4" style="display:block; padding: var(--space-4); border-right:1px solid var(--line); border-bottom:1px solid var(--line); text-decoration:none; color: var(--ink); background: var(--white); transition: all 0.2s var(--ease-primary);">
+          <span class="section-label" style="margin-bottom: var(--space-1); color: var(--gold);">// professional</span>
+          <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">LinkedIn</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7;">10 years in enterprise security, fintech CTO, AI systems. Full career history and recommendations.</p>
+          <p class="mono" style="margin-top: var(--space-2); color: var(--gold); font-size: var(--text-sm); font-weight:500;">linkedin.com/in/calebpierre →</p>
         </a>
 
-        <!-- Instagram -->
-        <a href="https://instagram.com/emperorpierre" target="_blank" rel="noopener" style="display: block; padding: 32px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// personal</span>
-          <h3 style="margin-bottom: 8px;">Instagram</h3>
-          <p style="font-size: 14px; opacity: 0.7;">Behind the scenes — building in public, LA life, and the occasional credit tip that doesn't fit in a template.</p>
-          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">@emperorpierre →</p>
+        <!-- Instagram — gold border for emphasis -->
+        <a href="https://instagram.com/emperorpierre" target="_blank" rel="noopener" data-tilt="4" style="display:block; padding: var(--space-4); border-bottom:1px solid var(--line); text-decoration:none; color: var(--ink); background: var(--white); transition: all 0.2s var(--ease-primary);">
+          <span class="section-label" style="margin-bottom: var(--space-1); color: var(--gold);">// personal</span>
+          <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">Instagram</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7;">Behind the scenes — building in public, LA life, and the occasional credit tip that doesn't fit in a template.</p>
+          <p class="mono" style="margin-top: var(--space-2); color: var(--gold); font-size: var(--text-sm); font-weight:500;">@emperorpierre →</p>
         </a>
 
         <!-- GitHub -->
-        <a href="https://github.com/ghettoeinstein" target="_blank" rel="noopener" style="display: block; padding: 32px; border-right: 1px solid var(--line); text-decoration: none; color: var(--ink);">
-          <span class="section-label" style="margin-bottom: 8px;">// code</span>
-          <h3 style="margin-bottom: 8px;">GitHub</h3>
-          <p style="font-size: 14px; opacity: 0.7;">All my open-source projects including this one. Star the repo if it helped you — it helps others find it.</p>
-          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">github.com/ghettoeinstein →</p>
+        <a href="https://github.com/ghettoeinstein" target="_blank" rel="noopener" data-tilt="3" style="display:block; padding: var(--space-4); border-right:1px solid var(--line); text-decoration:none; color: var(--ink); background: var(--white); transition: border-color 0.2s var(--ease-primary);">
+          <span class="section-label" style="margin-bottom: var(--space-1);">// code</span>
+          <h3 style="margin-bottom: var(--space-1); font-size: var(--text-md);">GitHub</h3>
+          <p style="font-size: var(--text-sm); opacity:0.7;">All my open-source projects including this one. Star the repo if it helped you — it helps others find it.</p>
+          <p class="mono" style="margin-top: var(--space-2); color: var(--blue); font-size: var(--text-sm);">github.com/ghettoeinstein →</p>
         </a>
       </div>
     </div>
@@ -89,16 +132,18 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
 
   <hr class="rule" />
 
-  <!-- Work with me -->
+  <!-- ============================================================
+       WORK WITH ME — CTAs
+       ============================================================ -->
   <section class="section">
     <div class="container">
-      <span class="section-label">// work with me</span>
-      <h2 style="margin-bottom: 24px;">Want to work together?</h2>
-      <p style="max-width: 64ch; margin-bottom: 24px;">
+      <span class="section-label" data-animate>// work with me</span>
+      <h2 data-animate style="margin-bottom: var(--space-3); font-size: var(--display-sm);">Want to work together?</h2>
+      <p data-animate data-animate-delay="0.1" style="max-width: 64ch; margin-bottom: var(--space-3); line-height: var(--leading-relaxed);">
         CreditCookbook is free and always will be. But if you need something more — AI automation for your business, security architecture review, or systems engineering — I take on a small number of clients through <a href="https://calebpierre.com" target="_blank" rel="noopener">calebpierre.com</a>.
       </p>
-      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-        <a href="https://calebpierre.com" target="_blank" rel="noopener" class="btn btn-primary">Book a call →</a>
+      <div data-animate data-animate-delay="0.2" style="display:flex; gap: var(--space-2); flex-wrap:wrap;">
+        <a href="https://calebpierre.com" target="_blank" rel="noopener" class="btn btn-primary" data-tilt="3" style="background: var(--gold); color: var(--ink); border:1.5px solid var(--gold);">Book a call →</a>
         <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener" class="btn btn-ghost">Connect on LinkedIn</a>
       </div>
     </div>
@@ -106,11 +151,13 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
 
   <hr class="rule" />
 
-  <!-- Credits -->
+  <!-- ============================================================
+       CREDITS
+       ============================================================ -->
   <section class="section" style="padding-bottom: 60px;">
     <div class="container">
-      <span class="section-label">// credits</span>
-      <h3 style="margin-bottom: 16px;">How CreditCookbook is built</h3>
+      <span class="section-label" data-animate>// credits</span>
+      <h3 data-animate style="margin-bottom: var(--space-2);">How CreditCookbook is built</h3>
       <table>
         <thead>
           <tr><th>Layer</th><th>Tool</th></tr>
@@ -127,3 +174,36 @@ const description = "Caleb Pierre — builder of CreditCookbook. Security engine
   </section>
 
 </Base>
+
+<!-- Schema.org Person markup -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Caleb Pierre",
+  "url": "https://creditcookbook.com/about",
+  "image": "https://creditcookbook.com/about#person",
+  "jobTitle": "Security Engineer / Fintech CTO / AI Automation Specialist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Caleb Pierre Ventures LLC"
+  },
+  "sameAs": [
+    "https://calebpierre.com",
+    "https://linkedin.com/in/calebpierre",
+    "https://instagram.com/emperorpierre",
+    "https://github.com/ghettoeinstein"
+  ],
+  "knowsAbout": [
+    "Information Security",
+    "Fintech",
+    "AI Automation",
+    "Credit Law",
+    "FCRA",
+    "FDCPA",
+    "Consumer Protection"
+  ],
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "UCLA"
+  }
+})} />

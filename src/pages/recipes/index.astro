@@ -2,9 +2,10 @@
 import Base from '../../layouts/Base.astro';
 import EmailCapture from '../../components/EmailCapture.astro';
 
-const description = 'Credit recipes — complete playbooks for disputing medical debt, collections, late payments, and more. Fill-in-the-blank letters, bureau response scripts, and step-by-step guides.';
+const description = 'Credit recipes — complete playbooks for disputing medical debt, collections, late payments, and more. Browse by problem, document type, or bureau. Fill-in-the-blank letters, bureau response scripts, and step-by-step guides.';
 
-const recipes = [
+// Recipe clusters organized by problem
+const byProblem = [
   { num: '01', title: 'Medical Debt Removal', desc: 'Dispute medical collections, negotiate hospital bills, HIPAA removal, and the $500 threshold.', href: '/medical-debt', status: 'live', count: '12 pages' },
   { num: '02', title: 'Collections Dispute', desc: 'Validate, dispute, and negotiate general collection accounts under the FDCPA.', href: '#', status: 'coming soon', count: 'coming soon' },
   { num: '03', title: 'Late Payments', desc: 'Goodwill letters, pay-for-delete, and 609 dispute strategies for late payment marks.', href: '#', status: 'coming soon', count: 'coming soon' },
@@ -12,17 +13,47 @@ const recipes = [
   { num: '05', title: 'Charge-Offs', desc: 'Dispute, negotiate, or remove charged-off accounts from your credit report.', href: '#', status: 'coming soon', count: 'coming soon' },
   { num: '06', title: 'Bankruptcy Removal', desc: 'Strategies for disputing and removing bankruptcies that are inaccurate or outdated.', href: '#', status: 'coming soon', count: 'coming soon' },
 ];
+
+// Document type index — letter templates across the site
+const byDocument = [
+  { type: 'FCRA Dispute Letter', desc: 'Section 611 dispute for inaccurate, incomplete, or unverifiable items.', href: '/medical-debt/dispute-letter', live: true },
+  { type: 'Debt Validation Letter', desc: 'FDCPA §1692g validation request for collection accounts.', href: '/medical-debt/validation-letter', live: true },
+  { type: 'HIPAA Removal Letter', desc: 'Challenge medical collections using HIPAA privacy provisions.', href: '/medical-debt/hipaa-removal', live: true },
+  { type: 'Goodwill Letter', desc: 'Request removal of legitimate late payments as a courtesy.', href: '/medical-debt/goodwill-letter', live: true },
+  { type: 'Pay-for-Delete Letter', desc: 'Negotiate removal in exchange for payment.', href: '/medical-debt/pay-for-delete', live: true },
+  { type: 'Hospital Financial Assistance', desc: 'Apply for charity care and financial aid programs.', href: '/medical-debt/hospital-financial-assistance', live: true },
+  { type: 'MOV Request Letter', desc: 'Method of Verification follow-up after a bureau verifies a dispute.', href: '/personal-credit/dispute-process', live: true },
+  { type: 'Identity Theft Dispute', desc: 'Block information resulting from identity theft under FCRA §605B.', href: '/personal-credit/dispute-process', live: true },
+];
+
+// Bureau/creditor reference — factual process only
+const byBureau = [
+  { name: 'Experian', role: 'Credit Bureau', address: 'P.O. Box 9701, Allen, TX 75013', phone: '1-888-397-3742' },
+  { name: 'Equifax', role: 'Credit Bureau', address: 'P.O. Box 105069, Atlanta, GA 30348', phone: '1-800-685-1111' },
+  { name: 'TransUnion', role: 'Credit Bureau', address: 'P.O. Box 2000, Chester, PA 19016', phone: '1-800-916-8800' },
+  { name: 'CFPB', role: 'Regulator / Complaints', address: 'consumerfinance.gov/complaint', phone: '1-855-411-2372' },
+];
+
+// How recipes work
+const recipeStructure = [
+  { num: '01', title: 'Overview', desc: 'What it is, how it gets on your report, and the current rules.' },
+  { num: '02', title: 'Templates', desc: 'Fill-in-the-blank dispute, validation, and goodwill letters.' },
+  { num: '03', title: 'Bureau Scripts', desc: 'What to do when bureaus verify, reject, or ignore your disputes.' },
+  { num: '04', title: 'FAQ', desc: 'Schema.org-marked FAQ for search engine rich results.' },
+];
 ---
 
 <Base title="Recipes — CreditCookbook" description={description} posterTitle="RECIPES" posterLabel="// complete credit repair playbooks">
+
+  <!-- By Problem -->
   <section class="section">
     <div class="container">
-      <span class="section-label">// all recipes</span>
-      <h2 style="margin-bottom: 16px;">Pick your situation. Follow the playbook.</h2>
-      <p style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">Each recipe is a complete cluster — dispute letters, bureau response scripts, step-by-step playbooks, and FAQ with schema.org markup. Copy, fill in, and send.</p>
+      <span class="section-label" data-animate>// browse by problem</span>
+      <h2 data-animate style="margin-bottom: 16px;">Pick your situation. Follow the playbook.</h2>
+      <p data-animate style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">Each recipe is a complete cluster — dispute letters, bureau response scripts, step-by-step playbooks, and FAQ with schema.org markup. Copy, fill in, and send.</p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
-        {recipes.map((r) => (
+      <div data-animate data-animate-stagger="0.08" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        {byProblem.map((r) => (
           r.status === 'live' ? (
             <a href={r.href} style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
               <span class="section-label" style="margin-bottom: 8px;">// recipe {r.num} — {r.status}</span>
@@ -45,32 +76,79 @@ const recipes = [
 
   <hr class="rule" />
 
+  <!-- By Document Type -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// browse by document type</span>
+      <h2 data-animate style="margin-bottom: 16px;">Letter templates index.</h2>
+      <p data-animate style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">Every letter template on the site, in one place. Each is fill-in-the-blank, ready for certified mail.</p>
+
+      <table data-animate>
+        <thead>
+          <tr><th>Document</th><th>Description</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          {byDocument.map((d) => (
+            <tr>
+              <td>
+                {d.live ? (
+                  <a href={d.href} style="font-weight: 600;">{d.type}</a>
+                ) : (
+                  <span style="opacity: 0.5;">{d.type}</span>
+                )}
+              </td>
+              <td style="opacity: 0.7;">{d.desc}</td>
+              <td>
+                {d.live ? (
+                  <span class="stat-gold" style="font-size: 12px;">live</span>
+                ) : (
+                  <span class="mono" style="font-size: 12px; opacity: 0.5;">soon</span>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- By Bureau / Creditor -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// browse by bureau / creditor</span>
+      <h2 data-animate style="margin-bottom: 16px;">Where to send what.</h2>
+      <p data-animate style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">Factual contact information for the three major bureaus and the CFPB. Send disputes by certified mail with return receipt — always.</p>
+
+      <div data-animate data-animate-stagger="0.08" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        {byBureau.map((b) => (
+          <div style="padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+            <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// {b.role}</span>
+            <h4 style="margin-top: 12px; margin-bottom: 8px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">{b.name}</h4>
+            <p class="mono" style="font-size: 12px; opacity: 0.7; line-height: 1.6;">{b.address}</p>
+            <p class="mono" style="font-size: 12px; opacity: 0.7; margin-top: 4px;">{b.phone}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
   <!-- How recipes work -->
   <section class="section">
     <div class="container">
-      <span class="section-label">// how recipes work</span>
-      <h2 style="margin-bottom: 32px;">Every recipe follows the same structure.</h2>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line);">
-        <div style="padding: 28px; border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// 01</span>
-          <h4 style="margin-top: 12px; margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em;">Overview</h4>
-          <p style="font-size: 13px; opacity: 0.7;">What it is, how it gets on your report, and the current rules.</p>
-        </div>
-        <div style="padding: 28px; border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// 02</span>
-          <h4 style="margin-top: 12px; margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em;">Templates</h4>
-          <p style="font-size: 13px; opacity: 0.7;">Fill-in-the-blank dispute, validation, and goodwill letters.</p>
-        </div>
-        <div style="padding: 28px; border-right: 1px solid var(--line);">
-          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// 03</span>
-          <h4 style="margin-top: 12px; margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em;">Bureau Scripts</h4>
-          <p style="font-size: 13px; opacity: 0.7;">What to do when bureaus verify, reject, or ignore your disputes.</p>
-        </div>
-        <div style="padding: 28px;">
-          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// 04</span>
-          <h4 style="margin-top: 12px; margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em;">FAQ</h4>
-          <p style="font-size: 13px; opacity: 0.7;">Schema.org-marked FAQ for search engine rich results.</p>
-        </div>
+      <span class="section-label" data-animate>// how recipes work</span>
+      <h2 data-animate style="margin-bottom: 32px;">Every recipe follows the same structure.</h2>
+      <div data-animate data-animate-stagger="0.08" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line);">
+        {recipeStructure.map((s) => (
+          <div style="padding: 28px; border-right: 1px solid var(--line);">
+            <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// {s.num}</span>
+            <h4 style="margin-top: 12px; margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em;">{s.title}</h4>
+            <p style="font-size: 13px; opacity: 0.7;">{s.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

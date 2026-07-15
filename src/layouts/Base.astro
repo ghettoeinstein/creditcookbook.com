@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/tokens.css';
 
 interface Props {
   title: string;
@@ -21,6 +22,21 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org Organization (sitewide) -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Caleb Pierre Ventures LLC",
+    "alternateName": "CreditCookbook",
+    "url": "https://creditcookbook.com",
+    "logo": "https://creditcookbook.com/favicon.svg",
+    "sameAs": [
+      "https://github.com/ghettoeinstein/creditcookbook.com",
+      "https://linkedin.com/in/calebpierre",
+      "https://instagram.com/emperorpierre"
+    ]
+  })} />
 </head>
 <body>
 
@@ -60,18 +76,165 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <span>© 2026 CreditCookbook · open-source credit education · <a href="https://github.com/ghettoeinstein/creditcookbook.com">GitHub</a></span>
-      <span>
+      <div class="footer-left">
+        <span>© 2026 CreditCookbook · open-source credit education · <a href="https://github.com/ghettoeinstein/creditcookbook.com">GitHub</a></span>
+      </div>
+      <div class="footer-legal">
         <a href="/personal-credit">Personal Credit</a>
         <a href="/business-credit">Business Credit</a>
-        <a href="/recipes">Recipes</a>
         <a href="/tools">Tools</a>
         <a href="/resources">Resources</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
-      </span>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://instagram.com/emperorpierre" target="_blank" rel="noopener">Instagram</a>
+        <a href="/#newsletter">Newsletter</a>
+      </div>
     </div>
   </footer>
+
+  <!-- GSAP + ScrollTrigger via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Motion controller: reduced-motion guard + universal reveal system -->
+  <script is:inline>
+    (function () {
+      function initMotion() {
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+        // Ensure GSAP + ScrollTrigger loaded
+        if (typeof gsap === 'undefined') {
+          // Retry shortly if deferred scripts haven't parsed yet
+          return setTimeout(initMotion, 50);
+        }
+        if (typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
+        }
+
+        if (reduceMotion) {
+          // Reduced motion: show everything immediately, no animation
+          document.querySelectorAll('[data-animate]').forEach(function (el) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
+          return;
+        }
+
+        // ---- Universal scroll reveal: fade + Y-translate ----
+        var revealEls = document.querySelectorAll('[data-animate]');
+        revealEls.forEach(function (el) {
+          var y = el.getAttribute('data-animate-y') || '24';
+          var delay = el.getAttribute('data-animate-delay') || '0';
+          var duration = el.getAttribute('data-animate-duration') || '0.8';
+          var stagger = el.getAttribute('data-animate-stagger');
+
+          if (stagger && el.children.length > 1) {
+            // Stagger children
+            gsap.set(el.children, { opacity: 0, y: y });
+            ScrollTrigger.create({
+              trigger: el,
+              start: 'top 85%',
+              once: true,
+              onEnter: function () {
+                gsap.to(el.children, {
+                  opacity: 1,
+                  y: 0,
+                  duration: parseFloat(duration),
+                  ease: 'power3.out',
+                  stagger: parseFloat(stagger)
+                });
+              }
+            });
+          } else {
+            // Single element reveal
+            gsap.set(el, { opacity: 0, y: y });
+            ScrollTrigger.create({
+              trigger: el,
+              start: 'top 85%',
+              once: true,
+              onEnter: function () {
+                gsap.to(el, {
+                  opacity: 1,
+                  y: 0,
+                  duration: parseFloat(duration),
+                  ease: 'power3.out',
+                  delay: parseFloat(delay)
+                });
+              }
+            });
+          }
+        });
+
+        // ---- Parallax layers: [data-parallax] with speed attribute ----
+        if (!isTouch) {
+          document.querySelectorAll('[data-parallax]').forEach(function (el) {
+            var speed = parseFloat(el.getAttribute('data-parallax')) || 0.3;
+            gsap.to(el, {
+              y: function () {
+                return (1 - speed) * 100;
+              },
+              ease: 'none',
+              scrollTrigger: {
+                trigger: el,
+                start: 'top top',
+                end: 'bottom top',
+                scrub: speed
+              }
+            });
+          });
+        }
+
+        // ---- 3D tilt on [data-tilt] cards (desktop only) ----
+        if (!isTouch) {
+          document.querySelectorAll('[data-tilt]').forEach(function (card) {
+            var maxRotate = parseFloat(card.getAttribute('data-tilt')) || 4;
+            card.style.transformStyle = 'preserve-3d';
+            card.style.perspective = '800px';
+
+            card.addEventListener('mousemove', function (e) {
+              var rect = card.getBoundingClientRect();
+              var x = e.clientX - rect.left;
+              var y = e.clientY - rect.top;
+              var centerX = rect.width / 2;
+              var centerY = rect.height / 2;
+              var rotateX = ((y - centerY) / centerY) * -maxRotate;
+              var rotateY = ((x - centerX) / centerX) * maxRotate;
+
+              gsap.to(card, {
+                rotateX: rotateX,
+                rotateY: rotateY,
+                duration: 0.3,
+                ease: 'power2.out',
+                transformPerspective: 800
+              });
+            });
+
+            card.addEventListener('mouseleave', function () {
+              gsap.to(card, {
+                rotateX: 0,
+                rotateY: 0,
+                duration: 0.6,
+                ease: 'power3.out'
+              });
+            });
+          });
+        }
+      }
+
+      // Init on DOMContentLoaded
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMotion);
+      } else {
+        initMotion();
+      }
+    })();
+  </script>
 
 </body>
 </html>
