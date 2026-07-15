@@ -1,0 +1,246 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = "Calculate your credit card utilization ratio — overall and per-card — and see how it impacts your credit score. Free, client-side, no signup.";
+---
+
+<Base title="Utilization Calculator — CreditCookbook" description={description} posterTitle="UTILIZATION CALCULATOR" posterLabel="// tool 02 — credit utilization">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// credit utilization</span>
+      <h2 style="margin-bottom: 16px;">Calculate your utilization</h2>
+      <p style="max-width: 60ch; margin-bottom: 40px; opacity: 0.7;">Enter each card's balance and credit limit. Your utilization ratio — the percentage of available credit you're using — is one of the biggest factors in your credit score (up to 30% of FICO).</p>
+
+      <!-- Card input table -->
+      <div class="card-flat" style="margin-bottom: 32px;">
+        <table id="utilTable" style="margin-bottom: 16px;">
+          <thead>
+            <tr>
+              <th style="width: 30%;">Card / Account</th>
+              <th style="width: 25%;">Balance ($)</th>
+              <th style="width: 25%;">Limit ($)</th>
+              <th style="width: 15%;">Utilization</th>
+              <th style="width: 5%;">—</th>
+            </tr>
+          </thead>
+          <tbody id="utilBody">
+            <!-- Rows added by JS -->
+          </tbody>
+        </table>
+        <button class="btn btn-ghost" id="addCardBtn" style="font-size: 12px; padding: 10px 20px;">+ Add card</button>
+      </div>
+
+      <!-- Results -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
+        <div style="padding: 40px; border-right: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// overall utilization</span>
+          <div id="overallUtil" style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">—</div>
+          <div id="overallBar" style="width: 100%; height: 8px; background: var(--paper); border: 1px solid var(--line); margin-top: 16px; position: relative; overflow: hidden;">
+            <div id="overallBarFill" style="height: 100%; width: 0%; background: var(--blue); transition: width 0.3s ease;"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; margin-top: 4px; opacity: 0.5;">
+            <span>0%</span><span>30%</span><span>50%</span><span>100%</span>
+          </div>
+        </div>
+        <div style="padding: 40px;">
+          <span class="section-label" style="margin-bottom: 8px;">// totals</span>
+          <table style="margin-bottom: 0;">
+            <tbody>
+              <tr><td style="border: none; padding: 4px 0; font-family: var(--font-mono); font-size: 13px; opacity: 0.7;">Total balance</td><td style="border: none; padding: 4px 0; text-align: right; font-family: var(--font-mono); font-weight: 600;" id="totalBalance">$0</td></tr>
+              <tr><td style="border: none; padding: 4px 0; font-family: var(--font-mono); font-size: 13px; opacity: 0.7;">Total limit</td><td style="border: none; padding: 4px 0; text-align: right; font-family: var(--font-mono); font-weight: 600;" id="totalLimit">$0</td></tr>
+              <tr><td style="border: none; padding: 4px 0; font-family: var(--font-mono); font-size: 13px; opacity: 0.7;">Available credit</td><td style="border: none; padding: 4px 0; text-align: right; font-family: var(--font-mono); font-weight: 600;" id="availableCredit">$0</td></tr>
+              <tr><td style="border: none; padding: 4px 0; font-family: var(--font-mono); font-size: 13px; opacity: 0.7;">Cards tracked</td><td style="border: none; padding: 4px 0; text-align: right; font-family: var(--font-mono); font-weight: 600;" id="cardCount">0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Score impact -->
+      <div class="card" style="margin-bottom: 32px;">
+        <h3 style="margin-bottom: 16px;">Score impact assessment</h3>
+        <div id="scoreAssessment" style="padding: 20px; border: 1px solid var(--line); background: var(--white); margin-bottom: 16px;">
+          <p style="opacity: 0.7;">Enter your card details above to see your score impact.</p>
+        </div>
+        <h4 style="margin-bottom: 12px;">Utilization tiers</h4>
+        <table>
+          <thead>
+            <tr><th>Tier</th><th>Range</th><th>Impact</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Excellent</strong></td><td>1% – 9%</td><td>Optimal — shows active, responsible credit use</td></tr>
+            <tr><td><strong>Good</strong></td><td>10% – 29%</td><td>Healthy — minimal score impact</td></tr>
+            <tr><td><strong>Fair</strong></td><td>30% – 49%</td><td>Moderate — may cost 10–30 points</td></tr>
+            <tr><td><strong>Poor</strong></td><td>50% – 74%</td><td>High — can cost 30–60+ points</td></tr>
+            <tr><td><strong>Critical</strong></td><td>75%+ or maxed</td><td>Severe — can cost 60–100+ points</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="card" id="recommendationsCard" style="display: none;">
+        <h3 style="margin-bottom: 16px;">Recommendations</h3>
+        <ul id="recommendations" style="margin-left: 24px; line-height: 2;">
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script is:inline>
+  let cardId = 0;
+
+  function addCardRow(name, balance, limit) {
+    const tbody = document.getElementById('utilBody');
+    const tr = document.createElement('tr');
+    tr.dataset.cardId = ++cardId;
+
+    tr.innerHTML = `
+      <td><input type="text" class="card-name" placeholder="Card name" value="${name || ''}" style="width: 100%; padding: 8px 10px; border: 1px solid var(--line); font-family: var(--font-body); font-size: 13px; outline: none;"></td>
+      <td><input type="number" class="card-balance" placeholder="0" value="${balance || ''}" min="0" step="0.01" style="width: 100%; padding: 8px 10px; border: 1px solid var(--line); font-family: var(--font-body); font-size: 13px; outline: none;"></td>
+      <td><input type="number" class="card-limit" placeholder="0" value="${limit || ''}" min="0" step="0.01" style="width: 100%; padding: 8px 10px; border: 1px solid var(--line); font-family: var(--font-body); font-size: 13px; outline: none;"></td>
+      <td class="card-util" style="font-family: var(--font-mono); font-size: 13px; font-weight: 600;">—</td>
+      <td><button class="remove-card" style="background: none; border: none; cursor: pointer; font-size: 16px; color: var(--ink); padding: 4px;">×</button></td>
+    `;
+
+    tr.querySelectorAll('input').forEach(input => {
+      input.addEventListener('input', calculate);
+    });
+    tr.querySelector('.remove-card').addEventListener('click', () => {
+      tr.remove();
+      calculate();
+    });
+
+    tbody.appendChild(tr);
+    calculate();
+  }
+
+  function calculate() {
+    const rows = document.querySelectorAll('#utilBody tr');
+    let totalBalance = 0;
+    let totalLimit = 0;
+    let cardCount = 0;
+
+    rows.forEach(row => {
+      const balance = parseFloat(row.querySelector('.card-balance').value) || 0;
+      const limit = parseFloat(row.querySelector('.card-limit').value) || 0;
+      const utilCell = row.querySelector('.card-util');
+
+      if (limit > 0) {
+        const util = (balance / limit) * 100;
+        utilCell.textContent = util.toFixed(1) + '%';
+        // Color code per-card
+        if (util <= 29) utilCell.style.color = 'var(--blue)';
+        else if (util <= 49) utilCell.style.color = '#B45309';
+        else utilCell.style.color = '#DC2626';
+        totalBalance += balance;
+        totalLimit += limit;
+        cardCount++;
+      } else {
+        utilCell.textContent = '—';
+        utilCell.style.color = 'var(--ink)';
+        if (balance > 0) totalBalance += balance;
+        cardCount++;
+      }
+    });
+
+    const overallUtil = totalLimit > 0 ? (totalBalance / totalLimit) * 100 : 0;
+    const availableCredit = totalLimit - totalBalance;
+
+    // Display
+    document.getElementById('overallUtil').textContent = overallUtil.toFixed(1) + '%';
+    document.getElementById('totalBalance').textContent = '$' + totalBalance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('totalLimit').textContent = '$' + totalLimit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('availableCredit').textContent = '$' + availableCredit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('cardCount').textContent = cardCount;
+
+    // Bar fill (cap at 100%)
+    const barFill = document.getElementById('overallBarFill');
+    barFill.style.width = Math.min(overallUtil, 100) + '%';
+
+    // Color the bar
+    if (overallUtil <= 29) barFill.style.background = 'var(--blue)';
+    else if (overallUtil <= 49) barFill.style.background = '#B45309';
+    else barFill.style.background = '#DC2626';
+
+    // Score assessment
+    updateAssessment(overallUtil, totalBalance, totalLimit, cardCount);
+  }
+
+  function updateAssessment(util, balance, limit, count) {
+    const assessment = document.getElementById('scoreAssessment');
+    const recsCard = document.getElementById('recommendationsCard');
+    const recs = document.getElementById('recommendations');
+
+    if (count === 0 || limit === 0) {
+      assessment.innerHTML = '<p style="opacity: 0.7;">Enter your card details above to see your score impact.</p>';
+      recsCard.style.display = 'none';
+      return;
+    }
+
+    let tier, tierColor, scoreImpact, description;
+    const recsList = [];
+
+    if (util <= 9) {
+      tier = 'Excellent'; tierColor = 'var(--blue)';
+      scoreImpact = 'Minimal to none';
+      description = 'You\'re in the optimal range. Lenders see you as low-risk and disciplined.';
+      recsList.push('Maintain current payment habits — you\'re doing everything right.');
+      recsList.push('Consider requesting a credit limit increase to create more buffer.');
+      recsList.push('Keep utilization in this range for maximum score benefit.');
+    } else if (util <= 29) {
+      tier = 'Good'; tierColor = 'var(--blue)';
+      scoreImpact = 'Minimal (0–10 pts)';
+      description = 'You\'re in a healthy range. Most scoring models treat this favorably.';
+      recsList.push('Pay down balances slightly to get under 10% for optimal scoring.');
+      recsList.push('Set up auto-pay to ensure balances stay in this range.');
+      recsList.push('Consider a limit increase if your balances are stable.');
+    } else if (util <= 49) {
+      tier = 'Fair'; tierColor = '#B45309';
+      scoreImpact = 'Moderate (10–30 pts)';
+      description = 'You\'re crossing into territory where scoring models start penalizing.';
+      recsList.push('Pay down balances to get under 30% utilization — the most important threshold.');
+      recsList.push('Make payments mid-cycle before the statement closes to lower reported balances.');
+      recsList.push('Request a credit limit increase to lower your ratio.');
+      recsList.push('Avoid opening new cards just for the limit — focus on pay-down.');
+    } else if (util <= 74) {
+      tier = 'Poor'; tierColor = '#B45309';
+      scoreImpact = 'High (30–60+ pts)';
+      description = 'High utilization is actively suppressing your score. Action needed.';
+      recsList.push('Pay down balances aggressively — getting under 30% should be your #1 priority.');
+      recsList.push('Consider a balance transfer to a 0% APR card to buy pay-down time.');
+      recsList.push('Make multiple payments per month to keep balances low before statement dates.');
+      recsList.push('Ask for a credit limit increase — even a small one helps the ratio.');
+      recsList.push('Stop new charges on high-utilization cards until balances drop.');
+    } else {
+      tier = 'Critical'; tierColor = '#DC2626';
+      scoreImpact = 'Severe (60–100+ pts)';
+      description = 'Near-maxed cards are severely damaging your score. Immediate action needed.';
+      recsList.push('Pay down balances immediately — this is the single biggest score lever available to you.');
+      recsList.push('Get every card under 50% as a first milestone, then under 30%.');
+      recsList.push('Consider a debt consolidation loan if you can get a lower rate.');
+      recsList.push('Stop all new charges. Switch to debit or cash until balances are under control.');
+      recsList.push('Contact creditors about hardship programs — many offer temporary rate reductions.');
+      recsList.push('If you\'re being denied new credit, it\'s because of this ratio. Fix it first.');
+    }
+
+    assessment.innerHTML = `
+      <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 12px;">
+        <span style="font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: ${tierColor};">${tier}</span>
+        <span style="font-family: var(--font-mono); font-size: 12px; opacity: 0.6;">Est. score impact: ${scoreImpact}</span>
+      </div>
+      <p style="margin-bottom: 0;">${description}</p>
+    `;
+
+    recs.innerHTML = recsList.map(r => `<li>${r}</li>`).join('');
+    recsCard.style.display = 'block';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Start with 3 empty rows
+    addCardRow();
+    addCardRow();
+    addCardRow();
+
+    document.getElementById('addCardBtn').addEventListener('click', () => addCardRow());
+  });
+</script>

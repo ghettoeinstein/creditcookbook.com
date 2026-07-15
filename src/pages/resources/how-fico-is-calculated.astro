@@ -1,0 +1,413 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = "A data-driven breakdown of how the FICO 8 scoring model works — the five factors, regression findings, machine learning subscores, and the profile of a perfect 840+ score. Based on reverse-engineering research by Michael Fowlie.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How FICO 8 Is Calculated: Reverse-Engineering the Black Box",
+  "description": "A data-driven breakdown of how the FICO 8 scoring model works — the five factors, regression findings, machine learning subscores, and the profile of a perfect 840+ score.",
+  "author": {
+    "@type": "Organization",
+    "name": "CreditCookbook",
+    "url": "https://creditcookbook.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CreditCookbook",
+    "url": "https://creditcookbook.com"
+  },
+  "datePublished": "2026-07-14",
+  "dateModified": "2026-07-14",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@url": "https://creditcookbook.com/resources/how-fico-is-calculated"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "FICO 8 Credit Score"
+  },
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "headline": "Reverse Engineering FICO 8",
+      "author": { "@type": "Person", "name": "Michael Fowlie" },
+      "url": "https://medium.com/@michael_fowlie"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "mfow/fico",
+      "codeRepository": "https://github.com/mfow/fico",
+      "author": { "@type": "Person", "name": "Michael Fowlie" }
+    }
+  ]
+};
+---
+
+<Base title="How FICO 8 Is Calculated — CreditCookbook" description={description} posterTitle="THE BLACK BOX" posterLabel="// resources — fico 8 reverse-engineered">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// overview</span>
+      <h2 style="margin-bottom: 24px;">How FICO 8 Is Calculated</h2>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        FICO 8 is the most widely used credit scoring model in the United States, yet its exact formula is a closely guarded trade secret. Scores range from 300 to 850 and influence the interest rates, credit limits, and loan approvals available to hundreds of millions of consumers.
+      </p>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        In a remarkable piece of reverse-engineering work, data scientist <strong>Michael Fowlie</strong> published a study analyzing a large dataset of credit files with known FICO 8 scores. Using ordinary least squares (OLS) regression and machine learning models, he was able to approximate the scoring formula with surprising accuracy — an R-squared of 0.64 and a mean absolute error of just 14 points.
+      </p>
+      <p style="max-width: 64ch;">
+        This article summarizes the key findings from that research. It is not the official FICO formula, and it cannot predict your exact score. But it reveals which variables matter, how much they matter, and what a "perfect" credit profile looks like under the hood.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Source Callout -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="card" style="border-left: 4px solid var(--blue);">
+        <span class="section-label" style="margin-bottom: 12px;">// source & attribution</span>
+        <p style="margin-bottom: 12px;">
+          This article is based on the research of <strong>Michael Fowlie</strong>, published as <em>"Reverse Engineering FICO 8"</em> on Medium. The original article walks through the full methodology, including data collection, feature engineering, and model evaluation.
+        </p>
+        <p style="margin-bottom: 16px;">
+          All code, datasets, and a live API are open-source on GitHub. The FICO 8 estimation API is also publicly available for testing.
+        </p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="https://github.com/mfow/fico" target="_blank" rel="noopener" class="btn btn-primary">GitHub: mfow/fico →</a>
+          <a href="https://mfowcreditscoring.azurewebsites.net/api/Fico8" target="_blank" rel="noopener" class="btn btn-ghost">Live API →</a>
+        </div>
+        <p class="mono" style="margin-top: 16px; font-size: 12px; opacity: 0.6;">
+          CreditCookbook is not affiliated with FICO, Michael Fowlie, or the original research. All findings are summarized for educational purposes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- The Five Factors -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// the five factors</span>
+      <h2 style="margin-bottom: 24px;">The 5 FICO Factors</h2>
+      <p style="max-width: 64ch; margin-bottom: 32px;">
+        FICO publicly discloses the five categories that make up a FICO 8 score and their approximate weights. What they don't disclose is how each category is computed internally or how the sub-calculations combine into the final number.
+      </p>
+
+      <table style="margin-bottom: 32px;">
+        <thead>
+          <tr><th>Factor</th><th>Weight</th><th>What it measures</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Payment History</strong></td><td>35%</td><td>Late payments, delinquencies, collections, public records</td></tr>
+          <tr><td><strong>Amounts Owed</strong></td><td>30%</td><td>Utilization ratios, total balances, number of accounts with balances</td></tr>
+          <tr><td><strong>Length of Credit History</strong></td><td>15%</td><td>Age of oldest account, average age of accounts, time since account activity</td></tr>
+          <tr><td><strong>New Credit</strong></td><td>10%</td><td>Hard inquiries, recently opened accounts, time since last inquiry</td></tr>
+          <tr><td><strong>Credit Mix</strong></td><td>10%</td><td>Diversity of account types — revolving, installment, mortgage, auto</td></tr>
+        </tbody>
+      </table>
+
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
+        <div style="padding: 20px; text-align: center; border-right: 1px solid var(--line);">
+          <div style="font-family: var(--font-mono); font-size: 28px; font-weight: 600; color: var(--blue);">35%</div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Payment History</div>
+        </div>
+        <div style="padding: 20px; text-align: center; border-right: 1px solid var(--line);">
+          <div style="font-family: var(--font-mono); font-size: 28px; font-weight: 600; color: var(--blue);">30%</div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Amounts Owed</div>
+        </div>
+        <div style="padding: 20px; text-align: center; border-right: 1px solid var(--line);">
+          <div style="font-family: var(--font-mono); font-size: 28px; font-weight: 600; color: var(--blue);">15%</div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Length of History</div>
+        </div>
+        <div style="padding: 20px; text-align: center; border-right: 1px solid var(--line);">
+          <div style="font-family: var(--font-mono); font-size: 28px; font-weight: 600; color: var(--blue);">10%</div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">New Credit</div>
+        </div>
+        <div style="padding: 20px; text-align: center;">
+          <div style="font-family: var(--font-mono); font-size: 28px; font-weight: 600; color: var(--blue);">10%</div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Credit Mix</div>
+        </div>
+      </div>
+
+      <p style="max-width: 64ch;">
+        The weights are additive, not multiplicative — a perfect payment history does not guarantee a perfect score if utilization is high and credit history is short. The interplay between factors is what the regression and ML models attempted to capture.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- OLS Regression -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// ols regression</span>
+      <h2 style="margin-bottom: 24px;">Ordinary Least Squares Findings</h2>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        The first approach was a linear regression — fitting the FICO score as a weighted sum of credit file variables. The model achieved an <strong>R-squared of 0.64</strong>, meaning it explained 64% of the variance in FICO scores, with a standard deviation of error around <strong>19 points</strong>.
+      </p>
+      <p style="max-width: 64ch; margin-bottom: 32px;">
+        While not precise enough to predict an individual's exact score, the regression coefficients reveal the marginal impact of each variable — how many points each factor costs or gains.
+      </p>
+
+      <h3 style="margin-bottom: 16px;">Key Coefficients</h3>
+      <table style="margin-bottom: 32px;">
+        <thead>
+          <tr><th>Variable</th><th>Coefficient</th><th>Interpretation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>30-day late payment</td><td>−8 pts</td><td>Each 30-day late mark costs ~8 points</td></tr>
+          <tr><td>120-day late payment</td><td>−13 pts</td><td>Each 120-day late mark costs ~13 points</td></tr>
+          <tr><td>First delinquency</td><td>−22 pts</td><td>The first-ever delinquency on file carries the largest single penalty</td></tr>
+          <tr><td>Recent delinquency</td><td>−8 pts</td><td>A delinquency in the recent past (vs. aged) costs an additional ~8 points</td></tr>
+          <tr><td>Revolving utilization</td><td>−1 pt / 3%</td><td>Every 3% increase in utilization costs ~1 point</td></tr>
+          <tr><td>Hard inquiries (6 months)</td><td>−1.1 pts</td><td>Each hard inquiry within 6 months costs ~1.1 points</td></tr>
+        </tbody>
+      </table>
+
+      <div class="mono-block" style="margin-bottom: 32px;">
+FICO ≈ 720
+  − 8   × (30-day lates)
+  − 13  × (120-day lates)
+  − 22  × (has first delinquency)
+  − 8   × (has recent delinquency)
+  − 1   × (utilization / 3)
+  − 1.1 × (inquiries in last 6mo)
+  + ... (other terms)
+
+R² = 0.64  |  σ(error) ≈ 19 pts
+      </div>
+
+      <h3 style="margin-bottom: 16px;">What the regression tells us</h3>
+      <ul style="margin-left: 24px; line-height: 2; max-width: 64ch;">
+        <li><strong>The first delinquency is the most expensive single event</strong> — at −22 points, it's nearly three times the cost of a subsequent 30-day late.</li>
+        <li><strong>Severity compounds</strong> — a 120-day late costs 62% more than a 30-day late (−13 vs. −8).</li>
+        <li><strong>Utilization is continuous</strong> — there's no single "threshold" where utilization hurts. It's a steady decline of ~1 point per 3% increase.</li>
+        <li><strong>Inquiries are cheap individually</strong> — but rate-shopping (multiple inquiries in 6 months) can add up quickly.</li>
+        <li><strong>Recency matters</strong> — a delinquency from 5 years ago costs less than one from 5 months ago, even before aging adjustments.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- ML Model -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// machine learning model</span>
+      <h2 style="margin-bottom: 24px;">The ML Model &amp; Five Subscores</h2>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        Linear regression treats every variable as independent and additive. FICO 8 does not — it uses segmented scorecards and interaction effects. To capture this, the research trained a machine learning model that decomposes the credit file into <strong>five subscores</strong>, each normalized to a 0.0–1.0 range.
+      </p>
+      <p style="max-width: 64ch; margin-bottom: 32px;">
+        The ML model achieved a <strong>mean absolute error of 14 points</strong> — meaning that on average, the predicted score was within 14 points of the actual FICO 8 score. This is a meaningful improvement over the OLS model's 19-point standard deviation of error.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
+        <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// subscore 1</span>
+          <h4 style="margin-bottom: 6px;">Payment History</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Captures lates, delinquencies, collections, public records, and their age/recency.</p>
+          <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">range: 0.0 – 1.0</p>
+        </div>
+        <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// subscore 2</span>
+          <h4 style="margin-bottom: 6px;">Indebtedness</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Captures utilization, total balances, and proportion of accounts with balances.</p>
+          <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">range: 0.0 – 1.0</p>
+        </div>
+        <div style="padding: 24px; border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// subscore 3</span>
+          <h4 style="margin-bottom: 6px;">Credit Age</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Captures age of oldest account, average age, and time since last activity.</p>
+          <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">range: 0.0 – 1.0</p>
+        </div>
+        <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// subscore 4</span>
+          <h4 style="margin-bottom: 6px;">Pursuit of Credit</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Captures hard inquiries, new accounts, and recent credit-seeking behavior.</p>
+          <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">range: 0.0 – 1.0</p>
+        </div>
+        <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// subscore 5</span>
+          <h4 style="margin-bottom: 6px;">Credit Mix</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Captures diversity of account types — revolving, installment, mortgage, auto.</p>
+          <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">range: 0.0 – 1.0</p>
+        </div>
+        <div style="padding: 24px; border-bottom: 1px solid var(--line); background: var(--paper);">
+          <span class="section-label" style="margin-bottom: 8px;">// overall</span>
+          <h4 style="margin-bottom: 6px;">FICO Estimate</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Weighted combination of all five subscores, mapped to the 300–850 scale.</p>
+          <p class="mono" style="margin-top: 8px; font-size: 12px; color: var(--blue);">MAE: 14 pts</p>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom: 16px;">Decision Tree Scorecards</h3>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        Beyond the regression and ML models, the research identified that FICO 8 uses <strong>segmented scorecards</strong> — decision-tree-like rules that bucket consumers into segments, each with its own scoring baseline. The same variable can have a very different marginal impact depending on which segment you fall into.
+      </p>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        For example, the cost of a new inquiry is higher for someone with a thin file than for someone with a thick file. The penalty for a late payment is steeper for someone with no prior delinquencies than for someone whose file already has several. This is why the linear model only captured 64% of the variance — the other 36% lives in these interaction effects.
+      </p>
+      <p style="max-width: 64ch;">
+        The ML model approximated these scorecards by learning the segment boundaries from the data, which is why it achieved a tighter error band (14 points vs. 19 points).
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Key Thresholds -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// key thresholds</span>
+      <h2 style="margin-bottom: 24px;">Key Balance &amp; Limit Thresholds</h2>
+      <p style="max-width: 64ch; margin-bottom: 32px;">
+        The regression and ML analysis surfaced several non-linear thresholds — points where a specific balance or credit limit crosses a boundary and triggers a discrete score change. These are not smooth gradients; they are step functions in the scoring formula.
+      </p>
+
+      <table style="margin-bottom: 32px;">
+        <thead>
+          <tr><th>Threshold</th><th>Trigger</th><th>Effect</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>$10K avg balance</strong></td><td>Average balance across accounts exceeds $10,000</td><td>Cutoff — scores above this balance level begin to drop more steeply</td></tr>
+          <tr><td><strong>$15K revolving limit</strong></td><td>Total revolving credit limit crosses $15,000</td><td>Score boost — higher limits signal trust and lower utilization</td></tr>
+          <tr><td><strong>$50K revolving limit</strong></td><td>Total revolving credit limit crosses $50,000</td><td>Additional score boost — a second tier of limit benefit</td></tr>
+          <tr><td><strong>$31K balance</strong></td><td>Total balance crosses $31,000</td><td>Score drop — a specific penalty band</td></tr>
+          <tr><td><strong>$50K balance</strong></td><td>Total balance crosses $50,000</td><td>Further score drop — debt load becomes a stronger negative signal</td></tr>
+          <tr><td><strong>$100K balance</strong></td><td>Total balance crosses $100,000</td><td>Most severe balance-related score drop</td></tr>
+          <tr><td><strong>$39K bankcard limit</strong></td><td>Total bankcard (credit card) limit crosses $39,000</td><td>Score boost — a specific threshold for bankcard-only limits</td></tr>
+        </tbody>
+      </table>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h4 style="margin-bottom: 12px;">Practical Takeaway</h4>
+        <p style="font-size: 14px;">
+          These thresholds suggest that <strong>increasing your credit limits</strong> (e.g., requesting CLI increases from existing card issuers) can produce score gains at specific boundaries — particularly at $15K, $39K, and $50K in total revolving/bankcard limits. Conversely, <strong>carrying balances</strong> above $10K average, $31K total, $50K total, and $100K total triggers discrete penalties. If you're near one of these boundaries, paying down to get under it may produce a larger score jump than the OLS coefficient alone would suggest.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Perfect Profile -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// the perfect profile</span>
+      <h2 style="margin-bottom: 24px;">The "Perfect Profile" — FICO 840+</h2>
+      <p style="max-width: 64ch; margin-bottom: 32px;">
+        By isolating the credit files that scored 840 or above, the research identified a consistent profile — the shared characteristics of near-perfect FICO 8 scores. This is what the scoring model rewards most heavily.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
+        <div style="padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// inquiries</span>
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">0</div>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Hard inquiries in the last 6 months</p>
+        </div>
+        <div style="padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// delinquencies</span>
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">0</div>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Late payments or delinquencies on file</p>
+        </div>
+        <div style="padding: 28px; border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// public records</span>
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">0</div>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Bankruptcies, judgments, or tax liens</p>
+        </div>
+        <div style="padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// open accounts</span>
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">10</div>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Average number of open accounts</p>
+        </div>
+        <div style="padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// revolving util</span>
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">4.4%</div>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Average revolving utilization rate</p>
+        </div>
+        <div style="padding: 28px; border-bottom: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// total accounts</span>
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">24</div>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Total accounts (open + closed)</p>
+        </div>
+        <div style="padding: 28px; border-right: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// bankruptcies</span>
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">0</div>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">No bankruptcies on file — ever</p>
+        </div>
+        <div style="padding: 28px; border-right: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// oldest account</span>
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">28 yrs</div>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">Average age of oldest account</p>
+        </div>
+        <div style="padding: 28px; background: var(--paper);">
+          <span class="section-label" style="margin-bottom: 8px;">// target score</span>
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">840+</div>
+          <p style="font-size: 13px; opacity: 0.7; margin-top: 4px;">FICO 8 score range (of 300–850)</p>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom: 16px;">What this profile tells us</h3>
+      <ul style="margin-left: 24px; line-height: 2; max-width: 64ch;">
+        <li><strong>Zero negatives is non-negotiable.</strong> No late payments, no collections, no public records, no bankruptcies. A single 30-day late can cost 8+ points; a first delinquency costs 22.</li>
+        <li><strong>Utilization must be near-zero.</strong> The 840+ cohort averages 4.4% revolving utilization. At −1 point per 3% increase, a 30% utilization rate would cost ~9 points before interaction effects.</li>
+        <li><strong>Credit age is a moat.</strong> 28 years for the oldest account is not something you can engineer quickly. It rewards consumers who opened their first account early and kept it open.</li>
+        <li><strong>Thickness matters.</strong> 10 open accounts and 24 total accounts signals a well-established, diverse credit file. Thin files — even clean ones — rarely reach 840.</li>
+        <li><strong>No recent credit-seeking.</strong> Zero inquiries in 6 months means no rate shopping, no new applications, no signal of financial stress.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Limitations -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// limitations</span>
+      <h2 style="margin-bottom: 24px;">Caveats &amp; Limitations</h2>
+      <ul style="margin-left: 24px; line-height: 2; max-width: 64ch;">
+        <li><strong>This is not the real FICO formula.</strong> It is a statistical approximation based on a specific dataset. Your actual FICO 8 score may differ by 20+ points from any model prediction.</li>
+        <li><strong>Correlation ≠ causation.</strong> The regression coefficients show association, not proof that changing a variable will change your score by exactly that amount.</li>
+        <li><strong>FICO 8 is one of many models.</strong> Lenders also use FICO 9, VantageScore 3.0/4.0, and industry-specific scores (auto, bankcard, mortgage). Each has a different formula.</li>
+        <li><strong>The dataset may not represent you.</strong> If the training data skews toward certain demographics, income levels, or geographic regions, the model's accuracy for your specific profile may vary.</li>
+        <li><strong>Thresholds may shift over time.</strong> FICO periodically updates its models. The thresholds identified here are specific to the FICO 8 model and the dataset analyzed.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Related -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// continue learning</span>
+      <h3 style="margin-bottom: 24px;">Related resources</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <a href="/resources/glossary" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// glossary</span>
+          <h4 style="margin-bottom: 6px;">Legal Glossary</h4>
+          <p style="font-size: 13px; opacity: 0.7;">30+ credit &amp; consumer law terms in plain English</p>
+        </a>
+        <a href="/medical-debt/overview" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// medical debt</span>
+          <h4 style="margin-bottom: 6px;">Medical Debt Guide</h4>
+          <p style="font-size: 13px; opacity: 0.7;">How to remove medical collections from your report</p>
+        </a>
+        <a href="/about" style="padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// about</span>
+          <h4 style="margin-bottom: 6px;">About CreditCookbook</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Open-source credit education — no paywall</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Base>

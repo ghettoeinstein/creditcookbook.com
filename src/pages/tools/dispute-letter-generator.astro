@@ -1,0 +1,276 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = "Generate a printable FCRA dispute letter for credit bureau errors — inaccurate, unverifiable, identity theft, obsolete debt, or mixed file. Free, client-side, no signup.";
+---
+
+<Base title="Dispute Letter Generator — CreditCookbook" description={description} posterTitle="DISPUTE LETTER GENERATOR" posterLabel="// tool 01 — FCRA §1681i">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// how it works</span>
+      <h2 style="margin-bottom: 16px;">Generate a dispute letter</h2>
+      <p style="max-width: 60ch; margin-bottom: 40px; opacity: 0.7;">Select your dispute type, fill in your details, and generate a printable letter formatted for all three credit bureaus. Everything runs in your browser — no data leaves your device.</p>
+
+      <!-- Form -->
+      <div class="card" style="margin-bottom: 40px;">
+        <h3 style="margin-bottom: 24px;">1 · Select dispute type</h3>
+        <div id="dispute-types" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
+          <label class="dispute-option" style="display: block; padding: 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); cursor: pointer; transition: background 0.1s;">
+            <input type="radio" name="disputeType" value="inaccurate" checked style="margin-bottom: 8px;">
+            <h4 style="margin-bottom: 6px;">Inaccurate</h4>
+            <p style="font-size: 12px; opacity: 0.6;">Information is wrong — wrong amount, wrong account, wrong status.</p>
+          </label>
+          <label class="dispute-option" style="display: block; padding: 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); cursor: pointer; transition: background 0.1s;">
+            <input type="radio" name="disputeType" value="unverifiable" style="margin-bottom: 8px;">
+            <h4 style="margin-bottom: 6px;">Unverifiable</h4>
+            <p style="font-size: 12px; opacity: 0.6;">Creditor cannot produce records to confirm the debt.</p>
+          </label>
+          <label class="dispute-option" style="display: block; padding: 20px; border-bottom: 1px solid var(--line); cursor: pointer; transition: background 0.1s;">
+            <input type="radio" name="disputeType" value="identity_theft" style="margin-bottom: 8px;">
+            <h4 style="margin-bottom: 6px;">Identity Theft</h4>
+            <p style="font-size: 12px; opacity: 0.6;">Account opened fraudulently in your name.</p>
+          </label>
+          <label class="dispute-option" style="display: block; padding: 20px; border-right: 1px solid var(--line); cursor: pointer; transition: background 0.1s;">
+            <input type="radio" name="disputeType" value="obsolete" style="margin-bottom: 8px;">
+            <h4 style="margin-bottom: 6px;">Obsolete Debt</h4>
+            <p style="font-size: 12px; opacity: 0.6;">Derogatory item older than 7 years (10 for Chapter 7 BK).</p>
+          </label>
+          <label class="dispute-option" style="display: block; padding: 20px; border-right: 1px solid var(--line); cursor: pointer; transition: background 0.1s;">
+            <input type="radio" name="disputeType" value="mixed_file" style="margin-bottom: 8px;">
+            <h4 style="margin-bottom: 6px;">Mixed File</h4>
+            <p style="font-size: 12px; opacity: 0.6;">Someone else's accounts appeared on your credit file.</p>
+          </label>
+        </div>
+
+        <h3 style="margin-bottom: 24px;">2 · Your information</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Full name *</label>
+            <input type="text" id="fullName" placeholder="Jane Q. Public" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">SSN (last 4)</label>
+            <input type="text" id="ssn" placeholder="1234" maxlength="4" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Street address *</label>
+            <input type="text" id="address" placeholder="123 Main St" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Phone</label>
+            <input type="text" id="phone" placeholder="(555) 123-4567" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">City</label>
+            <input type="text" id="city" placeholder="Los Angeles" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">State + ZIP</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" id="state" placeholder="CA" maxlength="2" style="width: 80px; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none; text-transform: uppercase;" />
+              <input type="text" id="zip" placeholder="90001" maxlength="5" style="flex: 1; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-bottom: 24px;">3 · Account information</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Account number</label>
+            <input type="text" id="accountNumber" placeholder="XXXX-XXXX-1234" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Creditor / Furnisher name</label>
+            <input type="text" id="creditorName" placeholder="ACME Collections LLC" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Amount in question</label>
+            <input type="text" id="amount" placeholder="$500.00" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Bureau</label>
+            <select id="bureau" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none; background: var(--white);">
+              <option value="Experian">Experian — P.O. Box 9701, Allen, TX 75013</option>
+              <option value="Equifax">Equifax — P.O. Box 105069, Atlanta, GA 30348</option>
+              <option value="TransUnion">TransUnion — P.O. Box 2000, Chester, PA 19016</option>
+            </select>
+          </div>
+        </div>
+
+        <h3 style="margin-bottom: 16px;">4 · Additional details (optional)</h3>
+        <textarea id="additionalDetails" placeholder="Any additional context — dates, prior correspondence, supporting facts…" rows="3" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none; resize: vertical; margin-bottom: 32px;"></textarea>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <button class="btn btn-primary" id="generateBtn">Generate letter</button>
+          <button class="btn btn-ghost" id="printBtn" style="display: none;">Print letter</button>
+          <button class="btn btn-ghost" id="copyBtn" style="display: none;">Copy to clipboard</button>
+        </div>
+      </div>
+
+      <!-- Generated letter -->
+      <div id="letterContainer" style="display: none; margin-bottom: 48px;">
+        <hr class="rule" style="margin-bottom: 32px;" />
+        <h3 style="margin-bottom: 24px;">Generated letter</h3>
+        <div id="letterOutput" class="mono-block" style="margin-bottom: 24px;"></div>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h4 style="margin-bottom: 12px;">Before sending</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Send via USPS Certified Mail with Return Receipt</li>
+          <li>Keep the tracking number — it's your proof of delivery</li>
+          <li>Send a separate letter to each bureau reporting the item</li>
+          <li>Include a copy of your credit report with the item highlighted</li>
+          <li>For identity theft: include a copy of your FTC Identity Theft Report</li>
+          <li>Bureaus have 30 days to investigate (FCRA §1681i)</li>
+          <li>If they can't verify, the item must be removed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script is:inline>
+  const disputeBodies = {
+    inaccurate: `I am disputing this account because the information reported is inaccurate.
+Specifically, the amount, account status, or other details do not match
+my records. The reported information is false and misleading.`,
+
+    unverifiable: `I am disputing this account because it cannot be verified. I have no
+record of this debt, and I question whether the furnisher can produce
+documentation to confirm it. Pursuant to FCRA §1681i(a)(5), if the
+information cannot be verified, it must be deleted from my file.`,
+
+    identity_theft: `I am disputing this account because it is the result of identity theft.
+This account was opened fraudulently in my name without my knowledge or
+consent. I have filed a report with the Federal Trade Commission and
+local law enforcement. Pursuant to FCRA §1681c-2, I am requesting that
+you block the reporting of this fraudulent information within 4 business
+days of receiving this request.`,
+
+    obsolete: `I am disputing this account because it is obsolete. The derogatory
+information at issue is more than 7 years old (or, in the case of a
+Chapter 7 bankruptcy, more than 10 years old). Pursuant to FCRA
+§1681c(a), this item is no longer permitted to appear on my credit
+report and must be removed.`,
+
+    mixed_file: `I am disputing this account because it does not belong to me. It
+appears that my credit file has been mixed with that of another
+consumer. The accounts listed below are not mine and have never been
+associated with my identity. I am requesting that you investigate and
+remove all information that does not belong to me from my credit file.`
+  };
+
+  function generateLetter() {
+    const name = document.getElementById('fullName').value.trim() || '[YOUR NAME]';
+    const address = document.getElementById('address').value.trim() || '[YOUR ADDRESS]';
+    const city = document.getElementById('city').value.trim() || '[CITY]';
+    const state = document.getElementById('state').value.trim() || '[STATE]';
+    const zip = document.getElementById('zip').value.trim() || '[ZIP]';
+    const phone = document.getElementById('phone').value.trim() || '[YOUR PHONE]';
+    const ssn = document.getElementById('ssn').value.trim();
+    const accountNumber = document.getElementById('accountNumber').value.trim() || '[ACCOUNT NUMBER]';
+    const creditorName = document.getElementById('creditorName').value.trim() || '[CREDITOR NAME]';
+    const amount = document.getElementById('amount').value.trim() || '[AMOUNT]';
+    const bureau = document.getElementById('bureau').value;
+    const details = document.getElementById('additionalDetails').value.trim();
+    const disputeType = document.querySelector('input[name="disputeType"]:checked').value;
+
+    const bureauAddresses = {
+      'Experian': 'P.O. Box 9701, Allen, TX 75013',
+      'Equifax': 'P.O. Box 105069, Atlanta, GA 30348',
+      'TransUnion': 'P.O. Box 2000, Chester, PA 19016'
+    };
+
+    const today = new Date().toLocaleDateString('en-US', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    const body = disputeBodies[disputeType];
+
+    const extraDetails = details ? `\nAdditional context:\n${details}\n` : '';
+
+    const ssnLine = ssn ? `SSN: XXX-XX-${ssn}\n` : '';
+
+    const letter = `${name}
+${address}
+${city}, ${state} ${zip}
+${phone}
+
+${today}
+
+${bureau}
+${bureauAddresses[bureau]}
+
+RE: Dispute of Credit Report Information
+
+Account: ${accountNumber}
+Creditor / Furnisher: ${creditorName}
+Amount: ${amount}
+${ssnLine}
+To Whom It May Concern,
+
+I am writing to dispute the above-referenced account appearing on my
+credit report. Pursuant to 15 U.S.C. §1681i (Section 611 of the Fair
+Credit Reporting Act), I am exercising my right to dispute this item.
+
+${body}
+${extraDetails}
+I am requesting that you investigate this dispute within 30 days as
+required by FCRA §1681i(a)(1). If you cannot verify this account with
+complete and accurate documentation, I request that you permanently
+remove it from my credit file.
+
+Please send me an updated copy of my credit report once the
+investigation is complete, as required by FCRA §1681j.
+
+Sincerely,
+
+${name}
+
+Enclosures:
+- Copy of credit report with disputed item highlighted
+${disputeType === 'identity_theft' ? '- FTC Identity Theft Report\n- Copy of government-issued ID\n' : ''}- Proof of payment (if applicable)`;
+
+    document.getElementById('letterOutput').textContent = letter;
+    document.getElementById('letterContainer').style.display = 'block';
+    document.getElementById('printBtn').style.display = 'inline-block';
+    document.getElementById('copyBtn').style.display = 'inline-block';
+
+    document.getElementById('letterContainer').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Highlight selected dispute type
+    const options = document.querySelectorAll('.dispute-option');
+    options.forEach(opt => {
+      const radio = opt.querySelector('input[type="radio"]');
+      radio.addEventListener('change', () => {
+        options.forEach(o => { o.style.background = ''; });
+        opt.style.background = 'var(--paper)';
+      });
+    });
+    // Set initial
+    options[0].style.background = 'var(--paper)';
+
+    document.getElementById('generateBtn').addEventListener('click', generateLetter);
+
+    document.getElementById('printBtn').addEventListener('click', () => {
+      const letterText = document.getElementById('letterOutput').textContent;
+      const win = window.open('', '_blank');
+      win.document.write(`<pre style="font-family: monospace; font-size: 13px; line-height: 1.7; white-space: pre-wrap; padding: 40px;">${letterText.replace(/</g, '&lt;')}</pre>`);
+      win.document.write('<script>window.print();</' + 'script>');
+      win.document.close();
+    });
+
+    document.getElementById('copyBtn').addEventListener('click', () => {
+      const letterText = document.getElementById('letterOutput').textContent;
+      navigator.clipboard.writeText(letterText).then(() => {
+        const btn = document.getElementById('copyBtn');
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = orig; }, 2000);
+      });
+    });
+  });
+</script>

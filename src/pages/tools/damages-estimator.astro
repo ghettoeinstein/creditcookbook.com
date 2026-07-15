@@ -1,0 +1,264 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = "Estimate statutory damages for FCRA and FDCPA violations — willful noncompliance, negligent noncompliance, and FDCPA statutory penalties. Free, client-side, no signup.";
+---
+
+<Base title="Statutory Damages Estimator — CreditCookbook" description={description} posterTitle="DAMAGES ESTIMATOR" posterLabel="// tool 03 — FCRA §1681n / §1681o / FDCPA §1692k">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// statutory damages estimator</span>
+      <h2 style="margin-bottom: 16px;">FCRA & FDCPA damages calculator</h2>
+      <p style="max-width: 64ch; margin-bottom: 16px; opacity: 0.7;">Estimate the statutory damages available under the Fair Credit Reporting Act (FCRA) and Fair Debt Collection Practices Act (FDCPA). This tool calculates statutory ranges based on the number and type of violations.</p>
+      <p style="max-width: 64ch; margin-bottom: 40px; font-family: var(--font-mono); font-size: 12px; color: var(--blue);">⚠ This is an educational estimator, not legal advice. Actual damages depend on case specifics and court discretion. Consult an attorney for your situation.</p>
+
+      <!-- Violation type selector -->
+      <div class="card" style="margin-bottom: 32px;">
+        <h3 style="margin-bottom: 20px;">1 · Select violation type</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line);">
+          <label class="violation-option" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); cursor: pointer; transition: background 0.1s;">
+            <input type="radio" name="violationType" value="willful" checked style="margin-bottom: 8px;">
+            <h4 style="margin-bottom: 8px;">Willful Noncompliance</h4>
+            <p style="font-size: 12px; opacity: 0.6; margin-bottom: 8px;">FCRA §1681n — knowingly or recklessly violating FCRA requirements.</p>
+            <p class="mono" style="font-size: 11px; color: var(--blue);">$100 – $1,000 per violation</p>
+          </label>
+          <label class="violation-option" style="display: block; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); cursor: pointer; transition: background 0.1s;">
+            <input type="radio" name="violationType" value="negligent" style="margin-bottom: 8px;">
+            <h4 style="margin-bottom: 8px;">Negligent Noncompliance</h4>
+            <p style="font-size: 12px; opacity: 0.6; margin-bottom: 8px;">FCRA §1681o — negligent failure to comply with FCRA duties.</p>
+            <p class="mono" style="font-size: 11px; color: var(--blue);">Actual damages + attorney fees</p>
+          </label>
+          <label class="violation-option" style="display: block; padding: 24px; border-bottom: 1px solid var(--line); cursor: pointer; transition: background 0.1s;">
+            <input type="radio" name="violationType" value="fdcpa" style="margin-bottom: 8px;">
+            <h4 style="margin-bottom: 8px;">FDCPA Violation</h4>
+            <p style="font-size: 12px; opacity: 0.6; margin-bottom: 8px;">15 U.S.C. §1692k — debt collector violates FDCPA rules.</p>
+            <p class="mono" style="font-size: 11px; color: var(--blue);">$500 – $1,000 per violation (class actions capped)</p>
+          </label>
+        </div>
+      </div>
+
+      <!-- Parameters -->
+      <div class="card-flat" style="margin-bottom: 32px;">
+        <h3 style="margin-bottom: 20px;">2 · Enter parameters</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Number of violations</label>
+            <input type="number" id="violationCount" value="1" min="1" max="100" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+            <p style="font-size: 11px; opacity: 0.5; margin-top: 4px;" id="violationHint">Each separate violation counts individually.</p>
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Actual damages ($)</label>
+            <input type="number" id="actualDamages" value="0" min="0" step="0.01" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+            <p style="font-size: 11px; opacity: 0.5; margin-top: 4px;">Documented financial harm — loan denials, higher interest, etc.</p>
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Estimated attorney fees ($)</label>
+            <input type="number" id="attorneyFees" value="0" min="0" step="0.01" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+            <p style="font-size: 11px; opacity: 0.5; margin-top: 4px;">FCRA and FDCPA both shift attorney fees to the defendant.</p>
+          </div>
+          <div id="punitiveBox" style="display: none;">
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Punitive damages ($)</label>
+            <input type="number" id="punitiveDamages" value="0" min="0" step="0.01" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none;" />
+            <p style="font-size: 11px; opacity: 0.5; margin-top: 4px;">Available only for willful violations (FCRA §1681n(b)).</p>
+          </div>
+          <div id="classActionBox" style="display: none;">
+            <label style="display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Class action? (FDCPA)</label>
+            <select id="isClassAction" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--ink); font-family: var(--font-body); font-size: 14px; outline: none; background: var(--white);">
+              <option value="no">No — individual action</option>
+              <option value="yes">Yes — class action</option>
+            </select>
+            <p style="font-size: 11px; opacity: 0.5; margin-top: 4px;">Class actions cap statutory damages at the lesser of $500K or 1% of collector's net worth.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
+        <div style="padding: 40px; border-right: 1px solid var(--line);">
+          <span class="section-label" style="margin-bottom: 8px;">// statutory damages range</span>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px;">
+            <span style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--blue);" id="statutoryLow">$100</span>
+            <span style="font-family: var(--font-display); font-size: 1.5rem; opacity: 0.4;">—</span>
+            <span style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--blue);" id="statutoryHigh">$1,000</span>
+          </div>
+          <p style="font-size: 12px; opacity: 0.6; font-family: var(--font-mono);" id="statutoryNote">Per-violution statutory range</p>
+        </div>
+        <div style="padding: 40px;">
+          <span class="section-label" style="margin-bottom: 8px;">// total estimated damages</span>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px;">
+            <span style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--ink);" id="totalLow">$100</span>
+            <span style="font-family: var(--font-display); font-size: 1.5rem; opacity: 0.4;">—</span>
+            <span style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--ink);" id="totalHigh">$1,000</span>
+          </div>
+          <p style="font-size: 12px; opacity: 0.6; font-family: var(--font-mono);">Including actual damages, fees, and punitive</p>
+        </div>
+      </div>
+
+      <!-- Breakdown table -->
+      <div class="card-flat" style="margin-bottom: 32px;">
+        <h3 style="margin-bottom: 16px;">Damage breakdown</h3>
+        <table>
+          <thead>
+            <tr><th>Category</th><th>Low estimate</th><th>High estimate</th><th>Statute</th></tr>
+          </thead>
+          <tbody id="breakdownBody">
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Legal references -->
+      <div class="card">
+        <h3 style="margin-bottom: 16px;">Statutory references</h3>
+        <table>
+          <thead>
+            <tr><th>Statute</th><th>Covers</th><th>Statutory damages</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>FCRA §1681n(a)</strong></td><td>Willful noncompliance — actual damages</td><td>Actual + attorney fees</td></tr>
+            <tr><td><strong>FCRA §1681n(b)</strong></td><td>Willful noncompliance — statutory</td><td>$100 – $1,000 per violation</td></tr>
+            <tr><td><strong>FCRA §1681n(c)</strong></td><td>Willful noncompliance — punitive</td><td>Unlimited (court discretion)</td></tr>
+            <tr><td><strong>FCRA §1681o</strong></td><td>Negligent noncompliance</td><td>Actual + attorney fees</td></tr>
+            <tr><td><strong>FDCPA §1692k(a)(2)(A)</strong></td><td>Individual FDCPA violation</td><td>Up to $1,000 per action</td></tr>
+            <tr><td><strong>FDCPA §1692k(a)(2)(B)</strong></td><td>Class action — statutory</td><td>Lesser of $500K or 1% net worth</td></tr>
+            <tr><td><strong>FDCPA §1692k(a)(3)</strong></td><td>Actual damages</td><td>Unlimited (documented harm)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script is:inline>
+  const violationConfig = {
+    willful: {
+      label: 'Willful Noncompliance (FCRA §1681n)',
+      minPerViolation: 100,
+      maxPerViolation: 1000,
+      allowsPunitive: true,
+      allowsActual: true,
+      allowsAttorneyFees: true,
+      allowsClassAction: false,
+      hint: 'Each separate willful FCRA violation counts individually for statutory damages.'
+    },
+    negligent: {
+      label: 'Negligent Noncompliance (FCRA §1681o)',
+      minPerViolation: 0,
+      maxPerViolation: 0,
+      allowsPunitive: false,
+      allowsActual: true,
+      allowsAttorneyFees: true,
+      allowsClassAction: false,
+      hint: 'Negligent violations do not carry statutory damages — only actual damages and attorney fees.'
+    },
+    fdcpa: {
+      label: 'FDCPA Violation (15 U.S.C. §1692k)',
+      minPerViolation: 500,
+      maxPerViolation: 1000,
+      allowsPunitive: false,
+      allowsActual: true,
+      allowsAttorneyFees: true,
+      allowsClassAction: true,
+      hint: 'FDCPA statutory damages are per action, not per violation. Courts weigh the frequency, nature, and intent of violations to set the amount within the $0–$1,000 range.'
+    }
+  };
+
+  function calculate() {
+    const type = document.querySelector('input[name="violationType"]:checked').value;
+    const config = violationConfig[type];
+    const count = parseInt(document.getElementById('violationCount').value) || 1;
+    const actualDmg = parseFloat(document.getElementById('actualDamages').value) || 0;
+    const attorneyFees = parseFloat(document.getElementById('attorneyFees').value) || 0;
+    const punitive = config.allowsPunitive ? (parseFloat(document.getElementById('punitiveDamages').value) || 0) : 0;
+    const isClassAction = config.allowsClassAction && document.getElementById('isClassAction').value === 'yes';
+
+    // Show/hide conditional fields
+    document.getElementById('punitiveBox').style.display = config.allowsPunitive ? 'block' : 'none';
+    document.getElementById('classActionBox').style.display = config.allowsClassAction ? 'block' : 'none';
+    document.getElementById('violationHint').textContent = config.hint;
+
+    // Statutory range
+    let statutoryLow, statutoryHigh;
+    if (config.maxPerViolation === 0) {
+      // Negligent — no statutory
+      statutoryLow = 0;
+      statutoryHigh = 0;
+    } else if (type === 'fdcpa' && isClassAction) {
+      // FDCPA class action — capped
+      statutoryLow = 0;
+      statutoryHigh = 500000; // cap — displayed separately
+    } else {
+      statutoryLow = config.minPerViolation * count;
+      statutoryHigh = config.maxPerViolation * count;
+    }
+
+    // For FDCPA individual, statutory is per ACTION (not per violation), but we use count as a frequency factor
+    let fdcpaNote = '';
+    if (type === 'fdcpa' && !isClassAction) {
+      // Courts consider number of violations to set amount within 0-1000
+      statutoryLow = Math.min(config.minPerViolation * count, 1000);
+      statutoryHigh = Math.min(config.maxPerViolation * count, 1000);
+      fdcpaNote = ' (per action — court weighs violation count)';
+    }
+
+    // Totals
+    const totalLow = statutoryLow + actualDmg + attorneyFees + punitive;
+    const totalHigh = statutoryHigh + actualDmg + attorneyFees + punitive;
+
+    // Display
+    document.getElementById('statutoryLow').textContent = '$' + statutoryLow.toLocaleString('en-US');
+    document.getElementById('statutoryHigh').textContent = statutoryHigh === 0 ? '$0' : '$' + statutoryHigh.toLocaleString('en-US');
+    document.getElementById('statutoryNote').textContent = type === 'negligent' ? 'No statutory damages for negligent violations' : 'Statutory damages range' + fdcpaNote;
+
+    document.getElementById('totalLow').textContent = '$' + totalLow.toLocaleString('en-US');
+    document.getElementById('totalHigh').textContent = '$' + totalHigh.toLocaleString('en-US');
+
+    // Breakdown table
+    const breakdown = document.getElementById('breakdownBody');
+    let rows = [];
+
+    if (config.maxPerViolation > 0) {
+      if (type === 'fdcpa' && isClassAction) {
+        rows.push(`<tr><td>Statutory (class action cap)</td><td>$0</td><td>$500,000 or 1% net worth</td><td>§1692k(a)(2)(B)</td></tr>`);
+      } else {
+        rows.push(`<tr><td>Statutory damages (${count} × violation${count > 1 ? 's' : ''})</td><td>$${statutoryLow.toLocaleString('en-US')}</td><td>$${statutoryHigh.toLocaleString('en-US')}</td><td>${type === 'willful' ? '§1681n(b)' : '§1692k(a)(2)(A)'}</td></tr>`);
+      }
+    }
+    if (actualDmg > 0) {
+      const statute = type === 'fdcpa' ? '§1692k(a)(3)' : (type === 'willful' ? '§1681n(a)' : '§1681o');
+      rows.push(`<tr><td>Actual damages</td><td>$${actualDmg.toLocaleString('en-US')}</td><td>$${actualDmg.toLocaleString('en-US')}</td><td>${statute}</td></tr>`);
+    }
+    if (attorneyFees > 0) {
+      const statute = type === 'fdcpa' ? '§1692k(a)(3)' : (type === 'willful' ? '§1681n(a)(3)' : '§1681o(b)');
+      rows.push(`<tr><td>Attorney fees & costs</td><td>$${attorneyFees.toLocaleString('en-US')}</td><td>$${attorneyFees.toLocaleString('en-US')}</td><td>${statute}</td></tr>`);
+    }
+    if (config.allowsPunitive && punitive > 0) {
+      rows.push(`<tr><td>Punitive damages</td><td>$${punitive.toLocaleString('en-US')}</td><td>$${punitive.toLocaleString('en-US')}</td><td>§1681n(c)</td></tr>`);
+    }
+    rows.push(`<tr style="font-weight: 700;"><td><strong>Total estimated range</strong></td><td><strong>$${totalLow.toLocaleString('en-US')}</strong></td><td><strong>$${totalHigh.toLocaleString('en-US')}</strong></td><td>—</td></tr>`);
+
+    breakdown.innerHTML = rows.join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Highlight selected violation type
+    const options = document.querySelectorAll('.violation-option');
+    options.forEach(opt => {
+      const radio = opt.querySelector('input[type="radio"]');
+      radio.addEventListener('change', () => {
+        options.forEach(o => { o.style.background = ''; });
+        opt.style.background = 'var(--paper)';
+        calculate();
+      });
+    });
+    options[0].style.background = 'var(--paper)';
+
+    // Recalculate on input change
+    ['violationCount', 'actualDamages', 'attorneyFees', 'punitiveDamages', 'isClassAction'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', calculate);
+      if (el) el.addEventListener('change', calculate);
+    });
+
+    calculate();
+  });
+</script>

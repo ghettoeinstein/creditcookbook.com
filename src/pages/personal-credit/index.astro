@@ -1,0 +1,85 @@
+---
+import Base from '../../layouts/Base.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+
+const description = 'Personal credit hub — dispute letters, bureau response scripts, and playbooks for medical debt, collections, late payments, and more. Free, inspectable, community-verifiable.';
+---
+
+<Base title="Personal Credit — CreditCookbook" description={description} posterTitle="PERSONAL CREDIT" posterLabel="// hub — dispute, enforce, build">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// the personal credit hub</span>
+      <h2 style="margin-bottom: 16px;">Everything you need to fix your personal credit.</h2>
+      <p style="max-width: 60ch; opacity: 0.7; margin-bottom: 48px;">The FCRA gives you every tool to dispute inaccuracies, enforce your rights, and build positive credit history. Here are the playbooks, letter templates, and step-by-step guides — all free, all inspectable on GitHub.</p>
+
+      <!-- Topic clusters -->
+      <h3 style="margin-bottom: 24px;">Topics</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+
+        <!-- Medical Debt (live) -->
+        <a href="/medical-debt" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// topic 01 — live</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Medical Debt</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Dispute medical collections, negotiate hospital bills, HIPAA removal, pay-for-delete, and the $500 threshold rule.</p>
+          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">12 pages →</p>
+        </a>
+
+        <!-- Collections (coming soon) -->
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
+          <span class="section-label" style="margin-bottom: 8px;">// topic 02 — coming soon</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Collections</h4>
+          <p style="font-size: 13px;">Validate, dispute, and negotiate general collection accounts.</p>
+          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        </div>
+
+        <!-- Late Payments (coming soon) -->
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
+          <span class="section-label" style="margin-bottom: 8px;">// topic 03 — coming soon</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Late Payments</h4>
+          <p style="font-size: 13px;">Goodwill letters, pay-for-delete, and 609 dispute strategies.</p>
+          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        </div>
+
+        <!-- Hard Inquiries (coming soon) -->
+        <div style="padding: 32px; border-bottom: 1px solid var(--line); opacity: 0.4;">
+          <span class="section-label" style="margin-bottom: 8px;">// topic 04 — coming soon</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Hard Inquiries</h4>
+          <p style="font-size: 13px;">Remove unauthorized inquiries and freeze your report.</p>
+          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- The process -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// the process</span>
+      <h2 style="margin-bottom: 32px;">How personal credit repair works.</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line);">
+        <div style="padding: 28px; border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 01</span>
+          <h3 style="margin-top: 12px; margin-bottom: 8px;">Know Your Rights</h3>
+          <p style="font-size: 13px; opacity: 0.7;">FCRA, FDCPA, HIPAA — the statutes that protect you and give you enforcement tools.</p>
+        </div>
+        <div style="padding: 28px; border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 02</span>
+          <h3 style="margin-top: 12px; margin-bottom: 8px;">Enforce</h3>
+          <p style="font-size: 13px; opacity: 0.7;">Send dispute letters, validation requests, and follow up. Track every response.</p>
+        </div>
+        <div style="padding: 28px;">
+          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 03</span>
+          <h3 style="margin-top: 12px; margin-bottom: 8px;">Build</h3>
+          <p style="font-size: 13px; opacity: 0.7;">Secured cards, credit-builder loans, and authorized user strategies to rebuild.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <EmailCapture />
+
+</Base>

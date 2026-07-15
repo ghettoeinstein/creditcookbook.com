@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+
+const description = 'Business credit hub — build business credit, separate personal from business liability, navigate DUNS, PayDex, and vendor credit lines. Free, inspectable, community-verifiable.';
+---
+
+<Base title="Business Credit — CreditCookbook" description={description} posterTitle="BUSINESS CREDIT" posterLabel="// hub — separate, establish, scale">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// the business credit hub</span>
+      <h2 style="margin-bottom: 16px;">Build business credit without personal liability.</h2>
+      <p style="max-width: 60ch; opacity: 0.7; margin-bottom: 48px;">Business credit is a separate system from personal credit — different bureaus, different scoring models, different rules. Here are the playbooks for establishing, building, and leveraging business credit the right way.</p>
+
+      <!-- Topic clusters -->
+      <h3 style="margin-bottom: 24px;">Topics</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
+          <span class="section-label" style="margin-bottom: 8px;">// topic 01 — coming soon</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Entity Setup</h4>
+          <p style="font-size: 13px;">LLC vs. C-Corp, EIN registration, and separating personal from business credit.</p>
+          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        </div>
+
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
+          <span class="section-label" style="margin-bottom: 8px;">// topic 02 — coming soon</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">DUNS & PayDex</h4>
+          <p style="font-size: 13px;">Register with Dun & Bradstreet, build your PayDex score, and understand business bureau reporting.</p>
+          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        </div>
+
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
+          <span class="section-label" style="margin-bottom: 8px;">// topic 03 — coming soon</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Vendor Credit Lines</h4>
+          <p style="font-size: 13px;">Net-30 accounts, tiered vendor credit, and building trade references that report.</p>
+          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        </div>
+
+        <div style="padding: 32px; border-bottom: 1px solid var(--line); opacity: 0.4;">
+          <span class="section-label" style="margin-bottom: 8px;">// topic 04 — coming soon</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">Business Credit Cards</h4>
+          <p style="font-size: 13px;">Cards that report to business bureaus (not personal), EIN-only approval, and spend optimization.</p>
+          <p class="mono" style="margin-top: 16px; font-size: 12px;">coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- The process -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// the process</span>
+      <h2 style="margin-bottom: 32px;">How business credit building works.</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line);">
+        <div style="padding: 28px; border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 01</span>
+          <h3 style="margin-top: 12px; margin-bottom: 8px;">Incorporate</h3>
+          <p style="font-size: 13px; opacity: 0.7;">Form a legal entity, get an EIN, and separate your business identity from your personal credit.</p>
+        </div>
+        <div style="padding: 28px; border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 02</span>
+          <h3 style="margin-top: 12px; margin-bottom: 8px;">Register</h3>
+          <p style="font-size: 13px; opacity: 0.7;">Get a DUNS number, register with business bureaus, and open a business bank account.</p>
+        </div>
+        <div style="padding: 28px;">
+          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// step 03</span>
+          <h3 style="margin-top: 12px; margin-bottom: 8px;">Build</h3>
+          <p style="font-size: 13px; opacity: 0.7;">Start with vendor credit lines, graduate to store cards, then business credit cards and loans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <EmailCapture />
+
+</Base>

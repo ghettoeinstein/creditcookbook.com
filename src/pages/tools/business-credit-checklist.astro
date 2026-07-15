@@ -1,0 +1,285 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = "Interactive business credit readiness checklist — entity setup, EIN/DUNS, banking, tradelines, reporting, and scoring. Track your progress with a live percentage. Free, client-side.";
+---
+
+<Base title="Business Credit Readiness Checklist — CreditCookbook" description={description} posterTitle="BUSINESS CREDIT READINESS" posterLabel="// tool 04 — build business credit">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// business credit readiness</span>
+      <h2 style="margin-bottom: 16px;">Are you ready for business credit?</h2>
+      <p style="max-width: 64ch; margin-bottom: 40px; opacity: 0.7;">Building business credit separate from your personal credit requires proper entity setup, correct registrations, and strategic tradeline management. Check off each item as you complete it — your readiness score updates live.</p>
+
+      <!-- Progress bar -->
+      <div style="border: 1px solid var(--line); margin-bottom: 32px;">
+        <div style="padding: 32px 40px; border-bottom: 1px solid var(--line);">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px;">
+            <span class="section-label" style="margin-bottom: 0;">// readiness score</span>
+            <span id="readinessScore" style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--blue);">0%</span>
+          </div>
+          <div style="width: 100%; height: 12px; background: var(--paper); border: 1px solid var(--line); position: relative; overflow: hidden;">
+            <div id="readinessBar" style="height: 100%; width: 0%; background: var(--blue); transition: width 0.3s ease;"></div>
+          </div>
+          <div id="readinessLabel" style="margin-top: 12px; font-family: var(--font-mono); font-size: 12px; opacity: 0.6;">Not started — begin with entity formation.</div>
+        </div>
+        <!-- Category progress -->
+        <div style="padding: 24px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px;" id="categoryProgress">
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div id="checklistContainer">
+        <!-- Category: Entity Setup -->
+        <div class="card" style="margin-bottom: 24px;" data-category="entity">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <span class="section-label" style="margin-bottom: 4px;">// 01</span>
+              <h3 style="margin-bottom: 0;">Entity Setup</h3>
+            </div>
+            <span class="cat-score" data-cat="entity" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/5</span>
+          </div>
+          <div class="checklist-items">
+            <label class="check-item"><input type="checkbox" data-cat="entity"> Form an LLC or Corporation (not a sole proprietorship)</label>
+            <label class="check-item"><input type="checkbox" data-cat="entity"> File with your state Secretary of State</label>
+            <label class="check-item"><input type="checkbox" data-cat="entity"> Obtain a business license for your industry/location</label>
+            <label class="check-item"><input type="checkbox" data-cat="entity"> File a DBA if operating under a different name</label>
+            <label class="check-item"><input type="checkbox" data-cat="entity"> Draft an operating agreement or corporate bylaws</label>
+          </div>
+        </div>
+
+        <!-- Category: EIN / DUNS -->
+        <div class="card" style="margin-bottom: 24px;" data-category="ein">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <span class="section-label" style="margin-bottom: 4px;">// 02</span>
+              <h3 style="margin-bottom: 0;">EIN & DUNS Number</h3>
+            </div>
+            <span class="cat-score" data-cat="ein" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/4</span>
+          </div>
+          <div class="checklist-items">
+            <label class="check-item"><input type="checkbox" data-cat="ein"> Obtain an EIN from the IRS (free at IRS.gov)</label>
+            <label class="check-item"><input type="checkbox" data-cat="ein"> Register for a DUNS number with Dun & Bradstreet (free)</label>
+            <label class="check-item"><input type="checkbox" data-cat="ein"> Verify your business profile on D&B is accurate</label>
+            <label class="check-item"><input type="checkbox" data-cat="ein"> Register with SAM.gov if pursuing government contracts</label>
+          </div>
+        </div>
+
+        <!-- Category: Bank Account -->
+        <div class="card" style="margin-bottom: 24px;" data-category="bank">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <span class="section-label" style="margin-bottom: 4px;">// 03</span>
+              <h3 style="margin-bottom: 0;">Business Banking</h3>
+            </div>
+            <span class="cat-score" data-cat="bank" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/5</span>
+          </div>
+          <div class="checklist-items">
+            <label class="check-item"><input type="checkbox" data-cat="bank"> Open a dedicated business checking account</label>
+            <label class="check-item"><input type="checkbox" data-cat="bank"> Open a business savings account</label>
+            <label class="check-item"><input type="checkbox" data-cat="bank"> Get a business debit card</label>
+            <label class="check-item"><input type="checkbox" data-cat="bank"> Separate all personal and business finances completely</label>
+            <label class="check-item"><input type="checkbox" data-cat="bank"> Maintain a minimum balance to avoid fees and show stability</label>
+          </div>
+        </div>
+
+        <!-- Category: Tradelines -->
+        <div class="card" style="margin-bottom: 24px;" data-category="tradelines">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <span class="section-label" style="margin-bottom: 4px;">// 04</span>
+              <h3 style="margin-bottom: 0;">Tradelines & Vendor Credit</h3>
+            </div>
+            <span class="cat-score" data-cat="tradelines" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/5</span>
+          </div>
+          <div class="checklist-items">
+            <label class="check-item"><input type="checkbox" data-cat="tradelines"> Open 2–3 net-30 vendor accounts (e.g., Uline, Quill, Grainger)</label>
+            <label class="check-item"><input type="checkbox" data-cat="tradelines"> Make purchases and pay early (before the 30-day terms)</label>
+            <label class="check-item"><input type="checkbox" data-cat="tradelines"> Open a store credit card (e.g., Home Depot, Lowe's, Amazon Business)</label>
+            <label class="check-item"><input type="checkbox" data-cat="tradelines"> Apply for a business credit card (separate from personal)</label>
+            <label class="check-item"><input type="checkbox" data-cat="tradelines"> Ensure at least 3 tradelines are reporting to D&B/Experian Business</label>
+          </div>
+        </div>
+
+        <!-- Category: Reporting -->
+        <div class="card" style="margin-bottom: 24px;" data-category="reporting">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <span class="section-label" style="margin-bottom: 4px;">// 05</span>
+              <h3 style="margin-bottom: 0;">Credit Bureau Reporting</h3>
+            </div>
+            <span class="cat-score" data-cat="reporting" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/5</span>
+          </div>
+          <div class="checklist-items">
+            <label class="check-item"><input type="checkbox" data-cat="reporting"> Verify your business is listed with Dun & Bradstreet (PAYDEX)</label>
+            <label class="check-item"><input type="checkbox" data-cat="reporting"> Verify your business is listed with Experian Business (Intelliscore)</label>
+            <label class="check-item"><input type="checkbox" data-cat="reporting"> Verify your business is listed with Equifax Business</label>
+            <label class="check-item"><input type="checkbox" data-cat="reporting"> Check that tradelines are actually reporting (pull a report)</label>
+            <label class="check-item"><input type="checkbox" data-cat="reporting"> Monitor your business credit reports quarterly</label>
+          </div>
+        </div>
+
+        <!-- Category: Score -->
+        <div class="card" style="margin-bottom: 24px;" data-category="score">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <span class="section-label" style="margin-bottom: 4px;">// 06</span>
+              <h3 style="margin-bottom: 0;">Score & Funding Readiness</h3>
+            </div>
+            <span class="cat-score" data-cat="score" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--blue);">0/6</span>
+          </div>
+          <div class="checklist-items">
+            <label class="check-item"><input type="checkbox" data-cat="score"> Achieve a PAYDEX score of 80+ (early payments)</label>
+            <label class="check-item"><input type="checkbox" data-cat="score"> Have 5+ tradelines reporting with positive history</label>
+            <label class="check-item"><input type="checkbox" data-cat="score"> Maintain 12+ months of business credit history</label>
+            <label class="check-item"><input type="checkbox" data-cat="score"> Keep business debt-to-income ratio below 50%</label>
+            <label class="check-item"><input type="checkbox" data-cat="score"> Have financial statements (P&L, balance sheet) prepared</label>
+            <label class="check-item"><input type="checkbox" data-cat="score"> Be pre-qualified for a business loan or line of credit</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action bar -->
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px;">
+        <button class="btn btn-ghost" id="resetBtn">Reset checklist</button>
+        <button class="btn btn-ghost" id="printBtn">Print checklist</button>
+      </div>
+
+      <!-- Tier explanation -->
+      <div class="card-flat">
+        <h3 style="margin-bottom: 16px;">Readiness tiers</h3>
+        <table>
+          <thead>
+            <tr><th>Tier</th><th>Score</th><th>What it means</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Not Started</strong></td><td>0% – 10%</td><td>No entity or registrations in place. Start with forming an LLC or corporation.</td></tr>
+            <tr><td><strong>Foundation</strong></td><td>11% – 30%</td><td>Entity formed, EIN obtained. Banking and registrations in progress.</td></tr>
+            <tr><td><strong>Building</strong></td><td>31% – 60%</td><td>Banking set up, first tradelines opened. DUNS registered and profile building.</td></tr>
+            <tr><td><strong>Established</strong></td><td>61% – 80%</td><td>Multiple reporting tradelines, positive payment history. Approaching fundability.</td></tr>
+            <tr><td><strong>Fundable</strong></td><td>81% – 100%</td><td>Strong business credit profile. Ready for loans, LOC, and vendor terms without personal guarantees.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script is:inline>
+  const categoryLabels = {
+    entity: 'Entity Setup',
+    ein: 'EIN / DUNS',
+    bank: 'Banking',
+    tradelines: 'Tradelines',
+    reporting: 'Reporting',
+    score: 'Scoring'
+  };
+
+  function calculate() {
+    const categories = ['entity', 'ein', 'bank', 'tradelines', 'reporting', 'score'];
+    let totalChecked = 0;
+    let totalItems = 0;
+    const catData = {};
+
+    categories.forEach(cat => {
+      const checkboxes = document.querySelectorAll(`input[data-cat="${cat}"]`);
+      const checked = document.querySelectorAll(`input[data-cat="${cat}"]:checked`).length;
+      const total = checkboxes.length;
+      catData[cat] = { checked, total };
+      totalChecked += checked;
+      totalItems += total;
+
+      // Update category score
+      const scoreEl = document.querySelector(`.cat-score[data-cat="${cat}"]`);
+      if (scoreEl) {
+        scoreEl.textContent = `${checked}/${total}`;
+        if (checked === total) scoreEl.style.color = 'var(--blue)';
+        else if (checked > 0) scoreEl.style.color = '#B45309';
+        else scoreEl.style.color = 'var(--ink)';
+        scoreEl.style.opacity = checked === 0 ? '0.4' : '1';
+      }
+    });
+
+    const percentage = totalItems > 0 ? Math.round((totalChecked / totalItems) * 100) : 0;
+
+    // Update main score
+    document.getElementById('readinessScore').textContent = percentage + '%';
+    document.getElementById('readinessBar').style.width = percentage + '%';
+
+    // Update label
+    let label, color;
+    if (percentage <= 10) { label = 'Not started — begin with entity formation.'; color = 'var(--ink)'; }
+    else if (percentage <= 30) { label = 'Foundation — entity forming, getting registered.'; color = '#B45309'; }
+    else if (percentage <= 60) { label = 'Building — banking and tradelines in progress.'; color = '#B45309'; }
+    else if (percentage <= 80) { label = 'Established — credit profile growing. Approaching fundability.'; color = 'var(--blue)'; }
+    else { label = 'Fundable — strong profile. Ready for business loans without personal guarantees.'; color = 'var(--blue)'; }
+
+    const labelEl = document.getElementById('readinessLabel');
+    labelEl.textContent = label;
+    labelEl.style.color = color;
+    document.getElementById('readinessScore').style.color = color;
+    document.getElementById('readinessBar').style.background = color;
+
+    // Update category progress bar
+    const catProgress = document.getElementById('categoryProgress');
+    catProgress.innerHTML = categories.map(cat => {
+      const d = catData[cat];
+      const pct = d.total > 0 ? Math.round((d.checked / d.total) * 100) : 0;
+      return `
+        <div>
+          <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; margin-bottom: 4px;">
+            <span style="opacity: 0.7;">${categoryLabels[cat]}</span>
+            <span style="font-weight: 600;">${pct}%</span>
+          </div>
+          <div style="width: 100%; height: 4px; background: var(--paper); border: 1px solid var(--line);">
+            <div style="height: 100%; width: ${pct}%; background: ${pct === 100 ? 'var(--blue)' : (pct > 0 ? '#B45309' : 'transparent')}; transition: width 0.3s ease;"></div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', calculate);
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => { cb.checked = false; });
+      calculate();
+    });
+
+    document.getElementById('printBtn').addEventListener('click', () => {
+      window.print();
+    });
+
+    calculate();
+  });
+</script>
+
+<style is:global>
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.6;
+    transition: opacity 0.1s;
+  }
+  .check-item:last-child { border-bottom: none; }
+  .check-item input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--blue);
+  }
+  .check-item:has(input:checked) {
+    opacity: 0.5;
+    text-decoration: line-through;
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+
+const description = 'Contact CreditCookbook — get in touch about credit education, corrections, partnerships, or just to say hello.';
+---
+
+<Base title="Contact — CreditCookbook" description={description} posterTitle="CONTACT" posterLabel="// get in touch">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// contact</span>
+      <h2 style="margin-bottom: 16px;">Get in touch.</h2>
+      <p style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">Questions about a recipe? Found an error in a letter template? Want to collaborate? Here's how to reach me.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <!-- Email -->
+        <a href="mailto:hello@creditcookbook.com" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// email</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">hello@creditcookbook.com</h4>
+          <p style="font-size: 13px; opacity: 0.7;">General questions, corrections, partnership inquiries.</p>
+          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">send email →</p>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/ghettoeinstein/creditcookbook.com" target="_blank" rel="noopener" style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// open an issue</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">GitHub Issues</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Found a typo or error in a template? Open an issue on the repo — fastest way to get it fixed.</p>
+          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">github.com/ghettoeinstein →</p>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener" style="display: block; padding: 32px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// professional</span>
+          <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">LinkedIn</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Connect with Caleb Pierre on LinkedIn for professional inquiries.</p>
+          <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">linkedin.com/in/calebpierre →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Response time -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// what to expect</span>
+      <h2 style="margin-bottom: 24px;">Response expectations.</h2>
+      <table>
+        <thead>
+          <tr><th>Channel</th><th>Response Time</th><th>Best For</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Email</td><td>3–5 business days</td><td>General questions, corrections, partnerships</td></tr>
+          <tr><td>GitHub Issue</td><td>1–2 business days</td><td>Template errors, bug reports, content fixes</td></tr>
+          <tr><td>LinkedIn</td><td>1 week</td><td>Professional inquiries, collaborations</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 32px; max-width: 60ch; font-size: 14px; opacity: 0.6;">
+        <strong>Note:</strong> CreditCookbook is a free, open-source educational resource — not a credit repair service. I cannot provide individualized legal or financial advice. For specific situations, consult a consumer law attorney or a certified credit counselor.
+      </p>
+    </div>
+  </section>
+
+</Base>

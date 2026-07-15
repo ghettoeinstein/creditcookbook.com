@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+
+const description = 'Credit tools — letter generators, dispute trackers, score calculators, and calculators. Free, open-source tools to manage your credit repair process.';
+
+const tools = [
+  { num: '01', title: 'Letter Generator', desc: 'Generate dispute, validation, goodwill, and pay-for-delete letters from your data.', status: 'coming soon' },
+  { num: '02', title: 'Dispute Tracker', desc: 'Track sent letters, bureau responses, deadlines, and follow-up dates.', status: 'coming soon' },
+  { num: '03', title: 'Score Calculator', desc: 'Estimate your FICO score impact from removing negatives or adding positive history.', status: 'coming soon' },
+  { num: '04', title: 'Statute Lookup', desc: 'Search FCRA, FDCPA, and HIPAA provisions by topic — find your enforcement lever.', status: 'coming soon' },
+  { num: '05', title: 'Debt-to-Income Calc', desc: 'Calculate your DTI ratio and see how lenders will evaluate your applications.', status: 'coming soon' },
+  { num: '06', title: 'Credit Freeze Guide', desc: 'Step-by-step instructions for freezing and unfreezing your credit at all three bureaus.', status: 'coming soon' },
+];
+---
+
+<Base title="Tools — CreditCookbook" description={description} posterTitle="TOOLS" posterLabel="// free, open-source credit tools">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// credit tools</span>
+      <h2 style="margin-bottom: 16px;">Tools to manage your credit repair.</h2>
+      <p style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">Letter generators, dispute trackers, score calculators, and statute lookups — all open-source, all free. No account required. No data stored on our servers.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        {tools.map((t) => (
+          <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
+            <span class="section-label" style="margin-bottom: 8px;">// tool {t.num} — {t.status}</span>
+            <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">{t.title}</h4>
+            <p style="font-size: 13px;">{t.desc}</p>
+            <p class="mono" style="margin-top: 16px; font-size: 12px;">{t.status}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Tools philosophy -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// our philosophy</span>
+      <h2 style="margin-bottom: 24px;">Tools that respect your data.</h2>
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 48px;">
+        <div>
+          <p style="margin-bottom: 16px;">Every tool on CreditCookbook runs client-side. No data is sent to our servers, no accounts are required, and no tracking scripts follow you. What you type stays in your browser.</p>
+        </div>
+        <div>
+          <p>The source code for every tool is inspectable on GitHub. If you don't trust the tool, you can read the code, fork it, or run it locally. That's the open-source deal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <EmailCapture />
+
+</Base>

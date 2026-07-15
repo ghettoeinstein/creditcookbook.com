@@ -1,0 +1,82 @@
+---
+import Base from '../../layouts/Base.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+
+const description = 'Credit recipes — complete playbooks for disputing medical debt, collections, late payments, and more. Fill-in-the-blank letters, bureau response scripts, and step-by-step guides.';
+
+const recipes = [
+  { num: '01', title: 'Medical Debt Removal', desc: 'Dispute medical collections, negotiate hospital bills, HIPAA removal, and the $500 threshold.', href: '/medical-debt', status: 'live', count: '12 pages' },
+  { num: '02', title: 'Collections Dispute', desc: 'Validate, dispute, and negotiate general collection accounts under the FDCPA.', href: '#', status: 'coming soon', count: 'coming soon' },
+  { num: '03', title: 'Late Payments', desc: 'Goodwill letters, pay-for-delete, and 609 dispute strategies for late payment marks.', href: '#', status: 'coming soon', count: 'coming soon' },
+  { num: '04', title: 'Hard Inquiries', desc: 'Remove unauthorized hard inquiries and freeze your credit report.', href: '#', status: 'coming soon', count: 'coming soon' },
+  { num: '05', title: 'Charge-Offs', desc: 'Dispute, negotiate, or remove charged-off accounts from your credit report.', href: '#', status: 'coming soon', count: 'coming soon' },
+  { num: '06', title: 'Bankruptcy Removal', desc: 'Strategies for disputing and removing bankruptcies that are inaccurate or outdated.', href: '#', status: 'coming soon', count: 'coming soon' },
+];
+---
+
+<Base title="Recipes — CreditCookbook" description={description} posterTitle="RECIPES" posterLabel="// complete credit repair playbooks">
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// all recipes</span>
+      <h2 style="margin-bottom: 16px;">Pick your situation. Follow the playbook.</h2>
+      <p style="max-width: 50ch; opacity: 0.7; margin-bottom: 48px;">Each recipe is a complete cluster — dispute letters, bureau response scripts, step-by-step playbooks, and FAQ with schema.org markup. Copy, fill in, and send.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        {recipes.map((r) => (
+          r.status === 'live' ? (
+            <a href={r.href} style="display: block; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+              <span class="section-label" style="margin-bottom: 8px;">// recipe {r.num} — {r.status}</span>
+              <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">{r.title}</h4>
+              <p style="font-size: 13px; opacity: 0.7;">{r.desc}</p>
+              <p class="mono" style="margin-top: 16px; color: var(--blue); font-size: 12px;">{r.count} →</p>
+            </a>
+          ) : (
+            <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 0.4;">
+              <span class="section-label" style="margin-bottom: 8px;">// recipe {r.num} — {r.status}</span>
+              <h4 style="margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em; font-size: 1.1rem;">{r.title}</h4>
+              <p style="font-size: 13px;">{r.desc}</p>
+              <p class="mono" style="margin-top: 16px; font-size: 12px;">{r.count}</p>
+            </div>
+          )
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- How recipes work -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// how recipes work</span>
+      <h2 style="margin-bottom: 32px;">Every recipe follows the same structure.</h2>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line);">
+        <div style="padding: 28px; border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// 01</span>
+          <h4 style="margin-top: 12px; margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em;">Overview</h4>
+          <p style="font-size: 13px; opacity: 0.7;">What it is, how it gets on your report, and the current rules.</p>
+        </div>
+        <div style="padding: 28px; border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// 02</span>
+          <h4 style="margin-top: 12px; margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em;">Templates</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Fill-in-the-blank dispute, validation, and goodwill letters.</p>
+        </div>
+        <div style="padding: 28px; border-right: 1px solid var(--line);">
+          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// 03</span>
+          <h4 style="margin-top: 12px; margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em;">Bureau Scripts</h4>
+          <p style="font-size: 13px; opacity: 0.7;">What to do when bureaus verify, reject, or ignore your disputes.</p>
+        </div>
+        <div style="padding: 28px;">
+          <span class="mono" style="font-size: 12px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">// 04</span>
+          <h4 style="margin-top: 12px; margin-bottom: 6px; text-transform: none; letter-spacing: -0.01em;">FAQ</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Schema.org-marked FAQ for search engine rich results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <EmailCapture />
+
+</Base>

@@ -1,0 +1,339 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = "A plain-English glossary of 30+ credit and consumer protection terms — FCRA, FDCPA, FCBA, CFPB, FTC, tradelines, charge-offs, utilization, and more. No jargon, no paywall.";
+
+const glossaryTerms = [
+  // Federal Laws
+  {
+    term: "FCRA — Fair Credit Reporting Act",
+    category: "Federal Law",
+    definition: "The federal law (15 U.S.C. § 1681) that regulates how credit bureaus collect, use, and share your credit information. It gives you the right to see your report, dispute inaccurate information, and have errors corrected or removed within 30 days. It also limits who can access your report and requires your consent for certain uses."
+  },
+  {
+    term: "FDCPA — Fair Debt Collection Practices Act",
+    category: "Federal Law",
+    definition: "The federal law (15 U.S.C. § 1692) that limits what debt collectors can do when pursuing a debt. It prohibits harassment, false statements, threats, calls at unreasonable hours, and contact at work if your employer prohibits it. It also gives you the right to demand debt validation and to stop collection contacts entirely with a written request."
+  },
+  {
+    term: "FCBA — Fair Credit Billing Act",
+    category: "Federal Law",
+    definition: "The federal law (15 U.S.C. § 1666) that protects consumers from unfair billing practices on open-end credit accounts (like credit cards). It gives you the right to dispute billing errors, withhold payment for defective goods or services (above $50), and requires creditors to acknowledge and investigate billing complaints within specific timeframes."
+  },
+  {
+    term: "ECOA — Equal Credit Opportunity Act",
+    category: "Federal Law",
+    definition: "The federal law (15 U.S.C. § 1691) that prohibits credit discrimination on the basis of race, color, religion, national origin, sex, marital status, age, or receipt of public assistance. Creditors cannot ask about or use these factors when deciding whether to extend credit or set terms."
+  },
+  {
+    term: "TILA — Truth in Lending Act",
+    category: "Federal Law",
+    definition: "The federal law (15 U.S.C. § 1601) that requires lenders to disclose the true cost of credit — including APR, fees, and total repayment amount — in a standardized format so consumers can compare offers. It also gives you the right of rescission (canceling certain loans within 3 days)."
+  },
+  {
+    term: "HIPAA — Health Insurance Portability and Accountability Act",
+    category: "Federal Law",
+    definition: "While primarily a healthcare privacy law, HIPAA is relevant to credit repair because it restricts how medical providers and their business associates can share patient billing information. Some credit repair strategies use HIPAA's privacy provisions to challenge the reporting of medical debt."
+  },
+  // Agencies
+  {
+    term: "CFPB — Consumer Financial Protection Bureau",
+    category: "Agency",
+    definition: "The federal agency created by the Dodd-Frank Act in 2011 to protect consumers in financial markets. It regulates banks, lenders, debt collectors, and credit bureaus. You can file complaints about credit reporting errors, debt collection abuse, or unfair lending practices directly with the CFPB at consumerfinance.gov."
+  },
+  {
+    term: "FTC — Federal Trade Commission",
+    category: "Agency",
+    definition: "The federal agency that enforces consumer protection laws, including the FCRA and FDCPA. The FTC can take action against credit bureaus, furnishers, and debt collectors who violate the law. It also publishes consumer education resources and accepts complaints at ftc.gov."
+  },
+  // Bureaus & Reporting
+  {
+    term: "Credit Bureau (CRA)",
+    category: "Reporting",
+    definition: "A Credit Reporting Agency that collects and maintains consumer credit information. The three major bureaus are Equifax, Experian, and TransUnion. They compile data from furnishers (lenders, collectors) and sell credit reports and scores to lenders and other authorized users."
+  },
+  {
+    term: "Furnisher",
+    category: "Reporting",
+    definition: "Any entity that reports information about you to a credit bureau — typically banks, credit card issuers, lenders, debt collectors, and sometimes utility or telecom companies. Under the FCRA, furnishers have a legal duty to report accurate information and to investigate disputes within 30 days."
+  },
+  {
+    term: "Tradeline",
+    category: "Reporting",
+    definition: "An entry on your credit report that represents a single credit account. Each tradeline includes the creditor name, account type, date opened, credit limit or loan amount, current balance, payment history, and account status. Your credit report is a collection of tradelines."
+  },
+  {
+    term: "Credit Report",
+    category: "Reporting",
+    definition: "The full record of your credit history maintained by the bureaus. It includes all tradelines, public records (bankruptcies, judgments, tax liens), collections, and a list of who has accessed your report (inquiries). You are entitled to one free report per bureau per year at annualcreditreport.com."
+  },
+  {
+    term: "Credit Score",
+    category: "Reporting",
+    definition: "A three-digit number (typically 300–850) that summarizes the information in your credit report at a given moment. FICO and VantageScore are the two most common scoring models. Your score changes as the underlying data on your report changes."
+  },
+  {
+    term: "Consumer Disclosure",
+    category: "Reporting",
+    definition: "The full copy of everything a bureau has on file about you — broader than the credit report a lender sees. You are entitled to one free consumer disclosure per bureau per year. This is the document you should review when checking for errors."
+  },
+  // Credit Concepts
+  {
+    term: "Utilization Rate",
+    category: "Credit Concept",
+    definition: "The percentage of your available revolving credit that you are currently using. Calculated as total balance ÷ total credit limit. Below 10% is ideal; below 30% is acceptable. Utilization is the second most important FICO factor (30% of your score) and can change your score within a single billing cycle."
+  },
+  {
+    term: "Hard Inquiry (Hard Pull)",
+    category: "Credit Concept",
+    definition: "A credit check that occurs when you apply for credit — a credit card, auto loan, mortgage, or personal loan. Hard inquiries appear on your credit report and can lower your score by a few points. They stay on your report for 2 years but only affect your FICO score for 12 months."
+  },
+  {
+    term: "Soft Inquiry (Soft Pull)",
+    category: "Credit Concept",
+    definition: "A credit check that does not affect your credit score. Soft inquiries include checking your own credit, prequalification offers, background checks, and existing creditors reviewing your account. Soft inquiries are visible only to you on your credit report, not to lenders."
+  },
+  {
+    term: "Revolving Account",
+    category: "Credit Concept",
+    definition: "A credit account with a reusable credit line — like a credit card or home equity line of credit (HELOC). You can borrow, repay, and borrow again up to the credit limit. The balance and payment amount vary month to month. Revolving utilization is a key FICO scoring input."
+  },
+  {
+    term: "Installment Account",
+    category: "Credit Concept",
+    definition: "A credit account with a fixed loan amount, fixed payment, and fixed repayment schedule — like an auto loan, student loan, or mortgage. The balance decreases over time. Installment utilization (balance ÷ original loan amount) has much less impact on your score than revolving utilization."
+  },
+  // Negative Marks
+  {
+    term: "Delinquency",
+    category: "Negative Mark",
+    definition: "A missed or late payment on a credit account. Delinquencies are reported as 30, 60, 90, or 120+ days late. The first delinquency on a file carries the largest penalty. Delinquencies remain on your report for 7 years from the date of the first missed payment."
+  },
+  {
+    term: "Charge-Off",
+    category: "Negative Mark",
+    definition: "When a creditor writes off a debt as unlikely to be collected, typically after 180 days of non-payment. A charge-off is a serious negative mark that stays on your report for 7 years. The debt is still legally owed — it is usually sold or transferred to a collection agency."
+  },
+  {
+    term: "Collection",
+    category: "Negative Mark",
+    definition: "When a debt is turned over to a third-party collection agency (either assigned or sold) for recovery. The collection account appears as a separate tradeline on your report. Collections remain for 7 years from the date of the original delinquency, but medical collections under $500 are excluded from reports entirely (as of 2023)."
+  },
+  {
+    term: "Public Record",
+    category: "Negative Mark",
+    definition: "Legal filings that appear on your credit report — bankruptcies, civil judgments, and tax liens. Chapter 7 bankruptcy stays on your report for 10 years; Chapter 13 stays for 7 years. As of 2018, most tax liens and civil judgments have been removed from credit reports due to reporting standard changes."
+  },
+  {
+    term: "Bankruptcy",
+    category: "Negative Mark",
+    definition: "A legal proceeding that discharges or restructures debt. Chapter 7 (liquidation) remains on your report for 10 years; Chapter 13 (repayment plan) remains for 7 years. Bankruptcy is the single most damaging entry on a credit report and can drop a score by 100–200+ points."
+  },
+  // Dispute & Repair
+  {
+    term: "Dispute",
+    category: "Repair",
+    definition: "A formal challenge to information on your credit report that you believe is inaccurate, incomplete, or unverifiable. Under the FCRA, the bureau must investigate within 30 days and either verify, correct, or delete the disputed item. Disputes can be filed online, by mail, or by phone — mail is recommended for paper trails."
+  },
+  {
+    term: "Debt Validation",
+    category: "Repair",
+    definition: "Your right under the FDCPA to demand that a debt collector prove you owe the debt and that the amount is correct. You must request validation in writing within 30 days of first contact. If the collector cannot validate the debt, they must cease collection efforts and remove the tradeline."
+  },
+  {
+    term: "Pay-for-Delete",
+    category: "Repair",
+    definition: "A negotiated agreement where you pay a collection (often in full or a settled amount) in exchange for the collector removing the tradeline from your credit report. Not all collectors will agree, and it is not required by law, but it can be an effective strategy for smaller debts."
+  },
+  {
+    term: "Goodwill Letter",
+    category: "Repair",
+    definition: "A written request to a creditor asking them to remove a legitimate negative mark (like a late payment) as a gesture of goodwill, typically citing a long history of on-time payments and an isolated mistake. There is no legal obligation to comply, but many creditors will for long-standing customers."
+  },
+  {
+    term: "Re-aging",
+    category: "Repair",
+    definition: "The illegal practice of resetting the date of first delinquency on a debt to make it appear newer than it is — extending the time it stays on your report. If a collector re-ages a debt, it is a violation of the FCRA and you can dispute it and file a complaint with the CFPB."
+  },
+  {
+    term: "Statute of Limitations (SOL)",
+    category: "Repair",
+    definition: "The legal time limit during which a creditor or collector can sue you to collect a debt. This varies by state (typically 3–6 years for written contracts) and by debt type. The SOL is separate from the 7-year reporting limit — a debt may fall off your report but still be within the SOL for a lawsuit, or vice versa."
+  },
+  // Additional Terms
+  {
+    term: "Authorized User",
+    category: "Credit Concept",
+    definition: "A person added to another's credit card account who can use the card but is not legally responsible for the debt. The account's history is reported on the authorized user's credit file, which can help build or repair credit — a practice known as 'piggybacking.'"
+  },
+  {
+    term: "Credit Freeze (Security Freeze)",
+    category: "Consumer Protection",
+    definition: "A lock placed on your credit file that prevents new creditors from accessing your report, making it extremely difficult for identity thieves to open accounts in your name. Freezes are free under federal law and can be placed and lifted at each bureau's website. They do not affect your credit score."
+  },
+  {
+    term: "Fraud Alert",
+    category: "Consumer Protection",
+    definition: "A notice placed on your credit file that requires creditors to verify your identity before extending credit. An initial fraud alert lasts 1 year; an extended fraud alert (for confirmed identity theft victims) lasts 7 years. Less restrictive than a freeze but also free."
+  },
+  {
+    term: "Permissible Purpose",
+    category: "Consumer Protection",
+    definition: "Under the FCRA, a creditor or other entity must have a 'permissible purpose' to access your credit report — typically your own request, a credit application, an existing account review, employment screening, or court order. Accessing your report without permissible purpose is a violation of federal law."
+  },
+  {
+    term: "VantageScore",
+    category: "Credit Concept",
+    definition: "A credit scoring model created jointly by the three major bureaus (Equifax, Experian, TransUnion) as an alternative to FICO. VantageScore 3.0 and 4.0 also range from 300–850. Some lenders use VantageScore instead of FICO, and free credit monitoring services (like Credit Karma) often display VantageScore."
+  },
+  {
+    term: "Adverse Action Notice",
+    category: "Consumer Protection",
+    definition: "A written notice a creditor must send you when denying credit, raising an interest rate, or taking other adverse action based on information from your credit report. It must include the reason for denial, the bureau that provided the information, and your right to a free copy of that report within 60 days."
+  },
+  {
+    term: "Derogatory Mark",
+    category: "Negative Mark",
+    definition: "Any negative entry on your credit report — late payments, charge-offs, collections, bankruptcies, judgments, or settlements. Derogatory marks reduce your score and remain on your report for 7–10 years depending on the type. Their scoring impact diminishes over time even before they fall off."
+  },
+  {
+    term: "Consumer Statement",
+    category: "Reporting",
+    definition: "A brief (100-word) statement you can add to your credit report to explain disputed or negative information. While rarely read by automated underwriting systems, it is visible to humans reviewing your file. You can add or remove a consumer statement at any time by contacting the bureau."
+  }
+];
+
+const categories = [...new Set(glossaryTerms.map(t => t.category))];
+---
+
+<Base title="Credit & Legal Glossary — CreditCookbook" description={description} posterTitle="GLOSSARY" posterLabel="// resources — 36 terms in plain english">
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// glossary</span>
+      <h2 style="margin-bottom: 24px;">Credit &amp; Legal Glossary</h2>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        Credit reports, consumer protection laws, and debt collection rules are written in legal language that can be hard to parse. This glossary translates the most important terms into plain English — no law degree required.
+      </p>
+      <p style="max-width: 64ch;">
+        Every term below is defined in the context of how it actually affects your credit, your rights, and your ability to repair your report. Where a federal statute applies, it is cited.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Term Count Stats -->
+  <section class="section-tight">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <div style="padding: 28px; text-align: center; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">36</div>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; opacity: 0.7;">Terms Defined</p>
+        </div>
+        <div style="padding: 28px; text-align: center; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">6</div>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; opacity: 0.7;">Federal Laws</p>
+        </div>
+        <div style="padding: 28px; text-align: center; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">2</div>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; opacity: 0.7;">Agencies</p>
+        </div>
+        <div style="padding: 28px; text-align: center; border-bottom: 1px solid var(--line);">
+          <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--blue);">8</div>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; opacity: 0.7;">Categories</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Category Quick Nav -->
+  <section class="section-tight">
+    <div class="container">
+      <span class="section-label">// jump to category</span>
+      <div style="display: flex; gap: 0; flex-wrap: wrap; border: 1px solid var(--line);">
+        {categories.map(cat => (
+          <a href={`#${cat.toLowerCase().replace(/\s+/g, '-')}`} style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; padding: 12px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none;">
+            {cat}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Glossary Terms by Category -->
+  <section class="section">
+    <div class="container">
+      {categories.map(cat => (
+        <div id={cat.toLowerCase().replace(/\s+/g, '-')} style="margin-bottom: 64px;">
+          <span class="section-label" style="margin-bottom: 8px;">// {cat.toLowerCase()}</span>
+          <h2 style="margin-bottom: 32px;">{cat}</h2>
+          <div style="display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--line);">
+            {glossaryTerms.filter(t => t.category === cat).map((t, idx, arr) => (
+              <div style={`padding: 28px; ${idx < arr.length - 1 ? 'border-bottom: 1px solid var(--line);' : ''}`}>
+                <h3 style="margin-bottom: 12px; font-size: 1.15rem;">{t.term}</h3>
+                <p style="max-width: 68ch; font-size: 15px; line-height: 1.75;">{t.definition}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Key Rights Callout -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// your key rights</span>
+      <h2 style="margin-bottom: 24px;">Your Key Rights at a Glance</h2>
+      <table>
+        <thead>
+          <tr><th>Right</th><th>Law</th><th>How to exercise it</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>See your credit report</td><td>FCRA</td><td>annualcreditreport.com — 1 free per bureau per year</td></tr>
+          <tr><td>Dispute errors on your report</td><td>FCRA</td><td>Written dispute to the bureau — must investigate within 30 days</td></tr>
+          <tr><td>Validate a debt</td><td>FDCPA</td><td>Written request within 30 days of first collector contact</td></tr>
+          <tr><td>Stop collector calls</td><td>FDCPA</td><td>Written cease-and-desist letter to the collector</td></tr>
+          <tr><td>Dispute a billing error</td><td>FCBA</td><td>Written dispute to creditor within 60 days of the statement</td></tr>
+          <tr><td>Freeze your credit</td><td>FCRA (amended)</td><td>Free freeze/unfreeze at each bureau's website</td></tr>
+          <tr><td>File a complaint</td><td>Various</td><td>consumerfinance.gov (CFPB) or ftc.gov (FTC)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Related -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// continue learning</span>
+      <h3 style="margin-bottom: 24px;">Related resources</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <a href="/resources/how-fico-is-calculated" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// fico 8</span>
+          <h4 style="margin-bottom: 6px;">How FICO Is Calculated</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Reverse-engineering the FICO 8 scoring model</p>
+        </a>
+        <a href="/medical-debt/overview" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// medical debt</span>
+          <h4 style="margin-bottom: 6px;">Medical Debt Guide</h4>
+          <p style="font-size: 13px; opacity: 0.7;">How to remove medical collections from your report</p>
+        </a>
+        <a href="/medical-debt/your-rights" style="padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// rights</span>
+          <h4 style="margin-bottom: 6px;">Your Rights Under FCRA</h4>
+          <p style="font-size: 13px; opacity: 0.7;">The statutes that protect you as a consumer</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Base>
