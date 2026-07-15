@@ -1,0 +1,171 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Debt validation request letter under FDCPA Section 809(b) — dispute a debt in writing within 30 days, demand verification, and protect your credit report from inaccurate reporting. Fill-in-the-blank template.";
+
+const howtoSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Send a Debt Validation Request Under FDCPA § 809(b)",
+  "description": "Dispute a debt in writing within 30 days of the collector's first notice. Request the amount, creditor name, judgment copies, collector licensing, and last payment proof. Protect your credit from inaccurate reporting.",
+  "totalTime": "P30D",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Respond within 30 days",
+      "text": "You have 30 days from the collector's first communication to dispute the debt in writing. Send this letter as soon as possible after receiving their notice."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Fill in the template",
+      "text": "Replace all bracketed fields: today's date, collector's name and address, your name, account number, and the date of their letter or call."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Send via certified mail",
+      "text": "Send via certified mail with return receipt. Keep the tracking number. The collector must cease collection until they verify the debt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Monitor and follow up",
+      "text": "If the collector reported the debt to credit bureaus, they must inform them of your dispute. If they pursue a judgment without validating, inform the judge. Report violations to your State Attorney General, FTC, and BBB."
+    }
+  ]
+};
+---
+
+<Base title="Debt Validation Request Letter — FDCPA § 809(b) — CreditCookbook" description={description} posterTitle="VALIDATION REQUEST" posterLabel="// FDCPA Section 809(b) dispute">
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howtoSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// overview</span>
+      <h2 data-animate style="margin-bottom: 16px;">Debt Validation Request Letter</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">
+        Under FDCPA Section 809(b), if you notify a debt collector in writing within 30 days that you dispute a debt, they must cease collection until they obtain verification. This letter requests the debt amount, creditor name, judgment copies, proof of licensing, and last payment records. It also protects you from inaccurate credit reporting under the FCRA.
+      </p>
+
+      <div data-animate style="display: flex; gap: 16px; margin-bottom: 48px;">
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('vrl').textContent)">Copy letter</button>
+        <a href="/recipes" class="btn btn-ghost">Back to recipes</a>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 16px;">What you are requesting</h3>
+        <ol style="margin-left: 24px; line-height: 2; margin-bottom: 48px;">
+          <li>The amount of the debt</li>
+          <li>The name of the creditor to whom the debt is owed</li>
+          <li>Verification or copy of any judgment (if applicable)</li>
+          <li>Proof that the collector is licensed to collect debts in your state</li>
+          <li>Proof of the last payment made on the account</li>
+        </ol>
+      </div>
+
+      <hr class="rule" style="margin-bottom: 48px;" />
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Letter template</h3>
+        <div id="vrl" class="mono-block" style="margin-bottom: 48px;">
+Today's Date: __________________________
+
+Collector's Name: ____________________________________
+
+Collector's Address: ____________________________________________
+
+____________________________________________
+
+RE:   Account of ____________________________________ (your name)
+      Account # _______________________________
+
+Dear Collector,
+
+I am writing in response to your letter or phone call dated
+__________________.
+
+I do not believe that I owe this debt or what you say I owe.
+
+Pursuant to the Fair Debt Collection Practices Act, Section
+809(b), Validating Debts:
+
+  "If the consumer notifies the debt collector in writing
+  within the thirty-day period described in subsection (a)
+  that the debt, or any portion thereof, is disputed, or
+  that the consumer requests the name and address of the
+  original creditor, the debt collector shall cease
+  collection of the debt, or any disputed portion thereof,
+  until the debt collector obtains verification of the debt
+  or any copy of a judgment, or the name and address of
+  the original creditor, and a copy of such verification or
+  judgment, or name and address of the original creditor,
+  is mailed to the consumer by the debt collector."
+
+I respectfully request that you provide me with the following:
+
+  1. The amount of the debt;
+  2. The name of the creditor to whom the debt is owed;
+  3. Verification or copy of any judgment (if applicable);
+  4. Proof that you are licensed to collect debts in
+     [YOUR STATE];
+  5. Proof of the last payment made on the account.
+
+I am asserting my rights under the federal and state Fair Debt
+Collection Practices Acts and the Fair Credit Reporting Act,
+including these rights:
+
+  • Because I have disputed this debt in writing within 30
+    days of receipt of your initial notice, you must obtain
+    verification of the debt or a copy of the judgment against
+    me and mail these items to me at your expense.
+
+  • You cannot add interest or fees except those allowed by
+    the original contract or state law.
+
+  • Any attempt to collect this debt without validating it
+    violates the FDCPA.
+
+Also be advised that I am keeping accurate records of all
+correspondence from you and your company, including recording
+all phone calls, and I will not hesitate to report violations
+of the law to my State Attorney General, the Federal Trade
+Commission and the Better Business Bureau.
+
+I have disputed this debt. Therefore, until it is validated,
+your information concerning this debt is assumed to be
+inaccurate. Accordingly, if you have already reported this debt
+to any credit-reporting agency (CRA) or Credit Bureau (CB),
+then you must immediately inform them of my dispute with this
+debt. Reporting information that you know to be inaccurate or
+failing to report information correctly violates the Fair Credit
+Reporting Act § 1681s-2. Should you pursue a judgment without
+validating this debt, I will inform the judge and request that
+the case be dismissed based on your failure to comply with the
+FDCPA.
+
+Finally, if you do not own this debt, I demand that you
+immediately send a copy of this dispute letter to the original
+creditor so they are also aware that I dispute the debt.
+
+Sincerely, ______________________________________
+
+Address: _______________________________________
+        </div>
+      </div>
+
+      <div data-animate class="card">
+        <h4 style="margin-bottom: 12px;">Key points</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Send within 30 days of the collector's first communication</li>
+          <li>Replace [YOUR STATE] with your state name</li>
+          <li>Send via USPS Certified Mail with Return Receipt</li>
+          <li>Collection must cease until the debt is verified</li>
+          <li>The collector must notify credit bureaus of your dispute</li>
+          <li>Report violations to your State Attorney General, FTC, and BBB</li>
+          <li>Keep copies of everything — letters, tracking, phone logs</li>
+          <li>This is not legal advice — consult an attorney for your situation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</Base>

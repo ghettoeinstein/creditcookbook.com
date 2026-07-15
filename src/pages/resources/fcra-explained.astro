@@ -1,0 +1,146 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = 'A plain-English guide to the Fair Credit Reporting Act (FCRA) — 15 U.S.C. § 1681. Learn your rights to access, dispute, and control your credit report, plus key sections and statutory citations.';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FCRA Explained: Your Rights Under the Fair Credit Reporting Act",
+  "description": description,
+  "author": { "@type": "Organization", "name": "CreditCookbook", "url": "https://creditcookbook.com" },
+  "publisher": { "@type": "Organization", "name": "CreditCookbook", "url": "https://creditcookbook.com" },
+  "datePublished": "2026-07-14",
+  "mainEntityOfPage": { "@type": "WebPage", "@url": "https://creditcookbook.com/resources/fcra-explained" },
+  "about": { "@type": "Thing", "name": "Fair Credit Reporting Act" }
+};
+---
+
+<Base title="FCRA Explained — CreditCookbook" description={description} posterTitle="FCRA" posterLabel="// resources — fair credit reporting act">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// overview</span>
+      <h2 style="margin-bottom: 24px;">The Fair Credit Reporting Act</h2>
+      <p style="max-width: 64ch; margin-bottom: 16px;">
+        The Fair Credit Reporting Act (FCRA) is the federal law that governs how consumer reporting agencies collect, use, and share your credit information. Enacted in 1970 and amended multiple times — including the FACT Act of 2003 and the Dodd-Frank Act of 2010 — the FCRA exists to ensure that credit reporting is fair, accurate, and respectful of your privacy.
+      </p>
+      <p style="max-width: 64ch; margin-bottom: 16px;">
+        <strong>Citation:</strong> 15 U.S.C. § 1681 et seq. (FCRA sections §§ 601–629).
+      </p>
+      <p style="max-width: 64ch;">
+        Congress found that the banking system depends on fair and accurate credit reporting, and that inaccurate reports directly impair the efficiency of that system. The FCRA requires consumer reporting agencies to adopt reasonable procedures for meeting the needs of commerce in a manner that is fair and equitable to consumers — with regard to confidentiality, accuracy, relevancy, and proper utilization of your information.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// key sections</span>
+      <h2 style="margin-bottom: 24px;">Key Sections Explained</h2>
+
+      <h3 style="margin-bottom: 8px;">Permissible Purposes — § 604 [15 U.S.C. § 1681b]</h3>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        Your credit report cannot be accessed by just anyone. The FCRA limits who may obtain a consumer report to specific "permissible purposes," including: a court order, your written instructions, a creditor evaluating a credit application, employment screening (with your consent), insurance underwriting, license/benefit eligibility, and legitimate business needs initiated by you. A person who obtains a report under false pretenses may face criminal penalties.
+      </p>
+
+      <h3 style="margin-bottom: 8px;">Reporting Time Limits — § 605 [15 U.S.C. § 1681c]</h3>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        Negative information cannot stay on your report forever. The FCRA sets strict time limits: bankruptcies may report for 10 years; civil suits, judgments, arrests, paid tax liens, collections, and charge-offs are limited to 7 years. The 7-year clock starts 180 days after the commencement of the delinquency that led to the collection or charge-off. Exceptions exist for credit transactions of $150,000+ or salaries of $75,000+.
+      </p>
+
+      <h3 style="margin-bottom: 8px;">Identity Theft Prevention — § 605A [15 U.S.C. § 1681c-1]</h3>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        If you suspect identity theft, you can place a <strong>fraud alert</strong> on your file. An initial fraud alert lasts 1 year; an extended fraud alert (requiring an identity theft report) lasts 7 years. Active-duty military consumers can place an active duty alert lasting at least 12 months. You also have the right to a <strong>security freeze</strong> — free of charge — that prevents anyone from accessing your report without your authorization.
+      </p>
+
+      <h3 style="margin-bottom: 8px;">Your Right to Dispute — § 611 [15 U.S.C. § 1681i]</h3>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        If you find inaccurate information on your report, you can dispute it directly with the consumer reporting agency. The agency must investigate within 30 days, forward your dispute to the furnisher, and correct or delete the information if it cannot be verified. If the investigation does not resolve the dispute, you can add a brief statement to your file explaining the situation.
+      </p>
+
+      <h3 style="margin-bottom: 8px;">Disclosures to Consumers — § 609 [15 U.S.C. § 1681g]</h3>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        You have the right to know what is in your file. Consumer reporting agencies must disclose all information in your file upon request, along with the sources of that information and anyone who has received your report in the past two years (or one year for employment purposes). You are entitled to one free disclosure per 12-month period.
+      </p>
+
+      <h3 style="margin-bottom: 8px;">Furnisher Responsibilities — § 623 [15 U.S.C. § 1681s-2]</h3>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        The companies that report information about you (creditors, lenders, collection agencies) have legal obligations. They must report accurate information, correct errors, and notify the agency when you dispute information directly with them. They cannot report information they know is inaccurate.
+      </p>
+
+      <h3 style="margin-bottom: 8px;">Civil Liability — § 616 [15 U.S.C. § 1681n] & § 617 [15 U.S.C. § 1681o]</h3>
+      <p style="max-width: 64ch;">
+        If a violation is willful, you can recover actual damages or statutory damages ($100–$1,000 per violation), plus punitive damages and attorney's fees. For negligent violations, you can recover actual damages and attorney's fees. Actions must be brought within 2 years of the violation (or within 2 years of discovery).
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// your rights</span>
+      <h2 style="margin-bottom: 24px;">Consumer Rights Under the FCRA</h2>
+      <ul style="margin-left: 24px; line-height: 2; max-width: 64ch;">
+        <li><strong>Access your report.</strong> You can obtain a free copy from each nationwide bureau every 12 months via AnnualCreditReport.com.</li>
+        <li><strong>Know who accessed your file.</strong> You can see every entity that pulled your report in the past 1–2 years.</li>
+        <li><strong>Dispute inaccurate information.</strong> Agencies must investigate within 30 days and correct verified errors.</li>
+        <li><strong>Place fraud alerts.</strong> Initial (1 year), extended (7 years), and active-duty alerts are free.</li>
+        <li><strong>Place a security freeze.</strong> Freeze and unfreeze your credit at no cost, preventing unauthorized access.</li>
+        <li><strong>Opt out of prescreened offers.</strong> You can stop credit and insurance companies from using your report for unsolicited offers.</li>
+        <li><strong>Receive adverse action notices.</strong> If denied credit, insurance, or employment based on your report, you must be told and given the agency's contact info.</li>
+        <li><strong>Seek damages.</strong> You can sue for willful or negligent violations, including statutory damages of $100–$1,000 per violation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// official sources</span>
+      <h2 style="margin-bottom: 24px;">Official Sources &amp; References</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <a href="https://www.consumerfinance.gov/learnmore/credit-reporting/" target="_blank" rel="noopener" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// cfpb</span>
+          <h4 style="margin-bottom: 6px;">CFPB — Credit Reporting</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Consumer Financial Protection Bureau resources</p>
+        </a>
+        <a href="https://www.ftc.gov/legal-library/browse/statutes/fair-credit-reporting-act" target="_blank" rel="noopener" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// ftc</span>
+          <h4 style="margin-bottom: 6px;">FTC — Full FCRA Text</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Complete statutory text, 15 U.S.C. § 1681</p>
+        </a>
+        <a href="https://www.annualcreditreport.com" target="_blank" rel="noopener" style="padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// free reports</span>
+          <h4 style="margin-bottom: 6px;">AnnualCreditReport.com</h4>
+          <p style="font-size: 13px; opacity: 0.7;">The only official source for free reports</p>
+        </a>
+        <a href="https://www.consumerfinance.gov/complaint/" target="_blank" rel="noopener" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// file complaint</span>
+          <h4 style="margin-bottom: 6px;">CFPB Complaint Portal</h4>
+          <p style="font-size: 13px; opacity: 0.7;">File a complaint against a bureau</p>
+        </a>
+        <a href="/resources/fdcpa-explained" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">FDCPA Explained</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Fair Debt Collection Practices Act</p>
+        </a>
+        <a href="/resources/consumer-laws-summary" style="padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">Consumer Laws Summary</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Quick overview of all consumer protection laws</p>
+        </a>
+      </div>
+
+      <p class="mono" style="margin-top: 24px; font-size: 12px; opacity: 0.5;">
+        This page is for educational purposes only and is not legal advice. The FCRA is codified at 15 U.S.C. § 1681 et seq. and has been amended by multiple laws including the FACT Act (2003) and the Dodd-Frank Act (2010).
+      </p>
+    </div>
+  </section>
+
+</Base>

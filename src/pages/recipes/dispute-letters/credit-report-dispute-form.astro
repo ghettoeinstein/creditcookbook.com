@@ -1,0 +1,120 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Credit report dispute form for online and mail disputes with all three credit bureaus. Fill-in-the-blank format with bureau addresses and instructions.";
+---
+
+<Base title="Credit Report Dispute Form — CreditCookbook" description={description} posterTitle="DISPUTE FORM" posterLabel="// credit report dispute format">
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// credit report dispute form</span>
+      <h2 data-animate style="margin-bottom: 16px;">Credit Report Dispute Form</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">Use this form to dispute inaccurate information on your credit report. Complete one form per credit reporting agency. Include two forms of ID: one government-issued identification and one utility bill, bank, or insurance statement. There is no charge for submitting a dispute.</p>
+
+      <div style="display: flex; gap: 16px; margin-bottom: 48px;" data-animate>
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').textContent)">Copy letter</button>
+        <a href="/recipes/dispute-letters" class="btn btn-ghost">Back to dispute letters</a>
+      </div>
+
+      <div id="letter" class="mono-block" style="margin-bottom: 48px;" data-animate>
+CREDIT REPORT DISPUTE FORM
+
+First Name: [FIRST NAME]    Middle: [MIDDLE]    Last: [LAST NAME]
+Suffix: [ ] Jr.  [ ] Sr.
+
+Date of Birth (MM/DD/YYYY): [MM]/[DD]/[YYYY]
+
+Address: [YOUR ADDRESS]
+City: [CITY]    State: [STATE]    Zip: [ZIP]
+
+Previous Address (if moved within past two years):
+Address: [PREVIOUS ADDRESS]
+City: [CITY]    State: [STATE]    Zip: [ZIP]
+
+Telephone Number: [YOUR PHONE]
+Social Security Number: [SSN]
+Signature: [YOUR SIGNATURE]    Date: [DATE]
+
+---------------------------------------------------------------
+DISPUTED ITEM #1
+---------------------------------------------------------------
+Creditor Name: [CREDITOR NAME]
+Account Number: [ACCOUNT NUMBER]
+
+Dispute Reason(s) — check all that apply:
+[ ] Not My Account
+[ ] Account Status Not Correct
+[ ] Late Payments
+[ ] Paid in Full
+[ ] Identity Theft
+[ ] Incorrect Balance (Approx. Correct Balance): [AMOUNT]
+[ ] Other (Explain): [EXPLANATION]
+
+---------------------------------------------------------------
+DISPUTED ITEM #2
+---------------------------------------------------------------
+Creditor Name: [CREDITOR NAME]
+Account Number: [ACCOUNT NUMBER]
+
+Dispute Reason(s) — check all that apply:
+[ ] Not My Account
+[ ] Account Status Not Correct
+[ ] Late Payments
+[ ] Paid in Full
+[ ] Identity Theft
+[ ] Incorrect Balance (Approx. Correct Balance): [AMOUNT]
+[ ] Other (Explain): [EXPLANATION]
+
+---------------------------------------------------------------
+ADDITIONAL INFORMATION TO BE CORRECTED
+---------------------------------------------------------------
+(For example: Name, Address, Employer)
+[ADDITIONAL INFORMATION]
+
+[REPEAT DISPUTED ITEM BLOCKS AS NEEDED]
+
+Remember to make a copy for your records.
+      </div>
+
+      <h3 style="margin-bottom: 16px;" data-animate>Bureau mailing addresses</h3>
+      <table style="margin-bottom: 48px;" data-animate>
+        <thead><tr><th>Bureau</th><th>Mailing Address</th><th>Online Dispute</th></tr></thead>
+        <tbody>
+          <tr><td>TransUnion</td><td>2 Baldwin Place, P.O. Box 2000, Chester, PA 19022</td><td>annualcreditreport.transunion.com/entry/disputeonline</td></tr>
+          <tr><td>Equifax</td><td>P.O. Box 740256, Atlanta, GA 30374</td><td>equifax.com/personal/credit-report-services/credit-dispute</td></tr>
+          <tr><td>Experian</td><td>P.O. Box 9701, Allen, TX 75013</td><td>experian.com/rs/fi67.html</td></tr>
+        </tbody>
+      </table>
+
+      <div class="card" data-animate>
+        <h4 style="margin-bottom: 12px;">Checklist before sending</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Print the name and account number of the creditor in question</li>
+          <li>Check off or clearly print the specific reason for your dispute</li>
+          <li>Clearly fill out all information, then sign the form where indicated</li>
+          <li>Include one copy of a government-issued ID (driver's license, state or military ID)</li>
+          <li>Include one copy of a utility bill, bank, or insurance statement</li>
+          <li>Do not include original copies of your supporting documents</li>
+          <li>Mail the form to the appropriate bureau, or file online</li>
+          <li>There is no charge for submitting a dispute</li>
+          <li>Make a copy for your records</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Credit Report Dispute Form",
+    "description": "Fill-in-the-blank credit report dispute form for disputing inaccuracies with TransUnion, Equifax, and Experian.",
+    "totalTime": "PT30M",
+    "step": [
+      {"@type": "HowToStep", "name": "Fill in personal information", "text": "Complete your name, date of birth, address, telephone number, and Social Security number on the dispute form."},
+      {"@type": "HowToStep", "name": "List disputed items", "text": "Print the creditor name and account number for each disputed item. Check off or clearly print the specific reason for your dispute."},
+      {"@type": "HowToStep", "name": "Gather supporting documents", "text": "Include one copy of a government-issued ID and one copy of a utility bill, bank, or insurance statement. Do not send original documents."},
+      {"@type": "HowToStep", "name": "Sign and date the form", "text": "Sign and date the completed dispute form."},
+      {"@type": "HowToStep", "name": "Mail or file online", "text": "Mail the form to the appropriate credit bureau address, or file online using the bureau's dispute portal."}
+    ]
+  })} />
+</Base>

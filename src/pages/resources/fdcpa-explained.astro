@@ -1,0 +1,180 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = 'A plain-English guide to the Fair Debt Collection Practices Act (FDCPA) — 15 U.S.C. § 1692. Learn what debt collectors can and cannot do, your right to dispute debts, and how to enforce your rights.';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FDCPA Explained: Your Rights Under the Fair Debt Collection Practices Act",
+  "description": description,
+  "author": { "@type": "Organization", "name": "CreditCookbook", "url": "https://creditcookbook.com" },
+  "publisher": { "@type": "Organization", "name": "CreditCookbook", "url": "https://creditcookbook.com" },
+  "datePublished": "2026-07-14",
+  "mainEntityOfPage": { "@type": "WebPage", "@url": "https://creditcookbook.com/resources/fdcpa-explained" },
+  "about": { "@type": "Thing", "name": "Fair Debt Collection Practices Act" }
+};
+---
+
+<Base title="FDCPA Explained — CreditCookbook" description={description} posterTitle="FDCPA" posterLabel="// resources — fair debt collection practices act">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// overview</span>
+      <h2 style="margin-bottom: 24px;">The Fair Debt Collection Practices Act</h2>
+      <p style="max-width: 64ch; margin-bottom: 16px;">
+        The Fair Debt Collection Practices Act (FDCPA) is the federal law that protects consumers from abusive, deceptive, and unfair debt collection practices. Enacted in 1977 (Public Law 95-109) and amended by the Dodd-Frank Act of 2010, the FDCPA sets strict rules for how third-party debt collectors can communicate with you, what they must disclose, and what conduct is prohibited.
+      </p>
+      <p style="max-width: 64ch; margin-bottom: 16px;">
+        <strong>Citation:</strong> 15 U.S.C. §§ 1692–1692p (FDCPA sections §§ 801–819).
+      </p>
+      <p style="max-width: 64ch;">
+        Congress found that abusive debt collection practices contribute to personal bankruptcies, marital instability, job loss, and invasions of privacy. The FDCPA's purpose is to eliminate abusive practices, ensure non-abusive collectors are not competitively disadvantaged, and promote consistent state-level consumer protection. The law applies to <strong>third-party debt collectors</strong> — not original creditors collecting their own debts under their own name.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// what collectors cannot do</span>
+      <h2 style="margin-bottom: 24px;">Prohibited Conduct</h2>
+
+      <h3 style="margin-bottom: 8px;">Harassment &amp; Abuse — § 806 [15 U.S.C. § 1692d]</h3>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        Collectors cannot use violence, threaten harm, use obscene language, publish your name as a non-payer, or call repeatedly to annoy you. They cannot place calls without identifying themselves.
+      </p>
+
+      <h3 style="margin-bottom: 8px;">False &amp; Misleading Representations — § 807 [15 U.S.C. § 1692e]</h3>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        Collectors cannot impersonate attorneys or government officials. They cannot claim you'll be arrested or imprisoned for non-payment. They cannot misrepresent the character, amount, or legal status of a debt. They cannot threaten actions they don't intend to take. They must identify themselves as debt collectors in every communication. There are 16 specific prohibited practices listed in the statute.
+      </p>
+
+      <h3 style="margin-bottom: 8px;">Unfair Practices — § 808 [15 U.S.C. § 1692f]</h3>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        Collectors cannot collect unauthorized fees or interest. They cannot accept postdated checks for the purpose of threatening criminal prosecution. They cannot communicate with you by postcard, or put any language on an envelope that indicates debt collection activity. They cannot take nonjudicial action to seize property without a legal right to do so.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// communication rules</span>
+      <h2 style="margin-bottom: 24px;">When &amp; How Collectors Can Contact You</h2>
+      <p style="max-width: 64ch; margin-bottom: 24px;">
+        Section 805 [15 U.S.C. § 1692c] places strict limits on collector communications:
+      </p>
+      <ul style="margin-left: 24px; line-height: 2; max-width: 64ch;">
+        <li><strong>Time restrictions.</strong> No calls before 8:00 AM or after 9:00 PM local time, unless you consent.</li>
+        <li><strong>Workplace restrictions.</strong> No contact at work if your employer prohibits it.</li>
+        <li><strong>Attorney representation.</strong> If you have an attorney, the collector must contact the attorney, not you.</li>
+        <li><strong>Third-party contacts.</strong> Collectors cannot discuss your debt with anyone except you, your attorney, the creditor, the creditor's attorney, or the collector's attorney.</li>
+        <li><strong>Cease communication.</strong> If you send a written request to stop all communication, the collector must comply — with limited exceptions (to notify you of specific legal actions or that collection efforts are terminating).</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// debt validation</span>
+      <h2 style="margin-bottom: 24px;">Your Right to Validate the Debt — § 809 [15 U.S.C. § 1692g]</h2>
+      <p style="max-width: 64ch; margin-bottom: 16px;">
+        Within 5 days of first contacting you, a debt collector must send a written notice containing:
+      </p>
+      <ul style="margin-left: 24px; line-height: 2; max-width: 64ch; margin-bottom: 24px;">
+        <li>The amount of the debt</li>
+        <li>The name of the creditor</li>
+        <li>A statement that you have 30 days to dispute the debt (otherwise it's assumed valid)</li>
+        <li>A statement that upon written dispute, the collector will obtain verification and mail it to you</li>
+        <li>A statement that upon written request, the collector will provide the original creditor's name and address</li>
+      </ul>
+      <p style="max-width: 64ch;">
+        If you dispute the debt in writing within 30 days, the collector must <strong>cease all collection activity</strong> until they obtain and mail you verification. Your failure to dispute cannot be used as an admission of liability in court.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// your rights</span>
+      <h2 style="margin-bottom: 24px;">Consumer Rights Under the FDCPA</h2>
+      <ul style="margin-left: 24px; line-height: 2; max-width: 64ch;">
+        <li><strong>Stop all contact.</strong> Send a written cease-and-desist letter and they must stop (except for legal action notices).</li>
+        <li><strong>Request debt validation.</strong> Dispute the debt in writing within 30 days of first contact and they must prove it.</li>
+        <li><strong>Limit contact hours.</strong> No calls before 8 AM or after 9 PM without your permission.</li>
+        <li><strong>Protect your privacy.</strong> Collectors cannot discuss your debt with third parties.</li>
+        <li><strong>Control where they call.</strong> If you have an attorney, they must call the attorney, not you.</li>
+        <li><strong>Sue for violations.</strong> You can recover actual damages, statutory damages up to $1,000, plus attorney's fees and costs.</li>
+        <li><strong>File complaints.</strong> Report violations to the CFPB and your state attorney general.</li>
+      </ul>
+
+      <div class="card" style="border-left: 4px solid var(--blue); margin-top: 32px;">
+        <h4 style="margin-bottom: 8px;">Legal Action Limits — § 811 [15 U.S.C. § 1692i]</h4>
+        <p style="font-size: 14px;">
+          A debt collector who sues you must file in the judicial district where you signed the contract or where you currently reside. They cannot sue you in a distant court to make it harder to defend yourself.
+        </p>
+      </div>
+
+      <div class="card" style="border-left: 4px solid var(--gold); margin-top: 16px;">
+        <h4 style="margin-bottom: 8px;">Damages &amp; Liability — § 813 [15 U.S.C. § 1692k]</h4>
+        <p style="font-size: 14px;">
+          For individual actions: actual damages + up to $1,000 in additional damages + attorney's fees and costs. For class actions: up to $500,000 or 1% of the debt collector's net worth, whichever is less. The 1-year statute of limitations runs from the date of the violation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// official sources</span>
+      <h2 style="margin-bottom: 24px;">Official Sources &amp; References</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <a href="https://www.consumerfinance.gov/learnmore/debt-collection/" target="_blank" rel="noopener" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// cfpb</span>
+          <h4 style="margin-bottom: 6px;">CFPB — Debt Collection</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Official consumer resources on debt collection</p>
+        </a>
+        <a href="https://www.ftc.gov/legal-library/browse/statutes/fair-debt-collection-practices-act" target="_blank" rel="noopener" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// ftc</span>
+          <h4 style="margin-bottom: 6px;">FTC — Full FDCPA Text</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Complete statutory text, 15 U.S.C. § 1692</p>
+        </a>
+        <a href="https://www.consumerfinance.gov/complaint/" target="_blank" rel="noopener" style="padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// file complaint</span>
+          <h4 style="margin-bottom: 6px;">CFPB Complaint Portal</h4>
+          <p style="font-size: 13px; opacity: 0.7;">File a complaint against a debt collector</p>
+        </a>
+        <a href="/resources/fcra-explained" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">FCRA Explained</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Fair Credit Reporting Act</p>
+        </a>
+        <a href="/resources/ftc-consumer-protections" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">FTC Consumer Protections</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Broader FTC consumer protection overview</p>
+        </a>
+        <a href="/resources/consumer-laws-summary" style="padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">Consumer Laws Summary</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Quick overview of all consumer protection laws</p>
+        </a>
+      </div>
+
+      <p class="mono" style="margin-top: 24px; font-size: 12px; opacity: 0.5;">
+        This page is for educational purposes only and is not legal advice. The FDCPA is codified at 15 U.S.C. §§ 1692–1692p. Enforcement is shared by the FTC, CFPB, and other federal agencies. State laws may provide additional protections.
+      </p>
+    </div>
+  </section>
+
+</Base>

@@ -1,0 +1,127 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Notice of pending lawsuit under FDCPA and FCRA — give a creditor or collector five days to cure violations before filing suit. References 15 U.S.C. § 1681b, § 1692c(a)(1), and state consumer protection acts.";
+
+const howtoSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Send a Notice of Pending Lawsuit Under FDCPA",
+  "description": "After completing your administrative process, send a notice of pending lawsuit giving the creditor five days to cure FCRA and FDCPA violations before you file suit.",
+  "totalTime": "P5D",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Complete your administrative process first",
+      "text": "This notice is sent AFTER you have completed your administrative process (validation letters, dispute letters, etc.) and established your position. Always give notice before filing suit — they may withdraw."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Fill in the template",
+      "text": "Replace all bracketed fields: your name, the all-caps name on their offer, account number, address, phone, email, creditor's name and address, and the date. Reference your state's consumer collection practices act."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Send via certified mail",
+      "text": "Send via certified mail with return receipt. This gives them five days from receipt to cure the violations or face a lawsuit."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "File suit if no response",
+      "text": "If the creditor does not settle within five days of receipt, proceed to file your lawsuit seeking remedies under the FCRA, FDCPA, and your state's consumer protection laws."
+    }
+  ]
+};
+---
+
+<Base title="Notice of Pending Lawsuit — FDCPA — CreditCookbook" description={description} posterTitle="NOTICE OF PENDING SUIT" posterLabel="// FDCPA § 1692c(a)(1) pre-suit notice">
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howtoSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// overview</span>
+      <h2 data-animate style="margin-bottom: 16px;">Notice of Pending Lawsuit</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">
+        Send this notice after completing your administrative process and establishing your position. It gives the creditor or collector five days to cure violations of the Fair Credit Reporting Act (FCRA), the Fair Debt Collection Practices Act (FDCPA), and your state's consumer protection laws before you file suit. Always give notice before a suit — they may withdraw.
+      </p>
+
+      <div data-animate style="display: flex; gap: 16px; margin-bottom: 48px;">
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('nps').textContent)">Copy letter</button>
+        <a href="/recipes" class="btn btn-ghost">Back to recipes</a>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 16px;">When to use this notice</h3>
+        <ul style="margin-left: 24px; line-height: 2; margin-bottom: 48px;">
+          <li><strong>After</strong> you have completed your administrative process</li>
+          <li><strong>After</strong> you have sent validation/dispute letters and established your position</li>
+          <li><strong>Before</strong> filing a lawsuit — as a final opportunity to settle</li>
+          <li>When you have documented FCRA, FDCPA, or state law violations</li>
+          <li>When you have billing errors under 15 USC 1666 that were not addressed</li>
+        </ul>
+      </div>
+
+      <hr class="rule" style="margin-bottom: 48px;" />
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Notice template</h3>
+        <div id="nps" class="mono-block" style="margin-bottom: 48px;">
+[YOUR FULL GIVEN NAME]     RE: THE [ALL CAPS NAME] ON THEIR OFFER
+ACCT# [ACCOUNT NUMBER]
+[YOUR ADDRESS]
+[YOUR CELL#]    [YOUR EMAIL]
+
+[CREDITOR'S NAME]
+[CREDITOR'S ADDRESS]
+
+[YOUR DATE]
+
+NOTICE OF PENDING LAWSUIT
+
+To whom it may concern,
+
+This is being sent prior to filing suit as an opportunity to
+amicably cure credit name violations of the Fair Credit
+Reporting Act (FCRA) 15 U.S.C. § 1681b, Fair Debt Collection
+Practices Act (FDCPA) 15 U.S.C. § 1692c(a)(1) and the
+[YOUR STATE] Consumer Collection Practices Act,
+[YOUR STATE STATUTE].
+
+I claim there are BILLING ERRORS as well, and per 15 USC 1666
+you must stop and deal with the issues I have.
+
+I am willing to settle these matters amicably without having to
+file suit and am giving you five (5) days from receipt of this
+letter to take the opportunity to do so. If the credit name
+chooses not to settle the matters at hand, then I will have no
+choice but to file suit and seek my remedy in a court of law.
+
+I can be reached directly at [YOUR PHONE] (cell) or via
+[YOUR EMAIL] — This cell number is not to be called, shared, or
+used for any purpose other than to address the matters at hand.
+Calls will be recorded.
+
+Respectfully,
+
+_______________________
+[YOUR FULL GIVEN NAME]
+        </div>
+      </div>
+
+      <div data-animate class="card">
+        <h4 style="margin-bottom: 12px;">Important reminders</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Send this AFTER completing your administrative process — not before</li>
+          <li>Replace [YOUR STATE] and [YOUR STATE STATUTE] with your state's laws</li>
+          <li>Send via USPS Certified Mail with Return Receipt</li>
+          <li>The five-day window starts from their verifiable receipt</li>
+          <li>Keep all prior correspondence as evidence for the lawsuit</li>
+          <li>Document all billing errors under 15 USC 1666</li>
+          <li>Consult an attorney before filing suit — this is not legal advice</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</Base>

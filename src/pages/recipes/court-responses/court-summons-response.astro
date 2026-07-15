@@ -1,0 +1,223 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Court summons response template — Motion to Strike Complaint or for More Definite Statement. Preserve jurisdictional defenses when responding to a debt collection lawsuit.";
+
+const howtoSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Respond to a Debt Collection Court Summons",
+  "description": "File a Motion to Strike Complaint or for More Definite Statement instead of an Answer to preserve jurisdictional defenses and prevent default judgment.",
+  "totalTime": "P3D",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Read the summons carefully",
+      "text": "Note the deadline to respond (typically 10–30 days). Note the court, case number, plaintiff, and the claims. Do not ignore the summons — failing to respond results in default judgment."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Prepare the motion",
+      "text": "Use the same court header format the local court uses. Copy the Motion to Strike Complaint or for More Definite Statement template, replacing bracketed fields with your information and your state's civil procedure rules."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "File with the court clerk",
+      "text": "File the motion with the court clerk before the response deadline. Request a stamped copy for your records. Filing a motion instead of an Answer avoids automatically granting jurisdiction to the court."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Serve the plaintiff's attorney",
+      "text": "Send a certified copy to the plaintiff's attorney. Keep the certified mail tracking number and return receipt as proof of service."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Record at the county recorder's office",
+      "text": "Record a copy at your county recorder's office showing your timely response. This creates a public record of your non-acceptance within the required time frame."
+    }
+  ]
+};
+---
+
+<Base title="Court Summons Response — Motion to Strike — CreditCookbook" description={description} posterTitle="COURT SUMMONS RESPONSE" posterLabel="// Motion to Strike Complaint or for More Definite Statement">
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howtoSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// overview</span>
+      <h2 data-animate style="margin-bottom: 16px;">Motion to Strike Complaint or for More Definite Statement</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">
+        When sued by a debt collector, filing a Motion to Strike or for More Definite Statement instead of an Answer preserves your jurisdictional defenses. An Answer automatically submits to the court's jurisdiction; a special appearance through a motion does not. Do not fail to answer a lawsuit quickly — but do it in the form of a motion.
+      </p>
+
+      <div data-animate style="display: flex; gap: 16px; margin-bottom: 48px;">
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('motion').textContent)">Copy template</button>
+        <a href="/recipes" class="btn btn-ghost">Back to recipes</a>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 16px;">Key principles</h3>
+        <ul style="margin-left: 24px; line-height: 2; margin-bottom: 48px;">
+          <li>Use the same court header the local court uses for format requirements</li>
+          <li>Appear "specially" — not as acknowledgment of jurisdiction</li>
+          <li>Challenge personal jurisdiction and service of process</li>
+          <li>Claim "billing error" under 15 USC 1666 to stop the action at least temporarily</li>
+          <li>Send certified copies to the court and the plaintiff's attorney</li>
+          <li>Record a copy at the county recorder's office</li>
+          <li>Follow through 3 times for a solid record</li>
+        </ul>
+      </div>
+
+      <hr class="rule" style="margin-bottom: 48px;" />
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Motion template</h3>
+        <div id="motion" class="mono-block" style="margin-bottom: 48px;">
+[YOUR COURT NAME]
+[YOUR COURT ADDRESS]
+
+Case No.: [CASE NUMBER]
+
+[PLAINTIFF NAME],
+Plaintiff,
+
+v.
+
+[YOUR NAME],
+Defendant.
+
+═══════════════════════════════════════════════
+
+MOTION TO STRIKE COMPLAINT OR FOR MORE DEFINITE STATEMENT
+
+COMES NOW [YOUR NAME], hereinafter "Affiant," "Respondent,"
+"Defendant," for purposes of this motion only and not as an
+acknowledgment of such legal position, appearing specially to
+preserve any and all jurisdictional defenses that may be present
+in this case, including defenses relating to lack of personal
+jurisdiction and lack of proper personal service as well as
+preserving all defenses, thus, specially appearing in that
+capacity and, by and through himself, file this his MOTION TO
+STRIKE COMPLAINT OR FOR MORE DEFINITE STATEMENT against
+[PLAINTIFF NAME], and would show unto the court as follows:
+
+Defendant here affirms he does not give his consent to this
+action by this responsive pleading and affirms he did not
+knowingly, voluntarily and intentionally enter into any contract
+that may erroneously be construed as his consent to this action,
+and pursuant to [YOUR STATE CODE], I reserve my right not to be
+compelled to perform under any contract or commercial agreement
+that I did not enter knowingly, voluntarily and intentionally
+that may erroneously be construed as my consent to this action.
+And I do not accept the liability of the compelled benefit of
+any such unrevealed contract or commercial agreement which may
+be construed as compelling my consent to this action. And
+pursuant to [YOUR STATE CODE], Defendant has and does hereby
+reserve all rights under common law and this code in termination
+of any such contract that may erroneously be construed as
+establishing his consent to this action which was not entered
+into knowingly, voluntarily, and intentionally by Defendant
+under full disclosure that by such agreement he would be giving
+his consent and granting jurisdiction to such action.
+
+[YOUR NAME] directs this Court to take administrative notice of
+the following case law:
+
+"Once jurisdiction is challenged it must be proven."
+  — Hagins v. Levine, 415 US 533 note 3 (1974)
+
+"There is no discretion to ignore that lack of jurisdiction."
+  — Joyce v. US, 474 F2d 215
+
+"Jurisdiction can be challenged at any time, even on final
+determination."
+  — Basso v. Utah Power & Light Co, 495 F2d 906 at 910
+
+"The burden shifts to the court to prove jurisdiction."
+  — Rosemond v. Lambert, 469 F2d 416
+
+"Court must prove on the record, all jurisdiction facts related
+to the jurisdiction asserted."
+  — Lantana v. Hopper, 102 F2d 188
+
+Defendant notices the court of this special appearance and that
+pursuant to case law cited above, this MOTION TO STRIKE COMPLAINT
+OR FOR MORE DEFINITE STATEMENT is not to be construed as a
+submittal to the jurisdiction of this Court.
+
+Defendant is aware Plaintiff has the legal recourse to withdraw
+this claim for whatever reasons of its own they may so choose and
+Defendant here notifies the Court and the Plaintiff he will make
+no opposition to it.
+
+Pursuant to [YOUR STATE] Rules of Civil Procedure [RULE NUMBER]
+— Motion for More Definite Statement and Motion to Strike:
+"If a pleading is so vague or ambiguous that a party cannot
+reasonably be required to frame a responsive pleading, he may
+move for a more definite statement. The motion shall point out
+the specific defects complained of and the details desired. The
+court may order stricken from any pleading any insufficient
+defense."
+
+Defendant alleges, affirms and will show the Court:
+
+1. Personal Service of Process and conflicts in style of personal
+   service are in error or at best ambiguous in legally determining
+   the In Personam identity, location and jurisdiction of the
+   Defendant in this case, requiring a more definite statement or
+   the complaint should be struck.
+
+2. Style of Service of Process in the summons and Style of the
+   Court in the complaint originally filed [DATE] are unclear and
+   ambiguous in establishing the legal jurisdiction of the Court
+   in this case, requiring a more definite statement or the
+   complaint should be struck.
+
+3. Pursuant to the [YOUR STATE] Constitution and/or statutes,
+   there is ambiguity as to the jurisdictional standing, nature
+   and capacity of this Court or its officers as identified in
+   the public records for the Court to hear the claims of the
+   Plaintiff, requiring clarification of the Court.
+
+4. Plaintiff's case results in an insufficiency of pleadings that
+   fails to establish standing of the Plaintiff to bring this suit
+   and therefore is improper and requires a more definite statement
+   or in the alternative that this complaint should be struck as
+   insufficient to require Defendant to formulate an answer.
+
+5. Defendant claims this matter constitutes a "BILLING ERROR"
+   pursuant to 15 USC 1666 and demands the court require Plaintiff
+   to cease and desist pending resolution.
+
+Defendant states it is his intent to answer the complaint in full
+and to vigorously defend his rights in this cause upon the
+clarification of the foregoing matters, or in the alternative,
+that this complaint be struck as insufficient to require
+Defendant to formulate an answer.
+
+Respectfully submitted,
+
+_____________________________________
+[YOUR NAME], Defendant
+[DATE]
+        </div>
+      </div>
+
+      <div data-animate class="card">
+        <h4 style="margin-bottom: 12px;">Critical reminders</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Do not fail to answer a lawsuit quickly — respond within the deadline</li>
+          <li>File a motion, not an Answer, to avoid giving up jurisdiction automatically</li>
+          <li>Replace all [BRACKETED] fields with your information and state codes</li>
+          <li>Look up your state's Rules of Civil Procedure for the correct rule numbers</li>
+          <li>Send certified copies to the court, the plaintiff's attorney, and record at the county recorder</li>
+          <li>Challenge jurisdiction orally at hearings — do not do it in writing where they can dance around it</li>
+          <li>Insert "billing error" language per 15 USC 1666 to stop the action temporarily</li>
+          <li>Consult an attorney if possible — this template is not legal advice</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</Base>

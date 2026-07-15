@@ -1,0 +1,203 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Debt collector verification letter template — demand sworn answers to detailed questions, certified documentation, and proof of authority under the FDCPA. Includes consulting fee schedule for non-compliant contact.";
+
+const howtoSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Send a Debt Collector Verification Letter",
+  "description": "Send a detailed verification letter demanding sworn answers, certified documentation, and proof of collection authority. Sets a consulting fee schedule for contact without validation.",
+  "totalTime": "P30D",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Fill in the template",
+      "text": "Replace all bracketed fields with your name, the collector's information, your account number, and the date of their letter."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Send via certified mail",
+      "text": "Send the letter via certified mail with return receipt. Keep the tracking number and green card as proof."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Copy the FTC",
+      "text": "Send a copy to the Consumer Response Center, Federal Trade Commission, Washington, D.C. 20580."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Wait for response",
+      "text": "The collector has 30 days to respond with sworn answers. If they contact you again without providing validation, they agree to your consulting fee schedule."
+    }
+  ]
+};
+---
+
+<Base title="Debt Collector Verification Letter — CreditCookbook" description={description} posterTitle="VERIFICATION LETTER" posterLabel="// FDCPA verification with fee schedule">
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howtoSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// overview</span>
+      <h2 data-animate style="margin-bottom: 16px;">Debt Collector Verification Letter</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">
+        This verification letter demands detailed sworn answers from a debt collector: the contract, what was loaned, account ledgers, proof of authority, and verification that they are not purchasing evidence of debt. It sets a consulting fee of $10,000 per letter and per phone call for contact without validation.
+      </p>
+
+      <div data-animate style="display: flex; gap: 16px; margin-bottom: 48px;">
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('vletter').textContent)">Copy letter</button>
+        <a href="/recipes" class="btn btn-ghost">Back to recipes</a>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 16px;">What this letter demands</h3>
+        <ul style="margin-left: 24px; line-height: 2; margin-bottom: 48px;">
+          <li>A copy of the contract between you and the collector regarding this debt</li>
+          <li>What was loaned — cash, credit, or a debt instrument</li>
+          <li>Account and general ledger statements verified by the party who made entries</li>
+          <li>Names and addresses of all parties with interest in the debt</li>
+          <li>Verification that the collector has not purchased evidence of debt</li>
+          <li>Proof from the original creditor that insurance did not reimburse the debt</li>
+          <li>Verification that the collector understands adhesion contract limitations</li>
+          <li>Verification from the original creditor authorizing the collector to act</li>
+          <li>Affidavit validating all answers under penalty of perjury</li>
+        </ul>
+      </div>
+
+      <hr class="rule" style="margin-bottom: 48px;" />
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Letter template</h3>
+        <div id="vletter" class="mono-block" style="margin-bottom: 48px;">
+[YOUR DATE]
+
+[NAME OF DEBT COLLECTOR OR FIRM]
+[ADDRESS]
+[PHONE, FAX]
+
+Certified Mail No.: ______________
+
+Re: Your letter dated ___________, your file #________________
+
+Sir or Madam:
+
+This is a request for verification as this alleged debt is in
+dispute. I am not refusing to pay a debt which I lawfully owe,
+but I need verification of the debt before we can proceed. Please
+answer the following questions relating to the disputed account
+and return them to me within thirty (30) days, with your
+Affidavit which validates the answers. If you need more time, or
+if you need any question restated, please make your request to
+me in writing.
+
+This letter is your notice under the authority of The Fair Debt
+Collections Practices Act that contacting me again regarding the
+above referenced alleged debt, after the verifiable receipt of
+this notice without providing procedurally proper validation of
+the debt, establishes that you, [COLLECTOR NAME] have used
+interstate communications in a scheme of fraud by using threat,
+intimidation, deception, and enticement to coerce a person to
+commit some act creating a legal disability where none exists.
+
+However, I am willing to communicate with you as a consultant
+for a fee of $10,000 per letter, and $10,000 per phone call, so
+if you write or call again, absent the proof required below, it
+will comprise your contractual agreement to pay my consultation
+fees.
+
+Please state the name, occupation and mailing address of the
+person answering the following questions.
+
+1. Please furnish a copy of the contract which your company has
+   with me in regard to this alleged debt.
+
+2. Please identify what you loaned to me. Did you loan me cash,
+   credit, or a debt instrument?
+
+3. Please produce the account and general ledger statement showing
+   the full account of the alleged obligation that you are now
+   attempting to collect, verified (sworn true, correct and
+   complete) by the party who made the entries.
+
+4. Please identify by name and address all persons, corporations,
+   associations, or any other parties having an interest in legal
+   proceedings regarding the alleged debt.
+
+5. Please verify under penalty of perjury that as a debt collector,
+   you have not purchased evidence of debt and are proceeding with
+   collection activity in the name of the original creditor.
+
+6. Please obtain verification from the original creditor, under
+   penalty of perjury, that the creditor did not receive
+   reimbursement from its insurance company in an amount exceeding
+   the amount of the alleged debt, as is the customary policy of
+   lenders; or in the case of an alleged criminal "judgment,"
+   verify via the court's fiscal office that the court was not
+   reimbursed by an income stream resulting from the sale of bonds
+   in the defendant's name, as is the standard practice of courts.
+
+7. Please verify under penalty of perjury that you know and
+   understand that certain clauses in a contract of adhesion, such
+   as a so-called forum selection clause, are unenforceable unless
+   the party to whom the contract is extended could have rejected
+   the clause with impunity.
+
+8. Please verify under penalty of perjury that you know and
+   understand that credit card contracts are a series of continuing
+   offers to contract and as such are non-transferable.
+
+9. Please provide verification from the original creditor that you
+   are authorized to act for them.
+
+10. Please verify that you know and understand that contacting me
+    again after receipt of this notice without providing procedurally
+    proper validation of the debt constitutes the use of interstate
+    communications in a scheme of fraud by advancing a writing which
+    you know is false with the intention that others rely on the
+    written communication to their detriment.
+
+11. Please verify that you know and understand that contacting me
+    again after receipt of this notice without providing procedurally
+    proper validation of the debt constitutes acceptance of my
+    contract terms to pay me consulting fees of $10,000 per letter
+    and $10,000 per phone call.
+
+                    Disputing the "debt,"
+
+                    By __________________________ Agent without recourse
+
+Note: A copy of the consumer credit contract is not sufficient to
+validate the debt. Validation requires presentment of the account
+and general ledger statement signed and dated by the party
+responsible for maintaining the account. Pacific Concrete F.C.U.
+v. Kauanoe, 62 Haw. 334, 614 P.2d 936 (1980); GE Capital Hawaii,
+Inc. v. Yonenaka, 25 P.3d 807, 96 Hawaii 32 (Hawaii App 2001);
+Fooks v. Norwich Housing Authority, 28 Conn. L. Rptr. 371
+(Conn. Super. 2000); Town of Brookfield v. Candlewood Shores
+Estates, Inc., 513 A.2d 1218, 201 Conn. 1 (1986); Solon v.
+Godbole, 163 Ill. App. 3d 845, 114 Ill. Dec. 890, 516 N.E.2d
+1045 (3 Dist. 1987).
+
+cc: Consumer Response Center
+    Federal Trade Commission
+    Washington, D.C. 20580
+        </div>
+      </div>
+
+      <div data-animate class="card">
+        <h4 style="margin-bottom: 12px;">Checklist</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Fill in all bracketed fields</li>
+          <li>Send via USPS Certified Mail with Return Receipt</li>
+          <li>Keep the tracking number and green card</li>
+          <li>Send a copy to the FTC Consumer Response Center</li>
+          <li>Keep a signed copy for your records</li>
+          <li>This is not legal advice — consult an attorney for your situation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</Base>

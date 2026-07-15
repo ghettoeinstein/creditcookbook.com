@@ -1,0 +1,85 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Debt collector letter — 'Here's how to contact me.' Restrict how and when a debt collector can contact you under federal law (FDCPA).";
+---
+
+<Base title="Debt Collector: Restricted Contact Letter — CreditCookbook" description={description} posterTitle="RESTRICTED CONTACT" posterLabel="// debt collector response template">
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// debt collector response — restricted contact</span>
+      <h2 data-animate style="margin-bottom: 16px;">"Here's How To Contact Me"</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">Use this letter to tell a debt collector how they may contact you and to instruct them not to contact you any other way. Under federal law, debt collectors can't contact you at a time or place they know is inconvenient. They also can't contact you at work if you tell them your employer prohibits it. Be careful not to over-restrict — if you want to work something out, you don't want to make it too hard for them to reach you.</p>
+
+      <div style="display: flex; gap: 16px; margin-bottom: 48px;" data-animate>
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').textContent)">Copy letter</button>
+        <a href="/recipes/dispute-letters" class="btn btn-ghost">Back to dispute letters</a>
+      </div>
+
+      <div id="letter" class="mono-block" style="margin-bottom: 48px;" data-animate>
+[YOUR NAME]
+[YOUR RETURN ADDRESS]
+[DATE]
+
+[DEBT COLLECTOR NAME]
+[DEBT COLLECTOR ADDRESS]
+
+Re: [ACCOUNT NUMBER FOR THE DEBT, IF YOU HAVE IT]
+
+Dear debt collector:
+
+I am responding to your contact about collecting a debt.
+You contacted me by [PHONE/MAIL], on [DATE] and identified
+the debt as [ANY INFORMATION THEY GAVE YOU ABOUT THE DEBT].
+
+You can contact me about this debt, but only in the way I
+say below. Don't contact me about this debt in any other
+way, or at any other place or time. It is inconvenient to
+me to be contacted except as I authorize below.
+
+You can only contact me at:
+
+Mailing address: [MAILING ADDRESS IF YOU WANT TO GET MAIL]
+Phone: [PHONE NUMBER AND CONVENIENT TIMES]
+
+[IF CORRECT, INCLUDE THE FOLLOWING:]
+My employer prohibits me from receiving communications like
+this at work.
+
+Thank you for your cooperation.
+
+Sincerely,
+
+[YOUR NAME]
+      </div>
+
+      <div class="card" data-animate>
+        <h4 style="margin-bottom: 12px;">Sending instructions</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Fill in your information on the template and edit as needed</li>
+          <li>Specify exactly how and when you can be contacted</li>
+          <li>Include the work restriction paragraph only if your employer prohibits such communications</li>
+          <li>Print and send the letter — keep a copy for your records</li>
+          <li>Send via certified mail with return receipt</li>
+          <li>Stopping a collector from calling doesn't cancel the debt — you could still be sued</li>
+          <li>In some cases, phone calls are the best way to deal with a debt collector</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Debt Collector Restricted Contact Letter",
+    "description": "Letter to restrict how and when a debt collector may contact you under the FDCPA.",
+    "totalTime": "PT10M",
+    "step": [
+      {"@type": "HowToStep", "name": "Fill in your information", "text": "Complete your name, return address, and the date at the top of the letter."},
+      {"@type": "HowToStep", "name": "Add debt collector details", "text": "Fill in the debt collector's name, address, and the account number if you have it."},
+      {"@type": "HowToStep", "name": "Specify contact methods", "text": "List the mailing address and phone number with convenient times where you can be reached. Delete any methods you don't want to allow."},
+      {"@type": "HowToStep", "name": "Consider work restriction", "text": "Include the paragraph about employer prohibition only if it applies to your situation."},
+      {"@type": "HowToStep", "name": "Print and mail", "text": "Print the letter and mail it via certified mail with return receipt. Keep a copy for your records."}
+    ]
+  })} />
+</Base>

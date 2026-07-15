@@ -1,0 +1,1091 @@
+______________________________________________________________________________ 
+______________________________________________________________________________ 
+FEDERAL TRADE COMMISSION  
+PROTECTING CONSUMERS IN  
+DEBT COLLECTION LITIGATION  
+ROUNDTABLE  
+December 4, 2009  
+PROOF OF CONSUMER CREDIT  
+INDEBTEDNESS  
+DR. ERIC M. BERMAN, ESQ.  
+Eric M. Berman, P.C.  
+500 West Main Street, Suite 212  
+Babylon, New York 11702  
+631.486.4900  
+eberman@ericbermanpc.com  
+Table of Contents 
+Executive Summary...................................................................................................................... i  
+1
+Introduction...................................................................................................................................  
+2
+The Consumer Credit Transaction Complaint..........................................................................  
+3
+Signatures. .....................................................................................................................................  
+7
+The Charge-off Balance – Best Proof of the Debt......................................................................  
+0
+1
+The Right to Dispute the Debt. .................................................................................................. 
+1
+Account Stated. ...........................................................................................................................  
+3
+1
+Real Party in Interest. ................................................................................................................ 
+7
+1
+Electronic Business Records. ..................................................................................................... 
+5
+2
+Asset Buyers and Electronic Business Records........................................................................ 
+7
+2
+Conclusion. .................................................................................................................................. 
+Proof of Consumer Credit Indebtedness  
+Dr. Eric M. Berman, Esq.  
+Executive Summary  
+1. 
+Introduction 
+Consumer credit indebtedness occurs when a consumer uses available credit to make 
+purchases, obtain services or take cash advances, and then fails to pay it back.  The failure of the 
+consumer to pay back the credit as required by the credit agreement can result in interest, fees 
+and charges being added to the principal or actual amount spent, and creditors can and do sue 
+consumers for unpaid balances and breaches of the credit card agreement. 
+The purpose of this White Paper is to explore the nature of the evidence of consumer 
+credit indebtedness and how it may be proven in court. 
+2. 
+The Consumer Credit Transaction Complaint 
+Creditors have the right to sue consumers to collect debts that are due and owing.  Each 
+state has its own standards of pleading, but the basic pleading standard was established by the 
+United States Supreme Court in Bell Atlantic Corp. v. Twombly. The degree of factual 
+specificity required, if any, to provide the defendant with fair notice of the relief demanded 
+depends on the specific case and the specific cause of action being pled.  The issue is not 
+whether a Plaintiff will ultimately prevail but whether the Claimant is entitled to offer evidence 
+to support the claims.  Current rules of court and pleading requirements are sufficient to protect 
+consumers as well as permit creditors to collect the debts owed them.  The following sections are 
+devoted to the elements and issues of evidence that are often present in consumer credit 
+litigation. 
+-i­
+3. 
+Signatures 
+One of the elements of a contract is the use of a signature to signify the intent of the 
+signor to enter into the agreement.  In the middle ages contracts were signed by the inscription of 
+a mark of some kind or an “X”.  Embossed or formalized signatures came into existence as more 
+people learned to read and write following the invention of the printing press.  We have now 
+returned to the use of marks in place of signatures, but these marks exist in the form of electronic 
+data which is submitted on-line or through other electronic or computer-generated means. 
+Consumer credit card applications and agreements no longer require signatures.  Most 
+consumers apply for and fill out their credit applications via telephone or on-line eliminating the 
+need for formal signatures or marks. The contract is created by the issuance of a credit card and 
+contract to a cardholder which the cardholder accepts each time he uses the card.  The 
+cardholder’s use of the card, not his signature on a contract or application, accesses the credit 
+and creates the obligation to repay the credit used plus contractual interest and fees. 
+4. 
+The Charge-off Balance – Best Proof of the Debt 
+Congress has pre-empted the regulation of credit card issuers, believing such regulation 
+to be necessary to insure national financial stability.  A credit grantor is not required to provide 
+copies of individual transactions if it is not the entity providing the goods, services or cash 
+advances. The monthly statement need only show the amount and date of the transaction, the 
+name of the entity that provided the goods, services or cash advances, the city and state where 
+the transaction took place, and the credit card issuer must retain evidence of compliance for only 
+two years after the disclosures were made. 
+Federal Law requires that a lending institution charge-off the outstanding balance due 
+and owing on a consumer’s credit account when the consumer is in continuous default for a 
+-ii­
+period of 180 days for open accounts including credit card accounts, or 120 days for other 
+consumer credit accounts such as retail installment agreements.  It is an accounting procedure in 
+which the credit card issuer absorbs the outstanding balance as a loss and takes the amount of the 
+non-performing receivable as a charge against current earnings. 
+The charged-off balance consists of all sums that are due and owing as of the charge-off 
+date. It includes the amount actually expended by the cardholder for goods and services, all un­
+reimbursed cash advances or transfers, and all interest, fees and charges as provided in the 
+cardholder agreement.  In essence, the charge-off balance is the total of all unpaid activity on the 
+account as of the date of charge-off.  Its use simplifies the process of proving the debt by 
+eliminating the need to scrutinize account detail. 
+5. 
+The Right to Dispute the Debt 
+Consumers have the right to dispute any entry on their billing statements which they 
+believe was made in error within sixty days following their receipt of each statement.  Lenders 
+are allowed the presumption that any entry not disputed is correct and consumers are not relieved 
+of their obligation to pay all undisputed entries.  A consumer’s failure to make such payments on 
+undisputed bills  results in the default of the credit agreement. 
+6. 
+Account Stated 
+An account stated is an agreed balance between the parties.  It may be defined as an 
+agreement, express or implied, between the parties to an account based upon prior transactions 
+between them, with respect to the correctness of the separate items composing the account, and 
+the balance, if any, in favor of the one or the other.  A mere statement of a balance due including 
+a monthly credit card account statement, if accepted, is enough to constitute an account stated. 
+Once accepted, the statement becomes a new contract. 
+-iii­
+7. 
+Real Party in Interest 
+A creditor which sues a consumer to collect a debt must be the real party in interest.  This 
+means that the creditor is the party to whom the consumer owes the debt.  The proof of the real 
+party in interest is straightforward if that party is the original creditor.  The modern function of 
+the rule in its negative aspect is simply to protect the defendant against a subsequent action by 
+the party actually entitled to recover, and to ensure generally that the judgment will have its 
+proper effect as res judicata.  
+The issue of the real party in interest is largely a procedural requirement and should 
+never become more important than the purpose which it seeks to accomplish.  When a 
+consumer’s account is assigned or sold, a transfer of all the interests and rights to the account 
+takes place.  The assignee thereafter stands in the shoes of the assignor and may enforce the 
+contract against the consumer. 
+Documentary proof is not necessary to establish an assignment when the allegations of 
+such assignment in the complaint are not contested.  A proper affidavit submitted with the 
+application for a default judgment satisfies legal requirements and copies of the assignments are 
+not required.  Asset Buyers take the rights that their predecessors had and have the right to bring 
+actions to collect the debts owed to their predecessors. 
+8. 
+Electronic Business Records 
+Business records establishing the claim need to be admitted into evidence to prove a 
+consumer credit case.  An original creditor which sues a consumer may enter its own business 
+records into evidence to prove its case and can provide its own employee-witness to testify to its 
+rights to the debt.  If the owner of the account purchased that account, it is unlikely that there 
+will be a witness from the original issuer.  A representative from the current owner will need to 
+-iv­
+testify or submit an affidavit of the facts to prove that the current owner is the real party in 
+interest; that the consumer is the person who owed the debt to the original creditor and now to 
+the current owner; and that the amount claimed to be owed is correct.  
+Most financial business records are maintained on computers in various electronic 
+formats.  The maintenance and use of these electronic business records is governed by a plethora 
+of Federal legislation including the Uniform Electronic Transactions Act.  The Act applies to 
+electronic records and electronic signatures relating to a transaction and does not require a record 
+or signature to be created or otherwise processed by electronic means or in electronic form. 
+Evidence of a record or signature may not be excluded solely because it is in electronic form. 
+It is immaterial if a business record is maintained electronically so long as it meets the 
+requirements of Federal Rules of Evidence Rule 803(b)(6).  The rationale underlying the hearsay 
+exception is that business records are generally trustworthy and reliable.  Businesses are 
+motivated to keep records accurately and are unlikely to falsify records upon which they depend. 
+The party seeking to admit documents into evidence need only establish that the document has 
+sufficient indicia of trustworthiness to be considered reliable.  Computer records are held 
+admissible absent a specific objection to their accuracy. 
+9. 
+Asset Buyers and Electronic Business Records 
+The buying and selling of defaulted loans is a common business practice and assignees 
+routinely rely on the data previously kept by the assignor in keeping business records as to the 
+amount of the debts owed. Asset Buyers must be able to demonstrate that they are the current 
+owners of the consumer accounts.  They produce paper documents from the electronic data 
+provided with the sale of the accounts, both of which are subject to hearsay exceptions to the 
+business records rules.  
+-v­
+ 
+The business record exception to the hearsay rule "does not require a showing of chain of 
+custody." A plaintiff is required to provide documents establishing transfer leading from the 
+original creditor to the Plaintiff only if the Defendant has challenged the Plaintiff's ownership of 
+the account. If there is no legitimate indication that another party is claiming ownership and 
+thereby is seeking payment on the same debt, there is no basis for the court to demand 
+production of the chain of assignments. 
+Courts have recognized the increasing number of claims on assigned debts and have 
+allowed assignees to introduce records inherited from their assignors to establish a prima facie 
+case. Rule 803(6) has been interpreted to be applicable to the admission of account records 
+initially generated by the original creditor, but later held by the Asset Buyer.  The Asset Buyer's 
+business is premised upon the integration of the business records of the original creditor into its 
+own records, and the debt buyer must primarily rely upon the accuracy of those documents in 
+pursuing collection of the account thereby satisfying the first factor for admissibility. 
+A witness from the entity that originally created the business record is not required. 
+Business records received from an assignor could be introduced by the assignee under the 
+business records exception without bringing in a witness from the assignor entity.  To require 
+testimony regarding the chain of custody of such documents, from the time of their creation to 
+their introduction at trial, would create a nearly insurmountable hurdle for successor creditors 
+attempting to collect loans. 
+10. 
+Conclusion 
+Laws should not be changed simply to “hurt a group that is a visible target, in order to 
+disfavor the group or to extract further concessions.”  We must exercise care because the debt 
+collection industry is that visible target. 
+-vi­
+While business records, once admitted, have no more probative force than any other 
+evidence admitted pursuant to the hearsay exception, the threshold determination that they are 
+business records, satisfying requirements of statute, is one of law and is not a matter going only 
+to weight of evidence.  Courts must be sensitive to innovations and not seize on petty 
+irregularities to exclude otherwise trustworthy business records from evidence.  A business 
+record which meets foundational requirements is admissible under the hearsay exception even 
+though the person who prepared it is unavailable to testify to the acts or transactions. 
+In the rush to change the laws to protect consumers, we often forget that all such changes 
+have consequences that may be more harmful than the wrongs we strive to right.  Proof of 
+consumer credit indebtedness needs no new special evidentiary rules to protect consumers.  Our 
+current rules of evidence protect the rights of consumers who have defaulted on their consumer 
+credit accounts, and at the same time, provide a foundation and framework for creditors to prove 
+that they are the right party in interest; that the consumer owes the debt to them; and that the 
+amount of the debt claimed to be owed is correct. 
+For additional information or to comment on this White Paper, please contact the author 
+at: 
+Dr. Eric M. Berman, Esq. 
+Eric M. Berman, P.C. 
+500 West Main Street, Suite 212 
+Babylon, NY 11702 
+631.486.4900 
+631.486.4997 fax 
+eberman@ericbermanpc.com. 
+January 5, 2010 
+-vii­
+Proof of Consumer Credit Indebtedness  
+Dr. Eric M. Berman, Esq.1  
+1. 
+Introduction 
+Credit is the ability of a person to “borrow money or obtain goods on time, in 
+consequence of the favorable opinion held by the particular lender as to the [person’s] solvency 
+and past history of reliability.”2   Consumer credit is based upon a contract between a consumer 
+and lender-creditor, and is the “right granted by a creditor to defer payment of debt or to incur 
+debt and defer its payment.”3 
+Consumer credit indebtedness occurs when a consumer uses available credit to make 
+purchases, obtain services or take cash advances, and then fails to pay it back.  The failure of the 
+consumer to pay back the credit as required by the credit agreement can result in interest, fees 
+and charges being added to the principal or actual amount spent, and creditors can and do sue 
+The purpose of this White Paper is to explore the nature of the evidence of consumer 
+credit indebtedness and how it may be proven in court.  
+1Dr. Berman is President of Eric M. Berman, P.C., a creditor’s rights and collection law firm with offices in New York, New 
+Jersey, North Carolina, Pennsylvania and South Carolina.  He is President of the Commercial Lawyers Conference of New York 
+and a Director of the National Association of Retail Collection Attorneys (NARCA). The author thanks the NARCA Sub-
+Committee on Evidence, Gerard J. Felt, Esq., Chairman, Mark U. Abendroth, Esq, Gregory Dye, Esq., Ira F. Leibsker, Esq., 
+Stephen J. Lerch, Esq., and Timothy Rooney, Esq., Committee Members, for its contributions to this White Paper. 
+2In re Ford, 14 F.2d 848, 849 (D.C.Wash 1926). 
+3Uniform Consumer Credit Code § 1.301(7). 
+4First Nat. Bank of Commerce v. Seale, 484 So. 2d 148 (La. Ct. App. 3d Cir. 1986); Fifth Third Bank/Visa v. Gilbert, 17 Ohio 
+Misc. 2d 14, 478 N.E.2d 1324 (Mun. Ct. 1984); Wenk v. City Nat. Bank, 613 S.W.2d 345 (Tex. Civ. App. Tyler 1981); Citibank 
+(S.D.) N.A. v. Roberts, 304 A.D.2d 901, 757 N.Y.S.2d 365 (3d Dep't 2003); Citibank (S.D.) N.A. v. Roberts, 304 A.D.2d 901, 757 
+N.Y.S.2d 365 (3d Dep't 2003). 
+4 
+consumers for unpaid balances and breaches of the credit card agreement. 
+-1­
+2. 
+The Consumer Credit Transaction Complaint 
+8 
+prevail but whether the Claimant is entitled to offer evidence to support the claims.” 
+Creditors have the right to sue consumers to collect debts that are due and owing.  Each 
+state has its own standards of pleading, but the basic pleading standard was established by the 
+United States Supreme Court in Bell Atlantic Corp. v. Twombly.5   Complaints must contain 
+enough “[f]actual allegations ... to raise a right to relief above the speculative level ... on the 
+6
+assumption that all the allegations in the complaint are true (even if doubtful in fact).” “Specific
+facts are not necessary; the statement need only ‘give the defendant fair notice of what the ... 
+claim is and the grounds upon which it rests.’”7   The degree of factual specificity required, if 
+any, to provide the defendant with fair notice of the relief demanded depends on the specific case 
+and the specific cause of action being pled.  The issue is not whether a Plaintiff will ultimately 
+There is no one size fits all, but most jurisdictions accept a summons (or notice) and 
+complaint that contains the name and address of the Plaintiff and Defendant, the basis of the 
+action (violation of contract, account stated) and the amount owed.  Some jurisdictions require 
+that the original account number (usually in a redacted format) be included.  Interest is generally 
+computed from the date of default.  The name of the originator of the debt is required in some 
+states if the Plaintiff is an assignee of the original creditor.  This information more than satisfies 
+the Supreme Court standard. 
+The form and content of consumer credit transaction complaints has undergone a great 
+5550 U.S. 544, 127 S.Ct. 1955, 167 L.Ed.2d 929 (2007).  
+6Id. 127 S.Ct. at 1965.  
+7Erickson v. Pardus, ---U.S. ----, ----, 127 S.Ct. 2197, 2200, 167 L.Ed.2d 1081 (2007) (quoting Conley v. Gibson, 355 U.S. 41,  
+47, 78 S.Ct. 99, 2 L.Ed.2d 80 (1957)).  
+8Scheur v Rhodes, 416 U.S. 232, 236 (1974).  
+-2­
+deal of scrutiny in the last few years as the economy declined.  Some jurisdictions have 
+attempted to tighten the requirements beyond the Supreme Court mandates, demanding 
+attachments of signed contracts, numerous statements of accounts and documents proving the 
+chain of title in assignment cases.  Such changes are not necessary.  Current rules of court and 
+pleading requirements are sufficient to protect consumers as well as permit creditors to collect 
+the debts owed them. 
+The following sections are devoted to the elements and issues of evidence that are often 
+present in consumer credit litigation. 
+3.  
+Signatures 
+One of the elements of a contract is the use of a signature to signify the intent of the 
+signor to enter into the agreement.  In the middle ages contracts were signed by the inscription of 
+a mark of some kind or an “X”.  Embossed or formalized signatures came into existence as more 
+people learned to read and write following the invention of the printing press.  We have now 
+returned to the use of marks in place of signatures, but these marks exist in the form of electronic 
+data which is submitted on-line or through other electronic or computer-generated means. 
+It is frequently (and astutely) stated that the law has not kept pace with technology.9 
+Authentication or proof of the legitimacy and the accuracy of the documents and records called 
+into evidence has troubled judges and scholars through the ages.  Oliver Wendell Holmes wrote 
+that: 
+[a]s few could write, most people had to authenticate a document in some other 
+way, for instance, by making their mark. This was, in fact, the universal practice 
+in England until the introduction of Norman customs.  With them seals came in. 
+But as late as Henry II they were said by the Chief Justice of England to belong 
+9Michael S. Baum, Linking Security and the Law of Computer-based Commerce, VeriSign, 1 (1993). 
+-3­
+only to kings and to very great men.  I know no ground for thinking that an 
+authentic charter had any less effect at that time when not under seal then when it 
+was sealed. . . . Its conclusive effect was due to the satisfactory nature of the 
+evidence, not to the seal. . . .  But when seals came into use they obviously made 
+the evidence of the charter better, in so far as the seal was more difficult to forge 
+than a stroke of the pen. 01 
+In 1851, the Supreme Court stated that: 
+[f]ormerly wax was the most convenient, and the only material used to receive 
+and retain the impression of a seal. . . .  We cannot perceive why paper, if it have 
+that capacity, would not as well be included in the category.  The simple and 
+powerful machine, now used to impress public seals, does not require any soft or 
+adhesive substance to receive or retain their impression. The impression made by 
+such a power on paper is as well defined, as durable, and less likely to be 
+destroyed or defaced by vermin, accident, or intention than that made on wax.  It 
+is the seal which authenticates, and not the substance on which it is impressed; 
+and where the court can recognize its identity, they should not be called upon to 
+analyze the material which exhibits it. 11 
+The identity of the person that the mark or signature represents remains more important 
+than the material or format in which it is placed.  The discussion now focuses, not on wax or 
+paper, but on digital media. 
+"Records" are in practice accepted as accurate upon the faith of the routine itself, 
+and of the self consistency of their contents.  Unless they can be used in court 
+without the task of calling those who at all stages had a part in the transactions 
+recorded, nobody need ever pay a debt. 21 
+Consumer credit card applications and agreements no longer require signatures.  Most 
+consumers apply for and fill out their credit applications via telephone or on-line eliminating the 
+need for formal signatures or marks. The contract is created by the issuance of a credit card and 
+contract to a cardholder (the offer) which the cardholder accepts each time he uses the card 
+10Oliver Wendell Holmes, The Common Law, 272-273 (1881), cited in Baum, supra.  
+11Pillow v. Roberts, 54 U.S. (13 How.) 472, 473-74 (1851), cited in Baum, supra.  
+12Great Seneca Financial v. Felty, 2006 WL 3690688 (Ohio App 1 Dist. 2006), citing Massachusetts Bonding & Ins Co. v.  
+Norwich Pharmacal Co., 18 F.2d 937 (2nd Cir 1927). 
+-4­
+(acceptance).  The cardholder’s use of the card, not his signature on a contract or application, 
+31 
+accesses the credit and creates the obligation to repay the credit used plus contractual interest 
+and fees. 
+Because it is the use of the credit card, and not the issuance, that creates an 
+enforceable contract, each time a cardholder uses his credit card, he accepts the 
+offer by tendering his promise to perform (i.e. to repay the debt upon the terms set 
+forth in the credit card agreement).
+In Duke v. Sears, Roebuck and Co.,14   the cardholder argued that his failure to sign the 
+card exempted him from liability.  The Court held that "[the cardholder's] undisputed use of one 
+of the cards sent to him . . . constituted an acceptance of the cards and an assent to the agreement 
+underlying their issuance. . .”  
+Even accepting defendant’s position that plaintiff has failed to provide a signed 
+original agreement and assuming that defendant did not sign the agreement, “the 
+absence of an underlying agreement, if established, would not relieve defendant 
+of her obligation to pay for goods and services received on credit.”15 
+The use of a credit card and the lack of need of the consumer’s signature on an 
+application or agreement was discussed extensively in Discover Bank v. Vangorder.16 Though a 
+13Bank of America v. Jarczyk, 268 B.R. 17 (W.D.N.Y. 2001).  See also Read v. Gulf Oil Corporation, 114 Ga. App. 21, 150 
+S.E.2d 319, 320 (1966). “When the customer uses the card a contract is created and he agrees to be bound by the terms and 
+conditions of the cardholder agreement.”; Grasso v. First USA Bank, 713 A.2d 304 (Del. 1998).  A cardholder's use of a card 
+constituted acceptance of the card and assent to the agreement underlying their issuance; Chase Manhattan Bank (Nat. Ass'n), 
+Bank Americard Division v. Hobbs, 405 N.Y.S.2d 967 (1978). “The defendant's use of the credit card in and as of itself 
+constituted proof of an underlying agreement between the account holder and account issuer.  The acceptance of a paper which 
+purports to be a contract may be indicated by conduct or acquiescence." 
+14433 S.W.2d 919, 926 (Tex.Civ.App. 1968). 
+15Citibank v Roberts, 304 A.D.2d 901, 757 N.Y.S.2d 365 (3rd Dep't 2003); see also Bank One, Columbus, NA v. Palmer, 63 Ohio 
+App.3d 491, 493 (1989). "Credit card agreements are contracts whereby the issuance and use of a credit card creates a legally 
+binding agreement."; Calvary SPV I, L.L.C. v. Furtado, 2005 WL 3528848 (Ohio App. 10 Dist. 2005).  Although that cardholder 
+agreement does not bear defendant's signature, the bank's issuance of the card and defendant's use of the card create a binding 
+contract; City Stores Co. v. Henderson, 116 Ga. App. 114, 156 S.E.2d 818 (App. Ct. 1967). "[T]he issuance of a credit card is but 
+an offer to extend a line of open account credit . . ..  use of the card by the offeree makes a contract between the parties according 
+to its terms; Anastas v. American Sav. Bank (In re Anastas), 94 F.3d 1280, 1285 (9th Cir. 1996). “[E]ach card use forms a 
+unilateral contract: the holder promises to repay the debt . . . and the . . . issuer performs by reimbursing the merchant who . . . 
+accepted the . . . card in payment.” 
+162006-9331 (NY Sup. Ct. Erie Cnty. 2007). 
+-5­
+New York case, its application crosses state lines. 
+Defendant further asserts that she is not a signatory to any contract which created 
+the credit card relationship between the parties. . . [and that] Plaintiff cannot set 
+out a prima facie case. For Plaintiff to prevail on its claim under New York law, 
+it is not required to submit an executed agreement with the Defendant. 
+The Retail Installment Sales Act of the Personal Property Law, Article 10, § 413­
+11(c) recites: 
+A single credit agreement entered into pursuant to either paragraph (a) or 
+paragraph (b) of this subdivision may provide for the financing agency to acquire 
+indebtedness of a retail buyer under a sales slip or memorandum evidencing a 
+purchase pursuant to the other of said paragraphs.  Where a financing agency 
+enters into a credit agreement with a retail buyer for its own account, the credit 
+agreement may consist of an agreement complying in all other respects with the 
+provisions of this section, but executed only by the financing agency, together 
+with a credit card issued by it to the retail buyer.  [emphasis added]  The credit 
+agreement, however, must then provide that it shall not become effective unless 
+and until the retail buyer or a person authorized by him signs a sales slip or 
+memorandum evidencing a purchase or lease of property or services by use of the 
+credit card and that prior thereto the retail buyer shall not be responsible for any 
+purchase or lease of property or services by use of the credit card after its loss or 
+theft. 
+Under New York Personal Property Law, it is not necessary for the Plaintiff to 
+obtain a credit agreement signed by the Defendant.  An agreement that does not 
+contain the retail buyer's signature, together with credit issued to the retail buyer 
+is sufficient pursuant to Personal Property Law § 413-11(c) provided the 
+agreement states that the agreement shall not become effective until the first 
+authorized use of the credit. As reflected in the record, the credit agreement made 
+available by Plaintiff to the Defendant clearly states that the agreement becomes 
+effective with the first use of the credit.  Once the Defendant actually used the 
+credit card, the agreement became effective despite the fact that no written credit 
+agreement was executed by the Defendant.  That the Defendant used the credit 
+card is more than adequately documented in Plaintiff’s motion papers. 
+The Court takes judicial notice of the fact that, routinely in the ordinary course of 
+business, a consumer can apply for credit by mail, telephone, in person, orally or 
+in writing.  The consumer then awaits approval of his or her application.  If 
+approved, the consumer is then sent the notice of approval of credit by mail 
+without having to sign any agreement.  It is the ordinary course of business that 
+the initial authorized use of the credit triggers the consumer's liability.  New York 
+Personal Property Law clearly supports this common business practice.  By 
+reason of the foregoing, it is clear that, pursuant to the Personal Property Law, an 
+-6­
+81 
+agreement signed by the Defendant is not necessary to support Plaintiff's 
+claims or establish Defendant's liability. [emphasis added] 
+4. 
+The Charge-off Balance – Best Proof of the Debt 
+Congress has pre-empted the regulation of credit card issuers, believing such regulation 
+to be necessary to insure national financial stability.17   Each billing statement sent to the credit 
+card user to disclose the following:
+a. 
+The outstanding balance at the beginning of the statement period. 
+b. 
+The amount and date of each extension of credit during the statement period and a 
+brief identification of each extension of credit sufficient to permit the credit card 
+user to identify the transaction.. 
+c. 
+The total amount credited to the account during the statement period. 
+d. 
+The amount of any finance charge added to the account during the statement 
+period itemized to show the amounts, if any, due to the application of the 
+percentage rates and the amounts, if any, imposed as a minimum or fixed charge. 
+e. 
+Where one or more periodic rates are used, each such rate, the balances to which 
+it is applied and the nominal annual percentage rate for each rate applied. 
+f. 
+The balance on which the finance charge was computed and a statement of how 
+the balance was determined. 
+g. 
+The outstanding balance at the end of the statement period. 
+h. 
+The date by which payment must be made to avoid additional finance charges. 
+i. 
+The address to which payments should be sent. 
+A credit grantor is not required to provide copies of individual transactions if it is not the 
+entity providing the goods, services or cash advances.  The monthly statement need only show 
+the amount and date of the transaction, the name of the entity that provided the goods, services 
+17Consumer Credit Protection Act, 15 U.S.C. §1601-I(A)(a). 
+18Federal Regulation of Credit Transactions, 15 U.S.C. §1637 (b). 
+-7­
+or cash advances, the city and state where the transaction took place,19 and the credit card issuer 
+must retain evidence of compliance for only two years after the disclosures were made.20 
+Requiring the production of  statements for the entire history of the account, even if still 
+available, would not result in meaningful disclosure of relevant information, and would place an 
+undue and unreasonable burden on the creditor. 
+Federal Law also requires that a lending institution charge-off the outstanding balance 
+due and owing on a consumer’s credit account when the consumer is in continuous default for a 
+period of 180 days for open accounts including credit card accounts, or 120 days for other 
+consumer credit accounts such as retail installment agreements.21   It is an accounting procedure 
+in which the credit card issuer absorbs the outstanding balance as a loss and takes the amount of 
+the non-performing receivable as a charge against current earnings. 
+Under the charge-off method, a bank's debt is conclusively presumed to be worthless, as 
+follows: 
+1.  
+The charge-off is made under specific orders of federal or state supervisory 
+authorities. To the extent the debts are charged off during a tax year, they're 
+conclusively presumed to have become worthless during that year.  Treas. Reg.     
+ § 1.166-2(d)(1)(I). 
+2.  
+The charge-off is made in conformance with established policies of federal or 
+state supervisory authorities. The debt is conclusively presumed to be worthless if 
+(a) the authorities, on their first audit of the bank after its charge-off, confirm in 
+writing that the charge-off would have been subject to their specific orders if the 
+audit had been made on the date of the charge-off, and (b) the bank claims a 
+deduction for the amount charged off on its return for the tax year in which the 
+1912 C.F.R. §226.8 (a)(3). 
+2012 C.F.R. 226.25. 
+21See 65 Fed. Reg. 36,903 at 36904.  The Office of the Comptroller of the Currency (“OCC”) adopted this policy for all national 
+banks and their operating subsidiaries on June 20, 2000 in OCC Bulletin 2000-20 which revised the “Uniform Retail Credit 
+Classification and Account Management Policy,” originally published in the Federal Register on February 10, 1999. 
+-8­
+ 
+charge-off took place.  Treas. Reg. § 1.166-2(d)(1)(ii). 22 
+The charged-off balance consists of all sums that are due and owing as of the charge-off 
+date. It includes the amount actually expended by the cardholder for goods and services, all un­
+reimbursed cash advances or transfers, and all interest, fees and charges as provided in the 
+cardholder agreement.23   In essence, the charge-off balance is the total of all unpaid activity on 
+the account as of the date of charge-off.  Its use simplifies the process of proving the debt by 
+eliminating the need to scrutinize account detail.24 
+Charge-off does not mean the debt is extinguished or forgiven and no longer owed by the 
+account holder.  Some delinquent account holders have argued that "credit card holders who are 
+unable to pay their debt need merely stop payment for 180 days, at which point . . . such debts 
+will automatically become taxable income and be extinguished. [However, the Court held that] 
+this theory is as ridiculous on its face as it is incoherent in its explanation." 52 
+The Connecticut Small Claims Bench-Bar Committee has recommended to the Judicial 
+Rules Committee that the Conn. Practice Book Section 24-24,  Judgments in Small Claims; 
+When Presence of the Plaintiff or Representative is Not Required for Entry of Judgment, be 
+revised to read: “For debts with a charge-off balance, the affidavits shall include the amount of 
+the original charge-off balance and an itemization of any damages, i.e., interest, attorney fees 
+2234 Am. Jur. 2d ¶ 20435. 
+23Smiley v. Citibank (South Dakota) N.A., 517 U.S. 735, 739, 116 S.Ct. 1730, 135 L.Ed.2d 25 (1996). “The Comptroller of the 
+Currency has reasonably interpreted the term “interest” in § 85 to include late-payment fees, see 12 CFR § 7.4001(a), and 
+petitioner has failed to establish that the Court should not accord its customary deference to the Comptroller’s interpretation of 
+an ambiguous provision of the National Bank Act.” 
+24Consumers have the right to dispute every entry on every statement of account sent them.  If the entries are not disputed, they 
+are deemed to be correct.  The consumers’ right to dispute entries on billing statements is discussed in Part 4 The Right to 
+Dispute the Debt. Creditors report the charge-off balance to Consumer Credit Reporting Agencies such as Experian, Equifax 
+and/or TransUnion, when they report that the account has been charged-off.  This information can also be used to verify the 
+charge-off balance, but only if is accessed under an authorized use as provided in the Fair Credit Reporting Act (15 U.S.C. §§ 
+1681-1681t (2003)). 
+25Kelly v. Wolpoff & Abramson, L.L.P., 2008 U.S. Dist. LEXIS 45345, 45360 (D.Colo. 2008). 
+-9­
+etc., claimed in addition to that balance.”  The Committee’s recommendation acknowledges that 
+the charge-off balance is the best proof of the underlying debt. 
+5. 
+The Right to Dispute the Debt 
+Consumers have the right to dispute any entry on their billing statements which they 
+believe was made in error within sixty days following their receipt of each statement.26    Lenders 
+are allowed the presumption that any entry not disputed is correct27 and consumers are not 
+relieved of their obligation to pay all undisputed entries.28   A consumer’s failure to make such 
+payments results in the default of the credit agreement.  
+The consumer’s acceptance of the charges can also be inferred from the fact that the 
+consumer continued to use the credit card, made partial payments, and never attempted to cancel 
+the agreement during the period despite having received the statements for several months. 
+Acquiescence to the contract by the party to be charged may be implied from his affirmative 
+actions, such as when he continues to order and accept goods with the knowledge that a service 
+charge is being imposed and pays the charge without timely objection,29 and consent may be 
+implied from acceptance of payments.
+Once a cardholder has established a credit card account, and provided that the 
+26Fair Credit Billing Act, 15 U.S.C. § 1666 et seq. (2003). 
+27Rodkinson v. Haecker, 248 N.Y. 480 (1928); see also Chisholm-Ryder Co., Inc. v. Sommer and Sommer, 70 A.D.2d 429, 421 
+N.Y.S.2d 455 (N.Y. A.D. 1979). “An agreement may be implied if the party receiving a statement of account keeps it without 
+objecting to it within a reasonable time.”; Toth v. Mansell, 207 Ill. App. 3d 665, 152 Ill. Dec. 853, 566 N.E.2d 730, 14 U.C.C. 
+Rep. Serv. 2d 70 (1st Dist. 1990). “[A]n objection to particular items of an account is an admission of the correctness of the rest 
+of the items, and the account becomes stated as to those items.”; Woodruff v. Shuford, 73 N.C. App. 627, 327 S.E.2d 14 (1985). 
+2815 U.S.C. § 1666 and Regulation Z Subsection 226-13(b)(1)-1.  "If the defendants fail to object in writing pursuant to their 
+rights to dispute the bill, the debtor has waived the right to dispute the balance." 
+29Tubelite v. Risica & Sons, Inc., 819 S.W.2d 801, 805 (Tex. 1991). 
+30Western State Bank v. Grumman Credit Corporation, 564 F.Supp. 9, 14 (D. Montana 1982). 
+03 
+-10­
+card issuer is in compliance with the billing statement disclosure requirements of 
+15 U.S.C. 1637, the cardholder is in a superior position to determine whether the 
+charges reflected on his regular billing statements are legitimate. A cardholder's 
+failure to examine credit card statements that would reveal fraudulent use of the 
+card, constitutes a negligent omission that creates apparent authority for charges 
+that would otherwise be considered unauthorized under TILA. 13 
+Consumers get a second opportunity to dispute or demand validation of the debt when 
+they are served with an initial collection letter from a third party collection agency or law firm.32 
+The collector must stop all collection activity until the debt is validated.33   If the account remains 
+undisputed, the statement of account is transformed into an account stated. 
+6. 
+Account Stated 
+An account stated is an agreed balance between the parties.34 It may be “defined, 
+broadly, as an agreement, express or implied, between the parties to an account based upon prior 
+transactions between them, with respect to the correctness of the separate items composing the 
+account, and the balance, if any, in favor of the one or the other.” 53 
+As a general rule where an account is made up and rendered, he who receives it is 
+bound to examine the same or to procure someone to examine it for him. If he 
+admits it to be correct it becomes a stated account and is binding on both parties. 
+If instead of an express admission of the correctness of the account, the party 
+receiving it keeps the same by him and makes no objection within a reasonable 
+time, his silence will be construed into an acquiescence in its justness, and he will 
+be bound by it as if it were a stated account. An account stated is conclusive upon 
+the parties unless fraud, mistake, or other equitable considerations are shown 
+31Minskoff v. American Express Travel Related Servs. Co., 98 F.3d 703 (2d Cir. 1996); see also Transamerica Ins. Co. v. 
+Standard Oil Co. (Indiana), 325 N.W.2d 210, 215  (N.D. 1982). 
+3215 U.S.C. § 1692g. 
+3315 U.S.C. § 1692g (b).  The validation notice will be discussed in detail in another White Paper in the NARCA White Paper 
+Series on Consumer Debt. 
+34Holt v. Western Farm Services, Inc., 19 Ariz.App. 355, 507 P.2d 674, 677 (Ariz.App. 1973). 
+35 
+nd
+R.A. Associates v Lerner, 265 A.D.2d 541, 697 N.Y.S.2d 161 (2 Dep’t 1999). 
+-11­
+which make it improper to be enforced.36 
+A mere statement of a balance due including a monthly credit card account statement, if 
+accepted, is enough to constitute an account stated.37   An account stated arose “between the 
+issuer of a credit card and cardholders when the issuer sent monthly statements of account 
+transactions to cardholders and no objections were made.”38   Once accepted, the statement 
+becomes a new contract. 
+It is well settled that a claim for an account stated is independent of the original 
+obligation.  By its submission of unrefuted evidence of having mailed statements 
+of account to defendant, which statements were retained without objection for a 
+reasonable period of time, plaintiff established its entitlement to summary 
+judgment on its claim for an account stated.
+Causes of action based upon accounts stated may be entered as default judgments in the 
+Civil Court of the City of New York so long as they satisfy the following:40 
+A summons and complaint which qualifies for entry following CPLR § 3215, 
+where the cause of action is for an account stated, may be entered by the clerk 
+under the following conditions: 
+1.  
+The affidavit of facts or verified complaint includes a statement indicating 
+that an accounting was delivered or mailed to the creditor and the date of 
+the delivery or mailing. 
+2.  
+The affidavit of facts or verified complaint also includes a statement that 
+the accounting has been retained and that no objection to it has been made. 
+In cases in which the defendant opposed a motion for summary judgment by alleging in a 
+conclusory fashion that payments were not properly credited or that he questioned certain 
+36Rodkinson v. Haecker, 248 N.Y. 480, 485 (1928). See also, Philips v. Belden, 2 Edw.Ch.Rep. 1, 13-14 (1833). 
+37Citibank (South Dakota), N.A. v. Runfola, 283 A.D.2d 1016, 725 N.Y.S.2d 246 (4 Dep’t, 2001), See also Citibank (South  
+Dakota), N.A. v, Currea, 2006 WL 1229919 (Conn. Super 2006).  
+38Citibank (South Dakota) N.A. v. Poynton, 187 Misc. 2d 397, 723 N.Y.S.2d 327 (App. Term 2000).  
+39Discover Bank v. Anderson, No. 2007-178 QC (NY App. Term 2008). [internal citations omitted]  
+40See Directive and Procedures 158, Entry of Judgment - Account Stated, Hon. Fern Fisher-Brandveen, Administrative Judge of  
+the Civil Court of the City of New York, July 27, 2001. 
+93 
+-12­
+ 
+charges, plaintiffs’ applications were granted. 
+The evidence, fairly interpreted, supports plaintiff's recovery of  the credit card 
+debt under the theory of account stated, since defendant did not object within a 
+reasonable time to the itemized credit card statements.  (internal citations 
+omitted) Defendant's argument that plaintiff was required to submit a signed 
+credit card application in order to establish its claim based on an account stated is 
+without merit. 41 
+"Defendant's opposition merely asserts he questioned several charges without giving 
+details.  His silence is an admission."42   If the consumer fails to object within a reasonable time 
+do so, an account stated may be found.43 
+7. 
+Real Party in Interest 
+A creditor which sues a consumer to collect a debt must be the real party in interest.  This 
+means that the creditor is the party to whom the consumer owes the debt.  The proof of the real 
+party in interest is straightforward if that party is the original creditor.  It is sometimes disputed 
+in cases in which a third party purchased the consumer’s account and then seeks to collect it.    
+The Federal Rules of Civil Procedure (“Fed.R.Evid.”) Rule 17(a) states that “every action 
+shall be prosecuted in the name of the real party in interest.”  The effect of this passage is that 
+the action must be brought by the person who, according to the governing substantive law, is 
+entitled to enforce the right.44    One for whose benefit a contract between other parties has been 
+made is a real party in interest and may sue the obligated contracting party.
+41 
+st
+Citibank (S.D.), N.A. v Leon , 2009 NY Slip Op 52642(U) (App.Term. 1 Dept. December 29, 2009). 
+42National Westminster Bank USA v. Seidler, 1984-6547 (Dist. Ct. Nassau Cnty. 1984). 
+43Interman Indus. Products, Ltd. v. R.S.M. Electron Power, Inc., 371 N.Y.S.2d 675, 332 N.E.2d 859 (1975). 
+44See Richards v. Reed, 611 F.2d 545 (5th Cir. 1980); Simpson v. Providence Washington Ins. Group, 608 F.2d 1171, 1173 n.2 
+(9th Cir. 1979).  
+45State Secs. Co. v. Federated Mut. Implement & Hardware Ins. Co., 204 F.Supp. 207 (D.C.Neb.1960), affirmed per curiam, 308  
+F.2d 452 (8th Cir. 1962).  
+54 
+-13­
+The basis for the real party in interest rule was stated in the Advisory Committee’s Note 
+to the 1966 Amendment to Rule 17(a): 
+[T]he modern function of the rule in its negative aspect is simply to protect the 
+defendant against a subsequent action by the party actually entitled to recover, 
+and to ensure generally that the judgment will have its proper effect as res 
+judicata. 
+The issue of the real party in interest is largely a procedural requirement and should 
+never become more important than the purpose which it seeks to accomplish.46 An assignment is 
+a transfer of all the interests and rights to the thing assigned; the assignee thereafter stands in the 
+shoes of the assignor and may enforce the contract against the original obligor in his own 
+name.47 An assignee for collection may bring suit in his own name as the real party in interest to 
+recover on the claim,48 and is ". . . entitled to control and to receive the benefits of the original 
+contract between the original debtor and the assignor".49    "An assignee’s rights are the same as 
+those of the assignor at the time of the assignment".
+“Where the defendant seeks to impugn the plaintiff's capacity to sue, the burden of proof 
+is placed upon him to establish such defense with appropriate proof.” 51 The plaintiff could not 
+produce an assignment document specifically listing the defendant's promissory note as an asset of 
+the sale when the defendant challenged the plaintiff's ownership of a promissory note it purchased 
+from the assignee of the original creditor.  The Court accepted an Affidavit of a records custodian for 
+46Eisinger v. Stern, 57 Misc.2d 16, 290 N.Y.S.2d 979 (Sup. Ct. Oneida Cnty. 1968). 
+47Price v. RLI Ins. Co., 914 So.2d 1010 (Fla.App.5.Dist. 2005); see also Citizens Fed. Bank, F.S.B. v. Brickler, 683 N.E.2d 358  
+(Ohio.App.2 1996).  
+48In re Thomas, 387 B.R. 808 (D.Colo. 2008).  
+49In the Matter of the Liquidation of Home Insurance Company, 2008 NH 0728.164, 953 A.2d 443, 448 (2008).  
+50Stateline Steel Erectores, Inc. v. Shields, 150 N.H. 332, 336 (2003).  
+51Dixie Dinettes, Inc. v. Schaller's Furniture, 71 Misc. 2d 102, 103, 335 N.Y.S.2d 632 (Sup. Ct. Kings Co. 1972).  
+05 
+-14­
+a prior owner to establish the transfer of the note and plaintiff's right to summary judgment on the 
+ownership issue. 52 An affidavit regarding the transfer of a lost promissory note sufficed to permit 
+the claimant to enforce a loan debt against the maker of the note.  The Court held that, Plaintiff’s 
+“failure to produce the original note does not prevent [Plaintiff] from presenting other evidence 
+in proof of the debt.”53 
+Affidavits of record custodians are sufficient if original documents are unavailable. 
+Plaintiff, which was the second assignee debt buyer, sued to collect on a credit card debt.  In its 
+motion for summary judgment, the Plaintiff provided the trial court with seven credit card 
+statements issued by the original creditor and a bill of sale evidencing the transfer of the 
+accounts from the original creditor to the first assignee.  The bill of sale did not specifically list 
+the accounts which were sold, but the court held that the "remaining evidence," an Affidavit and 
+Assignment, clearly demonstrated the chain of title. The Court ruled that ". . .such evidence 
+demonstrates the absence of any genuine issue of fact or material element of [Defendant’s] claim 
+that [Plaintiff] lacks ownership of their account."54    Documents falling short of being "direct 
+evidence" of the chain of transfers sufficed to establish the plaintiff's ownership of the 
+promissory note and the loan indebtedness.  Those documents included peripheral documents in 
+the debt transfer transactions other than the actual bills of sale.  The Court endorsed the use of 
+such documents to establish ownership even though no document evidencing the assignment of 
+the account from the original owner to its assignee was provided.
+52NCNB Tex Nat'l Bank v Johnson, 11 F3d 1260, 1265 (5th Cir 1994). 
+53Miller v MIF Realty LP (In re Perrysburg Marketplace Co), 208 BR 148, 159 (Bankr. N.D. Ohio 1997), citing New England  
+Savings Bank v Bedford Realty, 238 Conn 745, 680 A2d 301,309 (Conn 1996).  
+54National Check Bureau, Inc. v. Cody, 2005 WL 174762 (Ohio App. 8 Dist. 2005).  
+55New Haven Savings Bank v Follins, 431 F Supp 2d 183, 195-197 (D.Mass. 2006).  
+55 
+-15­
+There is an innocent reason that creditors assign collection to other firms rather 
+than doing it themselves. It is the same reason that most manufacturers sell to 
+consumers through independent distributors and dealers rather than doing their 
+own distribution. Outsourcing phases of the total production process facilitates 
+specialization, with resulting economies.  Specialists in debt collection are likely 
+to be better at it than specialists in creating credit card debt in the first place.
+Documentary proof is not necessary to establish an assignment when the allegations of 
+such assignment in the complaint are not contested. A proper affidavit submitted with the 
+application for a default judgment satisfies legal requirements.  Copies of the assignments are 
+not required. 
+In Centurion Capital Corporation, Assignee of Aspire v. Bendickson,57the Court noted 
+that the original account had been purchased by the Plaintiff and that the Defendant failed to 
+answer or appear.  The Court also commented that Centurion had not filed a copy of the 
+assignment with the Court. Centurion challenged the necessity of filing any assignment of debt 
+when filing for a default judgment and further claimed that it was unnecessary due to 
+Centurion’s status as a valid assignee.  The Court held that since Bendickson had failed to 
+answer the Complaint, she had admitted all allegations contained in the Complaint, including the 
+assignment of debt. Since it is undisputed, it is deemed admitted and the factual basis for entry of 
+judgment was accepted by this Court.  Based upon the above reasons, the Court granted the 
+Plaintiff's Motion for Default Judgment and did not require any additional proof of debt 
+assignment. 
+Requiring the production of documents evidencing the assignment of a debt may have 
+56Olvera v. Blitt & Gaines, P.C., 431 F.3d 285, 288 (7th Cir. 2005). 
+57 
+th
+Centurion Capital Corporation Assignee of Aspire v. Bendickson, CV 06-12091 (4 J.D. Dist. Minn 2007). 
+65 
+-16­
+other ramifications for the debt buyer including liability under the FDCPA and the GLBA.58 A 
+debt buyer may not reveal information about a consumer debtor to third parties and cannot 
+produce a Bill of Sale which contains information about non-party consumer debtors.  Though 
+non-party information can be redacted from a Bill of Sale, a mistake or insufficient redaction 
+would violate third party disclosure rights. 
+Asset Buyers take the rights that their predecessors had and have the right to bring 
+actions to collect the debts owed to their predecessors.  Asset Buyers are the real parties in 
+interest when they purchase a debt and seek to collect it. 
+8. 
+Electronic Business Records 
+Business records establishing the claim need to be admitted into evidence to prove a 
+consumer credit case.  An original creditor which sues a consumer may enter its own business 
+records into evidence to prove its case and can provide its own employee-witness to testify to its 
+rights to the debt.  If the owner of the account purchased that account, it is unlikely that there 
+will be a witness from the original issuer.  A representative from the current owner will need to 
+testify or submit an affidavit of the facts to prove that the current owner is the real party in 
+interest; that the consumer is the person who owed the debt to the original creditor and now to 
+the current owner; and that the amount claimed to be owed is correct.  
+The business records which a current owner seeks to put into evidence are governed by 
+the Business Records Exception to the Hearsay Rule found at Fed.R.Evid. Rule 803 and/or in the 
+rules of evidence of the State in which the collection lawsuit is being brought. 
+58See Dunmire v. Morgan Stanley Dean Witter, Inc., 475 F 3d 956 (8th Cir 2007), in which a violation of the GLBA was alleged 
+where an attorney's demand letter was served upon the estranged wife of a stockbroker's client. 
+-17­
+a.  
+Business Records 
+i.  
+General Rule - Business Records Exception to the Hearsay Rule: 
+To qualify as business records under Rule 803(6), 
+(1)  
+The document must be prepared in the normal course of business; 
+(2)  
+It must be made at or near the time of the events it records; and 
+(3)  
+It must be based on the personal knowledge of the entrant or on the 
+personal knowledge of an informant having a business duty to 
+transmit the information to the entrant. 95 
+Most financial business records are maintained on computers in various electronic 
+formats.  The maintenance and use of these electronic business records is governed by a plethora 
+of Federal legislation60 including the Uniform Electronic Transactions Act (“UETA”) which has 
+been adopted in most jurisdictions.61   The purposes of the UETA are: 
+to facilitate and promote commerce and governmental transactions by validating 
+and authorizing the use of electronic records and electronic signatures; to 
+eliminate barriers to electronic commerce and governmental transactions resulting 
+from uncertainties relating to writing and signature requirements; to simplify, 
+clarify, and modernize the law governing commerce and governmental 
+transactions through the use of electronic means; to permit the continued 
+expansion of commercial and governmental electronic practices through custom, 
+usage, and agreement of the parties; to promote uniformity of the law among the 
+states (and worldwide) relating to the use of electronic and similar technological 
+means of effecting and performing commercial and governmental transactions; to 
+promote public confidence in the validity, integrity, and reliability of electronic 
+59See DatamaticServs.,Inc. v. United States, 909 F.2d 1029 (7th Cir. 1990)  "The admissibility of business records is entrusted to 
+the broad discretion of the trial court." 
+60Electronic Signatures in Global and National Commerce Act, 15 U.S.C. §§ 7001-7006 (“ESign Law”); Secure and Fair 
+Enforcement for Mortgage Licensing Act of 2008, P. L. 110-289, Title V §§ 1501-1507 (“S.A.F.E Act”); Financial 
+Recordkeeping, 12 U.S.C. § 1953 (2003) (allowing uninsured bank or financial institution to retain or maintain records in an 
+electronic or automated form); Fair Credit Billing Act, 15 U.S.C. § 1666 et seq.; Fair Credit Reporting Act, 15 U.S.C. §§ 1681­
+1681t (2003); Gramm-Leach-Bliley Act, 15 U.S.C. §§ 6801-6809 (2003); Home Mortgage Disclosure Act, 12 U.S.C. §§2801-10 
+(2003); Truth in Lending Act (TILA), 15 U.S.C. § 1601- 1667e (2003); See generally, Federal Reserve Board Regulations, at 
+http://www.federalreserve.gov/regulations/default.htm. 
+61Forty-six States have enacted the UETA.  Four states, Georgia, Illinois, New York and Washington, have not adopted the 
+uniform act, but have statutes pertaining to electronic transactions.  Georgia: Ga. Code Ann., § 10-12-1; Illinois: 5 ILCS 175/1­
+101; New York: NY CLS State Technology § 301 et seq.; Washington: http://apps.leg.wa.gov/RCW/default.aspx?cite=19.34. 
+-18­
+commerce and governmental transactions; and to promote the development of the 
+legal and business infrastructure necessary to implement electronic commerce and 
+governmental transactions. 26 
+The Act applies to electronic records and electronic signatures relating to a transaction
+and does not require a record or signature to be created, generated, sent, communicated, 
+36 
+received, stored, or otherwise processed or used by electronic means or in electronic form.64 In a 
+proceeding, evidence of a record or signature may not be excluded solely because it is in 
+electronic form. 56 
+New York Technology Law § 302 provides: 
+§ 302. Definitions 
+1. "Electronic" shall mean of or relating to technology having electrical, digital, 
+magnetic, wireless, optical, electromagnetic, or similar capabilities. 
+2. "Electronic record" shall mean information, evidencing any act, transaction, 
+occurrence, event, or other activity, produced or stored by electronic means and 
+capable of being accurately reproduced in forms perceptible by human sensory 
+capabilities. . . 
+[The statute] is intended to support and encourage electronic commerce and 
+electronic government by allowing people to use electronic signatures and 
+electronic records in lieu of handwritten signatures and paper documents. 
+Subsequent to the adoption of ESRA [Electronic Signatures and Records Act], the 
+federal Electronic Signatures in Global and National Commerce Act (15 U.S.C. 
+§§ 7001-7006), known as the ESign Law, was adopted to permit and encourage 
+the expansion of electronic commerce in interstate and foreign commercial 
+transactions.  Like ESRA, this federal law authorizes the use and acceptance of 
+electronic signatures and electronic records in the context of these commercial 
+transactions.  It is the intent of this bill to ensure that these laws continue to 
+complement each other in achieving their stated purposes.  Rather than seeking to 
+modify, limit or supersede federal law, the legislature finds that it is in the best 
+interest of the State of New York, its citizens, businesses and government entities 
+62Uniform Electronic Transactions Act § 6 Comment 1. 
+63Uniform Electronic Transactions Act § 2(a). 
+64Uniform Electronic Transactions Act § 5(a). 
+65Uniform Electronic Transactions Act § 13.  See Amjur Compintnet § 39. 
+-19­
+for State and federal law to work in tandem to promote the use of electronic 
+technology in the everyday lives and transactions of such individuals and entities. 
+. . Legislative History, Technology Law § 302. 
+Fed.R.Evid. 803 governs the use of business records as evidence including paper 
+documents as well as the electronic data from which they are produced.  It is immaterial if a 
+business record is maintained electronically so long as it meets the requirements of Rule 
+803(b)(6).66   The rationale underlying the exception is that business records are generally 
+trustworthy and reliable.67   Businesses are motivated to keep records accurately and are unlikely 
+to falsify records upon which they depend.68    “These records are the customary reflections of the 
+day to day operations of a business.  These records must be truthful and accurate in order to 
+conduct the business enterprise.”69   The party seeking to admit documents into evidence need 
+only establish that the document has sufficient indicia of trustworthiness to be considered 
+reliable.70   “Because a business depends on the accuracy of its recordkeeping, its records, 
+although of course not sworn, are likely to be at least reasonably accurate, or at least not 
+contrived for the purpose of making the business look better if it is sued.71   Where routine factual 
+documents made by one business are transmitted and delivered to a second business and there 
+entered in the regular course of business of the receiving business, such documents are 
+admissible. Any lack of personal knowledge by the affiants would go to the weight of the 
+66Sea-Land Serv. v. Lozen Int'l, LLC, 285 F.3d 808, 819 (9th Cir. 2002); Brown v. Town of Chapel Hill, 1996 U.S. App. LEXIS 
+4849 (4th Cir. 1996).  
+67See Alexander, Practice Commentaries, McKinney's Cons Laws of NYC, Book 7B, CPLR C4518:1; see generally Pencom  
+Systems, Inc. v. Shapiro, 237 A.D.2d 144 (1st Dept 1997).  
+68City of Chicago v. Old Colony Partners LP, 364 111 App.3d 806 (1st Dist 2006).  
+69Williams v. Alexander, 309 N.Y. 283 (1955).  
+70Thanongsinh v. Board of Education, 462 F.3d 762, 778 (7th Cir. 2006).  
+71Lust v. Sealy, Inc., 383 F.3d 580, 588 (7th Cir.2004).  
+-20­
+evidence not its admissibility.72 Absent a timely objection at trial, hearsay will be admissible and 
+an alleged error regarding its admissibility will not be preserved for appeal.73   “[T]he final test is 
+whether the documents sought to be introduced are the type of records which are relied upon by 
+those who prepare them or for whom they are prepared.”It is immaterial if a business record is 
+maintained electronically so long as it meets the requirements of Rule 803(b)(6).74   The rationale 
+underlying the exception is that business records are generally trustworthy and reliable.75 
+Businesses are motivated to keep records accurately and are unlikely to falsify records upon 
+which they depend.76    “These records are the customary reflections of the day to day operations 
+of a business.  These records must be truthful and accurate in order to conduct the business 
+enterprise.”77   The party seeking to admit documents into evidence need only establish that the 
+document has sufficient indicia of trustworthiness to be considered reliable.78 "[P]rovided a 
+proper foundation is laid, computer generated evidence is no less reliable than original entry 
+books and should be admitted under the exception.”79    "There is no reason to believe that a 
+computerized business record is not trustworthy unless the opposing party comes forward with 
+some evidence to question its reliability.80   Computer records are held admissible absent a 
+72Boyd v. Calvary Portfolio Services, Inc,. 285 Ga. App. 390 (2007).  
+73New York Evidence Handbook, §81.1 (Second Edition 2003).  
+74Sea-Land Serv. v. Lozen Int'l, LLC, 285 F.3d 808, 819 (9th Cir. 2002); Brown v. Town of Chapel Hill, 1996 U.S. App. LEXIS  
+4849 (4th Cir. 1996). 
+75See Alexander, Practice Commentaries, McKinney's Cons Laws of NYC, Book 7B, CPLR C4518:1; see generally Pencom  
+Systems, Inc. v. Shapiro, 237 A.D.2d 144 (1st Dept 1997).  
+76City of Chicago v. Old Colony Partners LP, 364 111 App.3d 806 (1st Dist 2006).  
+77Williams v. Alexander, 309 N.Y. 283 (1955).  
+78Thanongsinh v. Board of Education, 462 F.3d 762, 778 (7th Cir. 2006).  
+79McCormick on Evidence § 294 (Fourth Edition 1992).  
+80Hahnemann Univ. Hosp. v. Dudnick, 292 N.J. Super. 11, 18 (App. Div. 1996).  
+-21­
+specific objection to their accuracy. 18 
+A foundation for admissibility may at times be predicated on judicial notice of the 
+nature of the business and the nature of the records as observed by the court, 
+particularly in the case of bank and similar statements. The court held that "the 
+records admitted were the type of records maintained by banks in the ordinary 
+course of business. The custodian testified that the records were of a type 
+normally maintained in the ordinary course of the bank's business and that the 
+records would be made in close proximity the time of their origin." Records are in 
+practice accepted as accurate upon the faith of the routine itself, and of the self 
+consistency of their contents. 28 
+The admission of the business record is not precluded by the foundation witness having 
+not been involved in the preparation of the printed computer record and not knowing who 
+prepared them.83   The "custodian [of the records] need not have personal knowledge of the actual 
+creation of the document to lay a proper foundation. . .”84   “Nor is there any requirement under 
+Rule 803(6) that the records be prepared by the party who has custody of the documents and 
+seeks to introduce them into evidence."85   So long as a business record meets these requirements, 
+and it is “. . . inherent to understanding that the business of the litigants is not to provide 
+testimony but to conduct business outside of the courtroom,” [a business record] is admissible 
+81Rosenberg v. Collins, 624 F.2d 659, 665 (5th Cir.1980). 
+82Federal Deposit Insurance Corporation v. Staudinger, 797 F.2d 908 (10th Cir. 1986). [internal citations omitted] 
+83Dyno Constr. Co. v. McWane, Inc., 198 F.3d 567 (6th Cir. 1999). 
+84Am. Equities Group, Inc. v. Ahava Dairy Prods. Corp., 2004 U.S. Dist. LEXIS 6970 (S.D.N.Y. 2004). 
+85Phoenix Associates III v. Stone, 60 F.3d 95, 101 (2d Cir. 1995) (quoting 4 Weinstein's Evidence, at 803-201-04). See also 
+Unifund CCR Partners v. Mendel, 2007 WL 1098640 (Mass App Div). Unifund testified that the assignor bank's files were 
+downloaded into Unifund's system which then created their own file. "The evidence established that the records were made in 
+good faith in the regular course of business, before the beginning of the proceedings, and that it was the regular course of that 
+business to make such records at the time of the event or within a reasonable time thereafter."; Saks International Inc. v. M/V 
+Export Champion, 817 F.2d 1011 (2d Cir. 1987).  Documents may be admitted under the business records exception to the 
+hearsay rule even though they are records of a business entity other than one of the parties and even though the foundation for 
+their receipt is laid by a witness who is not an employee of the entity that owns and prepared them. There is no requirement that 
+the person whose first-hand knowledge was the basis the entry be identified, so long as it was the business entity's regular 
+practice to get information from such person. 
+-22­
+“even though the person who prepared it is unavailable to testify to the acts or transactions.” 68 
+While it is true that a “witness may not testify to a matter unless evidence is 
+introduced sufficient to support a finding that the witness has personal knowledge 
+of the matter,” Fed. R. Evid. 602, there is no requirement that the party offering a 
+business record produce the author of the item.  Instead, a foundation for the 
+business record hearsay exception may be established by anyone who 
+demonstrates sufficient knowledge of the record keeping system that produced the 
+document. 87 
+The custodian of records need not be in control of or have individual knowledge of the 
+particular corporate records, but need only be familiar with the company's record keeping 
+practices.  In response to defendant’s argument that “the custodian of appellee bank's records is 
+incompetent to testify about the predecessor bank's records. . .”, the Court held that “once 
+appellee bank purchased the predecessor bank's accounts, it took possession of the former's 
+business records. It is not necessary that loan account records be verified by the custodian of the 
+original holder's records.”88 
+Ordinarily, the custodian or other qualified witness will testify in court that it was 
+the “regular practice” of the business to make and keep the business record. 
+Alternatively, the plaintiff can certify the document under Rule 902(11) or 
+902(12), both of which require the plaintiff to introduce at trial a “written 
+declaration” by the custodian or other qualified person that the record: 
+(A) was made at or near the time of the occurrence of the matters set forth by, or 
+from information transmitted by, a person with knowledge of those matters; 
+(B) was kept in the course of the regularly conducted activity; and 
+(C) was made by the regularly conducted activity as a regular practice. 
+Fed.R.Evid. 902(11), 902(12). 
+86Medical Expertise, P.C. v Trumbell Ins., 196 Misc.2d 389 (Civ. Queens 2003).  
+87Hardison v. Balboa Ins. Co., 4 Fed. Appx. 663, 670 (10th Cir. 2001). [internal citations omitted]  
+88Block v. Providian National Bank, 2004 WL 1551485 at *3 (Tex.App. Dallas 2004).  
+-23­
+Several Circuit Courts of Appeal have held that that exhibits can be admitted as business 
+records of an entity, even when that entity was not the maker of those records, provided that the 
+other requirements of Fed.Evid.R. 803(6) are met, and the circumstances indicate that the 
+records are trustworthy.89    The custodian need not be the individual who “personally gather[ed] . 
+. . in a business record. . . [and] need not be in control of or have individual knowledge of the 
+particular corporate records, but need only be familiar with the company's recordkeeping 
+practices.” 09 
+Financial institutions are not required to repeatedly print every transaction that took place 
+throughout the history of the account on every monthly statement of account.  Neither are they 
+required to provide Asset Buyers with a list of every transaction in the account.  Once the 
+account is charged-off, they provide the charge-off balance and any additional interest and fees. 
+This summary of the account is exactly the same information provided to consumers in their 
+charge-off statements and is admissible evidence.91   Courts have admitted summaries into 
+evidence when the originals or duplicates of voluminous writings, recordings or photographs are 
+89See United States v. Childs (C.A.9, 1993), 5 F.3d 1328, 1333, certiorari denied sub nom.  Childs v. United States (1994), 511 
+, supra 
+citing Childs
+ (C.A.9, 2004), 92 Fed.Appx. 489, 494, 
+see also United States v. Travers
+;
+114 S.Ct. 1385
+,
+U.S. 1011 
+("Records need not actually be prepared by the business to constitute business records, so long as they are received, maintained, 
+and relied upon in the ordinary course of business."); United States v. Jakobetz (C.A.2, 1992), 955 F.2d 786, 801 ("Even if the 
+document is originally created by another entity, its creator need not testify when the document has been incorporated into the 
+business records of the testifying entity."). 
+90Thanongsinh v. Board of Education, 462 F.3d 762, 778 (7th Cir. 2006), citing United States v. Jenkins, 345 F.3d 928, 935 (6th 
+Cir.2003) (internal quotation marks and citations omitted). 
+91Moore’s Federal Rules Pamphlet, 2007, Part 2: Federal Rules of Evidence, § 1006.5, Lexis-Nexis, 2007. “Fed.R.Evid. 1006 
+permits witnesses to give summary testimony of their review of voluminous writings, recordings, or photographs.”; Id. (citing 
+United States v. Caballero, 277 F.3d 1235, 1247 (10th Cir. 2002). Witness’ testimony summarizing voluminous business 
+records was clearly permissible under Rule 1006.; AMPAT/Midwest, Inc. v. Ill. Tool Works, Inc., 896 F.2d 1035, 1045 (7th Cir. 
+1990).  Summarized data has been admitted into evidence even though the data was summarized for litigation purposes.; United 
+States v. Weaver, 281 F.3d 228, 232 (D.C. Cir. 2002). Summary of payroll records was, itself, evidence, admitted in lieu of 
+payroll records. 
+-24­
+ 
+made available for examination or copying at a reasonable time or place. 29 
+So long as the electronic transmission incorporates a current summary of each account, it 
+should be treated no differently than a printed statement of account.  The process of review is no 
+different from reading a printed statement of account except that the same information, formerly 
+spread out over a one or two page paper document, now appears in a row on an electronic 
+spreadsheet.  An Asset Buyer would be in no better position to make an independent decision 
+concerning the validity of an alleged delinquency if given a paper statement of account to 
+review.  If the information is incorrectly maintained, the paper documents will contain the same 
+mistakes as the transmitted files. 
+9. 
+Asset Buyers and Electronic Business Records 
+The buying and selling of defaulted loans is a common business practice and assignees 
+routinely rely on the data previously kept by the assignor in keeping business records as to the 
+amount of the debts owed.93   Asset Buyers must be able to demonstrate that they are the current 
+owners of the consumer accounts.  They produce paper documents from the electronic data 
+provided with the sale of the accounts, both of which are subject to hearsay exceptions to the 
+business records rules.  
+The business record exception to the hearsay rule "does not require a showing of chain of 
+custody."94   A plaintiff is required to provide documents establishing transfer leading from the 
+92Moore, supra, note 155, § 1006.5 (citing Air Safety v. Roman Catholic Archbishop, 94 F.3d 1, 7-8 (1st Cir. 1996)). See also 
+Potemkin Cadillac Corp. v BRI Corp., 38 F3d 627, 633 (2d Cir. 1994).  Summary Records are admissible;   AFD Fund v. United 
+States, 61 Fed.Cl. 540, 545 (Ct.Cl. 2004).  Business records that do not reflect the entire history are admissible. 
+93Beal Bank, SSB v Eurich, 444 Mass 813, 831 N.E.2d 909 (2005). 
+94Pieters v. B-Right Trucking, Inc., 669 F. Supp. 1463, 1465 (N.D. In. 1987). 
+-25­
+ 
+original creditor to the Plaintiff only if the Defendant has challenged the Plaintiff's ownership of 
+the account. If there is no legitimate indication that another party is claiming ownership and 
+thereby is seeking payment on the same debt, there is no basis for the court to demand 
+production of the chain of assignments.
+  If both the source and the recorder of the information, as well as every other participant 
+in the chain producing the record, are acting in the regular course of business, the multiple 
+hearsay is excused by Rule 803(b).95   "Double hearsay in the context of a business record exists 
+when the record is prepared by an employee with information supplied by another person both 
+the source and the recorder of the information . . . are acting in the regular course of business, the 
+multiple hearsay is excused."96 
+Courts have recognized the increasing number of claims on assigned debts and have 
+allowed assignees to introduce records inherited from their assignors to establish a prima facie 
+case. Rule 803(6) has been interpreted to be applicable to the admission of account records 
+initially generated by the original creditor, but later held by the Asset Buyer.97    The Asset 
+Buyer's business is premised upon the integration of the business records of the original creditor 
+into its own records, and the debt buyer must primarily rely upon the accuracy of those 
+documents in pursuing collection of the account thereby satisfying the first factor for 
+admissibility.
+95United States v Baker, U.S.App.D.C. 68 (1982).  
+96Koch Industries Inc. & Subsidiaries v. U.S., 564 F. Supp.2d 1276 (D. Kan. 2008).  
+97Miller v. Javitch, 397 F. Supp. 2d 991, 997-98 (N.D. Ind. 2005).  
+98Schlosser v. Fairbanks Capital Corp., 323 F.3d 534 (7th Cir. 2003).  
+89 
+-26­
+ 
+A witness from the entity that originally created the business record is not required.99 
+Business records received from an assignor could be introduced by the assignee under the 
+business records exception without bringing in a witness from the assignor entity.  An affidavit 
+from a debt buyer's attorney that included the history of the account assignments and account 
+information furnished by the assignor was acceptable.100   “[T]o require testimony regarding the 
+chain of custody of such documents, from the time of their creation to their introduction at trial, 
+would create a nearly insurmountable hurdle for successor creditors attempting to collect 
+loans…"101 
+Since Asset Buyers rely upon the transfer of highly regulated, accurate electronic records 
+in the regular course of their business, and they use the information provided in such records in 
+the regular course of doing business, such evidence should be admissible.  Each party in the 
+chain has a duty to maintain accurate data.  Each asset seller has the duty to impart accurate data 
+to its Asset Buyer with the knowledge that the Asset Buyer is going to rely and act upon that 
+data.  Testimony or an affidavit from a person who can testify to the nature of the Asset Buyer’s 
+business and its record keeping practices is both admissible and sufficient to support an Asset 
+Buyer’s application for judgment. 
+10.  
+Conclusion 
+In his concurring opinion in William J. Clinton, President of the United States v. City of 
+99See also Krawczyk v. Centurion Capital Corp., 2009 WL 395458 (N.D.Ill. February 18, 2009).  
+100Miller v. Javitch, 397 F.Supp.2d 991, 997-98 (N.D. Ind. 2005).  
+101Kearns v. Michigan Iron & Coke Co., 340 Mich. 577, 581-582, 66 N.W.2nd 230 (1954).  
+-27­
+New York et al,102 Associate Supreme Court Justice Anthony Kennedy expressed his concerns 
+that a law should not be changed simply to “hurt a group that is a visible target, in order to 
+disfavor the group or to extract further concessions.”  We must exercise care because the debt 
+collection industry is that visible target. 
+While business records, once admitted, have no more probative force than any other 
+evidence admitted pursuant to the hearsay exception, the threshold determination that they are 
+business records, satisfying requirements of statute, is one of law and is not a matter going only 
+to weight of evidence.  Courts must be sensitive to innovations and not seize on petty 
+irregularities to exclude otherwise trustworthy business records from evidence.103   A business 
+record which meets foundational requirements is admissible under the hearsay exception even 
+though the person who prepared it is unavailable to testify to the acts or transactions.  Business 
+records from a separate entity used in preparation of documents and not mere filing of papers 
+received from other entities, may be admitted under the hearsay exception; records must, 
+however, be fully incorporated into recipient's records made in the regular course of business.104 
+In the rush to change the laws to protect consumers, we often forget that all such changes 
+have consequences that may be more harmful than the wrongs we strive to right.  Proof of 
+consumer credit indebtedness needs no new special evidentiary rules to protect consumers.  Our 
+current rules of evidence protect the rights of consumers who have defaulted on their consumer 
+credit accounts, and at the same time, provide a foundation and framework for creditors to prove 
+that they are the right party in interest; that the consumer owes the debt to them; and that the 
+102524 U.S. 417, 449-452 (1998).  
+103People v Kennedy, 68 NY2d 569, 578-579, 503 N.E.2d 501, 510 N.Y.S.2d 853 (N.Y. 1986).  
+104Medical Expertise, P.C. v. Trumbull Ins. Co., 196, Misc.2d 389 (Civ. Queens 2003).  
+-28­
+amount of the debt claimed to be owed is correct. 
+For additional information or to comment on this White Paper, please contact the author 
+at: 
+Dr. Eric M. Berman, Esq.  
+Eric M. Berman, P.C.  
+500 West Main Street, Suite 212  
+Babylon, NY 11702  
+631.486.4900  
+631.486.4997 fax  
+eberman@ericbermanpc.com.  
+January 5, 2010 
+-29­

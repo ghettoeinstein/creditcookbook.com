@@ -1,0 +1,187 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Debt validation template under FDCPA 15 U.S.C. § 1692g — demand proof of claim, computation of amount, original creditor identity, statute of limitations confirmation, and collector licensing. Includes FCRA violation warnings.";
+
+const howtoSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Send a Debt Validation Template Under FDCPA",
+  "description": "Send a debt validation notice under the FDCPA 15 U.S.C. § 1692g demanding proof of claim, amount computation, original creditor identity, statute of limitations confirmation, and collector licensing evidence.",
+  "totalTime": "P10D",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Fill in the template",
+      "text": "Replace all bracketed fields with your name, address, the corporation name, account number, and date. Include your state republic information."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Send via certified mail",
+      "text": "Send the letter via certified mail with return receipt. The collector has 10 days to respond with validation or the account must be deleted from your credit report."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Monitor credit reports",
+      "text": "If the collector reports invalidated information to credit bureaus during the validation period, this violates the FCRA. Document any negative reporting for potential legal action."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Request deletion if no response",
+      "text": "If the collector fails to respond within 10 days of receipt, demand that the account information be completely deleted from your credit report and that a copy of the deletion request be sent to you."
+    }
+  ]
+};
+---
+
+<Base title="Debt Validation Template — FDCPA § 1692g — CreditCookbook" description={description} posterTitle="DEBT VALIDATION TEMPLATE" posterLabel="// FDCPA 15 U.S.C. § 1692g">
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howtoSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// overview</span>
+      <h2 data-animate style="margin-bottom: 16px;">Debt Validation Template</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">
+        This validation template is sent under the Fair Debt Collection Practices Act (FDCPA), 15 U.S.C. § 1692g. It disputes the debt and demands validation: the amount owed, how it was computed, proof of agreement, original creditor identity, statute of limitations confirmation, and evidence of collector licensing. It warns that reporting invalidated information violates the FCRA.
+      </p>
+
+      <div data-animate style="display: flex; gap: 16px; margin-bottom: 48px;">
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('dvt').textContent)">Copy template</button>
+        <a href="/recipes" class="btn btn-ghost">Back to recipes</a>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 16px;">What this letter requests</h3>
+        <ul style="margin-left: 24px; line-height: 2; margin-bottom: 48px;">
+          <li>The amount the collector claims you owe</li>
+          <li>An explanation of how the amount was computed</li>
+          <li>Copies of documents proving you agreed to pay</li>
+          <li>The identity of the original creditor</li>
+          <li>Confirmation the statute of limitations has not expired</li>
+          <li>Evidence that the collector is licensed</li>
+          <li>Evidence of license numbers and registered agent</li>
+        </ul>
+      </div>
+
+      <hr class="rule" style="margin-bottom: 48px;" />
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Validation template</h3>
+        <div id="dvt" class="mono-block" style="margin-bottom: 48px;">
+Date: [MONTH XX, 20__]
+
+From:  First-Middle: Last
+       c/o [YOUR ADDRESS]
+       [CITY, STATE] [ZIP]
+       Principal
+
+To:    C.F.O. for
+       [CORPORATION NAME], Inc., et al.
+       [THEIR ADDRESS]
+       [CITY, STATE ZIP]
+       Respondent
+
+       RE: [CORPORATION NAME] Account # [ACCOUNT NUMBER]
+
+Respectfully,
+
+_________________________________
+First-Middle: Last
+Attorney in Fact
+
+To whom it may concern:
+
+Please note that this is not a refusal to pay off the account
+but a notice sent as per the Fair Debt Collection Practices Act
+(F.D.C.P.A.), 15 U.S.C. § 1692(g) Section 809(b). This notice
+states that your claim is disputed and validation of the account
+is required.
+
+This notice is not a request for verification of the account or
+proof of my mailing address but a request for validation made
+pursuant to the F.D.C.P.A. laws. I humbly request that your
+agency/office sends me valid proof of claim that I am legally
+obligated to pay you.
+
+Please provide me with the below mentioned items:
+
+  • The amount you claim the Respondent owes you
+  • An explanation showing me how you have computed the amount
+  • Copies of any documents that prove I agreed to pay the
+    alleged amount
+  • The identity of the original creditor
+  • Confirmation that the account has not crossed the statute
+    of limitation (SOL) period
+  • Evidence that you are a licensed debt collector
+  • Evidence of your license numbers and your registered agent
+
+I would like to inform you that in case your agency has reported
+invalidated account information to any of the three main credit
+bureaus such as TransUnion, Equifax, Experian, then it will be
+regarded as a fraudulent action under both federal and state
+statutes. Due to this reason, if any negative item is reported
+to any of my credit reports by your agency or the agency that you
+represent, then I will be compelled to take legal steps against
+you for the below mentioned reasons:
+
+  • Violation of the Fair Credit Reporting Act (F.C.R.A.)
+  • Violation of the F.D.C.P.A.
+  • Defamation of character
+  • Use of my copyrighted property
+
+I would like to further inform you that if any action is taken
+during the validation period which could be regarded as
+detrimental to any of my credit reports, then I will seek advice
+about initiating a potential lawsuit. This includes listing any
+information on a credit report that could be incorrect or
+invalidated, or confirming an account as correct when, in fact,
+there is no provided evidence that it is.
+
+If your agency can provide me with the requested documents, I
+will need a minimum of thirty (30) days to investigate this
+information, and during this period of time, all collection
+activities must be stopped.
+
+If your agency/company fails to respond to this debt validation
+request within a period of ten (10) days from the date of your
+receipt of my notice and affidavit, then the account information
+must be completely deleted from my credit report, and a copy of
+such deletion request should be sent to me at once, or I will
+take legal action.
+
+I would also like to request, in writing, that no calls should
+be made by your agency or company at my residence or workplace.
+If your agency attempts to make unlimited or computer generated
+calls to me or any third parties, then it will be considered
+harassment, and I will have no option but to file a lawsuit. All
+future communications with me should be done in writing and sent
+to the address mentioned in this letter. Further, any
+correspondence must be made in the form of a commercial affidavit
+under penalty of perjury and sent by certified mail. Any other
+form of service shall be deemed defective upon its face.
+
+It would be advisable that you assure that your records are in
+order before I am forced to take legal action. This is an attempt
+to correct your records. Any information obtained shall be used
+for that purpose.
+        </div>
+      </div>
+
+      <div data-animate class="card">
+        <h4 style="margin-bottom: 12px;">Checklist</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Fill in all bracketed fields with your information</li>
+          <li>Send via USPS Certified Mail with Return Receipt</li>
+          <li>Keep the tracking number and green card</li>
+          <li>The collector has 10 days to respond or must delete the account</li>
+          <li>If they provide documents, you get 30 days to investigate</li>
+          <li>Document any credit reporting during the validation period</li>
+          <li>All further communication must be in writing via certified mail</li>
+          <li>This is not legal advice — consult an attorney for your situation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</Base>

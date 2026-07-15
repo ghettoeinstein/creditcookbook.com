@@ -1,0 +1,172 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Debt collector response letter — 'Tell me more about this debt.' Request detailed information about a debt, including original creditor, amount, and collection authority.";
+---
+
+<Base title="Debt Collector: Request Information Letter — CreditCookbook" description={description} posterTitle="REQUEST INFO" posterLabel="// debt collector response template">
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// debt collector response — request information</span>
+      <h2 data-animate style="margin-bottom: 16px;">"Tell Me More About This Debt"</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">Use this letter to ask a debt collector for detailed information about a debt they are trying to collect. Send it as soon as possible — ideally within 30 days of when a debt collector first contacts you. Even if 30 days have passed, you can still ask for information, though the collector may not be legally required to provide it.</p>
+
+      <div style="display: flex; gap: 16px; margin-bottom: 48px;" data-animate>
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').textContent)">Copy letter</button>
+        <a href="/recipes/dispute-letters" class="btn btn-ghost">Back to dispute letters</a>
+      </div>
+
+      <div id="letter" class="mono-block" style="margin-bottom: 48px;" data-animate>
+[YOUR NAME]
+[YOUR RETURN ADDRESS]
+[DATE]
+
+[DEBT COLLECTOR NAME]
+[DEBT COLLECTOR ADDRESS]
+
+Re: [ACCOUNT NUMBER FOR THE DEBT, IF YOU HAVE IT]
+
+Dear debt collector:
+
+I am responding to your contact about a debt you are trying
+to collect. You contacted me by [PHONE/MAIL], on [DATE] and
+identified the debt as [ANY INFORMATION THEY GAVE YOU ABOUT
+THE DEBT].
+
+Please supply the information below so that I can be fully
+informed:
+
+Why you think I owe the debt, and to whom I owe it, including:
+
+- The name and address of the creditor to whom the debt is
+  currently owed, the account number used by that creditor,
+  and the amount owed.
+
+- If this debt started with a different creditor, provide the
+  name and address of the original creditor, the account number
+  used by that creditor, and the amount owed to that creditor
+  at the time it was transferred. When you identify the original
+  creditor, please provide any other name by which I might know
+  them, if different from the official name. In addition, tell
+  me when the current creditor obtained the debt and who the
+  current creditor obtained it from.
+
+- Provide verification and documentation that there is a valid
+  basis for claiming that I am required to pay the debt to the
+  current creditor. For example, can you provide a copy of the
+  written agreement that created my original requirement to pay?
+
+- If you are asking that I pay a debt that somebody else is or
+  was required to pay, identify that person. Provide verification
+  and documentation about why this is a debt that I am required
+  to pay.
+
+The amount and age of the debt, specifically:
+
+- A copy of the last billing statement sent to me by the
+  original creditor.
+
+- State the amount of the debt when you obtained it, and when
+  that was.
+
+- If there have been any additional interest, fees, or charges
+  added since the last billing statement from the original
+  creditor, provide an itemization showing the dates and amount
+  of each added amount. In addition, explain how the added
+  interest, fees, or other charges are expressly authorized by
+  the agreement creating the debt or are permitted by law.
+
+- If there have been any payments or other reductions since the
+  last billing statement from the original creditor, provide an
+  itemization showing the dates and amount of each of them.
+
+- If there have been any other changes or adjustments since the
+  last billing statement from the original creditor, please
+  provide full verification and documentation of the amount you
+  are trying to collect. Explain how that amount was calculated.
+  In addition, explain how the other changes or adjustments are
+  expressly authorized by the agreement creating the debt or
+  permitted by law.
+
+- Tell me when the creditor claims this debt became due and when
+  it became delinquent.
+
+- Identify the date of the last payment made on this account.
+
+- Have you made a determination that this debt is within the
+  statute of limitations applicable to it? Tell me when you think
+  the statute of limitations expires for this debt, and how you
+  determined that.
+
+I have asked for this information because I have some questions
+about this debt. Because of my questions, please consider the
+debt to be disputed at this time. If you stop your collection of
+this debt, and forward or return it to another company, please
+indicate to them that it is disputed. If you report it to a
+credit bureau (or have already done so), also report that the
+debt is disputed. In addition, you should state in any report
+that you have failed to fully verify the debt in response to my
+request (unless you have already provided all the necessary
+information).
+
+If you fail to provide any of the information or documentation I
+have asked for, please say why. If you do not provide it, and do
+not adequately explain why, I will understand that you are unable
+to confirm or document your claims.
+
+Details about your authority to collect this debt:
+
+- I would like more information about your firm before I discuss
+  the debt with you. Does your firm have a debt collection
+  license from my state? If not, say why not. If so, provide the
+  date of the license, the name on the license, the license
+  number, and the name, address, and telephone number of the
+  state agency issuing the license.
+
+- If you are contacting me from a place outside my state, does
+  your firm have a debt collection license from that place? If
+  so, provide the date of the license, the name on the license,
+  the license number, and the name, address, and telephone
+  number of the state agency issuing the license.
+
+Please let me know whether you are prepared to accept less than
+the balance you are claiming is owed on this account. If so,
+please tell me in writing your offer to accept less than the
+full balance.
+
+Thank you for your cooperation.
+
+Sincerely,
+
+[YOUR NAME]
+      </div>
+
+      <div class="card" data-animate>
+        <h4 style="margin-bottom: 12px;">Sending instructions</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Fill in your information on the template and edit as needed</li>
+          <li>Delete any bullets that don't apply to you or aren't information you're looking for</li>
+          <li>Print and send the letter as soon as you can — ideally within 30 days of first contact</li>
+          <li>Send via certified mail with return receipt</li>
+          <li>Keep a copy for your records</li>
+          <li>If the collector makes vague threats, read their response carefully — federal law prohibits threats they can't or won't act on</li>
+          <li>State statutes of limitations vary — a partial payment can restart the clock in some states</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Debt Collector Request Information Letter",
+    "description": "Letter to request detailed information about a debt from a debt collector, including creditor identity, amount, and collection authority.",
+    "totalTime": "PT25M",
+    "step": [
+      {"@type": "HowToStep", "name": "Fill in your information", "text": "Complete your name, return address, and the date at the top of the letter."},
+      {"@type": "HowToStep", "name": "Add debt collector details", "text": "Fill in the debt collector's name, address, and the account number if you have it."},
+      {"@type": "HowToStep", "name": "Delete inapplicable bullets", "text": "Remove any bullet points that don't apply to your situation or aren't information you're seeking."},
+      {"@type": "HowToStep", "name": "Print and send promptly", "text": "Print the letter and send it as soon as possible — ideally within 30 days of the collector's first contact. Send via certified mail with return receipt."}
+    ]
+  })} />
+</Base>

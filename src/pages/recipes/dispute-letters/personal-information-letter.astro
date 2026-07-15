@@ -1,0 +1,121 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Personal information dispute letter to remove old, misspelled, or inaccurate personal information from your credit report. Send to Experian, Equifax, and TransUnion.";
+---
+
+<Base title="Personal Information Dispute Letter — CreditCookbook" description={description} posterTitle="PERSONAL INFO" posterLabel="// credit reporting dispute">
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// personal information dispute</span>
+      <h2 data-animate style="margin-bottom: 16px;">Personal Information Dispute Letter</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">Removing old and inaccurate personal information prevents credit reporting agencies from linking you to old debts and possibly debts that do not belong to you. This letter is sent directly to Experian, TransUnion, and Equifax. Include a copy of your state-issued ID and Social Security card.</p>
+
+      <div style="display: flex; gap: 16px; margin-bottom: 48px;" data-animate>
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').textContent)">Copy letter</button>
+        <a href="/recipes/dispute-letters" class="btn btn-ghost">Back to dispute letters</a>
+      </div>
+
+      <div id="letter" class="mono-block" style="margin-bottom: 48px;" data-animate>
+Date: [DATE]
+
+[YOUR NAME]
+[YOUR ADDRESS]
+
+[CREDIT REPORTING AGENCY NAME]
+[CREDIT REPORTING AGENCY ADDRESS]
+
+RE: Update Personal Information
+
+Dear [CREDIT REPORTING AGENCY NAME],
+
+I recently reviewed my credit file and unfortunately found
+that some of my personal information was incorrect. You are
+reporting information that belongs to someone else. I am
+writing to ensure you have the most accurate information in
+my credit file at all times.
+
+Please delete the following inaccurate information from my
+credit file within the next 30 days. I know that you have up
+to thirty days to meet my requirements. If I do not receive
+any updates from you during this period, I know that these
+inaccuracies should be automatically removed.
+
+I have listed the information about my personal information
+that you incorrectly reported and should be deleted immediately.
+
+Please delete the following inaccurate names:
+  [LIST ALL MISSPELLED OR INACCURATE NAMES]
+
+Please delete the following inaccurate addresses:
+  [LIST ALL OLD AND INACCURATE ADDRESSES]
+
+Please delete the following invalid telephone numbers:
+  [LIST ALL OLD AND INACCURATE TELEPHONE NUMBERS]
+
+Please delete the following inaccurate employers:
+  [LIST ALL OLD EMPLOYERS]
+
+By reporting these inaccuracies you are in violation of
+15 USC 1681b(a)(2); for a consumer reporting agency may
+furnish a consumer report under the following circumstance
+and no other: in accordance with the written instructions
+of the consumer to whom it relates.
+
+[CREDIT REPORTING AGENCY NAME] has in fact knowingly
+furnished my consumer report with inaccuracies multiple
+times without having written instructions to do so. These
+actions have caused my family and me a great deal of injury.
+
+Furthermore, I am filing this consumer complaint and
+consumer check for compliance of these particular items
+that you are reporting under FACTA Title 1 sec. 151.
+
+I have enclosed copies of my state-issued identification
+and Social Security card to validate my identity.
+
+Regards,
+
+[YOUR NAME]
+Without Prejudice, All Natural Inalienable Rights Reserved
+      </div>
+
+      <h3 style="margin-bottom: 16px;" data-animate>Bureau mailing addresses</h3>
+      <table style="margin-bottom: 48px;" data-animate>
+        <thead><tr><th>Bureau</th><th>Address</th></tr></thead>
+        <tbody>
+          <tr><td>Experian</td><td>P.O. Box 9701, Allen, TX 75013</td></tr>
+          <tr><td>Equifax</td><td>P.O. Box 740256, Atlanta, GA 30374-0256</td></tr>
+          <tr><td>TransUnion</td><td>P.O. Box 2000, Chester, PA 19016</td></tr>
+        </tbody>
+      </table>
+
+      <div class="card" data-animate>
+        <h4 style="margin-bottom: 12px;">Sending instructions</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Send to all three credit reporting agencies: Experian, TransUnion, and Equifax</li>
+          <li>Include a copy of your state-issued ID and Social Security card</li>
+          <li>Send via certified mail with return receipt</li>
+          <li>Keep a copy for your records, including the tracking number</li>
+          <li>Credit reporting agencies have 30–45 days to investigate and respond</li>
+          <li>If no response within 30 days, the disputed items should be removed</li>
+          <li>Never dispute online — you waive rights by choosing that option</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Personal Information Dispute Letter",
+    "description": "Letter to remove old, misspelled, or inaccurate personal information from your credit report.",
+    "totalTime": "PT20M",
+    "step": [
+      {"@type": "HowToStep", "name": "Review your credit report", "text": "Obtain your credit report from all three bureaus and identify all inaccurate personal information including names, addresses, phone numbers, and employers."},
+      {"@type": "HowToStep", "name": "Fill in the letter", "text": "Complete the template with your information. List all misspelled names, old addresses, invalid phone numbers, and old employers."},
+      {"@type": "HowToStep", "name": "Gather ID documents", "text": "Include a copy of your state-issued ID and Social Security card to validate your identity."},
+      {"@type": "HowToStep", "name": "Send to all three bureaus", "text": "Mail a separate letter to each credit reporting agency via certified mail with return receipt."}
+    ]
+  })} />
+</Base>

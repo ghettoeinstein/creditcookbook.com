@@ -1,0 +1,102 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Right of rescission letter to rescind your liability in a contract. Exercise your right under 15 USC 1635 to rescind due to lack of disclosure or fraud.";
+---
+
+<Base title="Right of Rescission Letter — CreditCookbook" description={description} posterTitle="RESCISSION" posterLabel="// contract rescission">
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// right of rescission</span>
+      <h2 data-animate style="margin-bottom: 16px;">Right of Rescission Letter</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">It is your right as a consumer to rescind your liability in any contract. If you entered into a contract without full disclosure or later noticed violations or fraud, you should rescind your contract immediately. Under 15 USC 1635, rescission terminates alleged contracts. Send this letter to the dealership, creditor, and anyone you are in contract with.</p>
+
+      <div style="display: flex; gap: 16px; margin-bottom: 48px;" data-animate>
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').textContent)">Copy letter</button>
+        <a href="/recipes/dispute-letters" class="btn btn-ghost">Back to dispute letters</a>
+      </div>
+
+      <div id="letter" class="mono-block" style="margin-bottom: 48px;" data-animate>
+Date: [DATE]
+
+[YOUR NAME]
+[YOUR ADDRESS]
+
+[DEALERSHIP NAME]
+[DEALERSHIP ADDRESS]
+
+RE: RIGHT OF RESCISSION
+
+Dear [DEALERSHIP NAME],
+
+I, [YOUR NAME], Original Creditor and Natural Woman/Man
+hereby rescind my consent to be liable to perform on the
+contract agreement I entered with [DEALERSHIP NAME] on
+[DATE].
+
+I entered into this contract agreement with [DEALERSHIP
+NAME] without:
+1. Full disclosure of my right to rescind.
+2. Transparency regarding the process of the consumer
+   credit application being the financial asset (12 CFR
+   360.6(2)) as well as self-liquidating paper (17 CFR
+   260.11b-6).
+
+I have reason to believe that [DEALERSHIP NAME] willingly
+and knowingly took advantage of me and my consumer credit.
+
+I am not terminating or canceling this contract, I am
+deducting my liability to pay on behalf of the obligor as
+I have found several violations and fraud.
+
+Pursuant to 15 U.S. Code § 1635(b), upon receipt of this
+rescission I am not liable for any finance or other charge.
+Any security interest given by the obligor, including any
+such interest arising by operation of law, becomes void
+upon such a rescission.
+
+In addition, I was given false and deceptive information
+(violation of 1692e) as I was told that a down payment of
+&#123;[AMOUNT]&#125; was needed in order to drive off of the lot.
+Pursuant to 15 USC 1605a — a finance charge is the sum of
+all charges.
+
+Down Payment Reimbursement shall be made by check payable to:
+[YOUR NAME]
+[YOUR ADDRESS]
+
+Regards,
+
+[YOUR NAME]
+Without Prejudice, All Natural Inalienable Rights Reserved
+      </div>
+
+      <div class="card" data-animate>
+        <h4 style="margin-bottom: 12px;">Sending instructions</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Send the rescission letter and rescission affidavit to the dealership, creditor, and anyone you are in contract with</li>
+          <li>Include a copy of your contract marked up with the violations you have found</li>
+          <li>Once your letter is sent, also file a complaint with the CFPB</li>
+          <li>Send via certified mail with return receipt</li>
+          <li>Keep a copy for your records</li>
+          <li>A right is something that cannot be taken away — exercise it firmly</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Right of Rescission Letter",
+    "description": "Letter to rescind your liability in a contract under 15 USC 1635 due to lack of disclosure or fraud.",
+    "totalTime": "PT25M",
+    "step": [
+      {"@type": "HowToStep", "name": "Review your contract", "text": "Examine your contract for violations: lack of disclosure, fraud, or failure to inform you of your right to rescind."},
+      {"@type": "HowToStep", "name": "Mark up the contract", "text": "Make a copy of your contract and highlight or annotate the violations you have found."},
+      {"@type": "HowToStep", "name": "Fill in the letter", "text": "Complete the template with your name, the dealership name, the contract date, and the down payment amount if applicable."},
+      {"@type": "HowToStep", "name": "Send to all parties", "text": "Mail the rescission letter to the dealership, creditor, and anyone you are in contract with. Send via certified mail with return receipt."},
+      {"@type": "HowToStep", "name": "File a CFPB complaint", "text": "After sending the letter, file a complaint with the Consumer Financial Protection Bureau at consumerfinance.gov."}
+    ]
+  })} />
+</Base>

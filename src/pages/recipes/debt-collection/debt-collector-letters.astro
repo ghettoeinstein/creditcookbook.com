@@ -1,0 +1,294 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Three-letter debt collector response series — demand verification of claim, establish tacit agreement through non-response, and set fee schedules for further contact. FDCPA-compliant templates.";
+
+const howtoSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Send a 3-Letter Debt Collector Verification Series",
+  "description": "A three-letter administrative process that demands verification of a debt collector's claim, establishes tacit agreement through their failure to respond, and sets fee schedules for further contact.",
+  "totalTime": "P40D",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Send Letter 1 — Initial verification demand",
+      "text": "Send the first letter demanding certified copies of the Deed of Assignment, Deed of Novation, and the name of the duly authorized representative. Give 10 days to respond. Send via certified mail."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Wait 10 days, then send Letter 2 — Second notice",
+      "text": "After 10 days with no response, send the second letter referencing the first. State that failure to provide documentation within 10 days constitutes agreement to the listed terms."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Wait 10 more days, then send Letter 3 — Final notice and fee schedule",
+      "text": "After another 10 days with no response, send the third letter establishing a tacit agreement. Include the fee schedule for any further contact. State that selling the alleged liability breaks the agreement."
+    }
+  ]
+};
+---
+
+<Base title="Debt Collector Letters — 3-Letter Series — CreditCookbook" description={description} posterTitle="DEBT COLLECTOR LETTERS" posterLabel="// 3-letter verification series">
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howtoSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// overview</span>
+      <h2 data-animate style="margin-bottom: 16px;">Three-Letter Debt Collector Response Series</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">
+        This three-letter series demands verification of a debt collector's claim, then uses their failure to respond to establish a tacit agreement. Each letter escalates: the first requests documentation, the second notes the failure, and the third establishes the agreement and sets a fee schedule for further contact.
+      </p>
+
+      <div data-animate style="display: flex; gap: 16px; margin-bottom: 48px;">
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter1').textContent)">Copy Letter 1</button>
+        <button class="btn btn-ghost" onclick="navigator.clipboard.writeText(document.getElementById('letter2').textContent)">Copy Letter 2</button>
+        <button class="btn btn-ghost" onclick="navigator.clipboard.writeText(document.getElementById('letter3').textContent)">Copy Letter 3</button>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 16px;">How this series works</h3>
+        <ul style="margin-left: 24px; line-height: 2; margin-bottom: 48px;">
+          <li><strong>Letter 1:</strong> Demand verification — certified copies of Deed of Assignment, Deed of Novation, original note, due diligence records. 10-day deadline.</li>
+          <li><strong>Letter 2:</strong> Reference the first letter. State that failure to provide documentation within 10 days constitutes agreement to terms.</li>
+          <li><strong>Letter 3:</strong> Declare tacit agreement established. Set fee schedule for further contact. State that selling the alleged liability breaks the agreement.</li>
+          <li>Send every letter via certified mail with return receipt</li>
+          <li>Keep all tracking numbers and return receipts as evidence</li>
+          <li>Do not communicate by phone — everything in writing</li>
+        </ul>
+      </div>
+
+      <hr class="rule" style="margin-bottom: 48px;" />
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Letter 1 — Initial verification demand</h3>
+        <div id="letter1" class="mono-block" style="margin-bottom: 48px;">
+NON-NEGOTIABLE
+[FIRSTNAME] of the family [SURNAME]
+c/o [YOUR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+[COLLECTION CONTACT], Collections Department
+[THEIR ADDRESS]
+[YOUR DATE]
+
+Re: Reference Number: [ACCOUNT NUMBER]
+
+Dear Interloper,
+
+Thank you for your recent contact dated: [LAST LETTER DATE].
+
+I feel this matter is serious and wish to deal with it in
+writing. I do not give you permission to contact me by telephone.
+I will be logging the dates and times of your calls and messages
+and should they continue, I must warn you that they will now
+constitute 'harassment' and I may take action under The Fair Debt
+Collection Practices Act.
+
+Please provide verification of your claim, by providing me with
+true and certified copies (not photocopies) of the Deed of
+Assignment (not Notice of Assignment) and Deed of Novation.
+Please also provide me with the name of the individual who is
+the duly authorized representative from your company, who has
+seen the Original Note and is certifying these assignments as
+certified copies and that your company now has the Original Note
+(Credit Agreement) under penalty of perjury and with unlimited
+liability and confirm that the Note has never been sold prior to
+your company purchasing this account. Please also confirm the
+name of the individual who is the duly authorized representative
+from your company, who has carried out due diligence under the
+Money Laundering Control Act of 1986 and what actions s/he has
+taken in relation to this account.
+
+Please provide this information and documents within ten (10)
+days from the above date, so that I may settle any financial
+obligation I might lawfully owe. Your said failure to provide
+verification of your claim constitutes your agreement to the
+following terms: that you are a third party interloper; you have
+no legal standing; no first-hand knowledge of this matter; your
+claim is fraudulent; any damages I suffer you will be held
+culpable; you agree to pay all fee schedules; that any negative
+remarks made to a credit reference agency will be removed and
+that you will no longer pursue this matter any further.
+
+Should you provide sufficient evidence that I owe your
+organization or your client any outstanding amount and that you
+can provide proof that they have assigned you agency, I should
+be happy to pay any verified claim in full.
+
+Yours sincerely,
+
+By: ___________________________________  _____________, 20__
+    [FIRSTNAME] [MIDDLE] [LAST]
+    Authorized Representative for [FULLNAME UPPERCASE]
+    without prejudice — non assumpsit
+
+No assured value, No liability. Errors & Omissions Excepted.
+All Rights Reserved. Calls may be recorded.
+        </div>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Letter 2 — Second notice (after 10-day non-response)</h3>
+        <div id="letter2" class="mono-block" style="margin-bottom: 48px;">
+NON-NEGOTIABLE
+[FIRSTNAME] of the family [SURNAME]
+c/o [YOUR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+[COLLECTION CONTACT], Collections Department
+[THEIR ADDRESS]
+[YOUR DATE]
+
+Re: Reference Number: [ACCOUNT NUMBER]
+
+Dear Interloper,
+
+I previously wrote to you on ___________ 20__ requesting
+verification of your claim, by providing me with true and
+certified copies (not photocopies) of the Deed of Assignment
+(not the Notice of Assignment) and Deed of Novation. I also
+requested the name of the individual who is the duly authorized
+representative from your company, who has seen the Original Note
+and is certifying these assignments as certified copies and that
+your company now has the Original Note (Credit Agreement) under
+penalty of perjury and with unlimited liability and confirm that
+the Note has never been sold prior to your company purchasing
+this account and also confirmation of the name of the individual
+who is the duly authorized representative from your company, who
+has carried out due diligence under the Money Laundering Control
+Act of 1986 and what actions s/he has taken in relation to this
+account.
+
+This verification is required to validate your claim, so that I
+may settle any financial obligation I might lawfully owe. Your
+said failure to provide the requested documentation within ten
+(10) days from the above date will constitute your agreement to
+the following terms:
+
+  That you are a third party interloper;
+  That you have no legal standing;
+  That you have no first-hand knowledge of this matter;
+  That your claim is fraudulent;
+  That any damages I suffer, you will be held culpable;
+  That any negative remarks made to a credit reference
+    agency will be removed;
+  You will no longer pursue this matter any further;
+  That you agree to pay all Fee Schedules.
+
+Should you provide sufficient evidence that I owe your
+organization or your client any outstanding amount and that you
+can provide proof that they have assigned you agency, I should
+be happy to pay any verified claim in full.
+
+Yours sincerely,
+
+By: ____________________________
+
+    [FIRSTNAME] of the family [SURNAME]
+    Authorized Agent and Representative for [FULLNAME UPPERCASE]
+    and Non Resident Alien therefore Non Taxpayer
+
+No assured value, No liability. Errors & Omissions Excepted.
+All Rights Reserved.
+
+WITHOUT RECOURSE — NON-ASSUMPSIT
+Calls may be recorded.
+        </div>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Letter 3 — Final notice and fee schedule</h3>
+        <div id="letter3" class="mono-block" style="margin-bottom: 48px;">
+NON-NEGOTIABLE
+[FIRSTNAME] of the family [SURNAME]
+c/o [YOUR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+[COLLECTION CONTACT], Collections Department
+[THEIR ADDRESS]
+[YOUR DATE]
+
+Re: Reference Number: [ACCOUNT NUMBER]
+
+Dear Interloper,
+
+I previously wrote to you on ________ 20__ and on ____________
+20__ requesting verification of your claim, by providing me with
+true and certified copies (not photocopies) of the Deed of
+Assignment (not the Notice of Assignment) and Deed of Novation.
+I also requested the name of the individual who is the duly
+authorized representative from your company, who has seen the
+Original Note and is certifying these assignments as certified
+copies and that your company now has the Original Note (Credit
+Agreement) under penalty of perjury and with unlimited liability
+and confirm that the Note has never been sold prior to your
+company purchasing this account and also confirmation of the name
+of the individual who is the duly authorized representative from
+your company, who has carried out due diligence under the Money
+Laundering Control Act of 1986 and what actions s/he has taken
+in relation to this account.
+
+This verification is required to validate your claim, so that I
+may settle any financial obligation I might lawfully owe. As you
+have failed to provide the documentation within the ten (10)
+days requested in my last correspondence, we are now in agreement
+to; and have a lawfully binding tacit agreement comprising, the
+following terms:
+
+  That you are a third party interloper;
+  That you have no legal standing;
+  That you have no first-hand knowledge of this matter;
+  That your claim is fraudulent;
+  That any damages I suffer, you will be held culpable;
+  That any negative remarks made to a credit reference
+    agency will be removed;
+  You will no longer pursue this matter any further.
+
+You have not proven any debt, if you sell the alleged liability,
+and/or appoint an agent to act on its/your behalf on this matter
+you will have broken our agreement and you agree to pay the
+following fee schedule: 3X the amount claimed for dishonoring
+our agreement, $1,000 per hour or part thereof of Authorized
+Representatives time nunc pro tunc, $1,000 per recorded delivery
+or any other form of response nunc pro tunc. Also any further
+contact is now not necessary; if however you deem a need to
+contact me by phone or letter the fee is $100 per item payable
+in advance — place the check in the envelope. If no payment is
+made in advance the fee will rise to $1,000 per item and you
+will also be held culpable for any cost incurred while recovering
+the debt you owe.
+
+Yours sincerely,
+
+By: ____________________________
+
+    [FIRSTNAME] of the family [SURNAME]
+    Authorized Agent and Representative for [FULLNAME UPPERCASE]
+    and Non Resident Alien therefore Non Taxpayer
+
+No assured value, No liability. Errors & Omissions Excepted.
+All Rights Reserved.
+
+WITHOUT RECOURSE — NON-ASSUMPSIT
+Calls may be recorded.
+        </div>
+      </div>
+
+      <div data-animate class="card">
+        <h4 style="margin-bottom: 12px;">Important notes</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>This is not legal advice — consult an attorney for your specific situation</li>
+          <li>Replace all [BRACKETED] fields with your information</li>
+          <li>Send every letter via certified mail with return receipt</li>
+          <li>Keep a file with all tracking numbers, return receipts, and copies</li>
+          <li>Log all phone calls — you told them not to call, so any calls are evidence</li>
+          <li>Space letters 10 days apart minimum to allow for response</li>
+          <li>Research your state's specific debt collection laws and statutes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</Base>

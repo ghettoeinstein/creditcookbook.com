@@ -1,0 +1,121 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Data sharing opt-out letter to stop third parties from sharing your personal data. Withholding permission under privacy law with 10-day response window.";
+---
+
+<Base title="Data Sharing Opt-Out Letter — CreditCookbook" description={description} posterTitle="DATA SHARING" posterLabel="// privacy opt-out letter">
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// data sharing opt-out</span>
+      <h2 data-animate style="margin-bottom: 16px;">Data Sharing Opt-Out Letter</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">Use this letter to formally withhold permission for any organization to share your personal data with third parties. This covers all personal data including name, phone, address, email, bank details, medical information, and more. Give the recipient 10 working days to acknowledge.</p>
+
+      <div style="display: flex; gap: 16px; margin-bottom: 48px;" data-animate>
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').textContent)">Copy letter</button>
+        <a href="/recipes/dispute-letters" class="btn btn-ghost">Back to dispute letters</a>
+      </div>
+
+      <div id="letter" class="mono-block" style="margin-bottom: 48px;" data-animate>
+[YOUR FIRST NAME(S)] [FATHER'S NAME]
+[C/O — OPTIONAL] [YOUR ADDRESS]
+[ADDRESS LINE 2]
+[POSTCODE / ZIP CODE]
+[GPS COORDINATES — OPTIONAL]
+[MOBILE — OPTIONAL]
+
+[MANAGER'S NAME]
+[NAME OF ORGANIZATION]
+[ADDRESS]
+[ADDRESS LINE 2]
+[POST CODE]
+
+Date: [DATE]
+Perpetual claim number: [CLAIM NUMBER]
+
+Dear [NAME OF MANAGER],
+
+Regarding The Sharing Of My Data
+
+I, [YOUR FULL NAME], a Man / Woman, am informing you
+that I am withholding my express permission to share any
+of my personal data with any third (3rd) party(ies). This
+includes those authorized by the [CONSUMER PROTECTION
+BUREAUS, ETC.] or other regulated companies.
+
+No information / data / monies is to be shared at any time
+between my natural person's account and my artificial
+person's account and vice versa without my explicit consent.
+Furtherance: Consent in the past, present, or in the future
+is not given by me, [YOUR NAME]. If you are or have shared
+any of my personal data with any third (3rd) party, I hereby
+inform you that I, [YOUR NAME], wish this to be removed /
+withdrawn / called back.
+
+Personal data / information includes any information you
+hold on me relating to my private, professional, or public
+life including: name(s), telephone number, home address,
+websites I may visit, photos, e-mail address, bank details,
+posts on social networking sites, medical information, a
+computer's IP address, cultural activities, shopping &
+spending patterns, passport details, national security
+number, bank account details, court cases, etc.
+
+Failure to heed our withholding of permission of any third
+(3rd) party data sharing to which I have not given my
+explicit permission will result in my demanding of full
+compensation including fiduciary services / lawyer's /
+solicitors' fees. Failure to ignore my withholding of
+permission will also result in my reporting of you to the
+[CONSUMER PROTECTION BUREAUS, ETC.] and the Ombudsman
+or any other regulatory bodies.
+
+Be advised that 18 U.S. Code § 1341 — Frauds and swindles,
+may be something for consideration if continuing to use
+this data for profit without authorization.
+
+I am giving you 10 working days to acknowledge this letter
+in compliance with my instructions and for the 10 days
+correspond-back-rule via postal letter.
+
+Yours sincerely, The Living Man / Woman / Natural Person
+
+[YOUR AUTOGRAPH AND FINGERPRINT, THEN COPYRIGHT/COPY-CLAIM]
+
+No assured value, No liability. Errors & Omissions Excepted.
+All Rights Reserved.
+WITHOUT RECOURSE — NON-ASSUMPSIT
+
+Calls may be recorded.
+      </div>
+
+      <div class="card" data-animate>
+        <h4 style="margin-bottom: 12px;">Sending instructions</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Fill in all bracketed fields with your information</li>
+          <li>Address the letter to the manager or data protection officer of the organization</li>
+          <li>Send via certified mail with return receipt for proof of delivery</li>
+          <li>Keep a copy for your records, including the tracking number</li>
+          <li>Allow 10 working days for a response</li>
+          <li>If no response, follow up with a complaint to the relevant regulatory body</li>
+          <li>Keep all records of communication — handle matters through mail</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Data Sharing Opt-Out Letter",
+    "description": "Formal letter to withhold permission for organizations to share your personal data with third parties.",
+    "totalTime": "PT20M",
+    "step": [
+      {"@type": "HowToStep", "name": "Fill in your information", "text": "Complete your name, address, and contact details at the top of the letter."},
+      {"@type": "HowToStep", "name": "Address the recipient", "text": "Look up the manager's name and organization address. Address the letter to them directly."},
+      {"@type": "HowToStep", "name": "Customize regulatory references", "text": "Replace bracketed references to consumer protection bureaus with the specific agencies relevant to your situation."},
+      {"@type": "HowToStep", "name": "Sign and date", "text": "Sign the letter, add your fingerprint if desired, and include the date and a perpetual claim number."},
+      {"@type": "HowToStep", "name": "Send via certified mail", "text": "Mail the letter via certified mail with return receipt. Allow 10 working days for acknowledgement."}
+    ]
+  })} />
+</Base>

@@ -1,0 +1,79 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Debt collector letter — 'Only contact my lawyer.' Instruct a debt collector to contact your attorney instead of contacting you directly.";
+---
+
+<Base title="Debt Collector: Contact My Lawyer Letter — CreditCookbook" description={description} posterTitle="CONTACT LAWYER" posterLabel="// debt collector response template">
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// debt collector response — contact lawyer</span>
+      <h2 data-animate style="margin-bottom: 16px;">"Only Contact My Lawyer"</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">Use this letter to instruct a debt collector to contact your lawyer instead of you. If a lawyer is representing you about the debt, the debt collector should generally contact the lawyer instead. After you give the debt collector your lawyer's contact information, they should not contact you directly unless the lawyer doesn't respond.</p>
+
+      <div style="display: flex; gap: 16px; margin-bottom: 48px;" data-animate>
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').textContent)">Copy letter</button>
+        <a href="/recipes/dispute-letters" class="btn btn-ghost">Back to dispute letters</a>
+      </div>
+
+      <div id="letter" class="mono-block" style="margin-bottom: 48px;" data-animate>
+[YOUR NAME]
+[YOUR RETURN ADDRESS]
+[DATE]
+
+[DEBT COLLECTOR NAME]
+[DEBT COLLECTOR ADDRESS]
+
+Re: [ACCOUNT NUMBER FOR THE DEBT, IF YOU HAVE IT]
+
+Dear debt collector:
+
+I am responding to your contact about collecting a debt.
+You contacted me by [PHONE/MAIL], on [DATE] and identified
+the debt as [ANY INFORMATION THEY GAVE YOU ABOUT THE DEBT].
+
+Please contact my lawyer about this debt, and do not
+contact me directly again. My lawyer's contact information
+is:
+
+[LAWYER'S NAME]
+[LAWYER'S FIRM]
+[LAWYER'S ADDRESS]
+[LAWYER'S PHONE]
+[LAWYER'S EMAIL]
+
+Thank you for your cooperation.
+
+Sincerely,
+
+[YOUR NAME]
+      </div>
+
+      <div class="card" data-animate>
+        <h4 style="margin-bottom: 12px;">Sending instructions</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Fill in your information on the template and edit as needed</li>
+          <li>Provide complete contact information for your lawyer</li>
+          <li>Print and mail the letter — keep a copy for your records</li>
+          <li>Send via certified mail with return receipt</li>
+          <li>After receiving this, the collector should only contact your lawyer</li>
+          <li>The collector may still contact you directly if your lawyer doesn't respond</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Debt Collector Contact My Lawyer Letter",
+    "description": "Letter to instruct a debt collector to contact your attorney instead of contacting you directly.",
+    "totalTime": "PT10M",
+    "step": [
+      {"@type": "HowToStep", "name": "Fill in your information", "text": "Complete your name, return address, and the date at the top of the letter."},
+      {"@type": "HowToStep", "name": "Add debt collector details", "text": "Fill in the debt collector's name, address, and the account number if you have it."},
+      {"@type": "HowToStep", "name": "Add lawyer's contact information", "text": "Provide your lawyer's name, firm, address, phone, and email so the collector can contact them directly."},
+      {"@type": "HowToStep", "name": "Print and mail", "text": "Print the letter and mail it via certified mail with return receipt. Keep a copy for your records."}
+    ]
+  })} />
+</Base>

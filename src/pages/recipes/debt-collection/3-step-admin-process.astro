@@ -1,0 +1,304 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "3-step administrative process for bank and credit collection letters — demand validation, verification, and contract proof in a escalating three-letter series. UCC and FDCPA referenced.";
+
+const howtoSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Execute a 3-Step Administrative Process for Collection Letters",
+  "description": "A three-letter administrative process directed at the CEO of a collection agency, demanding validation, verification, and contract proof. Each letter escalates and establishes tacit agreement through non-response.",
+  "totalTime": "P30D",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Send Letter 1 — Initial demand",
+      "text": "Address the letter to the CEO of the collection agency. Demand: validation of debt (accounting), verification of claim (sworn affidavit), copy of contract signed by both parties, certified copy of original note, and due diligence records. Give 10 days."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Send Letter 2 — Second notice",
+      "text": "After 10 days without response, send the second letter referencing the first. Restate the demands and give another 10 days. Failure constitutes agreement to terms."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Send Letter 3 — Final notice and fee schedule",
+      "text": "After another 10 days, send the third letter declaring tacit agreement. Include the fee schedule for dishonoring the agreement. State that selling the alleged liability breaks the agreement."
+    }
+  ]
+};
+---
+
+<Base title="3-Step Admin Process — Bank & Credit Collection Letters — CreditCookbook" description={description} posterTitle="3-STEP ADMIN PROCESS" posterLabel="// bank & credit collection letter series">
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howtoSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// overview</span>
+      <h2 data-animate style="margin-bottom: 16px;">3-Step Administrative Process</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">
+        This three-letter administrative process is directed at the CEO of a bank or collection agency. Each letter demands three things: validation of the debt (the actual accounting), verification of the claim (a sworn affidavit or hand-signed invoice per the UCC), and a copy of the contract signed by both parties. Non-response establishes tacit agreement to terms.
+      </p>
+
+      <div data-animate style="display: flex; gap: 16px; margin-bottom: 48px;">
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('admin1').textContent)">Copy Letter 1</button>
+        <button class="btn btn-ghost" onclick="navigator.clipboard.writeText(document.getElementById('admin2').textContent)">Copy Letter 2</button>
+        <button class="btn btn-ghost" onclick="navigator.clipboard.writeText(document.getElementById('admin3').textContent)">Copy Letter 3</button>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 16px;">The three demands in every letter</h3>
+        <ol style="margin-left: 24px; line-height: 2; margin-bottom: 48px;">
+          <li><strong>Validation of the debt</strong> — the actual accounting</li>
+          <li><strong>Verification of your claim</strong> — a sworn affidavit or hand-signed invoice in accordance with the Uniform Commercial Code</li>
+          <li><strong>A copy of the contract</strong> — signed by both parties, binding both parties</li>
+        </ol>
+        <p style="max-width: 60ch; opacity: 0.7; margin-bottom: 48px;">
+          Additionally, each letter requests a certified copy (not photocopy) of the Original Note, confirmation it has never been sold, and the name of the duly authorized representative who performed due diligence under the Money Laundering Control Act of 1986.
+        </p>
+      </div>
+
+      <hr class="rule" style="margin-bottom: 48px;" />
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Letter 1 — Initial demand</h3>
+        <div id="admin1" class="mono-block" style="margin-bottom: 48px;">
+NON-NEGOTIABLE
+[FIRSTNAME] of the family [SURNAME]
+c/o [YOUR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+[CEO FULL NAME]
+[THEIR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+CC: [COLLECTION CONTACT], Collections Department
+[YOUR DATE]
+
+Re: Account Number: [ACCOUNT NUMBER]
+
+Dear [CEO TITLE SURNAME],
+
+I would be happy to settle any financial obligation I might
+lawfully owe, as soon as I have received the following
+documentation from you:
+
+  • Validation of the debt (the actual accounting);
+  • Verification of your claim against me (a sworn affidavit
+    or a hand signed invoice in accordance with The Uniform
+    Commercial Code);
+  • A copy of the contract signed by both parties and therefore
+    binding both parties.
+
+Please also provide me with a true and certified copy (NOT
+photocopy) of the Original Note (Credit Agreement), under penalty
+of perjury and with unlimited liability and confirm that this
+Note has never been sold. Please also confirm the name of the
+individual who is the duly authorized representative from your
+company, who has carried out due diligence under the Money
+Laundering Control Act of 1986 and what actions s/he has taken
+in relation to this account.
+
+I hereby give you ten (10) days to reply to this notice from the
+above date with a notice sent using recorded post and signed
+under full commercial liability and penalties of perjury,
+assuring and promising me that all of the replies and details
+given to the above requests are true and without deception, fraud
+or mischief. Your said failure to provide the aforementioned
+documentation within ten (10) days from the above date, to
+validate the debt, will constitute your agreement to the
+following terms:
+
+  That the debt did not exist in the first place; OR
+  It has already been paid in full; AND
+  That any damages suffered, you will be held culpable;
+  That any negative remarks made to a credit reference
+    agency will be removed;
+  You will no longer pursue this matter any further.
+  You agree to pay all fee schedules.
+
+Please Note: I wish to deal with this matter in writing and I do
+not give your organization permission to contact me by telephone.
+Should you do so, I must warn you that the calls could constitute
+'harassment' and I may take action under The Fair Debt Collection
+Practices Act.
+
+Yours sincerely,
+
+By: _____________________, _____________ 20__
+    First-Middle Last, without prejudice
+    Authorized Agent for [FULLNAME UPPERCASE]
+
+No assured value, No liability. Errors & Omissions Excepted.
+All Rights Reserved. Calls may be recorded.
+        </div>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Letter 2 — Second notice</h3>
+        <div id="admin2" class="mono-block" style="margin-bottom: 48px;">
+NON-NEGOTIABLE
+[FIRSTNAME] of the family [SURNAME]
+c/o [YOUR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+[CEO FULL NAME]
+[THEIR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+CC: [COLLECTION CONTACT], Collections Department
+[YOUR DATE]
+
+Re: Account Number: [ACCOUNT NUMBER]
+
+Dear [CEO TITLE SURNAME],
+
+I previously wrote to you on ________________ 20__ requesting the
+following documentation, so that I may settle any financial
+obligation I might lawfully owe:
+
+  • Validation of the debt (the actual accounting);
+  • Verification of your claim against me (a sworn affidavit
+    or a hand signed invoice in accordance with The Uniform
+    Commercial Code);
+  • A copy of the contract signed by both parties and therefore
+    binding both parties.
+
+Please also provide me with a true and certified copy (NOT
+photocopy) of the Original Note (Credit Agreement), under penalty
+of perjury and with unlimited liability and confirm that this
+Note has never been sold. Please also confirm the name of the
+individual who is the duly authorized representative from your
+company, who has carried out due diligence under the Money
+Laundering Control Act of 1986 and what actions s/he has taken
+in relation to this account.
+
+As you have failed to provide the aforementioned documentation to
+validate your claim, I hereby give you ten (10) days to reply to
+this notice from the above date with a notice sent using recorded
+post and signed under full commercial liability and penalties of
+perjury, assuring and promising me that all of the replies and
+details given to the above requests are true and without
+deception, fraud or mischief. Your said failure to provide the
+aforementioned documentation within ten (10) days, from the above
+date, to validate the debt, will constitute your agreement to the
+following terms:
+
+  That the debt did not exist in the first place; OR
+  It has already been paid in full; AND
+  That any damages suffered, you will be held culpable;
+  That any negative remarks made to a credit reference
+    agency will be removed;
+  You will no longer pursue this matter any further.
+  You agree to pay all fee schedules.
+
+Yours sincerely,
+
+By: _____________________, _____________ 20__
+    First-Middle Last, without prejudice
+    Authorized Agent for [FULLNAME UPPERCASE]
+
+No assured value, No liability. Errors & Omissions Excepted.
+All Rights Reserved. Calls may be recorded.
+        </div>
+      </div>
+
+      <div data-animate>
+        <h3 style="margin-bottom: 24px;">Letter 3 — Final notice with fee schedule</h3>
+        <div id="admin3" class="mono-block" style="margin-bottom: 48px;">
+NON-NEGOTIABLE
+[FIRSTNAME] of the family [SURNAME]
+c/o [YOUR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+[CEO FULL NAME]
+[THEIR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+CC: [COLLECTION CONTACT], Collections Department
+[YOUR DATE]
+
+Re: Account Number: [ACCOUNT NUMBER]
+
+Dear [CEO TITLE SURNAME],
+
+I previously wrote to you on ________________ 20__ and on
+______________ 20__ requesting the following documentation, so
+that I may settle any financial obligation I might lawfully owe:
+
+  • Validation of the debt (the actual accounting);
+  • Verification of your claim against me (a sworn affidavit
+    or a hand signed invoice in accordance with The Uniform
+    Commercial Code);
+  • A copy of the contract signed by both parties and therefore
+    binding both parties.
+
+Please also provide me with a true and certified copy (NOT
+photocopy) of the Original Note (Credit Agreement), under penalty
+of perjury and with unlimited liability and confirm that this
+Note has never been sold. Please also confirm the name of the
+individual who is the duly authorized representative from your
+company, who has carried out due diligence under the Money
+Laundering Control Act of 1986 and what actions s/he has taken
+in relation to this account.
+
+As you have failed to provide the aforementioned documentation to
+validate your claim, I hereby give you ten (10) days to reply to
+this notice from the above date with a notice sent using recorded
+post and signed under full commercial liability and penalties of
+perjury, assuring and promising me that all of the replies and
+details given to the above requests are true and without
+deception, fraud or mischief. Your said failure to provide the
+aforementioned documentation within ten (10) days, from the above
+date, to validate the debt, has now constituted your agreement to
+the following terms and agreement to my BILL:
+
+  That the debt did not exist in the first place; OR
+  It has already been paid in full; AND
+  That any damages I suffer, you will be held culpable;
+  That any negative remarks made to a credit reference
+    agency will be removed;
+  You will no longer pursue this matter any further.
+
+You have not proven any debt, if you sell the alleged liability,
+and/or appoint an agent to act on its/your behalf on this matter
+you will have broken our agreement and you agree to pay the
+following fee schedule: $[3X amount claimed] for dishonoring our
+agreement, $1,000 per hour or part thereof of Authorized
+Representatives time nunc pro tunc, $1,000 per recorded delivery
+or any other form of response nunc pro tunc. Also any further
+contact is now not necessary; if however you deem a need to
+contact me by phone or letter the fee is $100 per item payable in
+advance — place the check in the envelope. If no payment is made
+in advance the fee will rise to $1,000 per item and you will also
+be held culpable for any cost incurred while recovering the debt
+you owe.
+
+Yours sincerely,
+
+By: _____________________, _____________ 20__
+    First-Middle Last, without prejudice
+    Authorized Agent for [FULLNAME UPPERCASE]
+
+No assured value, No liability. Errors & Omissions Excepted.
+All Rights Reserved. Calls may be recorded.
+        </div>
+      </div>
+
+      <div data-animate class="card">
+        <h4 style="margin-bottom: 12px;">Process notes</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Refer to YOUR state statutes and case law — not legal advice</li>
+          <li>Address letters to the CEO, not just the collections department</li>
+          <li>Send every letter via certified mail with return receipt</li>
+          <li>Space each letter 10 days apart minimum</li>
+          <li>Keep a complete file: tracking numbers, return receipts, copies</li>
+          <li>The fee schedule in Letter 3 is set at 3X the claimed amount</li>
+          <li>Consult an attorney for your specific situation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</Base>

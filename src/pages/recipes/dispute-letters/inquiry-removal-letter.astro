@@ -1,0 +1,113 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const description = "Inquiry removal letter for unauthorized credit inquiries. Dispute fraudulent inquiries and demand validation under FCRA Section 1681b(c).";
+---
+
+<Base title="Inquiry Removal Letter — CreditCookbook" description={description} posterTitle="INQUIRY REMOVAL" posterLabel="// credit reporting dispute">
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// inquiry removal</span>
+      <h2 data-animate style="margin-bottom: 16px;">Inquiry Removal Letter</h2>
+      <p data-animate style="max-width: 60ch; margin-bottom: 32px; opacity: 0.7;">If there are inquiries on your credit report that you did not authorize and did not benefit from, they must be deleted. Unauthorized inquiries constitute fraudulent activity. This letter goes directly to Experian, TransUnion, and Equifax.</p>
+
+      <div style="display: flex; gap: 16px; margin-bottom: 48px;" data-animate>
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').textContent)">Copy letter</button>
+        <a href="/recipes/dispute-letters" class="btn btn-ghost">Back to dispute letters</a>
+      </div>
+
+      <div id="letter" class="mono-block" style="margin-bottom: 48px;" data-animate>
+[YOUR NAME]
+[YOUR ADDRESS]
+
+[CREDIT REPORTING AGENCY NAME]
+[CREDIT REPORTING AGENCY ADDRESS]
+
+RE: Inquiry Removal
+
+Dear [CREDIT REPORTING AGENCY NAME],
+
+While checking my most recent credit report, I noticed
+unauthorized and fraudulent credit inquiries made by the
+following companies:
+
+Inquiries:
+  [ACCOUNT NAME], Inquiry Date: [DATE]
+  [ACCOUNT NAME], Inquiry Date: [DATE]
+  [ACCOUNT NAME], Inquiry Date: [DATE]
+
+I did not authorize anyone employed by these companies to
+make any inquiry and view my credit report. In addition, I
+did not give you ([CREDIT REPORTING AGENCY]) permission to
+furnish this information onto my credit report. This is a
+violation of the Credit Reporting Act Section 1681b(c) which
+constitutes fraudulent activity and is also a serious breach
+of my privacy rights.
+
+Please validate this information with these companies and
+provide me with copies of any documentation associated with
+these accounts bearing my signature, authorizing an inquiry.
+
+I also demand that you, [CREDIT REPORTING AGENCY], produce
+a contract between you and me, the consumer, bearing my
+signature showing that I gave you permission to furnish any
+information on my behalf.
+
+In the absence of any such documentation bearing my signature,
+I formally request that these fraudulent inquiries be
+immediately deleted from the credit file you maintain under
+my Social Security number.
+
+Please note that you have 30 days to produce the requested
+contract and to complete this investigation, as per the Fair
+Credit Reporting Act Section 611.
+
+My contact information is as follows:
+[YOUR NAME]
+[YOUR ADDRESS]
+
+Best Regards,
+
+[YOUR NAME]
+Without Prejudice, All Natural Inalienable Rights Reserved
+      </div>
+
+      <h3 style="margin-bottom: 16px;" data-animate>Bureau mailing addresses</h3>
+      <table style="margin-bottom: 48px;" data-animate>
+        <thead><tr><th>Bureau</th><th>Address</th></tr></thead>
+        <tbody>
+          <tr><td>Experian</td><td>P.O. Box 9701, Allen, TX 75013</td></tr>
+          <tr><td>Equifax</td><td>P.O. Box 740256, Atlanta, GA 30374-0256</td></tr>
+          <tr><td>TransUnion</td><td>P.O. Box 2000, Chester, PA 19016</td></tr>
+        </tbody>
+      </table>
+
+      <div class="card" data-animate>
+        <h4 style="margin-bottom: 12px;">Sending instructions</h4>
+        <ul style="margin-left: 24px; line-height: 2;">
+          <li>Send to all three credit reporting agencies</li>
+          <li>Include a copy of your state-issued ID and Social Security card</li>
+          <li>List each unauthorized inquiry with the company name and date</li>
+          <li>Send via certified mail with return receipt</li>
+          <li>Keep a copy for your records</li>
+          <li>Bureaus have 30 days to investigate under FCRA Section 611</li>
+          <li>For phone-based inquiry removal, call the bureau's fraud department</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Inquiry Removal Letter",
+    "description": "Letter to dispute and remove unauthorized credit inquiries from your credit report under FCRA Section 1681b(c).",
+    "totalTime": "PT20M",
+    "step": [
+      {"@type": "HowToStep", "name": "Review your credit report", "text": "Obtain your credit report and identify all inquiries you did not authorize."},
+      {"@type": "HowToStep", "name": "List unauthorized inquiries", "text": "Write down each unauthorized company name and the inquiry date from your credit report."},
+      {"@type": "HowToStep", "name": "Fill in the letter", "text": "Complete the template with your information and the list of unauthorized inquiries."},
+      {"@type": "HowToStep", "name": "Send to all three bureaus", "text": "Mail a separate letter to each credit reporting agency via certified mail with return receipt."}
+    ]
+  })} />
+</Base>
