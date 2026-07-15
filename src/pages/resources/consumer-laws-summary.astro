@@ -1,0 +1,132 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const description = "Consumer protection laws that help you fight debt harassment. FDCPA, debt validation, statute of limitations, FTC debt relief rules, and billing error claims explained in plain English.";
+---
+
+<Base title="Consumer Laws Summary — CreditCookbook" description={description} posterTitle="CONSUMER LAWS" posterLabel="// your rights, in plain english">
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// overview</span>
+      <h2 data-animate style="margin-bottom: 24px;">Consumer laws that protect you.</h2>
+      <p data-animate style="max-width: 64ch; margin-bottom: 32px; opacity: 0.8;">
+        Consumer protection laws exist because lenders, creditors, and collection agencies have historically exploited information asymmetry. These are the laws that level the field — and they're free to use.
+      </p>
+
+      <div data-animate style="display: grid; grid-template-columns: 1fr; gap: 0;">
+
+        <div style="border: 1px solid var(--line); padding: 32px; border-bottom: none;">
+          <span class="section-label" style="color: var(--blue);">// law 01</span>
+          <h3 style="margin-bottom: 12px;">FDCPA — Fair Debt Collection Practices Act</h3>
+          <p style="margin-bottom: 16px;">Designed to prevent collection agencies from harassing consumers. Under the FDCPA, debt collectors cannot:</p>
+          <ul style="margin-left: 24px; line-height: 2; margin-bottom: 16px;">
+            <li>Threaten you with violence or harm</li>
+            <li>Call you at unreasonable hours (before 8am or after 9pm)</li>
+            <li>Contact you at work if you've told them not to</li>
+            <li>Use obscene or profane language</li>
+            <li>Falsely claim to be attorneys or government representatives</li>
+            <li>Discuss your debt with third parties (family, employer)</li>
+          </ul>
+          <p style="margin-bottom: 8px;"><strong>Enforcement:</strong> File complaints with the FTC. You can also sue in federal court for $500-$1,000 per violation plus actual damages and attorney fees.</p>
+          <p class="mono" style="font-size: 13px; color: var(--blue);">→ See our FDCPA guide and debt collection recipes</p>
+        </div>
+
+        <div style="border: 1px solid var(--line); padding: 32px; border-top: none; border-bottom: none;">
+          <span class="section-label" style="color: var(--blue);">// law 02</span>
+          <h3 style="margin-bottom: 12px;">Debt Validation Rule (FDCPA Section 1692g)</h3>
+          <p style="margin-bottom: 16px;">You have the right to request validation of any debt a collection agency claims you owe. If you send a validation letter within 30 days of their first contact, the agency must:</p>
+          <ul style="margin-left: 24px; line-height: 2; margin-bottom: 16px;">
+            <li>Cease all collection activities until they validate</li>
+            <li>Provide proof that the debt is yours</li>
+            <li>Provide the name and address of the original creditor</li>
+            <li>Provide documentation of their authority to collect</li>
+          </ul>
+          <p style="margin-bottom: 8px;">Many collection agencies cannot produce proper validation, especially for debts that have been sold and resold. If they can't validate, they must remove the tradeline.</p>
+          <p class="mono" style="font-size: 13px; color: var(--blue);">→ Use our validation letter template</p>
+        </div>
+
+        <div style="border: 1px solid var(--line); padding: 32px; border-top: none; border-bottom: none;">
+          <span class="section-label" style="color: var(--blue);">// law 03</span>
+          <h3 style="margin-bottom: 12px;">Statute of Limitations (SOL)</h3>
+          <p style="margin-bottom: 16px;">The SOL is the time limit within which a creditor or collection agency can sue you for non-payment of a debt. If they sue after this period, you can use the expired SOL as a defense in court.</p>
+          <table style="margin-bottom: 16px;">
+            <thead>
+              <tr><th>Debt type</th><th>Typical SOL</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Oral contracts</td><td>2-6 years</td><td>Varies by state</td></tr>
+              <tr><td>Written contracts</td><td>3-6 years</td><td>Varies by state</td></tr>
+              <tr><td>Promissory notes</td><td>3-6 years</td><td>Varies by state</td></tr>
+              <tr><td>Open accounts (credit cards)</td><td>3-6 years</td><td>Varies by state</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Important:</strong> Making a payment or even acknowledging the debt in writing can restart the SOL clock. Always check your state's specific SOL before responding to a collection attempt.</p>
+        </div>
+
+        <div style="border: 1px solid var(--line); padding: 32px; border-top: none; border-bottom: none;">
+          <span class="section-label" style="color: var(--blue);">// law 04</span>
+          <h3 style="margin-bottom: 12px;">FTC Debt Relief Law (2010)</h3>
+          <p style="margin-bottom: 16px;">Introduced in 2010, this rule protects consumers from predatory debt relief companies. Under this law:</p>
+          <ul style="margin-left: 24px; line-height: 2; margin-bottom: 16px;">
+            <li>No debt relief agency may charge upfront fees before settling or reducing your debt</li>
+            <li>Fees must be tied to actual results — not promises</li>
+            <li>Companies must disclose all costs and timeframes before enrollment</li>
+            <li>Companies cannot misrepresent their success rates</li>
+          </ul>
+          <p>If a debt relief company asks for money upfront, they are violating federal law. Report them to the FTC.</p>
+        </div>
+
+        <div style="border: 1px solid var(--line); padding: 32px; border-top: none;">
+          <span class="section-label" style="color: var(--blue);">// law 05</span>
+          <h3 style="margin-bottom: 12px;">Billing Error Claims (15 USC 1666 — FCBA)</h3>
+          <p style="margin-bottom: 16px;">The Fair Credit Billing Act gives you the right to challenge billing errors on your credit card statements. If you claim a billing error in writing within 60 days:</p>
+          <ul style="margin-left: 24px; line-height: 2; margin-bottom: 16px;">
+            <li>The creditor must acknowledge your dispute within 30 days</li>
+            <li>The creditor must resolve the dispute within two billing cycles</li>
+            <li>The creditor cannot report the disputed amount as delinquent during investigation</li>
+            <li>The creditor cannot collect the disputed amount during investigation</li>
+          </ul>
+          <p style="margin-bottom: 16px;"><strong>Strategic use:</strong> If a collector or creditor is pursuing you, claiming a billing error under 15 USC 1666 early in the process can stop them temporarily while you work on a permanent remedy. Do this before they take you to court.</p>
+          <p>Also: if an attorney is contacting you about a debt, you can claim they are making false and misleading statements under the FDCPA, which prohibits any false representations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// key takeaway</span>
+      <h2 data-animate style="margin-bottom: 24px;">The pattern across all these laws.</h2>
+      <div data-animate style="max-width: 64ch;">
+        <p style="margin-bottom: 16px;">Every consumer protection law follows the same structure: it creates a <strong>procedural obligation</strong> on the part of the creditor or collector, and it gives you a <strong>private right of action</strong> if they fail to meet that obligation.</p>
+        <p style="margin-bottom: 16px;">The FDCPA says collectors must validate. The FCRA says bureaus must investigate. The FCBA says creditors must resolve disputes. The SOL says they must sue within a time limit.</p>
+        <p>These are not loopholes. They are the rules of the game. The system works when consumers know the rules and enforce them in writing.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// official sources</span>
+      <h2 data-animate style="margin-bottom: 24px;">Verify everything.</h2>
+      <table data-animate>
+        <thead>
+          <tr><th>Resource</th><th>URL</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>FTC Complaints</td><td>ftccomplaintassistant.gov</td></tr>
+          <tr><td>CFPB Complaints</td><td>consumerfinance.gov/complaint</td></tr>
+          <tr><td>Free Credit Reports</td><td>annualcreditreport.com</td></tr>
+          <tr><td>FDCPA Full Text</td><td>ftc.gov/legal-library/browse/rules/fair-debt-collection-practices-act-text</td></tr>
+          <tr><td>FCRA Full Text</td><td>ftc.gov/legal-library/browse/statutes/fair-credit-reporting-act</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</Base>

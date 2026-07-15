@@ -1,0 +1,309 @@
+---
+import Base from '../../layouts/Base.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+
+const description = 'Comprehensive credit repair master guide — understanding credit reports, FICO scores, dispute process, building credit, hiding utilization, and suing in court. Educational resource covering the full credit repair lifecycle.';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Credit Repair Master Guide: Reports, Scores, Disputes, Building & Court",
+  "description": description,
+  "author": { "@type": "Organization", "name": "CreditCookbook", "url": "https://creditcookbook.com" },
+  "publisher": { "@type": "Organization", "name": "CreditCookbook", "url": "https://creditcookbook.com" },
+  "datePublished": "2026-07-14",
+  "mainEntityOfPage": { "@type": "WebPage", "@url": "https://creditcookbook.com/resources/credit-repair-master-guide" }
+};
+---
+
+<Base title="Credit Repair Master Guide — CreditCookbook" description={description} posterTitle="MASTER GUIDE" posterLabel="// resources — comprehensive credit repair">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)} />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// overview</span>
+      <h2 data-animate style="margin-bottom: 16px;">The Credit Repair Master Guide</h2>
+      <p data-animate style="max-width: 64ch; margin-bottom: 16px;">
+        This guide walks through the entire credit repair lifecycle: understanding what a credit report is, how FICO scores work, how to dispute inaccurate information, how to build positive credit, how to manage credit utilization, and how to enforce your rights in court.
+      </p>
+      <p data-animate style="max-width: 64ch; opacity: 0.7;">
+        This is for educational purposes only and is not legal, financial, or credit repair advice. If you need an attorney, consult one.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// 01 — understanding credit reports</span>
+      <h2 data-animate style="margin-bottom: 24px;">Understanding Consumer Credit Reports</h2>
+
+      <h3 data-animate style="margin-bottom: 8px;">What Is a Credit Report?</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        A credit report is a record of your credit history maintained by consumer reporting agencies (credit bureaus). It breaks down into six parts: your repayment history, length of credit, personal/demographic information, available credit, credit inquiries, and types of credit used. Lenders use it to determine the risk of lending you money — the higher the risk, the higher your interest rate, or the less likely you are to be approved.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Who Maintains Credit Reports?</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        The five main credit reporting agencies are Experian, TransUnion, Equifax, Innovis, and PRBC (Pay Rent, Build Credit). These agencies collect and maintain consumer credit data without consumer consent. Each maintains separate files — they do not share data in harmony.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">What Are Tradelines?</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        A tradeline is an account listed on your credit report. Each separate account is a different tradeline. Tradelines include the creditor's account name, account number, date opened, and payment status. There are four types: installment accounts (car loans), mortgage accounts, revolving accounts (credit cards), and open accounts (paid in full on receipt). A <strong>primary tradeline</strong> is opened in your own name. A <strong>secondary tradeline</strong> appears when you are added as an authorized user to someone else's account.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Credit Inquiries</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        A credit inquiry is a record of someone requesting your credit report. Inquiries stay on your report for about two years but only factor into your FICO score for one year. <strong>Hard inquiries</strong> occur when a lender pulls your report for a credit decision — these can lower your score by a few points. <strong>Soft inquiries</strong> (checking your own credit) do not affect your score.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Collections, Derogatory Accounts & Public Records</h3>
+      <p data-animate style="max-width: 64ch;">
+        Collections are a continuation of debt owed and can stay on your report for up to 7 years from the date of delinquency. Derogatory accounts are seriously past due (60–90+ days) and include charge-offs, repossessions, and foreclosures. Since 2017, civil judgments and tax liens were removed from credit reports under the National Consumer Assistance Plan. Bankruptcy can cause a FICO score drop of 200+ points and remains for 7–10 years.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// 02 — FICO scores</span>
+      <h2 data-animate style="margin-bottom: 24px;">How FICO Scores Work</h2>
+
+      <p data-animate style="max-width: 64ch; margin-bottom: 32px;">
+        Your FICO score ranges from 300–850. The higher the score, the lower the risk to lenders. Different industries use different FICO variants — mortgage companies use the Classic FICO Score, auto lenders use the FICO Auto Industry Option Score.
+      </p>
+
+      <div data-animate data-animate-stagger="0.1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0; border: 1px solid var(--line); margin-bottom: 32px;">
+        <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="stat-gold" style="font-size: clamp(1.5rem, 3vw, 2rem); display: block; line-height: 1; margin-bottom: 8px;">35%</span>
+          <span class="mono" style="font-size: 11px; letter-spacing: 0.05em; opacity: 0.6; text-transform: uppercase;">Payment History</span>
+        </div>
+        <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="stat-gold" style="font-size: clamp(1.5rem, 3vw, 2rem); display: block; line-height: 1; margin-bottom: 8px;">30%</span>
+          <span class="mono" style="font-size: 11px; letter-spacing: 0.05em; opacity: 0.6; text-transform: uppercase;">Amounts Owed</span>
+        </div>
+        <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="stat-gold" style="font-size: clamp(1.5rem, 3vw, 2rem); display: block; line-height: 1; margin-bottom: 8px;">15%</span>
+          <span class="mono" style="font-size: 11px; letter-spacing: 0.05em; opacity: 0.6; text-transform: uppercase;">Length of Credit</span>
+        </div>
+        <div style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <span class="stat-gold" style="font-size: clamp(1.5rem, 3vw, 2rem); display: block; line-height: 1; margin-bottom: 8px;">10%</span>
+          <span class="mono" style="font-size: 11px; letter-spacing: 0.05em; opacity: 0.6; text-transform: uppercase;">Credit Mix</span>
+        </div>
+        <div style="padding: 24px; border-bottom: 1px solid var(--line);">
+          <span class="stat-gold" style="font-size: clamp(1.5rem, 3vw, 2rem); display: block; line-height: 1; margin-bottom: 8px;">10%</span>
+          <span class="mono" style="font-size: 11px; letter-spacing: 0.05em; opacity: 0.6; text-transform: uppercase;">New Credit</span>
+        </div>
+      </div>
+
+      <h3 data-animate style="margin-bottom: 8px;">The Five Factors</h3>
+      <ul data-animate style="margin-left: 24px; line-height: 2; max-width: 64ch;">
+        <li><strong>Payment History (35%)</strong> — Paying bills on time is the single biggest factor. Late payments, collections, and charge-offs severely impact this category.</li>
+        <li><strong>Credit Utilization (30%)</strong> — Experts recommend using no more than 30% of your total credit limit. Maxing out cards signals financial distress.</li>
+        <li><strong>Length of Credit History (15%)</strong> — Longer histories generally produce higher scores. New credit users cannot speed this up, but timely payments help over time.</li>
+        <li><strong>Credit Mix (10%)</strong> — FICO favors a variety of loan types: both installment credit (fixed payments) and revolving credit (credit cards).</li>
+        <li><strong>New Credit / Inquiries (10%)</strong> — Hard inquiries lower your score by a few points but typically rebound within months if payments remain on time.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// 03 — the dispute process</span>
+      <h2 data-animate style="margin-bottom: 24px;">The Dispute Process Under the FCRA</h2>
+
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        In 1970, Congress created the Fair Credit Reporting Act (FCRA) to protect consumers dealing with credit bureaus. The FCRA limits who can see your report, mandates how long negative information can remain, and gives you the right to dispute errors. Bureaus are required to follow "reasonable procedures" to ensure "maximum possible accuracy."
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Your Right to Dispute</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        If you find inaccurate information, you can dispute it directly with the credit bureau. The bureau must investigate within 30 days, forward your dispute to the furnisher (the creditor or collection agency that reported the information), and correct or delete the information if it cannot be verified. Within five days of receiving your dispute, the bureau must notify the furnisher with all relevant information you provided.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Furnisher Responsibilities</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        After receiving notice of a dispute, the furnisher must conduct an investigation, review all relevant information, and report results to the bureau. If the information is inaccurate, the furnisher must notify all three national bureaus. If the investigation does not resolve the dispute, you can add a statement to your file.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Common Sources of Errors</h3>
+      <ul data-animate style="margin-left: 24px; line-height: 2; max-width: 64ch; margin-bottom: 24px;">
+        <li><strong>Mixed or mismerged files</strong> — Information from one consumer placed in another's file, often due to similar names or SSNs. 44% of credit reporting complaints to the FTC involved mismerged files.</li>
+        <li><strong>Furnisher errors</strong> — Incorrect payment history, status, or balance due to misapplied payments or data entry errors.</li>
+        <li><strong>Ownership disputes</strong> — Accounts attributed to consumers who don't owe the debt (identity theft, authorized user confusion).</li>
+        <li><strong>Re-aging of debt</strong> — Debt buyers purposefully misrepresenting the date of delinquency to resurrect time-barred debts.</li>
+      </ul>
+
+      <h3 data-animate style="margin-bottom: 8px;">The e-OSCAR System</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        Disputes are processed through e-OSCAR (Online Solution for Complete and Accurate Reporting). The bureau employee selects a 2–3 digit dispute code from 26 options — reducing your detailed written dispute to a code. Supporting documentation is often left out of the process. The most common codes used: "Not his/hers" (30.5%), "Disputes account history" (21.2%), "Claims inaccurate information" (16.8%), "Disputes amounts" (8.8%), "Claims account closed" (7.0%).
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Dispute Letter Best Practices</h3>
+      <ul data-animate style="margin-left: 24px; line-height: 2; max-width: 64ch;">
+        <li>Send disputes to all major bureaus — they do not share data</li>
+        <li>Also send directly to the furnisher/creditor</li>
+        <li>Send via certified mail with return receipt (PS Form 3811)</li>
+        <li>Avoid internet form letters — bureaus spot generic disputes</li>
+        <li>Adequately identify yourself, the account, and why it's disputed</li>
+        <li>Describe the full range of accounts (e.g., "any Capital One account")</li>
+        <li>Scan or photograph all documents before mailing</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// 04 — building credit</span>
+      <h2 data-animate style="margin-bottom: 24px;">Building Your Consumer Reports</h2>
+
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        Overall, you need a minimum of 10 positive tradelines. This includes 3–5 primary tradelines and 3–5 secondary (authorized user) tradelines. Aim for at least 3 installment and 3 revolving accounts, all at least 3 years old with limits above $10,000 when possible.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Primary Tradelines</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 16px;">
+        Start with 3–5 primary tradelines reporting on your personal credit reports:
+      </p>
+      <ul data-animate style="margin-left: 24px; line-height: 2; max-width: 64ch; margin-bottom: 24px;">
+        <li>Unsecured credit card with Capital One or Discover (if you have limited credit)</li>
+        <li>Secured credit card requiring a small deposit (Citi, Capital One, US Bank, Wells Fargo, Bank of America)</li>
+        <li>Self.inc — CD account, $25–$150 monthly, guaranteed approval, reports to all bureaus</li>
+        <li>CreditStrong.com — $1,000–$18,000 credit limit, no deposit, no credit check</li>
+        <li>Pledge loans — deposit $500–$10,000+, split into 5 payments of 20%, pay weekly</li>
+      </ul>
+
+      <h3 data-animate style="margin-bottom: 8px;">Secondary Tradelines (Authorized User)</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 16px;">
+        Have 3–5 secondary tradelines reporting. The best option is a family member or friend with a score above 720 who can add you as an authorized user. You only need the history to report — you don't need the physical card.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Rent Reporting</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        You can have your rent reported and backdated to build credit history through services like RentalKharma, CreditRentBoost, RentReporters, LevelCredit, and EsusuRent.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Credit Card Application Strategy</h3>
+      <p data-animate style="max-width: 64ch;">
+        Open multiple browser windows and apply for several cards simultaneously to minimize inquiry impact. Know which bureaus each bank pulls — don't apply to a bank that checks your weakest report. Target $25,000–$60,000 in total credit lines. Alliant Credit Union is a preferred lender that examines inquiries closely, so apply with them first.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// 05 — hiding utilization</span>
+      <h2 data-animate style="margin-bottom: 24px;">Hiding Credit Card Utilization</h2>
+
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        Credit utilization — the percentage of your available credit that you're using — accounts for about 30% of your FICO score. Experts recommend staying below 30%. For entrepreneurs and investors, managing utilization strategically can create financial flexibility.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">The Three Key Dates</h3>
+      <ul data-animate style="margin-left: 24px; line-height: 2; max-width: 64ch; margin-bottom: 24px;">
+        <li><strong>Due Date</strong> — The date your payment is due.</li>
+        <li><strong>Closing Date</strong> — The last day of your billing cycle, when the statement is compiled.</li>
+        <li><strong>Reporting Date</strong> — The date the credit card company reports your history to the bureaus.</li>
+      </ul>
+
+      <h3 data-animate style="margin-bottom: 8px;">Splitting Due Dates</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        If you have $50,000 in credit, split your cards so half have due dates on the 10th and half on the 24th. You can contact your credit card company to change due dates. This creates a window between payment periods to shift debt among cards, avoiding interest payments while keeping utilization low on each reporting cycle.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">The Shift Strategy</h3>
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        Liquidate cards due on the 24th to pay off cards due on the 10th. Then liquidate cards due on the 10th to pay cards due on the 24th. You're circulating debt and avoiding interest. Your credit history shows a positive payment history with low utilization. Six months of this process can significantly improve your credit position.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">When Cards Are Maxed</h3>
+      <p data-animate style="max-width: 64ch;">
+        You need to remove at least 30% of your credit card debt to begin hiding utilization effectively. Follow the same splitting process with the 30% utilization rate while managing the remaining debt. Note: student loan debt does not affect your credit utilization rate.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// 06 — suing in court</span>
+      <h2 data-animate style="margin-bottom: 24px;">Enforcing Your Rights in Court</h2>
+
+      <p data-animate style="max-width: 64ch; margin-bottom: 24px;">
+        Most creditors and collectors do not fully comply with the Fair Credit Act. Actions that may substantiate a lawsuit include: failure to validate a debt, calling you at work or at odd hours, erroneous reporting of your credit history, and refusing to note partial payments. Many creditors don't show up to court for smaller debts, resulting in default judgments in your favor.
+      </p>
+
+      <h3 data-animate style="margin-bottom: 8px;">Steps to File in Small Claims Court</h3>
+      <ol data-animate style="margin-left: 24px; line-height: 2; max-width: 64ch; margin-bottom: 24px;">
+        <li><strong>Gather evidence.</strong> Take screenshots of phone logs, get letters from your employer about collection calls, copy your credit report. Build a documented case showing which Fair Credit Act laws were broken.</li>
+        <li><strong>File your claim.</strong> Check your state's small claims maximum. File at your county courthouse. Always request: REMOVAL OF DEROGATORY DEBT from all three credit bureaus (TransUnion, Experian, Equifax) along with a dollar amount.</li>
+        <li><strong>Notify the other party.</strong> Send the court documents to the creditor or collection company. Don't over-invest in tracking them down — if they never receive it, it works in your favor.</li>
+        <li><strong>Attend the hearing.</strong> The creditor may or may not show up. If they don't appear, you win by default. If they do, present your evidence and cite the specific Fair Credit Act violations.</li>
+        <li><strong>Enforce the judgment.</strong> If you win, you receive a judgment of removal you can send to the three credit bureaus. By law, they must remove the debt from your credit report.</li>
+      </ol>
+
+      <div data-animate class="card" style="margin-bottom: 24px;">
+        <h4 style="margin-bottom: 12px;">HIPAA Violations (Medical Debt)</h4>
+        <p style="font-size: 14px; opacity: 0.7; line-height: 1.6;">
+          HIPAA laws are very strict. If a collection agency obtained your debt information from a hospital or doctor without your consent, they violated your HIPAA rights. Your medical information can never be shared with a third party without your consent. Some providers bury consent language in intake forms — always read forms and cross out any language about sharing your information with third parties.
+        </p>
+      </div>
+
+      <p data-animate class="mono" style="font-size: 12px; opacity: 0.5; max-width: 64ch;">
+        This information is for educational purposes only and is not legal advice. Consult an attorney before proceeding as a plaintiff. You must clearly prove you have a cause of action before filing.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label" data-animate>// related resources</span>
+      <h2 data-animate style="margin-bottom: 24px;">Related Resources</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line);">
+        <a href="/resources/fcra-explained" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">FCRA Explained</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Fair Credit Reporting Act rights</p>
+        </a>
+        <a href="/resources/how-fico-is-calculated" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">How FICO Is Calculated</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Detailed FICO score breakdown</p>
+        </a>
+        <a href="/recipes/free-credit-report-request" style="padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">Free Report Request</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Letter template for annual reports</p>
+        </a>
+        <a href="/recipes" style="padding: 24px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);">
+          <span class="section-label" style="margin-bottom: 8px;">// related</span>
+          <h4 style="margin-bottom: 6px;">All Recipes</h4>
+          <p style="font-size: 13px; opacity: 0.7;">Dispute letters and templates</p>
+        </a>
+      </div>
+
+      <p class="mono" style="margin-top: 24px; font-size: 12px; opacity: 0.5;">
+        This page is for educational purposes only and is not legal, financial, or credit repair advice. Consult an attorney for your specific situation.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <EmailCapture />
+
+</Base>
