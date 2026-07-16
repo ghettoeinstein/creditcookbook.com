@@ -21,7 +21,7 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
   <meta name="description" content={description} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Schema.org Organization (sitewide) -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
@@ -40,22 +40,27 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
 </head>
 <body>
 
-  <!-- Nav -->
+  <!-- Nav — inline, not floating -->
   <nav class="nav">
     <div class="container">
       <a href="/" class="logo">
         <span class="logo-mark"></span>
-        creditcookbook
+        <span data-en="creditcookbook" data-es="creditcookbook">creditcookbook</span>
       </a>
       <div class="links">
-        <a href="/">Home</a>
-        <a href="/personal-credit">Personal Credit</a>
-        <a href="/business-credit">Business Credit</a>
-        <a href="/recipes">Recipes</a>
-        <a href="/tools">Tools</a>
-        <a href="/resources">Resources</a>
-        <a href="/about">About</a>
-        <a href="/#newsletter" class="btn btn-primary">Newsletter</a>
+        <a href="/" data-en="Home" data-es="Inicio">Home</a>
+        <a href="/personal-credit" data-en="Personal Credit" data-es="Crédito Personal">Personal Credit</a>
+        <a href="/business-credit" data-en="Business Credit" data-es="Crédito Comercial">Business Credit</a>
+        <a href="/recipes" data-en="Recipes" data-es="Recetas">Recipes</a>
+        <a href="/tools" data-en="Tools" data-es="Herramientas">Tools</a>
+        <a href="/resources" data-en="Resources" data-es="Recursos">Resources</a>
+        <a href="/about" data-en="About" data-es="Acerca de">About</a>
+        <!-- Language toggle -->
+        <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+          <span class="lang-en lang-active">EN</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-es">ES</span>
+        </button>
       </div>
     </div>
   </nav>
@@ -77,22 +82,21 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
   <footer class="footer">
     <div class="container">
       <div class="footer-left">
-        <span>© 2026 CreditCookbook · open-source credit education · <a href="https://github.com/ghettoeinstein/creditcookbook.com">GitHub</a></span>
+        <span>© 2026 CreditCookbook · <span data-en="open-source credit education" data-es="educación crediticia de código abierto">open-source credit education</span> · <a href="https://github.com/ghettoeinstein/creditcookbook.com">GitHub</a></span>
       </div>
       <div class="footer-legal">
-        <a href="/personal-credit">Personal Credit</a>
-        <a href="/business-credit">Business Credit</a>
-        <a href="/tools">Tools</a>
-        <a href="/resources">Resources</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
+        <a href="/personal-credit" data-en="Personal Credit" data-es="Crédito Personal">Personal Credit</a>
+        <a href="/business-credit" data-en="Business Credit" data-es="Crédito Comercial">Business Credit</a>
+        <a href="/tools" data-en="Tools" data-es="Herramientas">Tools</a>
+        <a href="/resources" data-en="Resources" data-es="Recursos">Resources</a>
+        <a href="/about" data-en="About" data-es="Acerca de">About</a>
+        <a href="/contact" data-en="Contact" data-es="Contacto">Contact</a>
+        <a href="/privacy" data-en="Privacy" data-es="Privacidad">Privacy</a>
+        <a href="/terms" data-en="Terms" data-es="Términos">Terms</a>
       </div>
       <div class="footer-social">
         <a href="https://linkedin.com/in/calebpierre" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://instagram.com/emperorpierre" target="_blank" rel="noopener">Instagram</a>
-        <a href="/#newsletter">Newsletter</a>
       </div>
     </div>
   </footer>
@@ -101,6 +105,49 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
+  <!-- Language toggle — vanilla JS, reads/saves to localStorage -->
+  <script is:inline>
+    (function() {
+      var lang = localStorage.getItem('cc-lang') || 'en';
+      
+      function applyLang(l) {
+        document.documentElement.lang = l;
+        document.querySelectorAll('[data-en]').forEach(function(el) {
+          var text = el.getAttribute('data-' + l);
+          if (text) el.textContent = text;
+        });
+        // Update toggle button
+        var enBtn = document.querySelector('.lang-en');
+        var esBtn = document.querySelector('.lang-es');
+        if (enBtn && esBtn) {
+          if (l === 'en') {
+            enBtn.classList.add('lang-active');
+            esBtn.classList.remove('lang-active');
+          } else {
+            esBtn.classList.add('lang-active');
+            enBtn.classList.remove('lang-active');
+          }
+        }
+      }
+      
+      // Apply on load
+      applyLang(lang);
+      
+      // Toggle on click
+      document.addEventListener('DOMContentLoaded', function() {
+        var toggle = document.getElementById('lang-toggle');
+        if (toggle) {
+          toggle.addEventListener('click', function() {
+            var current = localStorage.getItem('cc-lang') || 'en';
+            var next = current === 'en' ? 'es' : 'en';
+            localStorage.setItem('cc-lang', next);
+            applyLang(next);
+          });
+        }
+      });
+    })();
+  </script>
+
   <!-- Motion controller: reduced-motion guard + universal reveal system -->
   <script is:inline>
     (function () {
@@ -108,9 +155,7 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         var isTouch = window.matchMedia('(pointer: coarse)').matches;
 
-        // Ensure GSAP + ScrollTrigger loaded
         if (typeof gsap === 'undefined') {
-          // Retry shortly if deferred scripts haven't parsed yet
           return setTimeout(initMotion, 50);
         }
         if (typeof ScrollTrigger !== 'undefined') {
@@ -118,7 +163,6 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
         }
 
         if (reduceMotion) {
-          // Reduced motion: show everything immediately, no animation
           document.querySelectorAll('[data-animate]').forEach(function (el) {
             el.style.opacity = '1';
             el.style.transform = 'none';
@@ -126,7 +170,6 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
           return;
         }
 
-        // ---- Universal scroll reveal: fade + Y-translate ----
         var revealEls = document.querySelectorAll('[data-animate]');
         revealEls.forEach(function (el) {
           var y = el.getAttribute('data-animate-y') || '24';
@@ -135,7 +178,6 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
           var stagger = el.getAttribute('data-animate-stagger');
 
           if (stagger && el.children.length > 1) {
-            // Stagger children
             gsap.set(el.children, { opacity: 0, y: y });
             ScrollTrigger.create({
               trigger: el,
@@ -152,7 +194,6 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
               }
             });
           } else {
-            // Single element reveal
             gsap.set(el, { opacity: 0, y: y });
             ScrollTrigger.create({
               trigger: el,
@@ -171,27 +212,16 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
           }
         });
 
-        // ---- Parallax layers: [data-parallax] with speed attribute ----
         if (!isTouch) {
           document.querySelectorAll('[data-parallax]').forEach(function (el) {
             var speed = parseFloat(el.getAttribute('data-parallax')) || 0.3;
             gsap.to(el, {
-              y: function () {
-                return (1 - speed) * 100;
-              },
+              y: function () { return (1 - speed) * 100; },
               ease: 'none',
-              scrollTrigger: {
-                trigger: el,
-                start: 'top top',
-                end: 'bottom top',
-                scrub: speed
-              }
+              scrollTrigger: { trigger: el, start: 'top top', end: 'bottom top', scrub: speed }
             });
           });
-        }
 
-        // ---- 3D tilt on [data-tilt] cards (desktop only) ----
-        if (!isTouch) {
           document.querySelectorAll('[data-tilt]').forEach(function (card) {
             var maxRotate = parseFloat(card.getAttribute('data-tilt')) || 4;
             card.style.transformStyle = 'preserve-3d';
@@ -207,27 +237,21 @@ const { title, description, posterTitle, posterLabel } = Astro.props;
               var rotateY = ((x - centerX) / centerX) * maxRotate;
 
               gsap.to(card, {
-                rotateX: rotateX,
-                rotateY: rotateY,
-                duration: 0.3,
-                ease: 'power2.out',
-                transformPerspective: 800
+                rotateX: rotateX, rotateY: rotateY,
+                duration: 0.3, ease: 'power2.out', transformPerspective: 800
               });
             });
 
             card.addEventListener('mouseleave', function () {
               gsap.to(card, {
-                rotateX: 0,
-                rotateY: 0,
-                duration: 0.6,
-                ease: 'power3.out'
+                rotateX: 0, rotateY: 0,
+                duration: 0.6, ease: 'power3.out'
               });
             });
           });
         }
       }
 
-      // Init on DOMContentLoaded
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initMotion);
       } else {

@@ -150,8 +150,8 @@ strong { font-weight: 700; }
 
 /* ---- Nav ---- */
 .nav {
-  position: sticky;
-  top: 0;
+  position: relative;
+  top: auto;
   z-index: 100;
   background: var(--white);
   border-bottom: 1px solid var(--line);
@@ -504,4 +504,34 @@ a:hover .gold-accent { color: var(--gold-hover); }
 .legal-content .disclaimer-box p {
   font-size: 14px;
   margin-bottom: 0;
+}
+
+/* ---- Language toggle ---- */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+.lang-toggle:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+.lang-active {
+  font-weight: 700;
+  color: var(--blue);
+}
+.lang-toggle:hover .lang-active {
+  color: var(--white);
+}
+.lang-sep {
+  opacity: 0.4;
+  margin: 0 2px;
 }
